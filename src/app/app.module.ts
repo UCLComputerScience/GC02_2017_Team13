@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { ProductsPage } from '../pages/products/products';
+import { SalesPage } from '../pages/sales/sales';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { RunningcPage } from '../pages/runningc/runningc';
+import { StockPage } from '../pages/stock/stock';
+import { FeaturesPage } from '../pages/features/features';
+import { PhotosoundPage } from '../pages/photosound/photosound';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,10 +18,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    ProductsPage,
+    SalesPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    RunningcPage,
+    StockPage,
+    PhotosoundPage,
+    FeaturesPage,
+
   ],
   imports: [
     BrowserModule,
@@ -26,10 +35,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    ProductsPage,
+    SalesPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    RunningcPage,
+    StockPage,
+    PhotosoundPage,
+    FeaturesPage,
+    
   ],
   providers: [
     StatusBar,
