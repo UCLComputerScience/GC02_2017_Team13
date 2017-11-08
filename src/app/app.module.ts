@@ -12,6 +12,7 @@ import { StockPage } from '../pages/stock/stock';
 import { FeaturesPage } from '../pages/features/features';
 import { PhotosoundPage } from '../pages/photosound/photosound';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { QuantityPage } from '../pages/quantity/quantity';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
