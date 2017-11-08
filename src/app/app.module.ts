@@ -13,7 +13,9 @@ import { FeaturesPage } from '../pages/features/features';
 import { PhotosoundPage } from '../pages/photosound/photosound';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QuantityPage } from '../pages/quantity/quantity';
+import { IscashpaidPage } from '../pages/iscashpaid/iscashpaid';
 
+IscashpaidPage
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -29,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PhotosoundPage,
     FeaturesPage,
     QuantityPage,
+    IscashpaidPage,
 
   ],
   imports: [
@@ -47,11 +50,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PhotosoundPage,
     FeaturesPage,
     QuantityPage,
+    IscashpaidPage,
     
   ],
   providers: [
     StatusBar,
-    SplashScreen,,Camera,
+    SplashScreen,Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
