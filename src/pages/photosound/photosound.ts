@@ -28,6 +28,7 @@ export class PhotosoundPage {
     this.photos = [];
   }
   takephoto() {
+    
     const options: CameraOptions = {
       quality: 50,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -46,6 +47,8 @@ export class PhotosoundPage {
       // Handle error
     });
     this.navCtrl.push(QuantityPage);
+    
+    
     
 
   }

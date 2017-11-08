@@ -28,6 +28,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StockPage,
     PhotosoundPage,
     FeaturesPage,
+    QuantityPage,
 
   ],
   imports: [
@@ -45,6 +46,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StockPage,
     PhotosoundPage,
     FeaturesPage,
+    QuantityPage,
     
   ],
   providers: [
