@@ -11,6 +11,7 @@ import { FeaturesPage } from '../features/features';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
+  public hideTabs:boolean = true;
 
   tab1Root = HomePage;
   tab2Root = ProductsPage;

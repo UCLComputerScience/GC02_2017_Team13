@@ -23,12 +23,12 @@ export class IscashpaidPage {
   }
 
   cashpaid() {
-
-    this.navCtrl.push(ProductsPage);
+    this.navCtrl.setRoot(ProductsPage);
+    
   }
   cashnotpaid() {
 
-    this.navCtrl.push(ProductsPage);
+    this.navCtrl.setRoot(ProductsPage);
   }
 
 
