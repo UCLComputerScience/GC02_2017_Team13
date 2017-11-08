@@ -15,6 +15,16 @@
 
 <ion-content padding>
 
+    <ion-grid>
+        <ion-row>
+          <ion-col col-6 *ngFor="let photo of photos; let id=index"> <!-- binds the new value photo to the old of photos and loops -->
+            <ion-card class="block">
+              <img [src]="photo" *ngIf="photo"/>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
 
   <button ion-button full class="photobutton" (click)="takephoto()">
     <ion-icon name="camera"></ion-icon>
@@ -22,7 +32,7 @@
   </button>
 
 
-  <button ion-button full class="record" (click)="takephoto()">
+  <button ion-button full class="record" (click)="recordsound()">
     <ion-icon name="mic"></ion-icon>
     &nbsp;&nbsp; Record
   </button>
