@@ -42,7 +42,6 @@ export class PhotosoundPage {
       this.base64Image = 'data:image/jpeg;base64,' + imageData;
       this.photos.push(this.base64Image);
       this.photos.reverse();
-      this.navCtrl.push(QuantityPage);
     }, (err) => {
       // Handle error
     });
