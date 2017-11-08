@@ -17,36 +17,38 @@ import { QuantityPage } from '../../pages/quantity/quantity';
   templateUrl: 'photosound.html',
 })
 export class PhotosoundPage {
-  public photos:any;
-  public base64Image:string;
+  public photos: any;
+  public base64Image: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
 
   }
-  ngOnInIt(){
+  ngOnInIt() {
+
+    this.photos = [];
+  }
+  takephoto() {
+    const options: CameraOptions = {
+      quality: 50,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.photos.push(this.base64Image);
+      this.photos.reverse();
+      this.navCtrl.push(QuantityPage);
+    }, (err) => {
+      // Handle error
+    });
+    this.navCtrl.push(QuantityPage);
     
-        this.photos=[];
-      }
-      takephoto(){
-        const options: CameraOptions = {
-          quality: 50,
-          destinationType: this.camera.DestinationType.DATA_URL,
-          encodingType: this.camera.EncodingType.JPEG,
-          mediaType: this.camera.MediaType.PICTURE
-        }
-        
-        this.camera.getPicture(options).then((imageData) => {
-         // imageData is either a base64 encoded string or a file URI
-         // If it's base64:
-         this.base64Image = 'data:image/jpeg;base64,' + imageData;
-         this.photos.push(this.base64Image);
-         this.photos.reverse();
-        }, (err) => {
-         // Handle error
-        });
-        this.navCtrl.push(QuantityPage);
-    
-      }
+
+  }
 
 
 
