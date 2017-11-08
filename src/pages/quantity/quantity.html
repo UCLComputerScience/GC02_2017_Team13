@@ -7,40 +7,44 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>quantity</ion-title>
+    <ion-title>Quantity</ion-title>
   </ion-navbar>
+
 
 </ion-header>
 
 
+
 <ion-content class="no-scroll" padding>
+
+    <p align="right"> <font size="+2" align="right">{{moneypaid}}</font></p>
 
 
   <ion-grid >
       <ion-row>
-          <ion-col col-3><ion-icon class="iconm" name="remove-circle"></ion-icon></ion-col>
-          <ion-col col-3>1</ion-col>
-          <ion-col col-3><ion-icon class="iconm" name="add-circle"></ion-icon></ion-col>
+          <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(1)"></ion-icon></ion-col>
+          <ion-col col-3><font size="+2">1</font></ion-col>
+          <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(1)"></ion-icon></ion-col>
       </ion-row >
     <ion-row>
-        <ion-col col-3><ion-icon class="iconm" name="remove-circle"></ion-icon></ion-col>
-        <ion-col col-3>2</ion-col>
-        <ion-col col-3><ion-icon class="iconm" name="add-circle"></ion-icon></ion-col>
+        <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(2)"></ion-icon></ion-col>
+        <ion-col col-3><font size="+2">2</font></ion-col>
+        <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(2)"></ion-icon></ion-col>
     </ion-row >
     <ion-row>
-        <ion-col col-3><ion-icon class="iconm" name="remove-circle"></ion-icon></ion-col>
-        <ion-col col-3>5</ion-col>
-        <ion-col col-3><ion-icon class="iconm" name="add-circle"></ion-icon></ion-col>
+        <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(5)"></ion-icon></ion-col>
+        <ion-col col-3><font size="+2">5</font></ion-col>
+        <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(5)"></ion-icon></ion-col>
     </ion-row >
     <ion-row>
-        <ion-col col-3><ion-icon class="iconm" name="remove-circle"></ion-icon></ion-col>
-        <ion-col col-3>10</ion-col>
-        <ion-col col-3><ion-icon class="iconm" name="add-circle"></ion-icon></ion-col>
+        <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(10)"></ion-icon></ion-col>
+        <ion-col col-3><font size="+2">10</font></ion-col>
+        <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(10)"></ion-icon></ion-col>
     </ion-row >
     <ion-row>
-        <ion-col col-3><ion-icon class="iconm" name="remove-circle"></ion-icon></ion-col>
-        <ion-col col-3>50</ion-col>
-        <ion-col col-3><ion-icon class="iconm" name="add-circle"></ion-icon></ion-col>
+        <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(50)"></ion-icon></ion-col>
+        <ion-col col-3><font size="+2">50</font></ion-col>
+        <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(50)"></ion-icon></ion-col>
     </ion-row >
   </ion-grid>
 

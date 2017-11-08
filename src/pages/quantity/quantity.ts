@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'quantity.html',
 })
 export class QuantityPage {
+  public moneypaid=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -21,5 +22,15 @@ export class QuantityPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuantityPage');
   }
+
+  increment(amount){
+
+    this.moneypaid=this.moneypaid+amount;
+  }
+
+  reduce(amount){
+    
+        this.moneypaid=this.moneypaid-amount;
+      }
 
 }
