@@ -16,10 +16,10 @@
 <ion-content padding>
   <ion-grid bottom right>
     <ion-row>
-      <button ion-button round>
+      <button ion-button round (click)="cashpaid()">
         <ion-icon class="iconx" name="checkmark"></ion-icon>
       </button>
-      <button ion-button color="danger" round>
+      <button ion-button color="danger" round (click)="cashnotpaid()">
         <ion-icon class="iconx" name="close"></ion-icon>
       </button>
 

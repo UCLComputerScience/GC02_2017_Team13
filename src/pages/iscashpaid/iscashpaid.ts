@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ProductsPage } from '../../pages/products/products';
 /**
  * Generated class for the IscashpaidPage page.
  *
@@ -21,5 +21,17 @@ export class IscashpaidPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad IscashpaidPage');
   }
+
+  cashpaid() {
+
+    this.navCtrl.push(ProductsPage);
+  }
+  cashnotpaid() {
+
+    this.navCtrl.push(ProductsPage);
+  }
+
+
+
 
 }
