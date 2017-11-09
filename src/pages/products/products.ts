@@ -7,14 +7,13 @@ import { PhotosoundPage } from '../../pages/photosound/photosound';
   templateUrl: 'products.html'
 })
 export class ProductsPage {
-  public hideTabs:boolean = false;
 
   constructor(public navCtrl: NavController) {
-
   }
   gotophotosound(){
 
     this.navCtrl.push(PhotosoundPage);
+    
   }
 
 
