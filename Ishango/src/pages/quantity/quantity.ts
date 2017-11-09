@@ -15,7 +15,7 @@ import { QuantityProvider } from '../../providers/quantity/quantity';
   templateUrl: 'quantity.html',
 })
 export class QuantityPage {
-  public moneypaid=0;
+  public moneypaid = 0;
 
   constructor(public quantityprovider: QuantityProvider, public navCtrl: NavController, public navParams: NavParams ) {
   }
@@ -29,7 +29,7 @@ export class QuantityPage {
   }
 
   gotoiscashpaid() {
-    this.quantityprovider.moneypaid=this.moneypaid;
+    this.quantityprovider.moneypaid.push(this.moneypaid);
     this.navCtrl.push(IscashpaidPage);
   }
 

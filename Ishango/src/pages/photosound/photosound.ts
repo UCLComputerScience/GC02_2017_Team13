@@ -31,7 +31,7 @@ export class PhotosoundPage {
   takephoto() {
     
     const options: CameraOptions = {
-      quality: 50,
+      quality: 25,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
@@ -46,7 +46,7 @@ export class PhotosoundPage {
     }, (err) => {
       // Handle error
     });
-    this.quantityprovider.photos=this.photos;
+    this.quantityprovider.photos.push(this.photos);
     this.navCtrl.push(QuantityPage);
     
     
