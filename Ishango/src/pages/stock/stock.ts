@@ -16,11 +16,15 @@ import { QuantityProvider } from '../../providers/quantity/quantity';
 })
 export class StockPage {
 
-  public reorderIsEnabled = true;
+  public reorderIsEnabled = false;
 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  toggleReorder(){
+    this.reorderIsEnabled = !this.reorderIsEnabled;
   }
 
   ionViewDidLoad() {
