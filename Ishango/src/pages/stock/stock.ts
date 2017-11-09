@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { QuantityProvider } from '../../providers/quantity/quantity';
 
 /**
  * Generated class for the StockPage page.
