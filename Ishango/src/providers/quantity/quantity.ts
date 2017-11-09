@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { IscashpaidPage } from '../../pages/iscashpaid/iscashpaid';
 /*
   Generated class for the QuantityProvider provider.
 
@@ -11,18 +10,12 @@ import { IscashpaidPage } from '../../pages/iscashpaid/iscashpaid';
 */
 @Injectable()
 export class QuantityProvider {
-  public moneypaid = 10;
+  public moneypaid;
 
   constructor(public http: Http) {
     console.log('Hello QuantityProvider Provider');
   }
-  increment(amount) {
-    this.moneypaid= this.moneypaid + amount;
-  }
 
-  reduce(amount) {
-    this.moneypaid = this.moneypaid - amount;
-  }
 
 
 

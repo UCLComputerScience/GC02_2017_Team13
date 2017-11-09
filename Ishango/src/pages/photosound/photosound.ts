@@ -45,6 +45,7 @@ export class PhotosoundPage {
     }, (err) => {
       // Handle error
     });
+
     this.navCtrl.push(QuantityPage);
     
     

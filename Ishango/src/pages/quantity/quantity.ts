@@ -15,24 +15,21 @@ import { QuantityProvider } from '../../providers/quantity/quantity';
   templateUrl: 'quantity.html',
 })
 export class QuantityPage {
-  public moneypaid = 0;
+  public moneypaid;
 
   constructor(public quantityprovider: QuantityProvider, public navCtrl: NavController, public navParams: NavParams ) {
-    this.moneypaid=this.quantityprovider.moneypaid;
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad QuantityPage');
   }
 
   increment(amount) {
-    this.quantityprovider.increment(amount);
+    this.moneypaid= this.moneypaid + amount;
   }
 
   reduce(amount) {
-    this.quantityprovider.reduce(amount);
+    this.moneypaid = this.moneypaid - amount;
   }
+
   gotoiscashpaid() {
+    this.quantityprovider.moneypaid=this.moneypaid;
     this.navCtrl.push(IscashpaidPage);
   }
 
