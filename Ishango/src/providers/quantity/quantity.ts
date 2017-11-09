@@ -11,6 +11,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Injectable()
 export class QuantityProvider {
   public moneypaid;
+  public photos=[];
 
   constructor(public http: Http) {
     console.log('Hello QuantityProvider Provider');

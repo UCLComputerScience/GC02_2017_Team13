@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QuantityPage } from '../../pages/quantity/quantity';
+import { QuantityProvider } from '../../providers/quantity/quantity';
 
 
 /**
@@ -20,7 +21,7 @@ export class PhotosoundPage {
   public photos: any;
   public base64Image: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera,private quantityprovider: QuantityProvider) {
 
   }
   ngOnInIt() {
@@ -45,7 +46,7 @@ export class PhotosoundPage {
     }, (err) => {
       // Handle error
     });
-
+    this.quantityprovider.photos=this.photos;
     this.navCtrl.push(QuantityPage);
     
     

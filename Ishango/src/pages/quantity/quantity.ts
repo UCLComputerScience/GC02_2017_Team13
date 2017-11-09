@@ -15,7 +15,7 @@ import { QuantityProvider } from '../../providers/quantity/quantity';
   templateUrl: 'quantity.html',
 })
 export class QuantityPage {
-  public moneypaid;
+  public moneypaid=0;
 
   constructor(public quantityprovider: QuantityProvider, public navCtrl: NavController, public navParams: NavParams ) {
   }
