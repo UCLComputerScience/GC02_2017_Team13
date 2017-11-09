@@ -47,6 +47,7 @@ export class PhotosoundPage {
       // Handle error
     });
     this.quantityprovider.photos.push(this.photos);
+    
     this.navCtrl.push(QuantityPage);
     
     
