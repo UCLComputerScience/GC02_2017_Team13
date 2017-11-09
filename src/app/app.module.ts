@@ -14,11 +14,10 @@ import { PhotosoundPage } from '../pages/photosound/photosound';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QuantityPage } from '../pages/quantity/quantity';
 import { IscashpaidPage } from '../pages/iscashpaid/iscashpaid';
-
-IscashpaidPage
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { QuantityProvider } from '../providers/quantity/quantity';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,7 @@ import { QuantityProvider } from '../providers/quantity/quantity';
 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp,{tabsHideOnSubPages:true})
   ],
   bootstrap: [IonicApp],

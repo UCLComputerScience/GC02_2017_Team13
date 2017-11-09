@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { IscashpaidPage } from '../../pages/iscashpaid/iscashpaid';
-
+import { QuantityProvider } from '../../providers/quantity/quantity';
 /**
  * Generated class for the QuantityPage page.
  *
@@ -17,7 +17,8 @@ import { IscashpaidPage } from '../../pages/iscashpaid/iscashpaid';
 export class QuantityPage {
   public moneypaid = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public quantityprovider: QuantityProvider, public navCtrl: NavController, public navParams: NavParams ) {
+    this.moneypaid=this.quantityprovider.moneypaid;
   }
 
   ionViewDidLoad() {
@@ -25,11 +26,11 @@ export class QuantityPage {
   }
 
   increment(amount) {
-    this.moneypaid = this.moneypaid + amount;
+    this.quantityprovider.increment(amount);
   }
 
   reduce(amount) {
-    this.moneypaid = this.moneypaid - amount;
+    this.quantityprovider.reduce(amount);
   }
   gotoiscashpaid() {
     this.navCtrl.push(IscashpaidPage);

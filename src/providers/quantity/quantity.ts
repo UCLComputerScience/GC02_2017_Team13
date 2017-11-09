@@ -11,11 +11,20 @@ import { IscashpaidPage } from '../../pages/iscashpaid/iscashpaid';
 */
 @Injectable()
 export class QuantityProvider {
-  public moneypaid = 0;
+  public moneypaid = 10;
 
   constructor(public http: Http) {
     console.log('Hello QuantityProvider Provider');
   }
+  increment(amount) {
+    this.moneypaid= this.moneypaid + amount;
+  }
+
+  reduce(amount) {
+    this.moneypaid = this.moneypaid - amount;
+  }
+
+
 
 
 }
