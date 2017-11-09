@@ -8,6 +8,8 @@
 
   <ion-navbar>
     <ion-title>Stock</ion-title>
+    
+
   </ion-navbar>
 
 </ion-header>
@@ -16,6 +18,13 @@
 
 
 <ion-content padding>
+
+  <button class="buttonStock" (click)="toggleReorder()" ion-button round outline block  *ngIf="!reorderIsEnabled">
+      Edit
+    </button>
+    <button class="buttonStock" (click)="toggleReorder()" ion-button round block   *ngIf="reorderIsEnabled">
+      Done
+    </button>
 
 <ion-list [reorder]="reorderIsEnabled">
       
