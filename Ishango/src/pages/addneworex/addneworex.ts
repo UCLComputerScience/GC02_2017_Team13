@@ -35,6 +35,7 @@ export class AddneworexPage {
     this.quantityprovider.buysameitem=true;
     this.quantityprovider.index=index;
     this.navCtrl.push(QuantityPage);
+    
 
   }
 
