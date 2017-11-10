@@ -6,9 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Quantity</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Quantity</ion-title>
+    </ion-navbar>
 
 
 </ion-header>
@@ -17,38 +17,93 @@
 
 <ion-content class="no-scroll" padding>
 
-    <p align="right"> <font size="+2" align="right">{{moneypaid}}</font></p>
 
 
-  <ion-grid >
-      <ion-row>
-          <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(1)"></ion-icon></ion-col>
-          <ion-col col-3><font size="+2">1</font></ion-col>
-          <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(1)"></ion-icon></ion-col>
-      </ion-row >
-    <ion-row>
-        <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(2)"></ion-icon></ion-col>
-        <ion-col col-3><font size="+2">2</font></ion-col>
-        <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(2)"></ion-icon></ion-col>
-    </ion-row >
-    <ion-row>
-        <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(5)"></ion-icon></ion-col>
-        <ion-col col-3><font size="+2">5</font></ion-col>
-        <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(5)"></ion-icon></ion-col>
-    </ion-row >
-    <ion-row>
-        <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(10)"></ion-icon></ion-col>
-        <ion-col col-3><font size="+2">10</font></ion-col>
-        <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(10)"></ion-icon></ion-col>
-    </ion-row >
-    <ion-row>
-        <ion-col col-3><ion-icon class="iconm" name="remove-circle" (click)="reduce(50)"></ion-icon></ion-col>
-        <ion-col col-3><font size="+2">50</font></ion-col>
-        <ion-col col-3><ion-icon class="iconm" name="add-circle" (click)="increment(50)"></ion-icon></ion-col>
-    </ion-row >
-  </ion-grid>
 
-  <ion-fab (click)="gotoiscashpaid()" right bottom><button ion-fab> 
-      <ion-icon class="iconf" name="arrow-dropright"></ion-icon>
-  </button></ion-fab>
+
+
+    <ion-grid>
+        <ion-row>
+                <ion-col col-6>
+                        <img src="https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/512x512/plain/shopping_basket_full.png"/>
+                    <!-- <img src="../assets/img/shopping_basket.png"/> -->
+                    </ion-col>
+                    <ion-col col-3>
+                            <font size="+1" align="left">Quantity</font>
+                        </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-3>
+
+            </ion-col>
+            <ion-col col-3>
+            </ion-col>
+            <ion-col col-3>
+                <font size="+3" align="right">{{moneypaid}}</font>
+            </ion-col>
+            </ion-row>
+            <ion-row></ion-row><ion-row></ion-row><ion-row></ion-row><ion-row></ion-row>
+
+            <ion-row>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(1)"></ion-icon>
+                </ion-col>
+                <ion-col col-3>
+                    <font size="+2">1</font>
+                </ion-col>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="add-circle" (click)="increment(1)"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(2)"></ion-icon>
+                </ion-col>
+                <ion-col col-3>
+                    <font size="+2">2</font>
+                </ion-col>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="add-circle" (click)="increment(2)"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(5)"></ion-icon>
+                </ion-col>
+                <ion-col col-3>
+                    <font size="+2">5</font>
+                </ion-col>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="add-circle" (click)="increment(5)"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(10)"></ion-icon>
+                </ion-col>
+                <ion-col col-3>
+                    <font size="+2">10</font>
+                </ion-col>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="add-circle" (click)="increment(10)"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(50)"></ion-icon>
+                </ion-col>
+                <ion-col col-3>
+                    <font size="+2">50</font>
+                </ion-col>
+                <ion-col col-3>
+                    <ion-icon tappable class="iconm" name="add-circle" (click)="increment(50)"></ion-icon>
+                </ion-col>
+            </ion-row>
+    </ion-grid>
+
+    <ion-fab (click)="gotoiscashpaid()" right bottom>
+        <button ion-fab>
+            <ion-icon class="iconf" name="arrow-dropright"></ion-icon>
+        </button>
+    </ion-fab>
 </ion-content>
