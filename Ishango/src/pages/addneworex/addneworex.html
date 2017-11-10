@@ -30,9 +30,9 @@
       </ion-row>
     </ion-grid>
     <ion-grid *ngFor="let photo of photos; let id=index" >
-      <ion-row (click)="buymoreofthesame(id)">
-        <ion-col col-6>
-          <img [src]="photo" />
+      <ion-row (click)="buymoreofthesame(id)" >
+        <ion-col col-6 >
+          <img [src]="photo"/>
         </ion-col>
         <ion-col col-6>
           <font size="+2"> {{quantity[id]}} </font>

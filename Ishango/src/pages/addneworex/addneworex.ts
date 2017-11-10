@@ -33,7 +33,7 @@ export class AddneworexPage {
   }
   buymoreofthesame(index){
     this.quantityprovider.buysameitem=true;
-    this.quantityprovider.index=0;
+    this.quantityprovider.index=index;
     this.navCtrl.push(QuantityPage);
 
   }
