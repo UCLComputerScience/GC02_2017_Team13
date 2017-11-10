@@ -15,8 +15,11 @@ import { QuantityProvider } from '../../providers/quantity/quantity';
   templateUrl: 'iscashpaid.html',
 })
 export class IscashpaidPage {
+ 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public quantityprovider: QuantityProvider) {
+  constructor(public quantityprovider: QuantityProvider, public navCtrl: NavController, public navParams: NavParams) {
+
+
   }
 
   ionViewDidLoad() {
@@ -28,11 +31,15 @@ export class IscashpaidPage {
 
     this.navCtrl.setRoot(ProductsPage);
     
+    
+
+    
   }
   cashnotpaid() {
     this.quantityprovider.acceptaddition();
 
     this.navCtrl.setRoot(ProductsPage);
+ 
   }
 
 
