@@ -1,17 +1,17 @@
 page-iscashpaid {
     .grid {
-        //height: 120%;
+        //height: 10%;
         //justify-content: center;
         //width: 150%;
         //margin-left: 47%;
        // margin-top:155%;
-       position: absolute;
-       left:    45%;
-       bottom:   0;
+       position: relative;
+       left:    40%;
+       top:   92%;
   }
 
   .iconx{
-    font-size: 50px;
+    font-size: 60px;
     text-align: center; //works
   }
   .photo {
@@ -19,7 +19,7 @@ page-iscashpaid {
   left: 0;
   right: 0;
   margin:0 auto;
-  top:50%;
+  top:40%;
   transform:translateY(-50%);
   }
 
