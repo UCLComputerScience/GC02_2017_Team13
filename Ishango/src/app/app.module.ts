@@ -20,6 +20,7 @@ import { QuantityProvider } from '../providers/quantity/quantity';
 import { HttpModule } from '@angular/http';
 import { MoneypaidPage } from '../pages/moneypaid/moneypaid';
 import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
+import { AddneworexPage } from '../pages/addneworex/addneworex';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
     QuantityPage,
     IscashpaidPage,
     MoneypaidPage,
-    VoicerecordPage
+    VoicerecordPage,
+    AddneworexPage
 
   ],
   imports: [
@@ -57,8 +59,8 @@ import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
     QuantityPage,
     IscashpaidPage,
     MoneypaidPage,
-    VoicerecordPage
-    
+    VoicerecordPage,
+    AddneworexPage    
   ],
   providers: [
     StatusBar,
