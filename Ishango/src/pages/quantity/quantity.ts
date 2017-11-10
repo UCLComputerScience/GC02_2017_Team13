@@ -31,7 +31,7 @@ export class QuantityPage {
 
   gotoiscashpaid() {
     if (this.quantity>0){
-    this.quantityprovider.quantity.push(this.quantity);
+    this.quantityprovider.quantityTemp.push(this.quantity);
     this.navCtrl.push(MoneypaidPage);}
   }
 

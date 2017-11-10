@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductsPage } from '../../pages/products/products';
+import { QuantityProvider } from '../../providers/quantity/quantity';
 /**
  * Generated class for the IscashpaidPage page.
  *
@@ -15,7 +16,7 @@ import { ProductsPage } from '../../pages/products/products';
 })
 export class IscashpaidPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public quantityprovider: QuantityProvider) {
   }
 
   ionViewDidLoad() {
@@ -23,10 +24,13 @@ export class IscashpaidPage {
   }
 
   cashpaid() {
+    this.quantityprovider.acceptaddition();
+
     this.navCtrl.setRoot(ProductsPage);
     
   }
   cashnotpaid() {
+    this.quantityprovider.acceptaddition();
 
     this.navCtrl.setRoot(ProductsPage);
   }

@@ -32,7 +32,7 @@ export class MoneypaidPage {
 
   gotoiscashpaid() {
     if (this.moneypaid>0){
-    this.quantityprovider.moneypaid.push(this.moneypaid);
+    this.quantityprovider.moneypaidTemp.push(this.moneypaid);
     this.navCtrl.push(IscashpaidPage);}
   }
 
