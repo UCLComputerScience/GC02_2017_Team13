@@ -17,10 +17,17 @@ import { QuantityProvider } from '../../providers/quantity/quantity';
 export class StockPage {
 
   public reorderIsEnabled = false;
+  private photos=[];
+  private moneypaid=[];
+   // private photoMoney = [];
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public quantityprovider: QuantityProvider) {
+
+    this.photos = this.quantityprovider.photos;
+    this.moneypaid = this.quantityprovider.moneypaid;
+    // this.photoMoney.push(this.moneypaid, this.photoMoney);
   }
 
   toggleReorder(){

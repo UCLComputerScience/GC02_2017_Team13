@@ -27,9 +27,10 @@
 
 <ion-list [reorder]="reorderIsEnabled">
       
-    <ion-item>Whatever</ion-item> 
-    <ion-item >Debt</ion-item>
-    <ion-item>Balance</ion-item> 
+    <ion-item *ngFor="let stockList of photos; let id=index"> 
+      {{moneypaid[id]}} 
+    </ion-item>
+     
 </ion-list>
 
 
