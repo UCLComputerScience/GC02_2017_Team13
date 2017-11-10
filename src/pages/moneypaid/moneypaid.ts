@@ -26,12 +26,14 @@ export class MoneypaidPage {
   }
 
   reduce(amount) {
-    this.moneypaid = this.moneypaid - amount;
+    if (this.moneypaid-amount>=0){
+    this.moneypaid = this.moneypaid - amount;}
   }
 
   gotoiscashpaid() {
-    this.quantityprovider.moneypaid.push(this.moneypaid);
-    this.navCtrl.push(IscashpaidPage);
+    if (this.moneypaid>0){
+    this.quantityprovider.moneypaidTemp.push(this.moneypaid);
+    this.navCtrl.push(IscashpaidPage);}
   }
 
   ionViewDidLoad() {
