@@ -7,12 +7,60 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title><font size="4">Add New product or preexisting?</font></ion-title>
+    <ion-title>
+      <font size="4">Add New product or preexisting?</font>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <font size="+2" align="left">Item</font>
+        </ion-col>
+        <ion-col col-6>
+          <font size="+2" align="left">Quantity</font>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid *ngFor="let photo of photos; let id=index">
+      <ion-row>
+        <ion-col col-6>
+          <img [src]="photo" />
+        </ion-col>
+        <ion-col col-6>
+          <font size="+2"> {{quantity[id]}} </font>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+           
+  <ion-fab tappable class="brick" (click)="gotophotosound()" bottom>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+           <!-- <img src="../assets/img/prize2.png"/> -->
+           <img src="http://www.free-icons-download.net/images/add-to-basket-icon-65307.png"/>
+
+            </ion-col>
+            <ion-col col-6 class="sentence">
+                <font size="+2"> Add new product </font>
+            </ion-col>
+
+        </ion-row>
+
+
+    </ion-grid>
+  </ion-fab>
+
+
+
 
 </ion-content>

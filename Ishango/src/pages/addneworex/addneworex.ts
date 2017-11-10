@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PhotosoundPage } from '../../pages/photosound/photosound';
+import { QuantityProvider } from '../../providers/quantity/quantity';
 
 /**
  * Generated class for the AddneworexPage page.
@@ -15,8 +16,19 @@ import { PhotosoundPage } from '../../pages/photosound/photosound';
   templateUrl: 'addneworex.html',
 })
 export class AddneworexPage {
+  private photos=[];
+  private quantity=[];
+  private moneypaid=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public quantityprovider: QuantityProvider) {
+
+    this.photos=this.quantityprovider.photos;
+    this.quantity = this.quantityprovider.quantity;
+    this.moneypaid = this.quantityprovider.moneypaid;
+  }
+
+  gotophotosound() {
+    this.navCtrl.push(PhotosoundPage);
   }
 
   ionViewDidLoad() {

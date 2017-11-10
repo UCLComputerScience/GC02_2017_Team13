@@ -23,7 +23,7 @@ export class ProductsPage {
 
 
 
-  gotophotosound() {
+  gotoneworexisting() {
     this.navCtrl.push(AddneworexPage);
   }
 
