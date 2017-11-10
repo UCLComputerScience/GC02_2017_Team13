@@ -18,7 +18,7 @@ export class StockPage {
 
   public reorderIsEnabled = false;
   private photos=[];
-  private moneypaid=[];
+  private quantity=[];
    // private photoMoney = [];
 
 
@@ -26,7 +26,7 @@ export class StockPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public quantityprovider: QuantityProvider) {
 
     this.photos = this.quantityprovider.photos;
-    this.moneypaid = this.quantityprovider.moneypaid;
+    this.quantity = this.quantityprovider.quantity;
     // this.photoMoney.push(this.moneypaid, this.photoMoney);
   }
 
