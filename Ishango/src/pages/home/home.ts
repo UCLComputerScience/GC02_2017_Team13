@@ -6,11 +6,11 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  tabBarElement: any;
-  splash = true;
+  // tabBarElement: any;
+  // splash = true;
 
   constructor(public navCtrl: NavController) {
-    this.tabBarElement = document.querySelector('.tabbar');
+    // this.tabBarElement = document.querySelector('.tabbar');
   }
 
   // ionViewDidLoad() {
