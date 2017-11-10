@@ -25,12 +25,14 @@ export class QuantityPage {
   }
 
   reduce(amount) {
-    this.quantity = this.quantity - amount;
+    if (this.quantity-amount>=0){
+    this.quantity = this.quantity - amount;}
   }
 
   gotoiscashpaid() {
+    if (this.quantity>0){
     this.quantityprovider.quantity.push(this.quantity);
-    this.navCtrl.push(MoneypaidPage);
+    this.navCtrl.push(MoneypaidPage);}
   }
 
 }
