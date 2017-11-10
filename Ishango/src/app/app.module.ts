@@ -35,7 +35,7 @@ import { AddneworexPage } from '../pages/addneworex/addneworex';
     QuantityPage,
     IscashpaidPage,
     MoneypaidPage,
-    AddneworexPage
+    AddneworexPage,
 
   ],
   imports: [
@@ -56,7 +56,7 @@ import { AddneworexPage } from '../pages/addneworex/addneworex';
     QuantityPage,
     IscashpaidPage,
     MoneypaidPage,
-    AddneworexPage
+    AddneworexPage,
     
   ],
   providers: [

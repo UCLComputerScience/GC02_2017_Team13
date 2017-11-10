@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PhotosoundPage } from '../../pages/photosound/photosound';
+import { QuantityPage } from '../../pages/quantity/quantity';
 import { QuantityProvider } from '../../providers/quantity/quantity';
 
 /**
@@ -29,6 +30,12 @@ export class AddneworexPage {
 
   gotophotosound() {
     this.navCtrl.push(PhotosoundPage);
+  }
+  buymoreofthesame(index){
+    this.quantityprovider.buysameitem=true;
+    this.quantityprovider.index=0;
+    this.navCtrl.push(QuantityPage);
+
   }
 
   ionViewDidLoad() {
