@@ -18,6 +18,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { QuantityProvider } from '../providers/quantity/quantity';
 import { HttpModule } from '@angular/http';
+import { MoneypaidPage } from '../pages/moneypaid/moneypaid';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpModule } from '@angular/http';
     FeaturesPage,
     QuantityPage,
     IscashpaidPage,
+    MoneypaidPage,
 
   ],
   imports: [
@@ -51,6 +53,7 @@ import { HttpModule } from '@angular/http';
     FeaturesPage,
     QuantityPage,
     IscashpaidPage,
+    MoneypaidPage,
     
   ],
   providers: [

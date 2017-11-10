@@ -10,8 +10,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 */
 @Injectable()
 export class QuantityProvider {
-  public moneypaid=[];
+  public quantity=[];
   public photos=[];
+  public moneypaid=[];
 
   constructor(public http: Http) {
     console.log('Hello QuantityProvider Provider');

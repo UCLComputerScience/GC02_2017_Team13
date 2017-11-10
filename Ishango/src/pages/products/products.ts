@@ -8,11 +8,13 @@ import { QuantityProvider } from '../../providers/quantity/quantity';
 })
 export class ProductsPage {
   private photos=[];
+   private quantity=[];
    private moneypaid=[];
 
 
   constructor(public navCtrl: NavController, public quantityprovider: QuantityProvider) {
     this.photos=this.quantityprovider.photos;
+    this.quantity = this.quantityprovider.quantity;
     this.moneypaid = this.quantityprovider.moneypaid;
 
   }
