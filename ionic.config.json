@@ -1,0 +1,8 @@
+{
+  "name": "Ishango",
+  "app_id": "e31d27a7",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
