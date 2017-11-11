@@ -15,9 +15,7 @@
 </ion-header>
 
 
-<ion-content padding>
-
-
+<ion-content padding hide-fab >
   <ion-list>
     <ion-grid>
       <ion-row>
@@ -39,28 +37,25 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-list>
+  </ion-list>    
+
 
            
-  <ion-fab tappable class="brick" (click)="gotophotosound()" bottom>
-    <ion-grid>
-        <ion-row>
-            <ion-col col-6>
-           <!-- <img src="../assets/img/prize2.png"/> -->
-           <img src="http://www.free-icons-download.net/images/add-to-basket-icon-65307.png"/>
+           
+<ion-fab (click)="gotophotosound()" bottom right >
 
-            </ion-col>
-            <ion-col col-6 class="sentence">
-                <font size="+2"> Add new product </font>
-            </ion-col>
-
-        </ion-row>
+  <button ion-fab class="fabs">
+         
+         <img src="http://www.free-icons-download.net/images/add-to-basket-icon-65307.png"/>
 
 
-    </ion-grid>
-  </ion-fab>
+        </button>
 
+</ion-fab>
 
 
 
 </ion-content>
+
+
+

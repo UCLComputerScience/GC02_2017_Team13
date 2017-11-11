@@ -21,6 +21,7 @@ import { HttpModule } from '@angular/http';
 import { MoneypaidPage } from '../pages/moneypaid/moneypaid';
 import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
 import { AddneworexPage } from '../pages/addneworex/addneworex';
+import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 
 
 @NgModule({
@@ -38,7 +39,9 @@ import { AddneworexPage } from '../pages/addneworex/addneworex';
     IscashpaidPage,
     MoneypaidPage,
     VoicerecordPage,
-    AddneworexPage
+    AddneworexPage,
+    HideFabDirective,
+
 
   ],
   imports: [
@@ -60,7 +63,7 @@ import { AddneworexPage } from '../pages/addneworex/addneworex';
     IscashpaidPage,
     MoneypaidPage,
     VoicerecordPage,
-    AddneworexPage    
+    AddneworexPage
   ],
   providers: [
     StatusBar,
