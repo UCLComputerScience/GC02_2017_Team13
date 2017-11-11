@@ -1,20 +1,18 @@
 page-iscashpaid {
-    .grid {
-       position: relative;
-       left:    42%;
-       top:   92%;
+    .buttons {
+      position: absolute;
+      right: 3%;
+      bottom: 2%;
   }
 
   .iconx{
     font-size: 60px;
-    text-align: center; //works
+    text-align: right; //works
   }
   .photo {
-  position:absolute;
-  left: 0;
-  right: 0;
+  position:relative;
+  top: 30%;
   margin:0 auto;
-  top:40%;
   transform:translateY(-50%);
   }
 
