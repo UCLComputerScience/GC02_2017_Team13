@@ -19,7 +19,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { QuantityProvider } from '../providers/quantity/quantity';
 import { HttpModule } from '@angular/http';
 import { MoneypaidPage } from '../pages/moneypaid/moneypaid';
+import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
 import { AddneworexPage } from '../pages/addneworex/addneworex';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { AddneworexPage } from '../pages/addneworex/addneworex';
     QuantityPage,
     IscashpaidPage,
     MoneypaidPage,
-    AddneworexPage,
+    VoicerecordPage,
+    AddneworexPage
 
   ],
   imports: [
@@ -56,8 +59,8 @@ import { AddneworexPage } from '../pages/addneworex/addneworex';
     QuantityPage,
     IscashpaidPage,
     MoneypaidPage,
-    AddneworexPage,
-    
+    VoicerecordPage,
+    AddneworexPage    
   ],
   providers: [
     StatusBar,

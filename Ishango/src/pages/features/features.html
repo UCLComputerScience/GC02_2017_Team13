@@ -9,37 +9,27 @@
 <ion-content padding>
 
     
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-          Item 1
-      </ion-col>
-      <ion-col>
-        Stock of Item 1
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        Item 2
-      </ion-col>
-      <ion-col>
-        Stock of Item 1
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        Item 3
-      </ion-col>
-      <ion-col>
-        Stock of Item 3
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <button class="buttonStock" (click)="toggleReorder()" ion-button round outline block  *ngIf="!reorderIsEnabled">
+      Edit
+    </button>
+    <button class="buttonStock" (click)="toggleReorder()" ion-button round block   *ngIf="reorderIsEnabled">
+      Done
+    </button>
+
+<ion-list [reorder]="reorderIsEnabled">
+      
+    <ion-item *ngFor="let recording of recordings; let id=index"> 
+      {{recordings[id]}} 
+    </ion-item>
+
+</ion-list>
+
+
 
 
   <button ion-button full class="addbutton" (click)="gotophotosound()">
-    <ion-icon name="basket"></ion-icon>
-    &nbsp;&nbsp; Add Item
+    <ion-icon name="mic"></ion-icon>
+    &nbsp;&nbsp; Add Recording
   </button>
 
 
