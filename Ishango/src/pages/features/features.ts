@@ -16,11 +16,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeaturesPage {
 
+//elements to be displayed in splitted page
+  top_item_array = ["Item A", "Item B", "Item C"]
+    bottom_item_array = ["Item D", "Item E", "Item F"]
+
   reorderIsEnabled = false;
   recordings = [1, 2, 3, 4];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
+//moving from top array to bottom array
+  move_from_top_to_bottom(idx){
+      this.bottom_item_array.push(this.top_item_array[idx])
+      this.top_item_array.splice(idx, 1)
+    }
+//moving from bottom array to top array
+    move_from_bottom_to_top(idx){
+      this.top_item_array.push(this.bottom_item_array[idx])
+      this.bottom_item_array.splice(idx, 1)
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeaturesPage');

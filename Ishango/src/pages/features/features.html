@@ -16,6 +16,25 @@
       Done
     </button>
 
+<!-- block that splits the screen -->
+    <ion-scroll scrollX="true" scrollY="true" style="height: 100px;">
+    <h2>Top</h2>
+    <ion-list [reorder]="reorderIsEnabled">
+        <ion-item *ngFor="let item of top_item_array; let idx = index" (tap)="move_from_top_to_bottom(idx)">
+            {{item}}
+        </ion-item>
+    </ion-list>
+</ion-scroll>
+<ion-scroll scrollX="true" scrollY="true" style="height: 100px;">
+    <h2>Bottom</h2>
+    <ion-list [reorder]="reorderIsEnabled">
+        <ion-item *ngFor="let item of bottom_item_array; let idx = index" (tap)="move_from_bottom_to_top(idx)">
+            {{item}}
+        </ion-item>
+    </ion-list>
+</ion-scroll>
+<!-- end of block -->
+
 <ion-list [reorder]="reorderIsEnabled">
       
     <ion-item *ngFor="let recording of recordings; let id=index"> 
@@ -23,6 +42,8 @@
     </ion-item>
 
 </ion-list>
+
+
 
 
 
