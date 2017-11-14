@@ -1,6 +1,9 @@
 
+
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, reorderArray } from 'ionic-angular';
+import { QuantityProvider } from '../../providers/quantity/quantity';
+
 
 /**
  * Generated class for the FeaturesPage page.
@@ -44,6 +47,13 @@ export class FeaturesPage {
   toggleReorder(){
     this.reorderIsEnabled = !this.reorderIsEnabled;
   }
+
+  itemReordered($event){
+    reorderArray(this.top_item_array, $event);
+
+  }
+
+
 
 
 

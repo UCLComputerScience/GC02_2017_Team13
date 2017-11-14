@@ -21,6 +21,7 @@ export class AddneworexPage {
   private quantity=[];
   private moneypaid=[];
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public quantityprovider: QuantityProvider) {
 
     this.photos=this.quantityprovider.photos;
@@ -42,5 +43,6 @@ export class AddneworexPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddneworexPage');
   }
+
 
 }
