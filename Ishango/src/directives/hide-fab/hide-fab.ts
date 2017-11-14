@@ -9,7 +9,7 @@ import { Content } from "ionic-angular";
 export class HideFabDirective {
   private fabRef;
   private storedScroll: number = 0;
-  private threshold: number = 10;
+  private threshold: number = 5;
 
   constructor(public element:ElementRef,public renderer:Renderer) {
     console.log('Hello HideFabDirective Directive');
