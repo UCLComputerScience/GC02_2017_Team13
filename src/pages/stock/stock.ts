@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, reorderArray } from 'ionic-angular';
 import { QuantityProvider } from '../../providers/quantity/quantity';
 
 /**
@@ -37,6 +37,11 @@ export class StockPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StockPage');
+  }
+
+  itemReordered($event){
+    reorderArray(this.quantity, $event);
+
   }
 
 }

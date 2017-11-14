@@ -25,7 +25,7 @@
       Done
     </button>
 
-<ion-list [reorder]="reorderIsEnabled">
+<ion-list [reorder]="reorderIsEnabled" (ionItemReorder)="itemReordered($event)">
       
     <ion-item *ngFor="let quantityStock of quantity; let id=index"> 
       {{quantity[id]}} 

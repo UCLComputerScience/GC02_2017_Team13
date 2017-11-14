@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PhotosoundPage } from '../../pages/photosound/photosound';
-import { QuantityProvider } from '../../providers/quantity/quantity';
+import { PhotosoundPage } from '../photosound/photosound';
+import { QuantityProvider } from '../../../providers/quantity/quantity';
+import { AddneworexPage } from '../addneworex/addneworex';
+
 @Component({
   selector: 'page-products',
   templateUrl: 'products.html'
@@ -21,8 +23,8 @@ export class ProductsPage {
 
 
 
-  gotophotosound() {
-    this.navCtrl.push(PhotosoundPage);
+  gotoneworexisting() {
+    this.navCtrl.push(AddneworexPage);
   }
 
 

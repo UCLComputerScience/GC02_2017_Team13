@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { QuantityProvider } from '../../providers/quantity/quantity';
-import { IscashpaidPage } from '../../pages/iscashpaid/iscashpaid';
+import { QuantityProvider } from '../../../providers/quantity/quantity';
+import { IscashpaidPage } from '../iscashpaid/iscashpaid';
 
 /**
  * Generated class for the MoneypaidPage page.

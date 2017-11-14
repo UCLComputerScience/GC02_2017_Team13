@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { QuantityPage } from '../../pages/quantity/quantity';
-import { QuantityProvider } from '../../providers/quantity/quantity';
+import { QuantityPage } from '../quantity/quantity';
+import { QuantityProvider } from '../../../providers/quantity/quantity';
 
 
 /**

@@ -1,0 +1,38 @@
+.brick {
+    background-color: #488aff;
+    position: absolute;
+    right:    0;
+    bottom:   0;
+}
+
+.listStyle {
+background-color: red;
+height: 75%;
+
+}
+
+.sentence{
+    position: relative;
+    right:    5%;
+    bottom:   -40%;
+    text-align:center;
+    color: #ffffff
+
+}
+
+.ion-row{
+    
+            border-bottom:1pt solid black;
+            border-top:1pt solid black;
+          }
+
+
+.columns{
+  text-align: center;
+}
+
+.fabs {
+    width: 100px !important;
+    height: 100px !important;
+    }
+
