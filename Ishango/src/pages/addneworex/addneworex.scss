@@ -3,9 +3,13 @@
     position: absolute;
     right:    0;
     bottom:   0;
-
 }
 
+.listStyle {
+background-color: red;
+height: 75%;
+
+}
 
 .sentence{
     position: relative;
@@ -23,9 +27,8 @@
           }
 
 
-.column{
-
-    text-align: center;
+.columns{
+  text-align: center;
 }
 
 .fabs {

@@ -20,26 +20,26 @@
 
 
 
-  <ion-list>
+  <ion-list class="listStyle">
     <ion-grid>
       <ion-row>
-        <ion-col col-6>
-          <font size="+2" align="left">Item</font>
+        <ion-col col-6 class="columns">
+          <font size="+2">Item</font>
         </ion-col>
-        <ion-col col-6>
-          <font size="+2" align="center">Quantity</font>
+        <ion-col col-6 class="columns">
+          <font size="+2">Quantity</font>
         </ion-col>
       </ion-row>
     </ion-grid>
 
-  <ion-scroll scrollX="true" scrollY="true" style="height: 300px;">
+  <ion-scroll scrollX="true" scrollY="true" style="height:80%;">
 
     <ion-grid *ngFor="let photo of photos; let id=index" >
       <ion-row (click)="buymoreofthesame(id)" class="ion-row" >
-        <ion-col col-6 >
+        <ion-col col-6 class="columns">
           <img [src]="photo"/>
         </ion-col>
-        <ion-col col-6 class="column" >
+        <ion-col col-6 class="columns" >
           <font size="+2"> {{quantity[id]}} </font>
         </ion-col>
       </ion-row>
