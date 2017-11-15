@@ -10,18 +10,16 @@ export class HomePage {
   // tabBarElement: any;
   // splash = true;
 
-  constructor(public navCtrl: NavController,private tts:TextToSpeech) {
+  constructor(public navCtrl: NavController, private tts: TextToSpeech) {
     // this.tabBarElement = document.querySelector('.tabbar');
   }
 
-  async producesound():Promise<any>{
-
-    try{
+  async producesound(): Promise<any> {
+    try {
       await this.tts.speak("this is the dashboard");
       console.log("succesfully spoke");
-
     }
-    catch(e){
+    catch (e) {
       console.log(e);
 
     }
