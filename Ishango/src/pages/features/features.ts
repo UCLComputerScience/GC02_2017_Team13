@@ -2,7 +2,7 @@
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, reorderArray } from 'ionic-angular';
-import { QuantityProvider } from '../../providers/quantity/quantity';
+import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
 
 
 /**

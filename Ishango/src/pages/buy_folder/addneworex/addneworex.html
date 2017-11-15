@@ -1,0 +1,75 @@
+<!--
+  Generated template for the AddneworexPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <font size="4">Add New product or preexisting?</font>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding hide-fab >
+
+
+
+  <ion-list class="listStyle">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 class="columns">
+          <font size="+2">Item</font>
+        </ion-col>
+        <ion-col col-6 class="columns">
+          <font size="+2">Quantity</font>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  <ion-scroll scrollX="true" scrollY="true" style="height:80%;">
+
+    <!-- <ion-grid *ngFor="let photo of photos; let id=index" >
+      <ion-row (click)="buymoreofthesame(id)" class="ion-row" >
+        <ion-col col-6 class="columns">
+          <img [src]="photo"/>
+        </ion-col>
+        <ion-col col-6 class="columns" >
+          <font size="+2"> {{quantity[id]}} </font>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+
+      </ion-scroll>   
+
+
+  </ion-list> 
+
+
+
+
+
+           
+           
+<ion-fab (click)="gotophotobuy()" bottom right >
+
+  <button ion-fab class="fabs">
+         
+         <img src="http://www.free-icons-download.net/images/add-to-basket-icon-65307.png"/>
+
+
+        </button>
+
+</ion-fab>
+
+
+
+</ion-content>
+
+
+

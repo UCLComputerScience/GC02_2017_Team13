@@ -2,44 +2,45 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
-import { ProductsPage } from '../pages/products/products';
+import { ProductstobuyPage } from '../pages/buy_folder/productstobuy/productstobuy';
 import { SalesPage } from '../pages/sales/sales';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { RunningcPage } from '../pages/runningc/runningc';
+import { RunningcostsPage } from '../pages/runningcosts_folder/runningcosts/runningcosts';
 import { StockPage } from '../pages/stock/stock';
 import { FeaturesPage } from '../pages/features/features';
-import { PhotosoundPage } from '../pages/photosound/photosound';
+import { PhotobuyPage } from '../pages/buy_folder/photobuy/photobuy';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { QuantityPage } from '../pages/quantity/quantity';
-import { IscashpaidPage } from '../pages/iscashpaid/iscashpaid';
+import { QuantitytobuyPage } from '../pages/buy_folder/quantitytobuy/quantitytobuy';
+import { IscashpaidPage } from '../pages/buy_folder/iscashpaid/iscashpaid';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { QuantityProvider } from '../providers/quantity/quantity';
+import { SharedProvider } from '../providers/sharedprovider/sharedprovider';
 import { HttpModule } from '@angular/http';
-import { MoneypaidPage } from '../pages/moneypaid/moneypaid';
+import { MoneypaidPage } from '../pages/buy_folder/moneypaid/moneypaid';
+import { ProductstosellPage } from '../pages/sell_folder/productstosell/productstosell';
 import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
-import { AddneworexPage } from '../pages/addneworex/addneworex';
+import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
 import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    ProductsPage,
-    SalesPage,
     HomePage,
-    TabsPage,
-    RunningcPage,
-    StockPage,
-    PhotosoundPage,
-    FeaturesPage,
-    QuantityPage,
-    IscashpaidPage,
-    MoneypaidPage,
-    VoicerecordPage,
+    ProductstobuyPage,
+    ProductstosellPage,
+    QuantitytobuyPage,
     AddneworexPage,
+    PhotobuyPage,
+    MoneypaidPage,
+    IscashpaidPage,
+    SalesPage,
+    TabsPage,
+    RunningcostsPage,
+    StockPage,
+    FeaturesPage,
+    VoicerecordPage,
     HideFabDirective,
 
 
@@ -51,15 +52,16 @@ import { HideFabDirective } from '../directives/hide-fab/hide-fab';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ProductsPage,
+    ProductstobuyPage,
+    ProductstosellPage,
     SalesPage,
     HomePage,
     TabsPage,
-    RunningcPage,
+    RunningcostsPage,
     StockPage,
-    PhotosoundPage,
+    PhotobuyPage,
     FeaturesPage,
-    QuantityPage,
+    QuantitytobuyPage,
     IscashpaidPage,
     MoneypaidPage,
     VoicerecordPage,
@@ -69,7 +71,7 @@ import { HideFabDirective } from '../directives/hide-fab/hide-fab';
     StatusBar,
     SplashScreen,Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    QuantityProvider
+    SharedProvider
   ]
 })
 export class AppModule {}
