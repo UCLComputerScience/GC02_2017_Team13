@@ -22,6 +22,7 @@ import { ProductstosellPage } from '../pages/sell_folder/productstosell/products
 import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
 import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
 import { HideFabDirective } from '../directives/hide-fab/hide-fab';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { HideFabDirective } from '../directives/hide-fab/hide-fab';
     FeaturesPage,
     VoicerecordPage,
     HideFabDirective,
+
 
 
   ],
@@ -69,7 +71,7 @@ import { HideFabDirective } from '../directives/hide-fab/hide-fab';
   ],
   providers: [
     StatusBar,
-    SplashScreen,Camera,
+    SplashScreen,Camera,TextToSpeech,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SharedProvider
   ]

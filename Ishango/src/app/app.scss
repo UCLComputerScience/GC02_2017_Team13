@@ -17,3 +17,26 @@
 .container_productstobuy {
   background-color: yellow;
 }
+
+ion-icon {
+  &[class*="appname-"] {
+      // Instead of using the font-based icons
+      // We're applying SVG masks
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 1em;
+      height: 1em;
+  }
+  // custom icons
+  &[class*="appname-sound"] {
+      mask-image: url(../assets/img/sound.svg);
+  }
+  &[class*="appname-customicon2"] {
+      mask-image: url(../assets/img/customicon2.svg);
+  }
+  &[class*="appname-customicon3"] {
+      mask-image: url(../assets/img/customicon3.svg);
+  }
+}
