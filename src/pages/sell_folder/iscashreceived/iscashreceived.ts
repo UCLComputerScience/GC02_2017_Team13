@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ProductstobuyPage } from '../productstobuy/productstobuy';
+import { ProductstosellPage } from '../productstosell/productstosell';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 /**
  * Generated class for the IscashpaidPage page.
@@ -11,10 +11,10 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 
 @IonicPage()
 @Component({
-  selector: 'page-iscashpaid',
-  templateUrl: 'iscashpaid.html',
+  selector: 'page-iscashreceived',
+  templateUrl: 'iscashreceived.html',
 })
-export class IscashpaidPage {
+export class IscashreceivedPage {
  
 
   constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
@@ -26,19 +26,19 @@ export class IscashpaidPage {
     console.log('ionViewDidLoad IscashpaidPage');
   }
 
-  cashpaid() {
+  cashreceived() {
     this.sharedprovider.acceptaddition();
 
-    this.navCtrl.setRoot(ProductstobuyPage);
+    this.navCtrl.setRoot(ProductstosellPage);
     
     
 
     
   }
-  cashnotpaid() {
+  cashnotreceived() {
     this.sharedprovider.acceptaddition();
 
-    this.navCtrl.setRoot(ProductstobuyPage);
+    this.navCtrl.setRoot(ProductstosellPage);
  
   }
 

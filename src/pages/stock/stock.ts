@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, reorderArray } from 'ionic-angular';
-import { QuantityProvider } from '../../providers/quantity/quantity';
+import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
 
 /**
  * Generated class for the StockPage page.
@@ -24,10 +24,10 @@ export class StockPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public quantityprovider: QuantityProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
 
-    this.photos = this.quantityprovider.photos;
-    this.quantity = this.quantityprovider.quantity;
+    this.photos = this.sharedprovider.photos;
+    this.quantity = this.sharedprovider.quantity;
     // this.photoMoney.push(this.moneypaid, this.photoMoney);
   }
 

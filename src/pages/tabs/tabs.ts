@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
-import { ProductsPage } from '../products/products';
-import { SalesPage } from '../sales/sales';
+import { ProductstobuyPage } from '../buy_folder/productstobuy/productstobuy';
+import { ProductstosellPage } from '../sell_folder/productstosell/productstosell';
 import { HomePage } from '../home/home';
-import { RunningcPage } from '../runningc/runningc';
-import { StockPage } from '../stock/stock';
+import { RunningcostsPage } from '../runningcosts_folder/runningcosts/runningcosts';
 import { FeaturesPage } from '../features/features';
 
 @Component({
@@ -14,10 +13,9 @@ export class TabsPage {
   public hideTabs:boolean = true;
 
   tab1Root = HomePage;
-  tab2Root = ProductsPage;
-  tab3Root = SalesPage;
-  tab4Root = RunningcPage;
-  tab5Root = StockPage;
+  tab2Root = ProductstobuyPage;
+  tab3Root = ProductstosellPage;
+  tab4Root = RunningcostsPage;
   tab6Root = FeaturesPage;
 
 

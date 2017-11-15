@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MoneypaidPage } from '../moneypaid/moneypaid';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import { IscashpaidPage } from '../iscashpaid/iscashpaid';
-
 /**
- * Generated class for the MoneypaidPage page.
+ * Generated class for the QuantityPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,32 +11,28 @@ import { IscashpaidPage } from '../iscashpaid/iscashpaid';
 
 @IonicPage()
 @Component({
-  selector: 'page-moneypaid',
-  templateUrl: 'moneypaid.html',
+  selector: 'page-quantitytobuy',
+  templateUrl: 'quantitytobuy.html',
 })
-export class MoneypaidPage {
-  moneypaid=0;
+export class QuantitytobuyPage {
+  public quantity = 0;
 
   constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams ) {
   }
 
   increment(amount) {
-    this.moneypaid= this.moneypaid + amount;
+    this.quantity= this.quantity + amount;
   }
 
   reduce(amount) {
-    if (this.moneypaid-amount>=0){
-    this.moneypaid = this.moneypaid - amount;}
+    if (this.quantity-amount>=0){
+    this.quantity = this.quantity - amount;}
   }
 
   gotoiscashpaid() {
-    if (this.moneypaid>0){
-    this.sharedprovider.moneypaidTemp.push(this.moneypaid);
-    this.navCtrl.push(IscashpaidPage);}
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MoneypaidPage');
+    if (this.quantity>0){
+    this.sharedprovider.quantityTemp.push(this.quantity);
+    this.navCtrl.push(MoneypaidPage);}
   }
 
 }

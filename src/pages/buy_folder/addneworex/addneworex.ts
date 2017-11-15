@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PhotosoundPage } from '../photosound/photosound';
-import { QuantityPage } from '../quantity/quantity';
-import { QuantityProvider } from '../../../providers/quantity/quantity';
+import { PhotobuyPage } from '../photobuy/photobuy';
+import { QuantitytobuyPage } from '../quantitytobuy/quantitytobuy';
+import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 
 /**
  * Generated class for the AddneworexPage page.
@@ -17,25 +17,25 @@ import { QuantityProvider } from '../../../providers/quantity/quantity';
   templateUrl: 'addneworex.html',
 })
 export class AddneworexPage {
-  private photos=[];
-  private quantity=[];
-  private moneypaid=[];
+  private photos = [];
+  private quantity = [];
+  private moneypaid = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public quantityprovider: QuantityProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
 
-    this.photos=this.quantityprovider.photos;
-    this.quantity = this.quantityprovider.quantity;
-    this.moneypaid = this.quantityprovider.moneypaid;
+    this.photos=this.sharedprovider.photos;
+    this.quantity = this.sharedprovider.quantity;
+    this.moneypaid = this.sharedprovider.moneypaid;
   }
 
-  gotophotosound() {
-    this.navCtrl.push(PhotosoundPage);
+  gotophotobuy() {
+    this.navCtrl.push(PhotobuyPage);
   }
   buymoreofthesame(index){
-    this.quantityprovider.buysameitem=true;
-    this.quantityprovider.index=index;
-    this.navCtrl.push(QuantityPage);
+    this.sharedprovider.buysameitem=true;
+    this.sharedprovider.index=index;
+    this.navCtrl.push(QuantitytobuyPage);
     
 
   }
