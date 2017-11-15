@@ -4,6 +4,7 @@ import { PhotobuyPage } from '../photobuy/photobuy';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { AddneworexPage } from '../addneworex/addneworex';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { DeleteitemPage } from '../../../pages/buy_folder/deleteitem/deleteitem';
 
 @Component({
   selector: 'page-productstobuy',
@@ -26,6 +27,11 @@ export class ProductstobuyPage {
 
   gotoneworexisting() {
     this.navCtrl.push(AddneworexPage);
+  }
+  gotodeleteitem(id){
+    this.sharedprovider.index=id;
+    this.navCtrl.push(DeleteitemPage);
+
   }
 
   async producesound(): Promise<any> {
