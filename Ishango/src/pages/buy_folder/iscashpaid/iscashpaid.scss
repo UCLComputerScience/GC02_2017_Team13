@@ -1,18 +1,23 @@
-    .buttons {
-      position: absolute;
-      right: 3%;
-      bottom: 2%;
-  }
+page-iscashpaid {
+  .buttons {
+    position: absolute;
+    right: 3%;
+    bottom: 50%;
+   // background-color: yellow;
+    //height: 10%;
+    //width: 60%;
+}
 
-  .iconx{
-    font-size: 60px;
-    text-align: right; //works
-  }
-  .photo {
-  position:relative;
-  top: 30%;
-  margin:0 auto;
-  transform:translateY(-50%);
-  }
+.iconx{
+  font-size: 60px;
+  text-align: right; //works
+}
+.photo {
+position:relative;
+top: 20%;
+margin:0 auto;
+transform:translateY(-50%);
+//background-color: black;
+}
 
- 
+}

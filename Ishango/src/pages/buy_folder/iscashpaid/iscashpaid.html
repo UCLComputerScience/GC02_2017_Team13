@@ -5,35 +5,32 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>CASH PAID?</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-
-
-
-<ion-content padding>
-
-  <ion-row class="photo">
-    <ion-col col-12>
-      <img src="https://2.bp.blogspot.com/-XpkGNICCjBs/V9DPUcjKMDI/AAAAAAAAByA/K55ncXrwMT8xoUw_SPp9FQ-Hrz63ki_0wCLcB/s1600/cash-payment-icon-5.png"
-      />
-      <!-- <img src="../assets/img/prize2.png"/> -->
-    </ion-col>
-  </ion-row>
-
-  <ion-grid>
-    <ion-row class="buttons">
-      <button ion-button round (click)="cashpaid()">
-        <ion-icon class="iconx" name="checkmark"></ion-icon>
-      </button>
-      <button ion-button color="danger" round (click)="cashnotpaid()">
-        <ion-icon class="iconx" name="close"></ion-icon>
-      </button>
+  
+    <ion-navbar>
+      <ion-title>CASH PAID?</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  
+  
+  
+  <ion-content padding>
+  
+    <ion-row class="photo">
+      <ion-col col-12>
+        <img src="https://2.bp.blogspot.com/-XpkGNICCjBs/V9DPUcjKMDI/AAAAAAAAByA/K55ncXrwMT8xoUw_SPp9FQ-Hrz63ki_0wCLcB/s1600/cash-payment-icon-5.png"
+        />
+        <!-- <img src="../assets/img/prize2.png"/> -->
+      </ion-col>
     </ion-row>
-  </ion-grid>
-</ion-content>
+      <ion-row class="buttons" >
+        <button ion-button round (click)="cashpaid()">
+          <ion-icon class="iconx" name="checkmark"></ion-icon>
+        </button>
+        <button ion-button color="danger" round (click)="cashnotpaid()">
+          <ion-icon class="iconx" name="close"></ion-icon>
+        </button>
+      </ion-row>
+  </ion-content>

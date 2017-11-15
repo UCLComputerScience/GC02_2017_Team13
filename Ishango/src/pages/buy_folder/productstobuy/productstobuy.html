@@ -9,39 +9,44 @@
 <ion-content padding>
 
 
-  <ion-list class="container_productstobuy">
-   
+  <ion-list class="listStyleProducts">
     <ion-grid>
       <ion-row>
-        <ion-col col-6 class="positionTags">
+        <ion-col col-6 class="column">
           <font size="+2">Item</font>
         </ion-col>
-        <ion-col col-6 class="positionTags">
-          <font size="+2" >Quantity</font>
+        <ion-col col-6 class="column">
+          <font size="+2">Quantity</font>
         </ion-col>
       </ion-row>
     </ion-grid>
 
-    <ion-scroll scrollX="true" scrollY="true" style="height:40px;">
-      <ion-grid *ngFor="let photo of photos; let id=index">
+    <ion-scroll scrollX="true" scrollY="true" class="scroll">
+
+<!--
+     asdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaaasdasdadadasaaaaaaaaa 
+-->
+    
+     <ion-grid *ngFor="let photo of photos; let id=index">
         <ion-row class="ion-row">
           <ion-col col-6>
-           <img [src]="photo"/> 
-         </ion-col>
-         <ion-col col-6 class="column">
-          <font size="+2"> {{quantity[id]}} </font>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-scroll>
+            <img [src]="photo" />
+          </ion-col>
+          <ion-col col-6 class="column">
+            <font size="+2"> {{quantity[id]}} </font>
+          </ion-col>
+        </ion-row>
+      </ion-grid> 
+    </ion-scroll>  
 
-</ion-list>
 
-<ion-fab class="addbutton column">
-  <button ion-button full class="addbutton"  (click)="gotoneworexisting()">
-    <ion-icon name="basket"></ion-icon>
-    &nbsp;&nbsp; New purchase
-  </button>
-</ion-fab>
+  </ion-list>
+
+  <ion-fab class="addbutton column">
+    <button ion-button full class="addbutton" (click)="gotoneworexisting()">
+      <ion-icon name="basket"></ion-icon>
+      &nbsp;&nbsp; New purchase
+    </button>
+  </ion-fab>
 
 </ion-content>
