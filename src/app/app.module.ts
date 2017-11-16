@@ -23,6 +23,7 @@ import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
 import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
 import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
     FeaturesPage,
     VoicerecordPage,
     HideFabDirective,
+    DeleteitemPage,
 
 
 
@@ -67,7 +69,8 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
     IscashpaidPage,
     MoneypaidPage,
     VoicerecordPage,
-    AddneworexPage
+    AddneworexPage,
+    DeleteitemPage
   ],
   providers: [
     StatusBar,

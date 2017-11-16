@@ -8,10 +8,10 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 @IonicPage()
 @Component({
-  selector: 'page-iscashpaid',
-  templateUrl: 'iscashpaid.html',
+  selector: 'page-deleteitem',
+  templateUrl: 'deleteitem.html',
 })
-export class IscashpaidPage {
+export class DeleteitemPage {
  
 
   constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams,private tts: TextToSpeech ) {
@@ -20,28 +20,20 @@ export class IscashpaidPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad IscashpaidPage');
+    console.log('ionViewDidLoad DeleteitemPage');
   }
 
-  cashpaid() {
-    this.sharedprovider.acceptaddition();
-
+  yes(index) {
+    this.sharedprovider.deleteitem();
     this.navCtrl.setRoot(ProductstobuyPage);
-    
-    
-
-    
   }
-  cashnotpaid() {
-    this.sharedprovider.acceptaddition();
-
+  no() {
     this.navCtrl.setRoot(ProductstobuyPage);
- 
   }
 
   async producesound(): Promise<any> {
     try {
-      await this.tts.speak("If you paid for the items click the blue button. If you paid by credit, click the red button");
+      await this.tts.speak("If you really want to delete this item click the blue button. If you want to cancel and return to the products screen click the red button");
       console.log("succesfully spoke");
     }
     catch (e) {

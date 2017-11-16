@@ -7,21 +7,19 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  // tabBarElement: any;
-  // splash = true;
+  tabBarElement: any;
+  splash = true;
 
-  constructor(public navCtrl: NavController,private tts:TextToSpeech) {
-    // this.tabBarElement = document.querySelector('.tabbar');
+  constructor(public navCtrl: NavController, private tts: TextToSpeech) {
+    this.tabBarElement = document.querySelector('.tabbar');
   }
 
-  async producesound():Promise<any>{
-
-    try{
+  async producesound(): Promise<any> {
+    try {
       await this.tts.speak("this is the dashboard");
       console.log("succesfully spoke");
-
     }
-    catch(e){
+    catch (e) {
       console.log(e);
 
     }
@@ -33,13 +31,13 @@ export class HomePage {
 
 
 
-  // ionViewDidLoad() {
-  //   this.tabBarElement.style.display = 'none';
-  //   setTimeout(() => {
-  //     this.splash = false;
-  //     this.tabBarElement.style.display = 'flex';
-  //   }, 3000);
-  // }
+  ionViewDidLoad() {
+    this.tabBarElement.style.display = 'none';
+    setTimeout(() => {
+      this.splash = false;
+      this.tabBarElement.style.display = 'flex';
+    }, 3000);
+  }
 
 
 }
