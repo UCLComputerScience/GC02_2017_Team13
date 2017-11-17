@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Device } from '@ionic-native/device';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -30,12 +31,27 @@ export class SharedProvider {
   public moneyreceived = [];
 
 
+  speed = 1;
+        
+
   
   public buysameitem: boolean = false;
 
-  constructor(public http: Http) {
+  constructor(public http: Http, private device: Device) {
     console.log('Hello QuantityProvider Provider');
+    console.log('Device UUID is: ' + this.device.uuid);
+
   }
+
+  speedvoice(){
+            if(this.device.platform == 'iOS')
+                if(this.device.version.charAt(0) > '9')
+                    this.speed = 1.5;
+                }
+
+            
+
+
 
   acceptaddition() {
     if (this.buysameitem == false) {

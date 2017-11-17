@@ -19,8 +19,10 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 })
 export class QuantitytosellPage {
   public quantity = 0;
+  public speed = 0;
 
   constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech ) {
+    this.speed = this.sharedprovider.speed;
   }
 
 
@@ -37,7 +39,8 @@ export class QuantitytosellPage {
 
   async producesound2(): Promise<any> {
     try {
-      await this.tts.speak("You don't have more items");
+      await this.tts.speak({ text: "You don't have more items",  rate: this.speed})
+
       console.log("succesfully spoke");
     }
     catch (e) {
