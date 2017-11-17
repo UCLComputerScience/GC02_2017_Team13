@@ -34,17 +34,8 @@ export class AddnewsalePage {
     // console.log(index);
   }  
   
-
-
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("in this page you can add a purchase of a new product or of a product that you had already bought");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
+  producesound () {
+       this.sharedprovider.producesound("in this page you can add a purchase of a new product or of a product that you had already bought");
   }
 
   ionViewDidLoad() {

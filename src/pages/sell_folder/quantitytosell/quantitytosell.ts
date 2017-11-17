@@ -4,9 +4,6 @@ import { MoneyreceivedPage } from '../moneyreceived/moneyreceived';
 import { AlertController } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
-
-
-
 /**
  * Generated class for the QuantityPage page.
  *
@@ -28,11 +25,7 @@ export class QuantitytosellPage {
 
   }
 
-producesound () {
-       this.sharedprovider.producesound("in this page you can add a purchase of a new product or of a product that you had already bought");
-  }
-
-  producesound1() {
+  producesound() {
     this.sharedprovider.producesound("You don't have more items");
   }
 
@@ -41,7 +34,7 @@ producesound () {
     this.quantity= this.quantity + amount;
     } else {
        this.quantity = this.sharedprovider.quantity[this.sharedprovider.index];
-       this.producesound1();
+       this.producesound();
     }
   }
 
