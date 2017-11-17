@@ -13,26 +13,24 @@ export class SharedProvider {
   public index;
 
 
-  // buy_folder variables
+  // buy_folder temporary variables
   public quantityTemp = [];
   public photosTemp = [];
   public moneypaidTemp = [];
 
-  public quantity = [];
-  public photos = [];
-  public moneypaid = [];
-
-  // sell_folder variables
+  // sell_folder temporary variables
   public quantityTempSell = [];
   public photosTempSell = [];
   public moneyreceivedTemp = [];
 
-  public quantitySell = [];
-  public photosSell = [];
+  // final stored values
+  public photos = [];
+  public quantity = [];
+  public moneypaid = [];
   public moneyreceived = [];
 
 
-
+  
   public buysameitem: boolean = false;
 
   constructor(public http: Http) {

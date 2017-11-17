@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ProductstobuyPage } from '../pages/buy_folder/productstobuy/productstobuy';
-import { SalesPage } from '../pages/sales/sales';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RunningcostsPage } from '../pages/runningcosts_folder/runningcosts/runningcosts';
@@ -12,6 +11,8 @@ import { FeaturesPage } from '../pages/features/features';
 import { PhotobuyPage } from '../pages/buy_folder/photobuy/photobuy';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QuantitytobuyPage } from '../pages/buy_folder/quantitytobuy/quantitytobuy';
+import { QuantitytosellPage } from '../pages/sell_folder/quantitytosell/quantitytosell';
+import { AddnewsalePage } from '../pages/sell_folder/addnewsale/addnewsale';
 import { IscashpaidPage } from '../pages/buy_folder/iscashpaid/iscashpaid';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,11 +34,11 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
     ProductstobuyPage,
     ProductstosellPage,
     QuantitytobuyPage,
+    QuantitytosellPage,
     AddneworexPage,
     PhotobuyPage,
     MoneypaidPage,
     IscashpaidPage,
-    SalesPage,
     TabsPage,
     RunningcostsPage,
     StockPage,
@@ -45,6 +46,7 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
     VoicerecordPage,
     HideFabDirective,
     DeleteitemPage,
+    AddnewsalePage
 
 
 
@@ -58,7 +60,7 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
     MyApp,
     ProductstobuyPage,
     ProductstosellPage,
-    SalesPage,
+    QuantitytosellPage,
     HomePage,
     TabsPage,
     RunningcostsPage,
@@ -70,7 +72,8 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
     MoneypaidPage,
     VoicerecordPage,
     AddneworexPage,
-    DeleteitemPage
+    DeleteitemPage,
+    AddnewsalePage
   ],
   providers: [
     StatusBar,

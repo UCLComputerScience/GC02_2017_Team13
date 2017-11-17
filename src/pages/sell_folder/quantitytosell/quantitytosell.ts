@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MoneyreceivedPage } from '../moneyreceived/moneyreceived';
+import { AlertController } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
 /**
  * Generated class for the QuantityPage page.
  *
@@ -17,22 +20,57 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 export class QuantitytosellPage {
   public quantity = 0;
 
-  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams ) {
+  constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech ) {
   }
 
+
+  async producesound(): Promise<any> {
+    try {
+      await this.tts.speak("in this page you can add a purchase of a new product or of a product that you had already bought");
+      console.log("succesfully spoke");
+    }
+    catch (e) {
+      console.log(e);
+
+    }
+  }
+
+  async producesound2(): Promise<any> {
+    try {
+      await this.tts.speak("You don't have more items");
+      console.log("succesfully spoke");
+    }
+    catch (e) {
+      console.log(e);
+
+    }
+  }
+
+
   increment(amount) {
+    if(this.quantity + amount <= this.sharedprovider.quantity[this.sharedprovider.index]){
     this.quantity= this.quantity + amount;
+    } else {
+       this.producesound2();
+    }
   }
 
   reduce(amount) {
-    if (this.quantity-amount>=0){
-    this.quantity = this.quantity - amount;}
+    if (this.quantity-amount >= 0){
+    this.quantity = this.quantity - amount;
+    }
   }
+
+
+
+  
+
 
   gotoiscashreceived() {
     if (this.quantity>0){
-    this.sharedprovider.quantityTemp.push(this.quantity);
-    this.navCtrl.push(MoneyreceivedPage);}
+      this.sharedprovider.quantityTemp.push(this.quantity);
+      this.navCtrl.push(MoneyreceivedPage);
+    }
   }
 
 }

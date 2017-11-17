@@ -1,34 +1,58 @@
-page-productstosell {
-
+page-productstosell{
+  
   .addbutton{
-  position: absolute;
-  right:    0;
-  bottom:   0;
-  width: 100%;
-  font-size: 25px;
-  margin: 0 auto;
-  height: 50px;
-  text-align: center;
-  color: rgb(255, 255, 255);
-}
-
-    .grid {
-        height: 100%;
-        justify-content: center;
-        width: 100%;
-        margin-bottom:0%;
-        background-color: purple;
+    position: absolute;
+    right:    0;
+    bottom:   0;
+    width: 100%;
+    font-size: 25px;
+    margin: 0 auto;
+    height: 50px;
+    text-align: center;
+    color: rgb(255, 255, 255);
   }
+  
+  .grid {
+    background-color: brown;
+    justify-content: center;
+    width: 100%;
+    margin-bottom:0%;
+  }
+  
+  .ion-row{
+    border-bottom:1pt solid black;
+   // border-top:1pt solid black;
+  }
+  
+  .column{
+    text-align: center;
+  }
+  
+  .scroll {
+    background-color: yellow;
+    height: 90%;
+    width: 100%;
+  }
+  .listStyleProducts{
+    height: 93%;
+    //width: 100%;
+  
+  }
+  
+
+  
+  
+  
+  
+  
+  
 
 
-.ion-row{
-  border-bottom:1pt solid black;
-  border-top:1pt solid black;
+  
 }
-
-.column{
-  text-align: center;
-}
-
-}
-
+  
+  
+  
+  
+  
+  
