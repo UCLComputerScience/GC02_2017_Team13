@@ -28,33 +28,20 @@ export class QuantitytosellPage {
 
   }
 
-
-
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("in this page you can add a purchase of a new product or of a product that you had already bought");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
+producesound () {
+       this.sharedprovider.producesound("in this page you can add a purchase of a new product or of a product that you had already bought");
   }
 
-
-
-  producesound2() {
+  producesound1() {
     this.sharedprovider.producesound("You don't have more items");
   }
 
-
   increment(amount) {
-     
     if(this.quantity + amount <= this.sharedprovider.quantity[this.sharedprovider.index]){
     this.quantity= this.quantity + amount;
     } else {
-       this.producesound2();
        this.quantity = this.sharedprovider.quantity[this.sharedprovider.index];
+       this.producesound1();
     }
   }
 
@@ -63,11 +50,6 @@ export class QuantitytosellPage {
     this.quantity = this.quantity - amount;
     }
   }
-
-
-
-  
-
 
   gotoiscashreceived() {
     if (this.quantity>0){

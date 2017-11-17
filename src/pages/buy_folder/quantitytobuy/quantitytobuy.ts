@@ -19,7 +19,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 export class QuantitytobuyPage {
   public quantity = 0;
 
-  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams, private device: Device, private tts:TextToSpeech ) {
+  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech ) {
   }
 
   increment(amount) {
@@ -37,15 +37,8 @@ export class QuantitytobuyPage {
     this.navCtrl.push(MoneypaidPage);}
   }
 
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("Enter how many items you bought");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
+  producesound () {
+       this.sharedprovider.producesound("Enter how many items you bought");
   }
 
 }

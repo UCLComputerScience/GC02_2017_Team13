@@ -76,24 +76,20 @@ export class SharedProvider {
     this.moneypaid.splice(this.index,1);
   }
 
+//speed voice regulator for iOS devices
   speedvoice(){
      if(this.device.platform.toString() == "iOS")
           this.speedVoice = 1.5;
   }
 
+//Text to Speech enabled 
   async producesound(soundString): Promise<any> {
     try {
-
          this.speedvoice();
          await this.tts.speak({ text: soundString,  rate: this.speedVoice})
-
     }
     catch (e) {
       console.log(e);
-
     }
   }
-
-
-
 }
