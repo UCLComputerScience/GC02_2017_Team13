@@ -18,7 +18,6 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 })
 export class QuantitytosellPage {
   public quantity = 0;
-  public speed = 0;
 
   constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech) {
         
@@ -46,7 +45,7 @@ export class QuantitytosellPage {
 
   gotoiscashreceived() {
     if (this.quantity>0){
-      this.sharedprovider.quantityTemp.push(this.quantity);
+      this.sharedprovider.quantityTempSell.push(this.quantity);
       this.navCtrl.push(MoneyreceivedPage);
     }
   }

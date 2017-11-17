@@ -10,13 +10,13 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 export class ProductstosellPage {
   private photos = [];
    private quantity = [];
-   private moneypaid = [];
+   private moneyreceived = [];
 
 
   constructor(public navCtrl: NavController, public sharedprovider: SharedProvider) {
     this.photos = this.sharedprovider.photos;
-    this.quantity = this.sharedprovider.quantity;
-    this.moneypaid = this.sharedprovider.moneypaid;
+    this.quantity = this.sharedprovider.quantitySell;
+    this.moneyreceived = this.sharedprovider.moneyReceived;
 
   }
 
