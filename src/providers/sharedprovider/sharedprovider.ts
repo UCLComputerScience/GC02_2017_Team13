@@ -12,6 +12,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Injectable()
 export class SharedProvider {
   public index;
+  public speedVoice = 0;
 
 
   // buy_folder temporary variables
@@ -24,15 +25,15 @@ export class SharedProvider {
   public photosTempSell = [];
   public moneyreceivedTemp = [];
 
-  // final stored values
+  // buy_folder final stored values 
   public photos = [];
   public quantity = [];
   public moneypaid = [];
+
+  // sell_folder final stored values 
+  public quantitySell = [];
   public moneyreceived = [];
 
-
-  speed = 1;
-        
 
   
   public buysameitem: boolean = false;
@@ -42,14 +43,11 @@ export class SharedProvider {
 
   }
 
+  //still working on this: making a provider speed variable to spot whether the device is iOS for voice speed
   speedvoice(){
-            
-
-           }
-
-            
-
-
+     if(this.device.platform.toString() == "iOS")
+          this.speedVoice = 1.5;
+  }
 
   acceptaddition() {
     if (this.buysameitem == false) {

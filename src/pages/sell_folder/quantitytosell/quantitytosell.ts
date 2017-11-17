@@ -25,8 +25,7 @@ export class QuantitytosellPage {
   public speed = 0;
 
   constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech, private device: Device ) {
-          this.sharedprovider.speedvoice;
-          this.speed = this.sharedprovider.speed;
+        
 
   }
 
@@ -45,10 +44,9 @@ export class QuantitytosellPage {
   async producesound2(): Promise<any> {
     try {
 
-         if(this.device.platform.toString() == "iOS")
-            this.speed = 1.5;
+         this.sharedprovider.speedvoice();
 
-         await this.tts.speak({ text: "You don't have more items",  rate: this.speed})
+         await this.tts.speak({ text: "You don't have more items",  rate: this.sharedprovider.speedVoice})
 
       console.log("succesfully spoke");
     }
@@ -60,12 +58,12 @@ export class QuantitytosellPage {
 
 
   increment(amount) {
-     console.log(this.device.platform);
-                  console.log(this.device.version.charAt(0));
+     
     if(this.quantity + amount <= this.sharedprovider.quantity[this.sharedprovider.index]){
     this.quantity= this.quantity + amount;
     } else {
        this.producesound2();
+       this.quantity = this.sharedprovider.quantity[this.sharedprovider.index];
     }
   }
 

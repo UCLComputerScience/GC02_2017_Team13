@@ -17,7 +17,7 @@ export class ProductstobuyPage {
    private moneypaid=[];
 
 
-  constructor(public navCtrl: NavController, public sharedprovider: SharedProvider,private tts:TextToSpeech) {
+  constructor(public navCtrl: NavController, public sharedprovider: SharedProvider, private tts:TextToSpeech) {
     this.photos = this.sharedprovider.photos;
     this.quantity = this.sharedprovider.quantity;
     this.moneypaid = this.sharedprovider.moneypaid;

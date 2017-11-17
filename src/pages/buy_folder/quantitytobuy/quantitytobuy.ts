@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MoneypaidPage } from '../moneypaid/moneypaid';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
-import { Device } from '@ionic-native/device';
 
 /**
  * Generated class for the QuantityPage page.
