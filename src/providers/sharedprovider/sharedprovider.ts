@@ -46,7 +46,8 @@ export class SharedProvider {
             if(this.device.platform == 'iOS')
                 if(this.device.version.charAt(0) > '9')
                     this.speed = 1.5;
-                }
+
+           }
 
             
 

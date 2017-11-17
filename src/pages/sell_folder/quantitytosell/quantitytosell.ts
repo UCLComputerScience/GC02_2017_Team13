@@ -4,6 +4,8 @@ import { MoneyreceivedPage } from '../moneyreceived/moneyreceived';
 import { AlertController } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { Device } from '@ionic-native/device';
+
 
 
 /**
@@ -22,8 +24,10 @@ export class QuantitytosellPage {
   public quantity = 0;
   public speed = 0;
 
-  constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech ) {
-    this.speed = this.sharedprovider.speed;
+  constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech, private device: Device ) {
+          this.sharedprovider.speedvoice;
+          this.speed = this.sharedprovider.speed;
+
   }
 
 
@@ -52,6 +56,8 @@ export class QuantitytosellPage {
 
 
   increment(amount) {
+     console.log(this.device.platform);
+                  console.log(this.device.version.charAt(0));
     if(this.quantity + amount <= this.sharedprovider.quantity[this.sharedprovider.index]){
     this.quantity= this.quantity + amount;
     } else {
