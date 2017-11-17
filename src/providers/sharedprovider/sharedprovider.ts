@@ -43,8 +43,9 @@ export class SharedProvider {
   }
 
   speedvoice(){
-            if(this.device.platform == 'iOS')
+            if(this.device.platform.toString() == "iOS")
                     this.speed = 1.5;
+                  else if(this.device.platform.toString() == "broswer"){console.log("co iddio")}
 
            }
 
