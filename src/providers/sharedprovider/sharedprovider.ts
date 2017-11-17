@@ -3,6 +3,8 @@ import { Device } from '@ionic-native/device';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
 /*
   Generated class for the QuantityProvider provider.
 
@@ -38,16 +40,12 @@ export class SharedProvider {
   
   public buysameitem: boolean = false;
 
-  constructor(public http: Http, private device: Device) {
+  constructor(public http: Http, private device: Device, private tts: TextToSpeech) {
     console.log('Hello QuantityProvider Provider');
 
   }
 
-  //still working on this: making a provider speed variable to spot whether the device is iOS for voice speed
-  speedvoice(){
-     if(this.device.platform.toString() == "iOS")
-          this.speedVoice = 1.5;
-  }
+
 
   acceptaddition() {
     if (this.buysameitem == false) {
@@ -78,7 +76,23 @@ export class SharedProvider {
     this.moneypaid.splice(this.index,1);
   }
 
+  speedvoice(){
+     if(this.device.platform.toString() == "iOS")
+          this.speedVoice = 1.5;
+  }
 
+  async producesound(soundString): Promise<any> {
+    try {
+
+         this.speedvoice();
+         await this.tts.speak({ text: soundString,  rate: this.speedVoice})
+
+    }
+    catch (e) {
+      console.log(e);
+
+    }
+  }
 
 
 

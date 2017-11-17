@@ -4,7 +4,6 @@ import { MoneyreceivedPage } from '../moneyreceived/moneyreceived';
 import { AlertController } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
-import { Device } from '@ionic-native/device';
 
 
 
@@ -24,10 +23,11 @@ export class QuantitytosellPage {
   public quantity = 0;
   public speed = 0;
 
-  constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech, private device: Device ) {
+  constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech) {
         
 
   }
+
 
 
   async producesound(): Promise<any> {
@@ -41,19 +41,10 @@ export class QuantitytosellPage {
     }
   }
 
-  async producesound2(): Promise<any> {
-    try {
 
-         this.sharedprovider.speedvoice();
 
-         await this.tts.speak({ text: "You don't have more items",  rate: this.sharedprovider.speedVoice})
-
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
+  producesound2() {
+    this.sharedprovider.producesound("You don't have more items");
   }
 
 
