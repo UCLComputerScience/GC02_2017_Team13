@@ -25,6 +25,8 @@ import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
 import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
+import { Device } from '@ionic-native/device';
+
 
 
 @NgModule({
@@ -77,7 +79,7 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
   ],
   providers: [
     StatusBar,
-    SplashScreen,Camera,TextToSpeech,
+    SplashScreen,Camera,TextToSpeech, Device,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SharedProvider
   ]

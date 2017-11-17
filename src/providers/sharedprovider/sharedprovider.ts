@@ -39,7 +39,6 @@ export class SharedProvider {
 
   constructor(public http: Http, private device: Device) {
     console.log('Hello QuantityProvider Provider');
-    console.log('Device UUID is: ' + this.device.uuid);
 
   }
 

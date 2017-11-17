@@ -5,6 +5,7 @@ import { AlertController } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 
+
 /**
  * Generated class for the QuantityPage page.
  *
