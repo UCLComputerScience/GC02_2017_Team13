@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QuantitytobuyPage } from '../quantitytobuy/quantitytobuy';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the PhotosoundPage page.
@@ -21,13 +20,14 @@ export class PhotobuyPage {
   public photos: any;
   public base64Image: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera,private sharedprovider: SharedProvider,private tts: TextToSpeech) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private sharedprovider: SharedProvider) {
 
   }
   ngOnInIt() {
 
     this.photos = [];
   }
+  
   takephoto() {
     
     const options: CameraOptions = {
@@ -49,19 +49,10 @@ export class PhotobuyPage {
     this.sharedprovider.photosTemp.push(this.photos);
     this.navCtrl.push(QuantitytobuyPage);
   }
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("Now, the camera will open to take a picture of the new item");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
 
-    }
+  producesound () {
+     this.sharedprovider.producesound("Now, the camera will open to take a picture of the new item");
   }
-
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PhotosoundPage');

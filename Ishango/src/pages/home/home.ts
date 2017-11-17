@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
 
 @Component({
   selector: 'page-home',
@@ -10,26 +10,13 @@ export class HomePage {
   // tabBarElement: any;
   // splash = true;
 
-  constructor(public navCtrl: NavController, private tts: TextToSpeech) {
+  constructor(public navCtrl: NavController, private sharedprovider: SharedProvider) {
     // this.tabBarElement = document.querySelector('.tabbar');
   }
 
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("this is the dashboard");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
+  producesound () {
+       this.sharedprovider.producesound("this is the dashboard");
   }
-
-
-
-
-
-
 
   // ionViewDidLoad() {
   //   this.tabBarElement.style.display = 'none';

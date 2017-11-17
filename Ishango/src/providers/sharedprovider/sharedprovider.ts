@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Device } from '@ionic-native/device';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
 /*
   Generated class for the QuantityProvider provider.
 
@@ -11,33 +14,38 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Injectable()
 export class SharedProvider {
   public index;
+  public speedVoice = 0;
 
 
-  // buy_folder variables
+  // buy_folder temporary variables
   public quantityTemp = [];
   public photosTemp = [];
   public moneypaidTemp = [];
 
-  public quantity = [];
-  public photos = [];
-  public moneypaid = [];
-
-  // sell_folder variables
+  // sell_folder temporary variables
   public quantityTempSell = [];
   public photosTempSell = [];
   public moneyreceivedTemp = [];
 
+  // buy_folder final stored values 
+  public photos = [];
+  public quantity = [];
+  public moneypaid = [];
+
+  // sell_folder final stored values 
   public quantitySell = [];
-  public photosSell = [];
   public moneyreceived = [];
 
 
-
+  
   public buysameitem: boolean = false;
 
-  constructor(public http: Http) {
+  constructor(public http: Http, private device: Device, private tts: TextToSpeech) {
     console.log('Hello QuantityProvider Provider');
+
   }
+
+
 
   acceptaddition() {
     if (this.buysameitem == false) {
@@ -68,8 +76,20 @@ export class SharedProvider {
     this.moneypaid.splice(this.index,1);
   }
 
+//speed voice regulator for iOS devices
+  speedvoice(){
+     if(this.device.platform.toString() == "iOS")
+          this.speedVoice = 1.5;
+  }
 
-
-
-
+//Text to Speech enabled 
+  async producesound(soundString): Promise<any> {
+    try {
+         this.speedvoice();
+         await this.tts.speak({ text: soundString,  rate: this.speedVoice})
+    }
+    catch (e) {
+      console.log(e);
+    }
+  }
 }

@@ -1,56 +1,52 @@
 <ion-header>
-  <ion-navbar hideBackButton="true">
+
+  <ion-navbar>
     <ion-title>
-      Products
+      <font size="4">Add New product or existing?</font>
     </ion-title>
     <ion-buttons end>
       <button (click)="producesound()" ion-button>
         <ion-icon name="musical-notes"></ion-icon>
         <!-- <ion-icon name="sound"></ion-icon> -->
       </button>
-      <button ion-button>
+      <button (click)="producesound()" ion-button>
       </button>
     </ion-buttons>
   </ion-navbar>
+
 </ion-header>
+
+
 
 <ion-content padding>
 
 
-  <ion-list class="listStyleProducts">
+
+  <ion-list class="listStyle">
     <ion-grid>
       <ion-row>
-        <ion-col col-6 class="column">
+        <ion-col col-6 class="columns">
           <font size="+2">Item</font>
         </ion-col>
-        <ion-col col-6 class="column">
+        <ion-col col-6 class="columns">
           <font size="+2">Quantity</font>
         </ion-col>
       </ion-row>
     </ion-grid>
 
     <ion-scroll scrollX="true" scrollY="true" class="scroll">
-
       <ion-grid *ngFor="let photo of photos; let id=index">
-        <ion-row class="ion-row" (click)="gotodeleteitem(id)">
-          <ion-col col-6>
+        <ion-row (click)="gotoquantitytosell(id)" class="ion-row">
+          <ion-col col-6 class="columns">
             <img [src]="photo" />
           </ion-col>
-          <ion-col col-6 class="column">
+          <ion-col col-6 class="columns">
             <font size="+2"> {{quantity[id]}} </font>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-scroll>
 
-
   </ion-list>
-
-  <ion-fab class="addbutton column">
-    <button ion-button full class="addbutton" (click)="gotoneworexisting()">
-      <ion-icon name="basket"></ion-icon>
-      &nbsp;&nbsp; New purchase
-    </button>
-  </ion-fab>
 
 </ion-content>

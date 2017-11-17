@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MoneypaidPage } from '../moneypaid/moneypaid';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
+
 /**
  * Generated class for the QuantityPage page.
  *
@@ -18,7 +18,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 export class QuantitytobuyPage {
   public quantity = 0;
 
-  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech ) {
+  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   increment(amount) {
@@ -36,15 +36,8 @@ export class QuantitytobuyPage {
     this.navCtrl.push(MoneypaidPage);}
   }
 
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("Enter how many items you bought");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
+  producesound () {
+       this.sharedprovider.producesound("Enter how much quantity you are buying");
   }
 
 }
