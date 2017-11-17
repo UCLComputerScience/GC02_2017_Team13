@@ -44,7 +44,11 @@ export class QuantitytosellPage {
 
   async producesound2(): Promise<any> {
     try {
-      await this.tts.speak({ text: "You don't have more items",  rate: this.speed})
+
+         if(this.device.platform.toString() == "iOS")
+            this.speed = 1.5;
+
+         await this.tts.speak({ text: "You don't have more items",  rate: this.speed})
 
       console.log("succesfully spoke");
     }

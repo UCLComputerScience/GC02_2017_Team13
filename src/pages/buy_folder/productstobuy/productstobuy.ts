@@ -6,6 +6,7 @@ import { AddneworexPage } from '../addneworex/addneworex';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { DeleteitemPage } from '../../../pages/buy_folder/deleteitem/deleteitem';
 
+
 @Component({
   selector: 'page-productstobuy',
   templateUrl: 'productstobuy.html'
@@ -28,6 +29,7 @@ export class ProductstobuyPage {
   gotoneworexisting() {
     this.navCtrl.push(AddneworexPage);
   }
+
   gotodeleteitem(id){
     this.sharedprovider.index=id;
     this.navCtrl.push(DeleteitemPage);
@@ -43,6 +45,9 @@ export class ProductstobuyPage {
       console.log(e);
 
     }
+
+
+
   }
 
 
