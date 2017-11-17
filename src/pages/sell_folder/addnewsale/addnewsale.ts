@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { QuantitytosellPage } from '../quantitytosell/quantitytosell';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the AddneworexPage page.
@@ -21,7 +20,7 @@ export class AddnewsalePage {
   private quantity = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider,private tts:TextToSpeech) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
 
     this.photos=this.sharedprovider.photos;
     this.quantity = this.sharedprovider.quantity;
@@ -35,7 +34,7 @@ export class AddnewsalePage {
   }  
   
   producesound () {
-       this.sharedprovider.producesound("in this page you can add a purchase of a new product or of a product that you had already bought");
+       this.sharedprovider.producesound("Select the item that you are selling");
   }
 
   ionViewDidLoad() {

@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PhotobuyPage } from '../photobuy/photobuy';
 import { QuantitytobuyPage } from '../quantitytobuy/quantitytobuy';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the AddneworexPage page.
@@ -23,7 +22,7 @@ export class AddneworexPage {
   private moneypaid = [];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider, private tts:TextToSpeech) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
 
     this.photos=this.sharedprovider.photos;
     this.quantity = this.sharedprovider.quantity;
@@ -41,17 +40,11 @@ export class AddneworexPage {
 
   }
 
-
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("in this page you can add a purchase of a new product or of a product that you had already bought");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
+producesound () {
+       this.sharedprovider.producesound("In this page you can add a purchase of a new product or of a product that you had already bought");
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddneworexPage');

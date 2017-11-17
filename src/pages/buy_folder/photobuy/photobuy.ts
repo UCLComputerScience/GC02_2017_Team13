@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QuantitytobuyPage } from '../quantitytobuy/quantitytobuy';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the PhotosoundPage page.
@@ -21,50 +20,71 @@ export class PhotobuyPage {
   public photos: any;
   public base64Image: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera,private sharedprovider: SharedProvider,private tts: TextToSpeech) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private sharedprovider: SharedProvider) {
 
   }
   ngOnInIt() {
 
     this.photos = [];
   }
-  takephoto() {
+  // takephoto() {
     
-    const options: CameraOptions = {
-      quality: 25,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
+  //   const options: CameraOptions = {
+  //     quality: 25,
+      // destinationType: this.camera.DestinationType.DATA_URL,
+      // encodingType: this.camera.EncodingType.JPEG,
+      // mediaType: this.camera.MediaType.PICTURE
+  //   }
 
-    this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      this.base64Image = 'data:image/jpeg;base64,' + imageData;
-      this.photos.push(this.base64Image);
-      this.photos.reverse();
-    }, (err) => {
-      // Handle error
-    });
-    this.sharedprovider.photosTemp.push(this.photos);
-    this.navCtrl.push(QuantitytobuyPage);
+  //   this.camera.getPicture(options).then((imageData) => {
+  //     // imageData is either a base64 encoded string or a file URI
+  //     // If it's base64:
+  //     this.base64Image = 'data:image/jpeg;base64,' + imageData;
+  //     this.photos.push(this.base64Image);
+  //     this.photos.reverse();
+  //   }, (err) => {
+  //     // Handle error
+  //   });
+  //   this.sharedprovider.photosTemp.push(this.photos);
+  //   this.navCtrl.push(QuantitytobuyPage);
+  // }
+
+  producesound () {
+     this.sharedprovider.producesound("Now, the camera will open to take a picture of the new item");
   }
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("Now, the camera will open to take a picture of the new item");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
-  }
-
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PhotosoundPage');
   }
+
+
+  takephoto(){
+    let options = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      targetWidth: 500,
+      targetHeight: 500,
+      quality: 100,
+      allowEdit: true,
+      correctOrientation: false,
+      saveToPhotoAlbum: true,
+      // mediaType: 0
+    };
+    this.camera.getPicture(options).then((imageData)=>{
+      this.base64Image = "data:image/jpeg;base64," + imageData;
+      this.photos.push(this.base64Image);
+      this.photos.reverse();
+
+      let cameraImageSelector = document.getElementById('camera-image');
+      cameraImageSelector.setAttribute('src', this.base64Image);
+
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+     this.sharedprovider.photosTemp.push(this.photos);
+    this.navCtrl.push(QuantitytobuyPage);
+ }
 
 }
