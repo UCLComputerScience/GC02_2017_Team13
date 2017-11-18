@@ -2,28 +2,38 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { ProductstobuyPage } from '../pages/buy_folder/productstobuy/productstobuy';
-import { SalesPage } from '../pages/sales/sales';
+import { HttpModule } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+
+//pages to review
 import { RunningcostsPage } from '../pages/runningcosts_folder/runningcosts/runningcosts';
 import { StockPage } from '../pages/stock/stock';
 import { FeaturesPage } from '../pages/features/features';
+
+import { ProductstobuyPage } from '../pages/buy_folder/productstobuy/productstobuy';
+import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
 import { PhotobuyPage } from '../pages/buy_folder/photobuy/photobuy';
-import { Camera, CameraOptions } from '@ionic-native/camera';
 import { QuantitytobuyPage } from '../pages/buy_folder/quantitytobuy/quantitytobuy';
+import { MoneypaidPage } from '../pages/buy_folder/moneypaid/moneypaid';
 import { IscashpaidPage } from '../pages/buy_folder/iscashpaid/iscashpaid';
+import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
+
+import { ProductstosellPage } from '../pages/sell_folder/productstosell/productstosell';
+import { AddnewsalePage } from '../pages/sell_folder/addnewsale/addnewsale';
+import { QuantitytosellPage } from '../pages/sell_folder/quantitytosell/quantitytosell';
+import { MoneyreceivedPage } from '../pages/sell_folder/moneyreceived/moneyreceived';
+import { IscashreceivedPage } from '../pages/sell_folder/iscashreceived/iscashreceived';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedProvider } from '../providers/sharedprovider/sharedprovider';
-import { HttpModule } from '@angular/http';
-import { MoneypaidPage } from '../pages/buy_folder/moneypaid/moneypaid';
-import { ProductstosellPage } from '../pages/sell_folder/productstosell/productstosell';
 import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
-import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
 import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
-import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
+import { Device } from '@ionic-native/device';
+import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 
 @NgModule({
@@ -33,11 +43,11 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
     ProductstobuyPage,
     ProductstosellPage,
     QuantitytobuyPage,
+    QuantitytosellPage,
     AddneworexPage,
     PhotobuyPage,
     MoneypaidPage,
     IscashpaidPage,
-    SalesPage,
     TabsPage,
     RunningcostsPage,
     StockPage,
@@ -45,6 +55,9 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
     VoicerecordPage,
     HideFabDirective,
     DeleteitemPage,
+    AddnewsalePage,
+    MoneyreceivedPage,
+    IscashreceivedPage
 
 
 
@@ -58,7 +71,7 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
     MyApp,
     ProductstobuyPage,
     ProductstosellPage,
-    SalesPage,
+    QuantitytosellPage,
     HomePage,
     TabsPage,
     RunningcostsPage,
@@ -70,11 +83,14 @@ import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
     MoneypaidPage,
     VoicerecordPage,
     AddneworexPage,
-    DeleteitemPage
+    DeleteitemPage,
+    AddnewsalePage,
+    MoneyreceivedPage,
+    IscashreceivedPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,Camera,TextToSpeech,
+    SplashScreen,Camera,TextToSpeech, Device, MediaCapture,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SharedProvider
   ]

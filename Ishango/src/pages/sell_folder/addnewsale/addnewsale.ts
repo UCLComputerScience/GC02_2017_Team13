@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PhotobuyPage } from '../photobuy/photobuy';
-import { QuantitytobuyPage } from '../quantitytobuy/quantitytobuy';
+import { QuantitytosellPage } from '../quantitytosell/quantitytosell';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 
 /**
@@ -13,38 +12,30 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 
 @IonicPage()
 @Component({
-  selector: 'page-addneworex',
-  templateUrl: 'addneworex.html',
+  selector: 'page-addnewsale',
+  templateUrl: 'addnewsale.html',
 })
-export class AddneworexPage {
+export class AddnewsalePage {
   private photos = [];
   private quantity = [];
-  private moneypaid = [];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
 
     this.photos=this.sharedprovider.photos;
     this.quantity = this.sharedprovider.quantity;
-    this.moneypaid = this.sharedprovider.moneypaid;
   }
 
-  gotophotobuy() {
-    this.navCtrl.push(PhotobuyPage);
-  }
-  buymoreofthesame(index){
+  gotoquantitytosell(index) {
     this.sharedprovider.buysameitem=true;
     this.sharedprovider.index=index;
-    this.navCtrl.push(QuantitytobuyPage);
-    
-
+    this.navCtrl.push(QuantitytosellPage);
+    // console.log(index);
+  }  
+  
+  producesound () {
+       this.sharedprovider.producesound("Select the item that you are selling");
   }
-
-producesound () {
-       this.sharedprovider.producesound("In this page you can add a purchase of a new product or of a product that you had already bought");
-  }
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddneworexPage');

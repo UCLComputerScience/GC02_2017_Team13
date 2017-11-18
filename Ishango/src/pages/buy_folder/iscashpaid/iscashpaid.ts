@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductstobuyPage } from '../productstobuy/productstobuy';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
-
 
 
 @IonicPage()
@@ -14,7 +12,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 export class IscashpaidPage {
  
 
-  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams,private tts: TextToSpeech ) {
+  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
 
 
   }
@@ -39,18 +37,9 @@ export class IscashpaidPage {
  
   }
 
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("If you paid for the items click the blue button. If you paid by credit, click the red button");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
 
-    }
+  producesound () {
+       this.sharedprovider.producesound("If you paid for the items click the blue button. If you paid on credit, click the red button");
   }
-
-
-
 
 }

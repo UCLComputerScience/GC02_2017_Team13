@@ -27,7 +27,7 @@ export class IscashreceivedPage {
   }
 
   cashreceived() {
-    this.sharedprovider.acceptaddition();
+    this.sharedprovider.acceptaddition1();
 
     this.navCtrl.setRoot(ProductstosellPage);
     
@@ -36,7 +36,7 @@ export class IscashreceivedPage {
     
   }
   cashnotreceived() {
-    this.sharedprovider.acceptaddition();
+    this.sharedprovider.acceptaddition1();
 
     this.navCtrl.setRoot(ProductstosellPage);
  

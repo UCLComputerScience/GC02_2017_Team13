@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { IscashpaidPage } from '../iscashpaid/iscashpaid';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the MoneypaidPage page.
@@ -19,7 +18,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 export class MoneypaidPage {
   moneypaid=0;
 
-  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams,private tts:TextToSpeech ) {
+  constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   increment(amount) {
@@ -37,16 +36,8 @@ export class MoneypaidPage {
     this.navCtrl.push(IscashpaidPage);}
   }
 
-
-  async producesound(): Promise<any> {
-    try {
-      await this.tts.speak("Enter how much money you paid for your purchase");
-      console.log("succesfully spoke");
-    }
-    catch (e) {
-      console.log(e);
-
-    }
+   producesound () {
+     this.sharedprovider.producesound("Enter how much money you paid for your purchase");
   }
 
   ionViewDidLoad() {
