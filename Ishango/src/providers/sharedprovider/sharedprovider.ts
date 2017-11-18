@@ -22,15 +22,15 @@ export class SharedProvider {
   public photosTemp = [];
   public moneypaidTemp = [];
 
-  // sell_folder temporary variables
-  public quantityTempSell = [];
-  public photosTempSell = [];
-  public moneyreceivedTemp = [];
-
   // buy_folder final stored values 
   public photos = [];
   public quantity = [];
   public moneypaid = [];
+
+  // sell_folder temporary variables
+  public quantityTempSell = [];
+  public photosTempSell = [];
+  public moneyreceivedTemp = [];
 
   // sell_folder final stored values 
   public quantitySell = [];
@@ -70,11 +70,7 @@ export class SharedProvider {
     }
   }
 
-
-
-
-
-
+  //procedure for selling products
 acceptaddition1() {
 
     this.quantitySell.push(this.quantityTempSell[this.quantityTemp.length - 1]);
@@ -91,10 +87,7 @@ acceptaddition1() {
       this.photosTemp.splice(num, 1);
     }
   }
-
-
-
-
+  //
 
   
   deleteitem(){

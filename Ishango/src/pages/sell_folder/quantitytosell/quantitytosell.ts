@@ -28,14 +28,17 @@ export class QuantitytosellPage {
     this.sharedprovider.producesound("You don't have more items");
   }
 
+  //if quantity to sell if bigger than quantity bought, do not allow sale + Vocal message saying no more items.
   increment(amount) {
     if(this.quantity + amount <= this.sharedprovider.quantity[this.sharedprovider.index]){
     this.quantity= this.quantity + amount;
     } else {
+       // push quantity to sell to maximum allowed when the actual quantity in stock is surpassed
        this.quantity = this.sharedprovider.quantity[this.sharedprovider.index];
        this.producesound();
     }
   }
+  //
 
   reduce(amount) {
     if (this.quantity-amount >= 0){

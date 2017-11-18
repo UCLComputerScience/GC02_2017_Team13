@@ -25,7 +25,10 @@ export class ProductstosellPage {
     if(this.photos.length > 0){
       this.navCtrl.push(AddnewsalePage);
     }
+  }
 
+  producesound () {
+     this.sharedprovider.producesound("Dimitris I love you");
   }
 
 
