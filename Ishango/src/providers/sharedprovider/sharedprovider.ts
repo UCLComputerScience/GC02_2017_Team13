@@ -45,8 +45,6 @@ export class SharedProvider {
 
   }
 
-
-
   acceptaddition() {
     if (this.buysameitem == false) {
       this.quantity.push(this.quantityTemp[this.quantityTemp.length - 1]);
@@ -73,8 +71,9 @@ export class SharedProvider {
   //procedure for selling products
 acceptaddition1() {
 
-    this.quantitySell.push(this.quantityTempSell[this.quantityTemp.length - 1]);
+    this.quantitySell.push(this.quantityTempSell[this.quantityTempSell.length - 1]);
      this.moneyReceived.push(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
+     this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[this.quantitySell.length - 1];
 
     var num: number = 0;
     for (num = 0; num < this.quantityTempSell.length; num++) {

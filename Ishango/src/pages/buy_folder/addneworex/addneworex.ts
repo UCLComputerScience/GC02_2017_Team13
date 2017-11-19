@@ -33,8 +33,8 @@ export class AddneworexPage {
     this.navCtrl.push(PhotobuyPage);
   }
   buymoreofthesame(index){
-    this.sharedprovider.buysameitem=true;
-    this.sharedprovider.index=index;
+    this.sharedprovider.buysameitem = true;
+    this.sharedprovider.index = index;
     this.navCtrl.push(QuantitytobuyPage);
     
 
