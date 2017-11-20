@@ -46,7 +46,7 @@ export class SharedProvider {
   }
 
   acceptaddition() {
-    if (this.buysameitem == false) {
+    if (!this.buysameitem) {
       this.quantity.push(this.quantityTemp[this.quantityTemp.length - 1]);
       this.photos.push(this.photosTemp[this.photosTemp.length - 1]);
       this.moneypaid.push(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
