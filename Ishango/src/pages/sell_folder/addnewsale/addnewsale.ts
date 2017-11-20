@@ -27,7 +27,6 @@ export class AddnewsalePage {
   }
 
   gotoquantitytosell(index) {
-    this.sharedprovider.buysameitem=true;
     this.sharedprovider.index=index;
     this.navCtrl.push(QuantitytosellPage);
     // console.log(index);
