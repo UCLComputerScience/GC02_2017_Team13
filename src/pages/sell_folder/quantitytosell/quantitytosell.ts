@@ -18,7 +18,6 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 })
 export class QuantitytosellPage {
   public quantity = 0;
-  public speed = 0;
 
   constructor(public sharedprovider: SharedProvider, private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, private tts:TextToSpeech) {
         
@@ -29,14 +28,17 @@ export class QuantitytosellPage {
     this.sharedprovider.producesound("You don't have more items");
   }
 
+  //if quantity to sell if bigger than quantity bought, do not allow sale + Vocal message saying no more items.
   increment(amount) {
     if(this.quantity + amount <= this.sharedprovider.quantity[this.sharedprovider.index]){
     this.quantity= this.quantity + amount;
     } else {
+       // push quantity to sell to maximum allowed when the actual quantity in stock is surpassed
        this.quantity = this.sharedprovider.quantity[this.sharedprovider.index];
        this.producesound();
     }
   }
+  //
 
   reduce(amount) {
     if (this.quantity-amount >= 0){
@@ -46,7 +48,7 @@ export class QuantitytosellPage {
 
   gotoiscashreceived() {
     if (this.quantity>0){
-      this.sharedprovider.quantityTemp.push(this.quantity);
+      this.sharedprovider.quantityTempSell.push(this.quantity);
       this.navCtrl.push(MoneyreceivedPage);
     }
   }

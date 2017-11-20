@@ -27,27 +27,28 @@ export class PhotobuyPage {
 
     this.photos = [];
   }
-  // takephoto() {
+  
+  takephoto() {
     
-  //   const options: CameraOptions = {
-  //     quality: 25,
-      // destinationType: this.camera.DestinationType.DATA_URL,
-      // encodingType: this.camera.EncodingType.JPEG,
-      // mediaType: this.camera.MediaType.PICTURE
-  //   }
+    const options: CameraOptions = {
+      quality: 25,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
 
-  //   this.camera.getPicture(options).then((imageData) => {
-  //     // imageData is either a base64 encoded string or a file URI
-  //     // If it's base64:
-  //     this.base64Image = 'data:image/jpeg;base64,' + imageData;
-  //     this.photos.push(this.base64Image);
-  //     this.photos.reverse();
-  //   }, (err) => {
-  //     // Handle error
-  //   });
-  //   this.sharedprovider.photosTemp.push(this.photos);
-  //   this.navCtrl.push(QuantitytobuyPage);
-  // }
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.photos.push(this.base64Image);
+      this.photos.reverse();
+    }, (err) => {
+      // Handle error
+    });
+    this.sharedprovider.photosTemp.push(this.photos);
+    this.navCtrl.push(QuantitytobuyPage);
+  }
 
   producesound () {
      this.sharedprovider.producesound("Now, the camera will open to take a picture of the new item");
@@ -56,35 +57,5 @@ export class PhotobuyPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PhotosoundPage');
   }
-
-
-  takephoto(){
-    let options = {
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-      targetWidth: 500,
-      targetHeight: 500,
-      quality: 100,
-      allowEdit: true,
-      correctOrientation: false,
-      saveToPhotoAlbum: true,
-      // mediaType: 0
-    };
-    this.camera.getPicture(options).then((imageData)=>{
-      this.base64Image = "data:image/jpeg;base64," + imageData;
-      this.photos.push(this.base64Image);
-      this.photos.reverse();
-
-      let cameraImageSelector = document.getElementById('camera-image');
-      cameraImageSelector.setAttribute('src', this.base64Image);
-
-    })
-    .catch(err=>{
-      console.log(err);
-    })
-     this.sharedprovider.photosTemp.push(this.photos);
-    this.navCtrl.push(QuantitytobuyPage);
- }
 
 }

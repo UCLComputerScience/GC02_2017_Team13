@@ -22,19 +22,19 @@ export class SharedProvider {
   public photosTemp = [];
   public moneypaidTemp = [];
 
-  // sell_folder temporary variables
-  public quantityTempSell = [];
-  public photosTempSell = [];
-  public moneyreceivedTemp = [];
-
   // buy_folder final stored values 
   public photos = [];
   public quantity = [];
   public moneypaid = [];
 
+  // sell_folder temporary variables
+  public quantityTempSell = [];
+  public photosTempSell = [];
+  public moneyreceivedTemp = [];
+
   // sell_folder final stored values 
   public quantitySell = [];
-  public moneyreceived = [];
+  public moneyReceived = [];
 
 
   
@@ -45,13 +45,11 @@ export class SharedProvider {
 
   }
 
-
-
   acceptaddition() {
     if (this.buysameitem == false) {
       this.quantity.push(this.quantityTemp[this.quantityTemp.length - 1]);
       this.photos.push(this.photosTemp[this.photosTemp.length - 1]);
-      this.moneypaid.push(this.photosTemp[this.moneypaidTemp.length - 1]);
+      this.moneypaid.push(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
     else {
       this.quantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
@@ -69,6 +67,27 @@ export class SharedProvider {
       this.photosTemp.splice(num, 1);
     }
   }
+
+  //procedure for selling products
+acceptaddition1() {
+
+    this.quantitySell.push(this.quantityTempSell[this.quantityTempSell.length - 1]);
+     this.moneyReceived.push(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
+     this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[this.quantitySell.length - 1];
+
+    var num: number = 0;
+    for (num = 0; num < this.quantityTempSell.length; num++) {
+      this.quantityTemp.splice(num, 1);
+    }
+    for (num = 0; num < this.moneypaidTemp.length; num++) {
+      this.moneypaidTemp.splice(num, 1);
+    }
+    for (num = 0; num < this.photosTemp.length; num++) {
+      this.photosTemp.splice(num, 1);
+    }
+  }
+  //
+
   
   deleteitem(){
     this.quantity.splice(this.index,1);

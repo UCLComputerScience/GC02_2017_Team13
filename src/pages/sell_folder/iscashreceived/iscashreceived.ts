@@ -26,8 +26,8 @@ export class IscashreceivedPage {
     console.log('ionViewDidLoad IscashpaidPage');
   }
 
-  cashreceived() {
-    this.sharedprovider.acceptaddition();
+  cashreceived() { 
+    this.sharedprovider.acceptaddition1();
 
     this.navCtrl.setRoot(ProductstosellPage);
     
@@ -36,7 +36,7 @@ export class IscashreceivedPage {
     
   }
   cashnotreceived() {
-    this.sharedprovider.acceptaddition();
+    this.sharedprovider.acceptaddition1();
 
     this.navCtrl.setRoot(ProductstosellPage);
  
