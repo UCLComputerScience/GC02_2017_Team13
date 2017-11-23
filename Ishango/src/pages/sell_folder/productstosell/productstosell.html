@@ -31,7 +31,8 @@
 
     <ion-scroll scrollX="true" scrollY="true" class="scroll">
 
-      <ion-grid *ngFor="let photo of photos; let id=index">
+      <!-- changed 'photos' into 'quantity' to avoid the blank box to appear. Understand how to get the photo for each item sold -->
+      <ion-grid *ngFor="let a of quantity; let id=index">
         <ion-row class="ion-row" (click)="gotodeleteitem(id)">
           <ion-col col-6>
             <img [src]="photo" />
