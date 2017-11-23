@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
+import { AmountrepaidPage } from '../../../pages/debt/amountrepaid/amountrepaid';
 
 /**
  * Generated class for the DebtperproductPage page.
@@ -21,6 +22,12 @@ export class DebtperproductPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public sharedprovider: SharedProvider) {
     this.photos = this.sharedprovider.photos;
     this.debt=this.sharedprovider.debt;
+  }
+
+  gotorepaypage(id){
+    this.sharedprovider.index=id;
+    this.navCtrl.push(AmountrepaidPage);
+
   }
 
 

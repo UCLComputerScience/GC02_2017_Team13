@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 
 /**
  * Generated class for the AmountrepaidPage page.
@@ -14,9 +15,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'amountrepaid.html',
 })
 export class AmountrepaidPage {
+  amountrepaid=0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public sharedprovider: SharedProvider) {
   }
+
+  increment(amount) {
+    this.amountrepaid= this.amountrepaid + amount;
+  }
+
+  reduce(amount) {
+    if (this.amountrepaid-amount>=0){
+    this.amountrepaid = this.amountrepaid - amount;}
+    else{
+      this.amountrepaid = 0;
+    }
+  }
+
+  producesound() {
+    this.sharedprovider.producesound("Please choose how much money you want to repay");
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AmountrepaidPage');
