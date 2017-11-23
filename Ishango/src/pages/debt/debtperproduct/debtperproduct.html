@@ -31,12 +31,12 @@
 
 
       <ion-grid *ngFor="let photo of photos; let id=index">
-        <ion-row class="ion-row" (click)="gotodeleteitem(id)">
+        <ion-row class="ion-row" (click)="gotorepaypage(id)">
           <ion-col col-6>
             <img [src]="photo" />
           </ion-col>
           <ion-col col-6 class="column">
-            <font size="+2"> {{quantity[id]}} </font>
+            <font size="+2"> {{debt[id]}} </font>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -44,11 +44,5 @@
 
   </ion-list>
 
-  <ion-fab class="addbutton column">
-    <button ion-button full class="addbutton" (click)="gotoneworexisting()">
-      <ion-icon name="basket"></ion-icon>
-      &nbsp;&nbsp; New purchase
-    </button>
-  </ion-fab>
 
 </ion-content>

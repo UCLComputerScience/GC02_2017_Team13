@@ -23,7 +23,6 @@ export class IscashpaidPage {
 
   cashpaid() {
     this.sharedprovider.acceptaddition();
-
     this.navCtrl.setRoot(ProductstobuyPage);
     
     
@@ -31,8 +30,8 @@ export class IscashpaidPage {
     
   }
   cashnotpaid() {
+    this.sharedprovider.registerdebt();
     this.sharedprovider.acceptaddition();
-
     this.navCtrl.setRoot(ProductstobuyPage);
  
   }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 
 /**
  * Generated class for the DebtperproductPage page.
@@ -14,8 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'debtperproduct.html',
 })
 export class DebtperproductPage {
+  private photos=[];
+  public debt=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public sharedprovider: SharedProvider) {
+    this.photos = this.sharedprovider.photos;
+    this.debt=this.sharedprovider.debt;
   }
 
   ionViewDidLoad() {
