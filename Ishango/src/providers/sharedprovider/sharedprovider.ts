@@ -22,9 +22,9 @@ export class SharedProvider {
   public moneypaidTemp = [];
 
   // buy_folder final stored values 
-  public photos = [];
-  public quantity = [];
-  public moneypaid = [];
+  public photos = [1,2,3,4,5];
+  public quantity = [1,2,3,4,5];
+  public moneypaid = [13123,123,34534,13123,45565];
 
   // sell_folder temporary variables
   public quantityTempSell = [];
@@ -36,7 +36,8 @@ export class SharedProvider {
   public moneyReceived = [];
 
     // debt values
-    public debt = [];
+    public debtRepay;
+    public debt = [23,23,4,342,123];
 
 
   
@@ -88,9 +89,14 @@ acceptaddition1() {
       this.photosTemp.splice(num, 1);
     }
   }
-  //
+  //delete a product
+  repay(){
+    this.debt[this.index]=this.debt[this.index]-this.debtRepay;
 
-  
+  }
+
+
+  //delete a product
   deleteitem(){
     this.quantity.splice(this.index,1);
     this.photos.splice(this.index,1);

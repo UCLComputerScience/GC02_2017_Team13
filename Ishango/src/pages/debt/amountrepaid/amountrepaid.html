@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Moneypaid</ion-title>
+    <ion-title> <font size="+1">How much money to repay?</font></ion-title>
     <ion-buttons end>
       <button (click)="producesound()" ion-button>
         <ion-icon name="musical-notes"></ion-icon>
@@ -32,20 +32,14 @@
         <font size="+1" align="left">Money to repay</font>
       </ion-col>
     </ion-row>
+    <ion-row></ion-row>
     <ion-row>
-      <ion-col col-3>
-
-      </ion-col>
-      <ion-col col-3>
-      </ion-col>
+      <ion-col col-3></ion-col><ion-col col-3></ion-col>
       <ion-col col-3>
         <font size="+2" align="right">{{amountrepaid}}</font>
       </ion-col>
     </ion-row>
-    <ion-row></ion-row>
-    <ion-row></ion-row>
-    <ion-row></ion-row>
-    <ion-row></ion-row>
+    <ion-row></ion-row><ion-row></ion-row>
 
     <ion-row>
       <ion-col col-3>
@@ -126,7 +120,7 @@
     </ion-row>
   </ion-grid>
 
-  <ion-fab (click)="gotoiscashpaid()" right bottom>
+  <ion-fab (click)="gotoconfirmation()" right bottom>
     <button ion-fab>
       <ion-icon class="iconf" name="arrow-dropright"></ion-icon>
     </button>
