@@ -31,7 +31,8 @@
 
     <ion-scroll scrollX="true" scrollY="true" class="scroll">
 
-      <ion-grid *ngFor="let photo of photos; let id=index">
+      <ion-grid class="mark" *ngFor="let photo of photos; let id=index">
+       
         <ion-row class="ion-row" (click)="gotodeleteitem(id)">
           <ion-col col-6>
             <img [src]="photo" />
@@ -40,6 +41,7 @@
             <font size="+2"> {{quantity[id]}} </font>
           </ion-col>
         </ion-row>
+
       </ion-grid>
     </ion-scroll>
 
