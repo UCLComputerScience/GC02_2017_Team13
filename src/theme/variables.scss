@@ -63,7 +63,7 @@ $colors: (
 // Change the color of the segment button text
 
 //color of all text on the page
-$text-color:                 red !default;
+$text-color:                 #424953 !default;
 $link-color:                 color($colors, primary) !default;
 //background of every screen
 $background-color:           yellow !default;
@@ -71,7 +71,7 @@ $background-color:           yellow !default;
 $font-size-base:             1.4rem !default; // 1.4rem == 14px
 
 //padding and margins of page
-$content-padding:            16px !default;
+$content-padding:            0px !default;
 $content-margin:             16px !default;
 
 //toolbar background color
@@ -96,15 +96,25 @@ $list-background-color:      $background-color !default;
 $list-border-color:         red !default;
 
 @font-face {
-font-family: GlobalFont;
+font-family: Regular;
+src: url("../assets/fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+font-family: Bold;
 src: url("../assets/fonts/Lato-Black.ttf");
 }
 
-ion-grid {
-font-family: 'GlobalFont' !important;
+.fontTitle {
+font-family: 'Regular' !important;
 
 }
 
+.fontList {
+font-family: 'Bold' !important;
+font-size: 20px;
+
+}
 
 @import "ionic.theme.default";
 
