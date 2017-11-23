@@ -29,6 +29,9 @@ import { AmountrepaidPage } from '../pages/debt/amountrepaid/amountrepaid';
 import { ConfirmationPage } from '../pages/debt/confirmation/confirmation';
 import { DebtperproductPage } from '../pages/debt/debtperproduct/debtperproduct';
 
+import { RegistrationPage } from '../pages/initialRegistration/registration/registration';
+import {IonicStorageModule} from '@ionic/storage';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedProvider } from '../providers/sharedprovider/sharedprovider';
@@ -64,12 +67,13 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     IscashreceivedPage,
     DebtperproductPage,
     ConfirmationPage,
-    AmountrepaidPage
+    AmountrepaidPage,
+    RegistrationPage
 
   ],
   imports: [
     BrowserModule,HttpModule,
-    IonicModule.forRoot(MyApp,{tabsHideOnSubPages:true})
+    IonicModule.forRoot(MyApp,{tabsHideOnSubPages:true}),IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -94,7 +98,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     IscashreceivedPage,
     DebtperproductPage,
     ConfirmationPage,
-    AmountrepaidPage
+    AmountrepaidPage,
+    RegistrationPage
   ],
   providers: [
     StatusBar,
