@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
+import { DebtperproductPage } from '../../pages/debt/debtperproduct/debtperproduct';
 
 @Component({
   selector: 'page-home',
@@ -16,6 +17,9 @@ export class HomePage {
 
   producesound () {
        this.sharedprovider.producesound("this is the dashboard");
+  }
+  debtperproduct(){
+    this.navCtrl.push(DebtperproductPage);
   }
 
   // ionViewDidLoad() {

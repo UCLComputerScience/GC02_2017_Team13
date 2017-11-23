@@ -25,6 +25,10 @@ import { QuantitytosellPage } from '../pages/sell_folder/quantitytosell/quantity
 import { MoneyreceivedPage } from '../pages/sell_folder/moneyreceived/moneyreceived';
 import { IscashreceivedPage } from '../pages/sell_folder/iscashreceived/iscashreceived';
 
+import { AmountrepaidPage } from '../pages/debt/amountrepaid/amountrepaid';
+import { ConfirmationPage } from '../pages/debt/confirmation/confirmation';
+import { DebtperproductPage } from '../pages/debt/debtperproduct/debtperproduct';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedProvider } from '../providers/sharedprovider/sharedprovider';
@@ -57,9 +61,10 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     DeleteitemPage,
     AddnewsalePage,
     MoneyreceivedPage,
-    IscashreceivedPage
-
-
+    IscashreceivedPage,
+    DebtperproductPage,
+    ConfirmationPage,
+    AmountrepaidPage
 
   ],
   imports: [
@@ -86,7 +91,10 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     DeleteitemPage,
     AddnewsalePage,
     MoneyreceivedPage,
-    IscashreceivedPage
+    IscashreceivedPage,
+    DebtperproductPage,
+    ConfirmationPage,
+    AmountrepaidPage
   ],
   providers: [
     StatusBar,
