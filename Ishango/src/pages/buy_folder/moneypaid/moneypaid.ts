@@ -28,6 +28,9 @@ export class MoneypaidPage {
   reduce(amount) {
     if (this.moneypaid-amount>=0){
     this.moneypaid = this.moneypaid - amount;}
+    else{
+      this.moneypaid = 0;
+    }
   }
 
   gotoiscashpaid() {

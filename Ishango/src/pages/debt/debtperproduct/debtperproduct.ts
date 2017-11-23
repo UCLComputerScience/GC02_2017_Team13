@@ -23,6 +23,11 @@ export class DebtperproductPage {
     this.debt=this.sharedprovider.debt;
   }
 
+
+  producesound() {
+    this.sharedprovider.producesound("In this screen you can see the debt for each product you have bought");
+}
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DebtperproductPage');
   }

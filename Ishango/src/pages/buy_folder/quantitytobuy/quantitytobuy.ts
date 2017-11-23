@@ -28,7 +28,11 @@ export class QuantitytobuyPage {
   reduce(amount) {
     if (this.quantity-amount>=0){
     this.quantity = this.quantity - amount;}
+    else{
+      this.quantity = 0;
+    }
   }
+
 
   gotoiscashpaid() {
     if (this.quantity>0){

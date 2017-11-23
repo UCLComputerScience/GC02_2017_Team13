@@ -22,12 +22,9 @@ export class IscashpaidPage {
   }
 
   cashpaid() {
+    this.sharedprovider.debt.push(0);
     this.sharedprovider.acceptaddition();
     this.navCtrl.setRoot(ProductstobuyPage);
-    
-    
-
-    
   }
   cashnotpaid() {
     this.sharedprovider.registerdebt();
