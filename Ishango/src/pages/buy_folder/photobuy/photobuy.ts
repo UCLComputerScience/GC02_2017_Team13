@@ -31,10 +31,14 @@ export class PhotobuyPage {
   takephoto() {
     
     const options: CameraOptions = {
-      quality: 25,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+    quality : 75,
+           destinationType : this.camera.DestinationType.DATA_URL,
+           sourceType : this.camera.PictureSourceType.CAMERA,
+           allowEdit : false, //To enable/disable the user editing in camera
+           encodingType: this.camera.EncodingType.JPEG,
+           targetWidth: 640,
+           targetHeight: 400,
+           saveToPhotoAlbum: false
     }
 
     this.camera.getPicture(options).then((imageData) => {

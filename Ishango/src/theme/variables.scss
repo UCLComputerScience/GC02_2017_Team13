@@ -63,27 +63,26 @@ $colors: (
 // Change the color of the segment button text
 
 //color of all text on the page
-$text-color:                 red !default;
+$text-color:                 #424953 !default;
 $link-color:                 color($colors, primary) !default;
 //background of every screen
 $background-color:           yellow !default;
 
-$font-family-base:           -apple-system, "Helvetica Neue", "Roboto", sans-serif !default;
 $font-size-base:             1.4rem !default; // 1.4rem == 14px
 
 //padding and margins of page
-$content-padding:            16px !default;
+$content-padding:            0px !default;
 $content-margin:             16px !default;
 
 //toolbar background color
-$toolbar-background:         yellow !default;
+$toolbar-background:         #f4f6f9 !default;
 
 
-$tabs-background:            transparent !default;
+$tabs-background:            #f4f6f9 !default;
 // $tabs-background:            url('../../assets/imgs/tabs.jpg') !default;
 
 //color activated tabs
-$tabs-tab-color-active:      $link-color !default;
+$tabs-tab-color-active:      #73b1f4 !default;
 $tabs-tab-color-inactive:      #3c3c3c !default;
 
 
@@ -96,7 +95,26 @@ $list-text-color:            blue !default;
 $list-background-color:      $background-color !default;
 $list-border-color:         red !default;
 
+@font-face {
+font-family: Regular;
+src: url("../assets/fonts/Lato-Regular.ttf");
+}
 
+@font-face {
+font-family: Bold;
+src: url("../assets/fonts/Lato-Black.ttf");
+}
+
+.fontTitle {
+font-family: 'Regular' !important;
+
+}
+
+.fontList {
+font-family: 'Bold' !important;
+font-size: 20px;
+
+}
 
 @import "ionic.theme.default";
 

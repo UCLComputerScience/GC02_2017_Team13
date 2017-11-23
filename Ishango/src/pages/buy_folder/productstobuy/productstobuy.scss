@@ -1,51 +1,53 @@
 page-productstobuy{
 
   .content {
-    background-image: url('../../assets/imgs/a.png');
+    background-color: white;
     background-position: center;
   }
 
-  .div{
-background-color: red;
-position: absolute;
-opacity: 0.3;
-width:45px;
-height: 90px;
-  }
+ 
   
-  .addbutton{
-    position: absolute;
-    right:    0;
-    bottom:   0;
-    width: 100%;
-    font-size: 25px;
-    margin: 0 auto;
-    height: 50px;
-    text-align: center;
-    color: rgb(255, 255, 255);
+  .buttonPosition{
+    bottom: 14%;
   }
-  
+   
   .grid {
-    justify-content: center;
     width: 100%;
     margin-bottom:0%;
   }
+
+  .gridColor{
+
+    background-color: red;
+
+  }
+
+  
   
   .ion-row{
-    border-bottom:1pt solid black;
+    // border-bottom:1pt solid black;
    // border-top:1pt solid black;
   }
   
-  .column{
-    text-align: center;
+  .fontTitle{
+      text-align: center;
   }
-  
+
+  .alignPic{
+      text-align: left;
+  }
+
+   .alignProd{
+      text-align: center;
+  }
+
   .scroll {
     height: 90%;
     width: 100%;
   }
   .listStyleProducts{
-    height: 93%;
+    height: 80%;
+    background-color: #e5e8ec;
     //width: 100%;
   
   }
