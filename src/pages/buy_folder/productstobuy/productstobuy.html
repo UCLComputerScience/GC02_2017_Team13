@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar hideBackButton="true">
+  <ion-navbar hideBackButton="false">
     <ion-title>
       Products
     </ion-title>
@@ -14,16 +14,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="content" padding>
 
 
   <ion-list class="listStyleProducts">
     <ion-grid>
       <ion-row>
-        <ion-col col-6 class="column">
+        <ion-col col-6 class="column col1">
           <font size="+2">Item</font>
         </ion-col>
-        <ion-col col-6 class="column">
+        <ion-col col-6 class="column col2">
           <font size="+2">Quantity</font>
         </ion-col>
       </ion-row>
@@ -31,15 +31,17 @@
 
     <ion-scroll scrollX="true" scrollY="true" class="scroll">
 
-      <ion-grid *ngFor="let photo of photos; let id=index">
+      <ion-grid class="mark" *ngFor="let photo of photos; let id=index">
+       
         <ion-row class="ion-row" (click)="gotodeleteitem(id)">
-          <ion-col col-6>
+          <ion-col col-6 class="column col1">
             <img [src]="photo" />
           </ion-col>
-          <ion-col col-6 class="column">
-            <font size="+2"> {{quantity[id]}} </font>
+          <ion-col col-6 class="column col2">
+            <font> {{quantity[id]}} </font>
           </ion-col>
         </ion-row>
+
       </ion-grid>
     </ion-scroll>
 

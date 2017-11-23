@@ -16,7 +16,6 @@ export class SharedProvider {
   public index;
   public speedVoice = 0;
 
-
   // buy_folder temporary variables
   public quantityTemp = [];
   public photosTemp = [];
@@ -35,6 +34,9 @@ export class SharedProvider {
   // sell_folder final stored values 
   public quantitySell = [];
   public moneyReceived = [];
+
+    // debt values
+    public debt = [];
 
 
   
@@ -71,7 +73,7 @@ export class SharedProvider {
   //procedure for selling products
 acceptaddition1() {
 
-    this.quantitySell.push(this.quantityTempSell[this.quantityTempSell.length - 1]);
+     this.quantitySell.push(this.quantityTempSell[this.quantityTempSell.length - 1]);
      this.moneyReceived.push(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
      this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[this.quantitySell.length - 1];
 
@@ -100,6 +102,18 @@ acceptaddition1() {
      if(this.device.platform.toString() == "iOS")
           this.speedVoice = 1.5;
   }
+
+  //register the new debt
+  registerdebt(){
+    if(this.buysameitem){
+      this.debt[this.index]=this.debt[this.index]+this.moneypaidTemp[this.moneypaidTemp.length - 1];
+    }
+    else {
+      this.debt.push(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
+    }
+ }
+
+
 
 //Text to Speech enabled 
   async producesound(soundString): Promise<any> {
