@@ -40,7 +40,7 @@ export class SharedProvider {
     public debt = [23,23,4,342,123];
 
     //cash values
-    public cash;
+    public cash=1234567;
 
 
   
