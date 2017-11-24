@@ -23,9 +23,7 @@ export class AmountrepaidPage {
 
   increment(amount) {
     this.amountrepaid=this.amountrepaid+amount;
-    if(this.sharedprovider.debt[this.sharedprovider.index]-this.amountrepaid>=0){
-    this.amountrepaid= this.amountrepaid + amount;}
-    else {
+    if(this.sharedprovider.debt[this.sharedprovider.index]-this.amountrepaid<0){
       this.amountrepaid= this.sharedprovider.debt[this.sharedprovider.index];
       this.sharedprovider.producesound("You cannot repay more than you owe");
     

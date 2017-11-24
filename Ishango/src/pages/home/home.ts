@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
 import { DebtperproductPage } from '../../pages/debt/debtperproduct/debtperproduct';
+import { WelcomePage } from '../../pages/initialRegistration/welcome/welcome';
 
 @Component({
   selector: 'page-home',
@@ -10,9 +11,16 @@ import { DebtperproductPage } from '../../pages/debt/debtperproduct/debtperprodu
 export class HomePage {
   // tabBarElement: any;
   // splash = true;
+  public cash;
+  public totaldebt=0;
 
   constructor(public navCtrl: NavController, private sharedprovider: SharedProvider) {
     // this.tabBarElement = document.querySelector('.tabbar');
+    this.cash=this.sharedprovider.cash;
+    var num: number = 0;
+    for (num = 0; num < this.sharedprovider.debt.length; num++) {
+      this.totaldebt=this.totaldebt+this.sharedprovider.debt[num];
+    }
   }
 
   producesound () {
@@ -20,6 +28,9 @@ export class HomePage {
   }
   debtperproduct(){
     this.navCtrl.push(DebtperproductPage);
+  }
+  gotoregistration(){
+    this.navCtrl.push(WelcomePage);
   }
 
   // ionViewDidLoad() {

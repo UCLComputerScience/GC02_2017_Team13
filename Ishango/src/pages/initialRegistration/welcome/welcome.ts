@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../../../pages/home/home';
+import { CashregisterPage } from '../../../pages/initialRegistration/cashregister/cashregister';
 
 /**
- * Generated class for the RegistrationPage page.
+ * Generated class for the WelcomePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +11,20 @@ import { HomePage } from '../../../pages/home/home';
 
 @IonicPage()
 @Component({
-  selector: 'page-registration',
-  templateUrl: 'registration.html',
+  selector: 'page-welcome',
+  templateUrl: 'welcome.html',
 })
-export class RegistrationPage {
+export class WelcomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  gohome(){
-    this.navCtrl.setRoot(HomePage);
+  gotocashregister(){
+    this.navCtrl.push(CashregisterPage)
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RegistrationPage');
+    console.log('ionViewDidLoad WelcomePage');
   }
 
 }
