@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage';
 
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { RegistrationPage } from '../pages/initialRegistration/registration/registration';
+import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +28,7 @@ export class MyApp {
             if(result){
               this.rootPage = TabsPage;
             } else {
-              this.rootPage = RegistrationPage;
+              this.rootPage = WelcomePage;
               this.storage.set('introShown', true);
             }
     

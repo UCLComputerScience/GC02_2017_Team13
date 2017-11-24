@@ -29,14 +29,15 @@ import { AmountrepaidPage } from '../pages/debt/amountrepaid/amountrepaid';
 import { ConfirmationPage } from '../pages/debt/confirmation/confirmation';
 import { DebtperproductPage } from '../pages/debt/debtperproduct/debtperproduct';
 
-import { RegistrationPage } from '../pages/initialRegistration/registration/registration';
+import { CashregisterPage } from '../pages/initialRegistration/cashregister/cashregister';
+import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
 import {IonicStorageModule} from '@ionic/storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedProvider } from '../providers/sharedprovider/sharedprovider';
 import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
-import { HideFabDirective } from '../directives/hide-fab/hide-fab';
+//import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { Device } from '@ionic-native/device';
 import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
@@ -60,7 +61,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     StockPage,
     FeaturesPage,
     VoicerecordPage,
-    HideFabDirective,
+    //HideFabDirective,
     DeleteitemPage,
     AddnewsalePage,
     MoneyreceivedPage,
@@ -68,7 +69,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     DebtperproductPage,
     ConfirmationPage,
     AmountrepaidPage,
-    RegistrationPage
+    CashregisterPage,
+    WelcomePage
 
   ],
   imports: [
@@ -99,7 +101,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     DebtperproductPage,
     ConfirmationPage,
     AmountrepaidPage,
-    RegistrationPage
+    CashregisterPage,
+    WelcomePage
   ],
   providers: [
     StatusBar,

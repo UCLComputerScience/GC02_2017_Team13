@@ -34,7 +34,7 @@ $headings-font-weight: 300;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:    #73b1f4,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -64,6 +64,7 @@ $colors: (
 
 //color of all text on the page
 $text-color:                 #424953 !default;
+$color-header:               white;
 $link-color:                 color($colors, primary) !default;
 //background of every screen
 $background-color:           yellow !default;
@@ -106,8 +107,8 @@ src: url("../assets/fonts/Lato-Black.ttf");
 }
 
 .fontTitle {
-font-family: 'Regular' !important;
-
+font-family: 'Bold' !important;
+font-size: 18px;
 }
 
 .fontList {
