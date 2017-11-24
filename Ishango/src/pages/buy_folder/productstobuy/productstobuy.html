@@ -1,66 +1,60 @@
 <ion-header>
   <ion-navbar hideBackButton="false">
-    <ion-title>
-      Products
-    </ion-title>
+    <ion-title>Products</ion-title>
+    
     <ion-buttons end>
       <button (click)="producesound()" ion-button>
         <ion-icon name="musical-notes"></ion-icon>
-        <!-- <ion-icon name="sound"></ion-icon> -->
-      </button>
-      <button ion-button>
       </button>
     </ion-buttons>
+  
   </ion-navbar>
 </ion-header>
 
 <ion-content class="content" padding>
-
-
   <ion-list class="listStyleProducts">
-    <ion-grid class="grid gridColor">
+    <ion-grid class="gridNav">
       <ion-row>
-        <ion-col col-6 class="fontTitle">
-          <font size="+2">Item </font>
-          <ion-icon name="volume-up"></ion-icon>
+
+        <ion-col col-6 class="colTitle">
+          <button ion-button round>
+            <font>ITEM</font> 
+            <ion-icon style="font-size:20px; margin-left:5px;" name="musical-notes"></ion-icon>
+          </button>
         </ion-col>
-        <ion-col col-6 class="fontTitle">
-          <font size="+2">Quantity </font>
-          <ion-icon name="volume-up"></ion-icon>
+
+        <ion-col col-6 class="colTitle">
+          <button ion-button round>
+            <font>QUANTITY</font> 
+            <ion-icon style="font-size:20px; margin-left:5px;" name="musical-notes"></ion-icon>
+          </button>
         </ion-col>
+
       </ion-row>
     </ion-grid>
 
     <ion-scroll scrollX="true" scrollY="true" class="scroll">
-       
-      <ion-grid class="grid" *ngFor="let photo of photos; let id=index">
+      <ion-grid class="gridList" *ngFor="let photo of photos; let id=index">
         <ion-row class="ion-row" (click)="gotodeleteitem(id)">
+          
           <ion-col col-6 class="fontList alignPic">
             <img [src]="photo" />
           </ion-col>
+          
           <ion-col col-6 class="fontList alignProd">
             <font> {{quantity[id]}} </font>
           </ion-col>
-        </ion-row>
 
+        </ion-row>
       </ion-grid>
     </ion-scroll>
 
-
   </ion-list>
-
-<!-- <ion-fab>
- <button ion-fab class="buttonPosition" (click)="gotoneworexisting()">
-       <ion-icon class="icon" name="add" ></ion-icon>
-   </button>
-</ion-fab> -->
  
-
-   <button ion-fab bottom center class="buttonPosition"  (click)="gotoneworexisting()"> 
-    <ion-icon name="add">
-    </ion-icon>
-   </button>
-
-
+  <ion-fab bottom center class="buttonPosition">
+    <button ion-fab bottom (click)="gotoneworexisting()"> 
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>
