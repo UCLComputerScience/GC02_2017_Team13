@@ -1,40 +1,31 @@
-<!--
-  Generated template for the IscashpaidPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-  
-    <ion-navbar>
-      <ion-title>Delete this Item?</ion-title>
-      <ion-buttons end>
-          <button (click)="producesound()" ion-button>
-            <ion-icon name="musical-notes"></ion-icon>
-            <!-- <ion-icon name="sound"></ion-icon> -->
-          </button>
-          <button ion-button>
-          </button>
-        </ion-buttons>
-    </ion-navbar>
-  
-  </ion-header>
-  
-  <ion-content padding>
-  
-    <ion-row class="photo">
-      <ion-col col-12>
-        <img src="http://downloadicons.net/sites/default/files/open--trash-can-icon-80062.png"
-        />
-        <!-- <img src="../../assets/img/trash.png"/> -->
-      </ion-col>
-    </ion-row>
-      <ion-row class="buttons" >
-        <button ion-button round (click)="yes()">
-          <ion-icon class="iconx" name="checkmark"></ion-icon>
-        </button>
-        <button ion-button color="danger" round (click)="no()">
-          <ion-icon class="iconx" name="close"></ion-icon>
-        </button>
-      </ion-row>
-  </ion-content>
+
+  <ion-navbar>
+    <ion-title>Delete this Item?</ion-title>
+    <ion-buttons end>
+      <button (click)="producesound()" ion-button>
+        <ion-icon name="MyApp-sound"></ion-icon>
+      </button>
+      <button ion-button>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-row class="photo">
+    <ion-col col-12>
+      <img src="assets/imgs/trash.png" />
+    </ion-col>
+  </ion-row>
+  <ion-row class="buttons">
+    <button ion-button round (click)="yes()">
+      <ion-icon class="iconx" name="checkmark"></ion-icon>
+    </button>
+    <button ion-button color="danger" round (click)="no()">
+      <ion-icon class="iconx" name="close"></ion-icon>
+    </button>
+  </ion-row>
+</ion-content>

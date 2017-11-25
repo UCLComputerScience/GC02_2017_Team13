@@ -76,7 +76,7 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountrepaidPage,
     CashregisterPage,
     WelcomePage,
-    RecordPage
+    RecordPage,
 
   ],
   imports: [
@@ -109,7 +109,7 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountrepaidPage,
     CashregisterPage,
     WelcomePage,
-    RecordPage
+    RecordPage,
   ],
   providers: [
     StatusBar,

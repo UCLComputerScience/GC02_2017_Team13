@@ -79,8 +79,8 @@ constructor(public customTrack: CustomTrackProvider, public navCtrl: NavControll
     },
     {
       src: 'http://www.noiseaddicts.com/samples_1w72b820/4207.mp3',
-      title: 'Israel National Anthem',
-      art: 'http://www.crwflags.com/fotw/images/i/il.gif',
+      title: 'India National Anthem',
+      art: 'http://www.flagsinformation.com/indian-flag.png',
       preload: 'metadata'
     }];
     
@@ -91,12 +91,6 @@ constructor(public customTrack: CustomTrackProvider, public navCtrl: NavControll
       preload: 'metadata'
     };
     
-     this.customTrack.customTrack = {
-         src: this.customTrack.customSource,
-         artist: 'Unknown',
-         title: 'Custom Song',
-         preload: 'none'
-     };
   }
 
   saveTrackSource(source) {
