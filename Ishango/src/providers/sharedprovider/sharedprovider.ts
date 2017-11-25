@@ -22,9 +22,9 @@ export class SharedProvider {
   public moneypaidTemp = [];
 
   // buy_folder final stored values 
-  public photos = [1,2,3,4,5];
+  public photos = [12,34,23,23,123];
   public quantity = [1,2,3,4,5];
-  public moneypaid = [13123,123,34534,13123,45565];
+  public moneypaid = [1000,2000,3000,4000,5000];
 
   // sell_folder temporary variables
   public quantityTempSell = [];
@@ -35,15 +35,13 @@ export class SharedProvider {
   public quantitySell = [];
   public moneyReceived = [];
 
-    // debt values
-    public debtRepay;
-    public debt = [23,23,4,342,123];
+  // debt values
+  public debtRepay;
+  public debt = [12,324,1212,512,123];
 
-    //cash values
-    public cash=1234567;
+  //cash values
+  public cash=10000;
 
-
-  
   public buysameitem: boolean = false;
 
   constructor(public http: Http, private device: Device, private tts: TextToSpeech) {
@@ -52,6 +50,7 @@ export class SharedProvider {
   }
 
   acceptaddition() {
+    this.cash=this.cash-this.moneypaidTemp[this.moneypaidTemp.length-1];
     if (!this.buysameitem) {
       this.quantity.push(this.quantityTemp[this.quantityTemp.length - 1]);
       this.photos.push(this.photosTemp[this.photosTemp.length - 1]);
@@ -75,11 +74,10 @@ export class SharedProvider {
   }
 
   //procedure for selling products
-acceptaddition1() {
-
-     this.quantitySell.push(this.quantityTempSell[this.quantityTempSell.length - 1]);
-     this.moneyReceived.push(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
-     this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[this.quantitySell.length - 1];
+  acceptaddition1() {
+    this.quantitySell.push(this.quantityTempSell[this.quantityTempSell.length - 1]);
+    this.moneyReceived.push(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
+    this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[this.quantitySell.length - 1];
 
     var num: number = 0;
     for (num = 0; num < this.quantityTempSell.length; num++) {
@@ -92,43 +90,41 @@ acceptaddition1() {
       this.photosTemp.splice(num, 1);
     }
   }
-  //delete a product
-  repay(){
-    this.debt[this.index]=this.debt[this.index]-this.debtRepay;
-
+  //pay back for bought items
+  repay() {
+    this.debt[this.index] = this.debt[this.index] - this.debtRepay;
   }
 
-
   //delete a product
-  deleteitem(){
-    this.quantity.splice(this.index,1);
-    this.photos.splice(this.index,1);
-    this.moneypaid.splice(this.index,1);
+  deleteitem() {
+    this.quantity.splice(this.index, 1);
+    this.photos.splice(this.index, 1);
+    this.moneypaid.splice(this.index, 1);
   }
 
-//speed voice regulator for iOS devices
-  speedvoice(){
-     if(this.device.platform.toString() == "iOS")
-          this.speedVoice = 1.5;
+  //speed voice regulator for iOS devices
+  speedvoice() {
+    if (this.device.platform.toString() == "iOS")
+      this.speedVoice = 1.5;
   }
 
   //register the new debt
-  registerdebt(){
-    if(this.buysameitem){
-      this.debt[this.index]=this.debt[this.index]+this.moneypaidTemp[this.moneypaidTemp.length - 1];
+  registerdebt() {
+    if (this.buysameitem) {
+      this.debt[this.index] = this.debt[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
     }
     else {
       this.debt.push(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
- }
+  }
 
 
 
-//Text to Speech enabled 
+  //Text to Speech enabled 
   async producesound(soundString): Promise<any> {
     try {
-         this.speedvoice();
-         await this.tts.speak({ text: soundString,  rate: this.speedVoice})
+      this.speedvoice();
+      await this.tts.speak({ text: soundString, rate: this.speedVoice })
     }
     catch (e) {
       console.log(e);

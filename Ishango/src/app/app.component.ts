@@ -5,8 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Device } from '@ionic-native/device';
 import { LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-
-
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
 
