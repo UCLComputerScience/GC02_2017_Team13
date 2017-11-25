@@ -71,16 +71,16 @@ constructor(public customTrack: CustomTrackProvider, public navCtrl: NavControll
      this.File = this.filePath;
     
     this.myTracks = [{
-      src: 'http://mp3zoop.com/download/775932db906b446e8f3177af4c71f4e0/4/katatonia-soil039s-song.mp3',
+      src: 'http://www.noiseaddicts.com/samples_1w72b820/4207.mp3',
       artist: 'Katatonia',
       title: "Soil's Song",
       art: 'https://images-na.ssl-images-amazon.com/images/I/51%2BVlDDzumL.jpg',
       preload: 'metadata'
     },
     {
-      src: 'http://www.noiseaddicts.com/samples_1w72b820/4201.mp3',
-      title: 'India National Anthem',
-      art: 'http://www.flagsinformation.com/indian-flag.png',
+      src: 'http://www.noiseaddicts.com/samples_1w72b820/4207.mp3',
+      title: 'Israel National Anthem',
+      art: 'http://www.crwflags.com/fotw/images/i/il.gif',
       preload: 'metadata'
     }];
     
