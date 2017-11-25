@@ -38,7 +38,9 @@
         <ion-row class="ion-row" (click)="gotodeleteitem(id)">
           
           <ion-col col-6 class="fontList alignPic">
-            <img [src]="photo" />
+            <ion-card>
+              <img [src]="photo" />
+            </ion-card>
           </ion-col>
           
           <ion-col col-6 class="fontList alignProd">
