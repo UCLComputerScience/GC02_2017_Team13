@@ -8,6 +8,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 //pages to review
 import { RunningcostsPage } from '../pages/runningcosts_folder/runningcosts/runningcosts';
+import { RecordPage } from '../pages/runningcosts_folder/record/record';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { StockPage } from '../pages/stock/stock';
 import { FeaturesPage } from '../pages/features/features';
 
@@ -42,6 +45,8 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { Device } from '@ionic-native/device';
 import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { IonicAudioModule } from 'ionic-audio/dist';
+import { CustomTrackProvider } from '../providers/custom-track/custom-track';
 
 
 @NgModule({
@@ -70,12 +75,13 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     ConfirmationPage,
     AmountrepaidPage,
     CashregisterPage,
-    WelcomePage
+    WelcomePage,
+    RecordPage
 
   ],
   imports: [
     BrowserModule,HttpModule,
-    IonicModule.forRoot(MyApp,{tabsHideOnSubPages:true}),IonicStorageModule.forRoot()
+    IonicModule.forRoot(MyApp,{tabsHideOnSubPages:true}),IonicStorageModule.forRoot(),IonicAudioModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -102,13 +108,15 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
     ConfirmationPage,
     AmountrepaidPage,
     CashregisterPage,
-    WelcomePage
+    WelcomePage,
+    RecordPage
   ],
   providers: [
     StatusBar,
     SplashScreen,Camera,TextToSpeech, Device, MediaCapture,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SharedProvider
-  ]
+    SharedProvider,CustomTrackProvider
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
