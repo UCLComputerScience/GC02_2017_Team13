@@ -15,15 +15,12 @@ export class HomePage {
   public totaldebt=0;
 
   constructor(public navCtrl: NavController, private sharedprovider: SharedProvider) {
-    // this.tabBarElement = document.querySelector('.tabbar');
     this.cash=this.sharedprovider.cash;
-    var num: number = 0;
-    for (num = 0; num < this.sharedprovider.debt.length; num++) {
-      this.totaldebt=this.totaldebt+this.sharedprovider.debt[num];
-    }
+    // this.tabBarElement = document.querySelector('.tabbar');
   }
 
   producesound () {
+    console.log(this.sharedprovider.cash);
        this.sharedprovider.producesound("this is the dashboard");
   }
   debtperproduct(){
@@ -32,6 +29,17 @@ export class HomePage {
   gotoregistration(){
     this.navCtrl.push(WelcomePage);
   }
+  ionViewDidEnter(){
+    this.cash=this.sharedprovider.cash;
+    var num: number = 0;
+    var temp: number = 0;
+    for (num = 0; num < this.sharedprovider.debt.length; num++) {
+      temp=temp+this.sharedprovider.debt[num];
+    }
+    this.totaldebt=temp;
+  }
+
+  
 
   // ionViewDidLoad() {
   //   this.tabBarElement.style.display = 'none';
