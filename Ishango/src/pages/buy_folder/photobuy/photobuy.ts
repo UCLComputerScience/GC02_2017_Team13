@@ -23,36 +23,36 @@ export class PhotobuyPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private sharedprovider: SharedProvider) {
 
   }
-  ngOnInIt() {
-
-    this.photos = [];
-  }
   
-  takephoto() {
-    
-    const options: CameraOptions = {
-    quality : 75,
-           destinationType : this.camera.DestinationType.DATA_URL,
-           sourceType : this.camera.PictureSourceType.CAMERA,
-           allowEdit : false, //To enable/disable the user editing in camera
-           encodingType: this.camera.EncodingType.JPEG,
-           targetWidth: 640,
-           targetHeight: 400,
-           saveToPhotoAlbum: false
-    }
 
-    this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      this.base64Image = 'data:image/jpeg;base64,' + imageData;
-      this.photos.push(this.base64Image);
-      this.photos.reverse();
-    }, (err) => {
-      // Handle error
-    });
-    this.sharedprovider.photosTemp.push(this.photos);
-    this.navCtrl.push(QuantitytobuyPage);
+  ngOnInit() {
+    this.photos = [];
+
   }
+
+  takePhoto() {
+
+const options: CameraOptions = {
+  quality: 30,
+  destinationType: this.camera.DestinationType.DATA_URL,
+  encodingType: this.camera.EncodingType.JPEG,
+  mediaType: this.camera.MediaType.PICTURE
+}
+
+this.camera.getPicture(options).then((imageData) => {
+ // imageData is either a base64 encoded string or a file URI
+ // If it's base64:
+  this.base64Image = 'data:image/jpeg;base64,' + imageData;
+  this.photos.push(this.base64Image);
+  this.photos.reverse();
+
+}, (err) => {
+ // Handle error
+});
+this.sharedprovider.photos.push(this.photos);
+}
+
+
 
   producesound () {
      this.sharedprovider.producesound("Now, the camera will open to take a picture of the new item");
