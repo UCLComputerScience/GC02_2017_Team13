@@ -9,10 +9,7 @@
   
  <ion-content padding>
   
- <button ion-button block outline (click)="openFile()">Open File</button>
- <b>Link to File:</b>
- <ion-input placeholder="customTrack" #customId [(ngModel)]="customTrack.customSource"> </ion-input>
- <button ion-button block outline (click)="saveTrackSource(customId.value)">Save</button>
+
  <ion-list>
     <audio-track #audio *ngFor="let track of myTracks" [track]="track" (onFinish)="onTrackFinished($event)">
       <ion-item>
