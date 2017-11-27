@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController,Platform, AlertController, NavParams } from 'ionic-angular';
 import { MediaPlugin } from 'ionic-native';
+import {FileChooser} from 'ionic-native';
+import {FilePath} from 'ionic-native';
 
 
 @IonicPage()
@@ -12,9 +14,11 @@ export class RecordPage {
   mediaPlugin: MediaPlugin = null;
   recorded: boolean;
 
-  constructor(public navCtrl: NavController,public alertCtrl: AlertController,public platform: Platform) {
+  constructor(public navCtrl: NavController,public alertCtrl: AlertController,public platform: Platform,private file:File) {
     this.recorded = false;
   }
+
+  
 
 
   get MediaPlugin(): MediaPlugin {
