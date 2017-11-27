@@ -1,102 +1,134 @@
 <ion-header>
+  <ion-navbar>
+    <ion-title>Quantity</ion-title>
 
-    <ion-navbar>
-        <ion-title>Quantity</ion-title>
-        <ion-buttons end>
-            <button (click)="producesound()" ion-button>
-                    <ion-icon name="MyApp-sound"></ion-icon>
-                <!-- <ion-icon name="sound"></ion-icon> -->
-            </button>
-            <button ion-button>
-            </button>
-        </ion-buttons>
-    </ion-navbar>
+    <ion-buttons end>
+      <button (click)="producesound()" ion-button>
+          <ion-icon name="MyApp-sound"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
 </ion-header>
+
+
+
 <ion-content class="no-scroll" padding>
-    <ion-grid>
-        <ion-row>
-            <ion-col col-6>
-                <img src="assets/imgs/shopping_basket.png"/> 
+
+<div style="text-align: center;" class="navBarGlobal">
+<button ion-button round >
+            <font>QUANTITY&nbsp;</font>
+            <ion-icon style="font-size:20px;" name="musical-notes"></ion-icon>
+          </button>
+      </div>
+
+
+    <ion-grid class="grid">
+        <ion-row >
+            <ion-col class="col" col-6>
+                <img width="150px" src="assets/imgs/shopping_basket.png"/> 
             </ion-col>
-            <ion-col col-4>
-                <font size="+1" align="left">Quantity</font>
+            <ion-col class="coll" col-6>
+                <div class="position">
+                <font size="+3" >{{quantity}}</font>
+            </div>
             </ion-col>
         </ion-row>
-        <ion-row>
-            <ion-col col-3>
 
-            </ion-col>
-            <ion-col col-3>
-            </ion-col>
-            <ion-col col-3>
-                <font size="+3" align="right">{{quantity}}</font>
-            </ion-col>
-        </ion-row>
-        <ion-row></ion-row>
-        <ion-row></ion-row>
-        <ion-row></ion-row>
-        <ion-row></ion-row>
 
-        <ion-row>
-            <ion-col col-3>
+        <div class="wrapper">
+
+        <ion-row class="row1">
+            <ion-col class="col" col-1>
+            </ion-col>
+            <ion-col class="col" col-3>
                 <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(1)"></ion-icon>
             </ion-col>
-            <ion-col col-3>
+            <ion-col class="col" col-4>
                 <font size="+2">1</font>
             </ion-col>
-            <ion-col col-3>
+            <ion-col class="col" col-3>
                 <ion-icon tappable class="iconm" name="add-circle" (click)="increment(1)"></ion-icon>
             </ion-col>
+            <ion-col class="col" col-1>
+            </ion-col>
         </ion-row>
-        <ion-row>
-            <ion-col col-3>
+
+        <ion-row class="row1">
+            <ion-col class="col" col-1>
+            </ion-col>
+            <ion-col class="col" col-3>
                 <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(2)"></ion-icon>
             </ion-col>
-            <ion-col col-3>
+            <ion-col class="col" col-4>
                 <font size="+2">2</font>
             </ion-col>
-            <ion-col col-3>
+            <ion-col class="col" col-3>
                 <ion-icon tappable class="iconm" name="add-circle" (click)="increment(2)"></ion-icon>
             </ion-col>
+            <ion-col class="col" col-1>
+            </ion-col>
         </ion-row>
-        <ion-row>
+
+        <ion-row class="row1">
+            <ion-col class="col" col-1>
+            </ion-col>
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(5)"></ion-icon>
             </ion-col>
-            <ion-col col-3>
+            <ion-col col-4>
                 <font size="+2">5</font>
             </ion-col>
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="add-circle" (click)="increment(5)"></ion-icon>
             </ion-col>
+            <ion-col class="col" col-1>
+            </ion-col>
         </ion-row>
-        <ion-row>
+
+        <ion-row class="row1">
+             <ion-col class="col" col-1>
+            </ion-col>
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(10)"></ion-icon>
             </ion-col>
-            <ion-col col-3>
+            <ion-col col-4>
                 <font size="+2">10</font>
             </ion-col>
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="add-circle" (click)="increment(10)"></ion-icon>
             </ion-col>
+             <ion-col class="col" col-1>
+            </ion-col>
         </ion-row>
-        <ion-row>
+
+
+        <ion-row class="row1">
+             <ion-col class="col" col-1>
+            </ion-col>
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(50)"></ion-icon>
             </ion-col>
-            <ion-col col-3>
+            <ion-col col-4>
                 <font size="+2">50</font>
             </ion-col>
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="add-circle" (click)="increment(50)"></ion-icon>
             </ion-col>
+            <ion-col class="col" col-1>
+            </ion-col>
         </ion-row>
+         
+         </div>
     </ion-grid>
 
-    <ion-fab (click)="gotoiscashpaid()" right bottom>
-        <button ion-fab>
-            <ion-icon class="iconf" name="arrow-dropright"></ion-icon>
-        </button>
-    </ion-fab>
+    <ion-fab class="fullButtonBottom">
+    <button ion-button full class="fullButtonBottom"></button>
+  </ion-fab>
+
+  <ion-fab bottom center class="buttonPosition">
+    <button class="borderButton" ion-fab bottom (click)="gotoiscashpaid()">
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>

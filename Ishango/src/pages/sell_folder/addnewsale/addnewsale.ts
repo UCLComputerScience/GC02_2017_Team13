@@ -22,12 +22,14 @@ export class AddnewsalePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
 
-    this.photos=this.sharedprovider.photos;
+    this.photos = this.sharedprovider.photos;
     this.quantity = this.sharedprovider.quantity;
   }
 
   gotoquantitytosell(index) {
-    this.sharedprovider.index=index;
+    this.sharedprovider.index = index;
+    this.sharedprovider.photosTempSell.push(this.photos[index]) 
+    console.log(this.photos[index]);
     this.navCtrl.push(QuantitytosellPage);
     // console.log(index);
   }  

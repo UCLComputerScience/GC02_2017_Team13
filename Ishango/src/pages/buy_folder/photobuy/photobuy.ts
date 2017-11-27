@@ -43,9 +43,8 @@ this.camera.getPicture(options).then((imageData) => {
  // imageData is either a base64 encoded string or a file URI
  // If it's base64:
   this.base64Image = 'data:image/jpeg;base64,' + imageData;
-  this.photos.push(this.base64Image);
-  this.photos.reverse();
-
+//adding at index 0
+  this.photos.unshift(this.base64Image);
 }, (err) => {
  // Handle error
 });

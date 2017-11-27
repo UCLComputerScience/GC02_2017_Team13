@@ -14,16 +14,42 @@ page-quantitytobuy {
     }
 
     .grid {
-      height: 100%;
-      justify-content: center;
       width: 100%;
-      margin-left: 20%;
-      margin-bottom:0%;
+      margin-top: -2%;
+      text-align: center;
+
 }
 
-.row{
+.wrapper {
 
-      height: 7%;
+  margin-top: -2%;
+}
+
+.row1{
+      margin-bottom: 0;
+}
+
+.col{
+}
+
+.coll {
+
+}
+
+
+
+.position {
+  width: 100%;
+  height: 100%;
+
+}
+
+.position font {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .iconf{
@@ -31,12 +57,10 @@ page-quantitytobuy {
   text-align: center; //works
 }
 .iconm{
-  font-size: 30px;
+  font-size: 35px;
   text-align: center; //works
 }
 
-.no-scroll .scroll-content{
-  overflow: hidden;
-}
+
 
 }
