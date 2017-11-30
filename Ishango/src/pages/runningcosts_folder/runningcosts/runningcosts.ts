@@ -27,13 +27,11 @@ export class RunningcostsPage {
   
   constructor(public customTrack: CustomTrackProvider, public navCtrl: NavController, public navParams: NavParams, private audioProvider: AudioProvider, public platform: Platform) {
     this.recordingNames=this.customTrack.recordingNames;
-    
   }
 
   playrecording(id)
   {
-    let totalrecording:string="recordinga";
-    this.customTrack.playRecording(totalrecording);
+    this.customTrack.playRecording(id);
   }
   
 

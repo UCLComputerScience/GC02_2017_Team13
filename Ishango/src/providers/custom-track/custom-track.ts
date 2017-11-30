@@ -15,8 +15,8 @@ import { MediaPlugin } from 'ionic-native';
    console.log('Hello CustomTrack Provider');
  
  }
- playRecording(arg) {
-    this.MediaPlugin = new MediaPlugin(arg+".mp3");
+ playRecording(id) {
+    this.MediaPlugin = new MediaPlugin("recording"+id+".mp3");
     this.MediaPlugin.play();
 }
 
