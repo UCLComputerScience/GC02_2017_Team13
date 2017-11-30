@@ -23,12 +23,40 @@
           Stop recording
          </button>
         
-         <div *ngIf = "recorded">
+         <div><!-- *ngIf = "recorded"> -->
              <button ion-button (click)="playRecording()">
               Start playback
              </button>
              <button ion-button (click)="stopRecordingPlay()">
               Stop playback
              </button>
+
+            </div>
+            <button ion-button (click)="startRecording2()">
+             Start recording2
+            </button>
+            <button ion-button (click)="stopRecording2()">
+             Stop recording2
+            </button>
+           
+            <div><!-- *ngIf = "recorded"> -->
+                <button ion-button (click)="playRecording2()">
+                 Start playback2
+                </button>
+                <button ion-button (click)="stopRecordingPlay2()">
+                 Stop playback2
+                </button>
          </div>
+
+         <ion-fab class="fullButtonBottom">
+          <button ion-button full class="fullButtonBottom"></button>
+        </ion-fab>
+      
+        <ion-fab bottom center class="buttonPosition">
+          <button class="borderButton" ion-fab bottom (click)="gotorunningcost()">
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-fab>
+
+
  </ion-content>
