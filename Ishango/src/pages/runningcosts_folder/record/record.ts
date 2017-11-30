@@ -118,10 +118,6 @@ export class RecordPage {
     this.navCtrl.push(RunningcostsPage);
   }
 
-
-
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad AudioRecorderPage');
   }
