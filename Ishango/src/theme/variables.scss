@@ -137,13 +137,12 @@ src: url("../assets/fonts/Lato-Black.ttf");
   border-style: none;
 }
 
+
 .avatarStyle img  {
-  width:100% !important;
-  height : 100% !important;
-  max-width: 100px !important;  //any size
-  max-height: 100px !important; //any size
-  min-width: 100px !important;  //any size
-  min-height: 100px !important; //any size
+  display:inline-block;
+    width: 100px !important;
+      height : 100px !important;
+  object-fit: cover;
 }
 
 .buttonContainer {
