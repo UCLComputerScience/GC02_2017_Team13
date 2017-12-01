@@ -1,12 +1,54 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>createrecording</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title></ion-title>
+      <ion-buttons end>
+        <button (click)="producesound()" ion-button>
+          <ion-icon name="MyApp-sound"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+  
+  
+    <ion-grid class="thegrid">
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button class="buttona">
+            <img tappable (click)="startRecording()" src="assets/imgs/record.svg" />
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button class="buttona">
+            <img tappable (click)="stopRecording()" src="assets/imgs/record-stop.png" />
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button class="buttona">
+            <img tappable (click)="playRecording()" src="assets/imgs/record-play.png" />
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-fab class="fullButtonBottom">
+      <button ion-button full class="fullButtonBottom"></button>
+    </ion-fab>
+  
+    <ion-fab bottom center class="buttonPosition">
+      <button class="borderButton" ion-fab bottom (click)="gotofeatures()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-fab>
+  
+  
+  </ion-content>

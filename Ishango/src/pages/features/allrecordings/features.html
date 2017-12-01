@@ -17,14 +17,13 @@
 
   <!-- block that splits the screen -->
   <ion-scroll scrollX="true" scrollY="true" style="height: 100px;">
-    <ion-grid class="gridList" *ngFor="let recording of recordings; let id = index">
+    <ion-grid class="gridList" *ngFor="let recording of recordingID; let id = index">
       <ion-row class="ion-row" >
         <ion-col col-6 class="fontList alignPic">
             <img (click)="playrecording(id)" src="assets/imgs/runningcosts.png"/>
         </ion-col>
-
         <ion-col col-6 class="fontList alignProd">
-            <img (click)="gotodeleterunningcost(id)" src="assets/imgs/pulse.png"/>
+            <img (click)="deleterecording(id)" src="assets/imgs/pulse.png"/>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -6,11 +6,21 @@ import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
  
 @Injectable()export class CustomTrackProvider {
 
+  //values for recording
+  public recordingID=[];
+  public indexrec;
+  public recordingNames2=[];
+  public MediaPlugin2: MediaPlugin;
+  public totalrecords=0;
+
+
+
+//values for runningcosts
  public runningCosts=[];
  public recordingNames=[];
  public totalrecordings=0;
  public MediaPlugin: MediaPlugin;
- public index;
+ public index;//this values is used to delete 
  
  constructor(public http: Http,public sharedprovider:SharedProvider) {
    console.log('Hello CustomTrack Provider');
@@ -21,19 +31,30 @@ import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
     this.MediaPlugin.play();
 }
 
-stopRecordingPlay() {
-    this.MediaPlugin.stop();
-  }
-
-  delete(id){
-    this.runningCosts.splice(id,1);
-    this.recordingNames.splice(id,1);
+  delete(){
+    this.runningCosts.splice(this.index,1);
+    this.recordingNames.splice(this.index,1);
   }
 
   acceptaddition(moneypaid){
     this.runningCosts.push(moneypaid);
     this.sharedprovider.cash=this.sharedprovider.cash-moneypaid;
   }
+
+
+  //functions for recording
+
+  deleterec(){
+    this.recordingID.splice(this.indexrec,1);
+  }
+
+  playRecord(id){
+    this.MediaPlugin = new MediaPlugin(this.recordingNames2[id]+".mp3");
+    this.MediaPlugin2.play();
+  }
+
+
+
  
 }
 

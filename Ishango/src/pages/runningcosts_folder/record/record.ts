@@ -37,6 +37,7 @@ export class RecordPage {
   }
 
   playRecording() {
+    this.MediaPlugin.stopRecord();
     this.MediaPlugin.play();
   }
 

@@ -30,9 +30,6 @@ export class RunningcostsPage {
     this.recordingprovider.playRecording(id);
   }
 
-  delete(id){
-    this.recordingprovider.delete(id);
-  }
 
   gotodeleterunningcost(id){
     this.recordingprovider.index=id;

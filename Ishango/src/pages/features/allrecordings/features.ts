@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, reorderArray } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { CreaterecordingPage } from '../../../pages/features/createrecording/createrecording';
+import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
 
 
 
@@ -11,31 +12,26 @@ import { CreaterecordingPage } from '../../../pages/features/createrecording/cre
   templateUrl: 'features.html',
 })
 export class FeaturesPage {
+  public recordingID=[];
 
 
 
-  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider,public recordingprovider: CustomTrackProvider, public navParams: NavParams) {
+    this.recordingID=this.recordingprovider.recordingID;
+  }
+
+  playrecording(id)
+  {
+    this.recordingprovider.playRecord(id);
   }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  gotocreaterecording(){
+  gotocreaterecording(id){
+    this.recordingprovider.indexrec=id;
     this.navCtrl.push(CreaterecordingPage);
   }
+
 
 
   producesound(presets){
