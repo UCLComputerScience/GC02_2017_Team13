@@ -7,6 +7,7 @@ import { File } from '@ionic-native/file';
 import { RunningcostsPage } from '../../../pages/runningcosts_folder/runningcosts/runningcosts';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
+import {AmountpaidPage} from '../../../pages/runningcosts_folder/amountpaid/amountpaid';
 
 
 @IonicPage()
@@ -41,14 +42,13 @@ export class RecordPage {
   }
 
 
-  gotorunningcost() {
+  gotomoneypaid() {
     //if (this.MediaPlugin != null) {
       //this.MediaPlugin.stopRecord();
       let name: string = "recording" + this.totalrecordings;
       this.recordingprovider.recordingNames.push(name);
-      this.recordingprovider.runningCosts.push("20");
-      this.navCtrl.setRoot(RunningcostsPage);
-   // }
+      this.navCtrl.push(AmountpaidPage);
+    //}
   }
 
   producesound(){

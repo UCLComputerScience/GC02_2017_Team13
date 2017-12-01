@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { RunningcostsPage } from '../pages/runningcosts_folder/runningcosts/runningcosts';
 import { RecordPage } from '../pages/runningcosts_folder/record/record';
 import {DeleterunningcostPage} from '../pages/runningcosts_folder/deleterunningcost/deleterunningcost';
+import {AmountpaidPage} from '../pages/runningcosts_folder/amountpaid/amountpaid';
 
 import { StockPage } from '../pages/stock/stock';
 import { FeaturesPage } from '../pages/features/features';
@@ -77,7 +78,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     CashregisterPage,
     WelcomePage,
     RecordPage,
-    DeleterunningcostPage
+    DeleterunningcostPage,
+    AmountpaidPage
 
   ],
   imports: [
@@ -111,7 +113,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     CashregisterPage,
     WelcomePage,
     RecordPage,
-    DeleterunningcostPage
+    DeleterunningcostPage,
+    AmountpaidPage
   ],
   providers: [
     StatusBar,

@@ -28,6 +28,10 @@ stopRecordingPlay() {
     this.runningCosts.splice(id,1);
     this.recordingNames.splice(id,1);
   }
+
+  acceptaddition(moneypaid){
+    this.runningCosts.push(moneypaid);
+  }
  
 }
 

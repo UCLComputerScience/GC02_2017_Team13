@@ -20,7 +20,7 @@
     <ion-row>
       <ion-col col-4>
         <button ion-button class="buttona">
-          <img tappable (click)="stopRecording()" src="assets/imgs/record.svg" />
+          <img tappable (click)="startRecording()" src="assets/imgs/record.svg" />
         </button>
       </ion-col>
     </ion-row>
@@ -45,7 +45,7 @@
   </ion-fab>
 
   <ion-fab bottom center class="buttonPosition">
-    <button class="borderButton" ion-fab bottom (click)="gotorunningcost()">
+    <button class="borderButton" ion-fab bottom (click)="gotomoneypaid()">
       <ion-icon name="checkmark"></ion-icon>
     </button>
   </ion-fab>
