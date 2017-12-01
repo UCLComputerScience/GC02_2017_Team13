@@ -4,7 +4,7 @@ import { ProductstobuyPage } from '../buy_folder/productstobuy/productstobuy';
 import { ProductstosellPage } from '../sell_folder/productstosell/productstosell';
 import { HomePage } from '../home/home';
 import { RunningcostsPage } from '../runningcosts_folder/runningcosts/runningcosts';
-import { FeaturesPage } from '../features/features';
+import { FeaturesPage } from '../features/allrecordings/features';
 
 @Component({
   templateUrl: 'tabs.html'

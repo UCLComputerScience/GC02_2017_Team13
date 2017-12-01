@@ -14,7 +14,6 @@ import {AmountpaidPage} from '../../../pages/runningcosts_folder/amountpaid/amou
 @Component({
   selector: 'page-record',
   templateUrl: 'record.html',
-  providers: [File]
 })
 export class RecordPage {
 
@@ -22,7 +21,7 @@ export class RecordPage {
 
   public totalrecordings = 0;
 
-  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider, public recordingprovider: CustomTrackProvider, public alertCtrl: AlertController, private file: File) {
+  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider, public recordingprovider: CustomTrackProvider, public alertCtrl: AlertController) {
     this.totalrecordings = this.recordingprovider.totalrecordings;
 
   }
@@ -43,12 +42,12 @@ export class RecordPage {
 
 
   gotomoneypaid() {
-    //if (this.MediaPlugin != null) {
-      //this.MediaPlugin.stopRecord();
-      let name: string = "recording" + this.totalrecordings;
+    if (this.MediaPlugin != null) {
+      this.MediaPlugin.stopRecord();
+      let name: string = "runningcost" + this.totalrecordings;
       this.recordingprovider.recordingNames.push(name);
       this.navCtrl.push(AmountpaidPage);
-    //}
+    }
   }
 
   producesound(){

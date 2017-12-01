@@ -41,8 +41,16 @@ export class QuantitytobuyPage {
     }
   }
 
-  producesound () {
-       this.sharedprovider.producesound("Enter how much quantity you are buying");
+  producesound (preset) {
+    if(preset==1)
+    {
+      this.sharedprovider.producesound("Enter how many items you are bying");
+    }
+    else if (preset==2)
+    {
+      this.sharedprovider.producesound("Enter how many items you are bying");
+    }
+     
   }
 
 }

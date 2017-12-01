@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { MediaPlugin } from 'ionic-native';
+import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
  
 @Injectable()export class CustomTrackProvider {
 
@@ -11,7 +12,7 @@ import { MediaPlugin } from 'ionic-native';
  public MediaPlugin: MediaPlugin;
  public index;
  
- constructor(public http: Http) {
+ constructor(public http: Http,public sharedprovider:SharedProvider) {
    console.log('Hello CustomTrack Provider');
  
  }
@@ -31,6 +32,7 @@ stopRecordingPlay() {
 
   acceptaddition(moneypaid){
     this.runningCosts.push(moneypaid);
+    this.sharedprovider.cash=this.sharedprovider.cash-moneypaid;
   }
  
 }
