@@ -116,12 +116,29 @@ src: url("../assets/fonts/Lato-Black.ttf");
 .wrapperHeader {
 height:40%;
 }
+<<<<<<< HEAD
 
 .pictureQuantityMoney {
 height:100%;
 }
 
+=======
+>>>>>>> a7409a9901630cf61046a00aeae6be86ae222f7b
 
+.wrapper {
+margin-top: 0%;  
+height: 45%;
+  width:100%;
+  text-align: center;
+  position: relative;
+}
+
+.androidWrapper {
+  position: absolute;
+  width:100%;
+  bottom: 0;
+}
+// END WRAPPERS
 
 
 .wrapper {
@@ -162,7 +179,12 @@ height: 45%;
   border-style: none;
 }
 
-.avatarStyle {
+
+.avatarStyle img  {
+    display:inline-block;
+    width: 100px !important;
+    height : 100px !important;
+    object-fit: cover;
 }
 
 .tickCross{

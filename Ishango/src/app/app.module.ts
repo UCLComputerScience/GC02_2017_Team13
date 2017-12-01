@@ -9,7 +9,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 //pages to review
 import { RunningcostsPage } from '../pages/runningcosts_folder/runningcosts/runningcosts';
 import { RecordPage } from '../pages/runningcosts_folder/record/record';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {DeleterunningcostPage} from '../pages/runningcosts_folder/deleterunningcost/deleterunningcost';
+import {AmountpaidPage} from '../pages/runningcosts_folder/amountpaid/amountpaid';
 
 import { StockPage } from '../pages/stock/stock';
 import { FeaturesPage } from '../pages/features/features';
@@ -77,6 +78,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     CashregisterPage,
     WelcomePage,
     RecordPage,
+    DeleterunningcostPage,
+    AmountpaidPage
 
   ],
   imports: [
@@ -110,6 +113,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     CashregisterPage,
     WelcomePage,
     RecordPage,
+    DeleterunningcostPage,
+    AmountpaidPage
   ],
   providers: [
     StatusBar,
@@ -117,6 +122,5 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SharedProvider,CustomTrackProvider
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
