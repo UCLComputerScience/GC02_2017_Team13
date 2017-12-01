@@ -32,9 +32,6 @@ export class FeaturesPage {
     this.navCtrl.push(CreaterecordingPage);
   }
 
-  deleterecording(id){
-    this.recordingprovider.delete(id);
-  }
 
 
   producesound(presets){
