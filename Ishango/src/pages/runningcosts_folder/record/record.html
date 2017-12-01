@@ -13,26 +13,30 @@
 </ion-header>
 
 <ion-content padding>
-  <div>
-    <b>Simple Interface for Audio Recorder</b>
-  </div>
-  <button ion-button (click)="startRecording()">
-    Start recording
-  </button>
-  <button ion-button (click)="stopRecording()">
-    Stop recording
-  </button>
 
-  <div>
-    <!-- *ngIf = "recorded"> -->
-    <button ion-button (click)="playRecording()">
-      Start playback
-    </button>
-    <button ion-button (click)="stopRecordingPlay()">
-      Stop playback
-    </button>
 
-  </div>
+
+  <ion-grid class="thegrid">
+    <ion-row>
+      <ion-col col-4>
+        <ion-button class="buttona">
+        <img tappable (click)="startRecording()" src="assets/imgs/record.svg" />
+      </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+          <ion-button class="buttona">
+        <img tappable (click)="stopRecording()" src="assets/imgs/record-stop.png" />
+      </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <img tappable (click)="playRecording()" src="assets/imgs/record-play.png" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-fab class="fullButtonBottom">
     <button ion-button full class="fullButtonBottom"></button>

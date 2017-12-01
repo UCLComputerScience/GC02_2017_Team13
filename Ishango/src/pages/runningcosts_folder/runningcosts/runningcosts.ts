@@ -21,16 +21,21 @@ export class RunningcostsPage {
     console.log('ionViewDidLoad MusicPlayerPage');
   }
   
-  constructor(public customTrack: CustomTrackProvider, public navCtrl: NavController, public navParams: NavParams, private audioProvider: AudioProvider, public platform: Platform) {
-    this.runningCosts=this.customTrack.runningCosts;
+  constructor(public recordingprovider: CustomTrackProvider, public navCtrl: NavController, public navParams: NavParams, private audioProvider: AudioProvider, public platform: Platform) {
+    this.runningCosts=this.recordingprovider.runningCosts;
   }
 
   playrecording(id)
   {
-    this.customTrack.playRecording(id);
+    this.recordingprovider.playRecording(id);
+  }
+
+  delete(id){
+    this.recordingprovider.delete(id);
   }
 
   gotorecord(){
+    this.recordingprovider.totalrecordings=this.recordingprovider.totalrecordings+1;
     this.navCtrl.push(RecordPage);
   }
 

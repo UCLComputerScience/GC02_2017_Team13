@@ -6,7 +6,8 @@ import { MediaPlugin } from 'ionic-native';
 @Injectable()export class CustomTrackProvider {
 
  public runningCosts=[];
- public totalrecording=0;
+ public recordingNames=[];
+ public totalrecordings=0;
  public MediaPlugin: MediaPlugin;
  
  constructor(public http: Http) {
@@ -14,12 +15,17 @@ import { MediaPlugin } from 'ionic-native';
  
  }
  playRecording(id) {
-    this.MediaPlugin = new MediaPlugin("recording"+id+".mp3");
+    this.MediaPlugin = new MediaPlugin(this.recordingNames[id]+".mp3");
     this.MediaPlugin.play();
 }
 
 stopRecordingPlay() {
     this.MediaPlugin.stop();
+  }
+
+  delete(id){
+    this.runningCosts.splice(id,1);
+    this.recordingNames.splice(id,1);
   }
  
 }
