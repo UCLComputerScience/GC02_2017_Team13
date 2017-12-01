@@ -4,10 +4,8 @@ import 'rxjs/add/operator/map';
 import { MediaPlugin } from 'ionic-native';
  
 @Injectable()export class CustomTrackProvider {
- customTrack: any;
- customSource: any;
 
- public recordingNames=[];
+ public runningCosts=[];
  public totalrecording=0;
  public MediaPlugin: MediaPlugin;
  

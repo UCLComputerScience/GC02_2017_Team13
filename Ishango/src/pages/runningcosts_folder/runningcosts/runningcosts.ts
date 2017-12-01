@@ -15,30 +15,23 @@ import {FilePath} from 'ionic-native';
 })
 export class RunningcostsPage {
 
-  public recordingNames=[];
-
-  loaded: boolean;
+  public runningCosts=[];
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad MusicPlayerPage');
   }
   
-
-  
   constructor(public customTrack: CustomTrackProvider, public navCtrl: NavController, public navParams: NavParams, private audioProvider: AudioProvider, public platform: Platform) {
-    this.recordingNames=this.customTrack.recordingNames;
+    this.runningCosts=this.customTrack.runningCosts;
   }
 
   playrecording(id)
   {
     this.customTrack.playRecording(id);
   }
-  
 
   gotorecord(){
     this.navCtrl.push(RecordPage);
   }
-
-
 
  }

@@ -24,8 +24,7 @@ export class RecordPage {
 
   public totalrecording;
 
-  constructor(public navCtrl: NavController,public provider:CustomTrackProvider,public alertCtrl: AlertController,public platform: Platform,private file: File) {
-    this.recorded = false;
+  constructor(public navCtrl: NavController,public provider:CustomTrackProvider,public alertCtrl: AlertController,private file: File) {
     this.totalrecording=this.provider.totalrecording;
     
   }
@@ -44,78 +43,22 @@ export class RecordPage {
 
   
   startRecording() {
-    try {
         let name: string = "recording"+this.totalrecording;
         this.MediaPlugin = new MediaPlugin(name+".mp3");     
         this.MediaPlugin.startRecord();
-    }
-    catch (e) {
-      this.showAlert('Error: '+ e);
-    }
+
   }
   
-  stopRecording() {
-    try {     
+  stopRecording() { 
       this.MediaPlugin.stopRecord();
       this.recorded = true;
-    }
-    catch (e) {
-      this.showAlert('Error: '+ e);
-    }
   }
   
-  playRecording() {
-    try {
-      this.MediaPlugin.play();
-    }
-    catch (e) {
-      this.showAlert('Error: '+ e);
-    }
-  }
-  
-  stopRecordingPlay() {
-    try {
-      this.MediaPlugin.stop();
-    }
-    catch (e) {
-      this.showAlert('Error: '+ e);
-    }
-  }
 
-  startRecording2() {
-    try {
-      
-            
-         this.MediaPlugin2.startRecord();
-    }
-    catch (e) {
-      this.showAlert('Error: '+ e);
-    }
-  }
-  
-  stopRecording2() {
-    try {     
-      this.MediaPlugin2.stopRecord();
-      this.recorded = true;
-    }
-    catch (e) {
-      this.showAlert('Error: '+ e);
-    }
-  }
-  
-  
-  showAlert(message) {
-    let alert = this.alertCtrl.create({
-      title: 'Error',
-      subTitle: message,
-      buttons: ['OK']
-    });
-    alert.present();
-  }
   gotorunningcost(){
+    this.provider.runningCosts.push("skata");
     this.provider.totalrecording=this.provider.totalrecording+1;
-    this.provider.recordingNames.push("skata");
-    this.navCtrl.push(RunningcostsPage);
+    this.navCtrl.setRoot(RunningcostsPage);
   }
 
   ionViewDidLoad() {
