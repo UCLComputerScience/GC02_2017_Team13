@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { CreaterecordingPage } from '../../../pages/features/createrecording/createrecording';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
+import { DeleterecordingPage } from '../../../pages/features/deleterecording/deleterecording';
 
 
 
@@ -30,7 +31,7 @@ export class FeaturesPage {
 
   deleterecording(id){
     this.recordingprovider.indexrec=id;
-    //this.navCtrl.push(DeleterecordingPage);
+    this.navCtrl.push(DeleterecordingPage);
   }
 
   producesound(presets){

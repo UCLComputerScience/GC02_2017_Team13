@@ -6,6 +6,7 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-deleterunningcost',
