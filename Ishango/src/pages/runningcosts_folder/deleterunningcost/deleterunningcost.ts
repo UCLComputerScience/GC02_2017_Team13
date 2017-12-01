@@ -25,8 +25,8 @@ export class DeleterunningcostPage {
     this.sharedprovider.producesound("If you really want to delete this item click the blue button. If you want to cancel and return to the running cost screen click the red button");
 }
 
-yes(index) {
-  this.recordingprovider.delete(index);
+yes() {
+  this.recordingprovider.delete();
   this.navCtrl.setRoot(RunningcostsPage);
 }
 no() {
