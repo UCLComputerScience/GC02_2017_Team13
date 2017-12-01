@@ -9,6 +9,7 @@ import { MediaPlugin } from 'ionic-native';
  public recordingNames=[];
  public totalrecordings=0;
  public MediaPlugin: MediaPlugin;
+ public index;
  
  constructor(public http: Http) {
    console.log('Hello CustomTrack Provider');

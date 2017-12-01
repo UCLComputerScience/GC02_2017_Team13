@@ -6,6 +6,7 @@ import { FilePath } from 'ionic-native';
 import { File } from '@ionic-native/file';
 import { RunningcostsPage } from '../../../pages/runningcosts_folder/runningcosts/runningcosts';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
+import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 
 
 @IonicPage()
@@ -20,7 +21,7 @@ export class RecordPage {
 
   public totalrecordings = 0;
 
-  constructor(public navCtrl: NavController, public recordingprovider: CustomTrackProvider, public alertCtrl: AlertController, private file: File) {
+  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider, public recordingprovider: CustomTrackProvider, public alertCtrl: AlertController, private file: File) {
     this.totalrecordings = this.recordingprovider.totalrecordings;
 
   }
@@ -41,29 +42,23 @@ export class RecordPage {
 
 
   gotorunningcost() {
-    if (this.MediaPlugin != null) {
-      this.MediaPlugin.stopRecord();
+    //if (this.MediaPlugin != null) {
+      //this.MediaPlugin.stopRecord();
       let name: string = "recording" + this.totalrecordings;
       this.recordingprovider.recordingNames.push(name);
       this.recordingprovider.runningCosts.push("20");
       this.navCtrl.setRoot(RunningcostsPage);
-    }
+   // }
+  }
+
+  producesound(){
+    this.sharedprovider.producesound("Press the microphone button to record your running cost and press the stop button when you're done. You can hear your recording by pressing the play button")
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AudioRecorderPage');
   }
 
-
-
-  /*get MediaPlugin(): MediaPlugin {
-  if (this.mediaPlugin == null) {
-    //let filepath = this.file.externalDataDirectory + "my_audio.mp3";
-    this.mediaPlugin = new MediaPlugin("gamao.wav");
-  }
- 
-  return this.mediaPlugin;
-}*/
 
 }
 
