@@ -112,7 +112,25 @@ src: url("../assets/fonts/Lato-Black.ttf");
 
 ///// common style for buying, selling, and running costs
 
+//WRAPPERS
+.wrapperHeader {
+height:40%;
+}
 
+.wrapper {
+margin-top: 0%;  
+height: 45%;
+  width:100%;
+  text-align: center;
+  position: relative;
+}
+
+.androidWrapper {
+  position: absolute;
+  width:100%;
+  bottom: 0;
+}
+// END WRAPPERS
 
 .navBarGlobal {
   // background-color: #B0E0E6;
@@ -139,10 +157,10 @@ src: url("../assets/fonts/Lato-Black.ttf");
 
 
 .avatarStyle img  {
-  display:inline-block;
+    display:inline-block;
     width: 100px !important;
-      height : 100px !important;
-  object-fit: cover;
+    height : 100px !important;
+    object-fit: cover;
 }
 
 .buttonContainer {
