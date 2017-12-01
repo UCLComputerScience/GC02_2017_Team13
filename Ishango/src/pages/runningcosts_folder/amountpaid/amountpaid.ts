@@ -4,12 +4,6 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 import { RunningcostsPage } from '../../../pages/runningcosts_folder/runningcosts/runningcosts';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
 
-/**
- * Generated class for the AmountpaidPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

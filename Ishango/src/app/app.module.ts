@@ -13,7 +13,9 @@ import {DeleterunningcostPage} from '../pages/runningcosts_folder/deleterunningc
 import {AmountpaidPage} from '../pages/runningcosts_folder/amountpaid/amountpaid';
 
 import { StockPage } from '../pages/stock/stock';
-import { FeaturesPage } from '../pages/features/features';
+import { FeaturesPage } from '../pages/features/allrecordings/features';
+import { CreaterecordingPage } from '../pages/features/createrecording/createrecording';
+
 
 import { ProductstobuyPage } from '../pages/buy_folder/productstobuy/productstobuy';
 import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
@@ -79,7 +81,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     WelcomePage,
     RecordPage,
     DeleterunningcostPage,
-    AmountpaidPage
+    AmountpaidPage,
+    CreaterecordingPage
 
   ],
   imports: [
@@ -114,7 +117,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     WelcomePage,
     RecordPage,
     DeleterunningcostPage,
-    AmountpaidPage
+    AmountpaidPage,
+    CreaterecordingPage
   ],
   providers: [
     StatusBar,

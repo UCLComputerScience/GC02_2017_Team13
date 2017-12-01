@@ -3,7 +3,7 @@
     <ion-title>Quantity</ion-title>
 
     <ion-buttons end>
-      <button (click)="producesound()" ion-button>
+      <button (click)="producesound(1)" ion-button>
           <ion-icon name="MyApp-sound"></ion-icon>
       </button>
     </ion-buttons>
@@ -17,7 +17,7 @@
 
 <div class="wrapperHeader">
 <div style="text-align: center;" class="navBarGlobal">
-<button ion-button round >
+<button ion-button round (click)="producesound(2)" >
             <font>QUANTITY&nbsp;</font>
             <ion-icon style="font-size:20px;" name="musical-notes"></ion-icon>
           </button>

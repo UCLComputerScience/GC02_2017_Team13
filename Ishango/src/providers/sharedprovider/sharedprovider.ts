@@ -5,12 +5,7 @@ import 'rxjs/add/operator/map';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 
-/*
-  Generated class for the QuantityProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class SharedProvider {
   public index;
@@ -110,6 +105,7 @@ export class SharedProvider {
     if (this.device.platform.toString() == "iOS")
       this.speedVoice = 1.5;
   }
+
 
   //register the new debt
   registerdebt() {

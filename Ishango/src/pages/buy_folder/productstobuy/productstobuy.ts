@@ -104,8 +104,20 @@ this.sharedprovider.photos[index] = this.photos[index];
 
   }
 
-  producesound () {
-     this.sharedprovider.producesound("In this screen appear all the products you have bought");
+  producesound (preset) {
+    if(preset==1)
+    {
+      this.sharedprovider.producesound("In this screen appear all the products you have bought");
+    }
+    else if (preset==2)
+    {
+      this.sharedprovider.producesound("this column shows a photo of your product");
+    }
+    else if (preset==3)
+    {
+      this.sharedprovider.producesound("this column shows the quantity of your product");
+    }
+     
   }
 
 }
