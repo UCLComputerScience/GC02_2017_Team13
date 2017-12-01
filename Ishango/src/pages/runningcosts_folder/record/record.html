@@ -14,28 +14,19 @@
 
 <ion-content padding>
 
+    <img class="background thegrid" src="assets/imgs/recordingBackground.png" />
 
 
   <ion-grid class="thegrid">
     <ion-row>
       <ion-col col-4>
-        <button ion-button class="buttona">
-          <img tappable (click)="startRecording()" src="assets/imgs/record.svg" />
-        </button>
+          <img tappable (click)="startRecording()" src="assets/imgs/record.png" />
       </ion-col>
-    </ion-row>
-    <ion-row>
       <ion-col col-4>
-        <button ion-button class="buttona">
-          <img tappable (click)="stopRecording()" src="assets/imgs/record-stop.png" />
-        </button>
+          <img tappable (click)="stopRecording()" src="assets/imgs/stop.png" />
       </ion-col>
-    </ion-row>
-    <ion-row>
       <ion-col col-4>
-        <button ion-button class="buttona">
-          <img tappable (click)="playRecording()" src="assets/imgs/record-play.png" />
-        </button>
+          <img tappable (click)="playRecording()" src="assets/imgs/play.png" />
       </ion-col>
     </ion-row>
   </ion-grid>

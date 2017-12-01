@@ -29,7 +29,7 @@ export class RecordPage {
 
   startRecording() {
     let name: string = "recording" + this.totalrecordings;
-    this.MediaPlugin = new MediaPlugin(name + ".mp3");
+    this.MediaPlugin = new MediaPlugin(name + ".wav");
     this.MediaPlugin.startRecord();
   }
 
