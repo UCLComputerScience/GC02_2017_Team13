@@ -26,7 +26,7 @@ import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
  
  }
  playRecording(id) {
-    this.MediaPlugin = new MediaPlugin(this.recordingNames[id]+".mp3");
+    this.MediaPlugin = new MediaPlugin(this.recordingNames[id]+".wav");
     this.MediaPlugin.play();
 }
 

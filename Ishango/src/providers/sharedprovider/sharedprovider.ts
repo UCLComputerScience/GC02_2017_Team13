@@ -35,6 +35,10 @@ export class SharedProvider {
   // debt values
   public debtRepay;
   public debt = [];
+  public debtBoolean = [];
+
+  //total profit
+  public totalProfit = 0;
 
   // cash values
   public cash=10000;
@@ -113,7 +117,7 @@ export class SharedProvider {
       this.debt[this.index] = this.debt[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
     }
     else {
-      this.debt.push(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
+      this.debt.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
   }
 

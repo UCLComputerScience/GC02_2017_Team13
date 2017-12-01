@@ -16,24 +16,17 @@
 <ion-content padding>
 
 <div class="wrapperHeader">
-<div style="text-align: center;" class="navBarGlobal">
-<button ion-button round (click)="producesound(2)" >
-            <font>QUANTITY&nbsp;</font>
-            <ion-icon style="font-size:20px;" name="musical-notes"></ion-icon>
-          </button>
-      </div>
 
-
-        <ion-row >
-            <ion-col class="col" col-6>
-                <img width="150px" src="assets/imgs/shopping_basket.png"/> 
-            </ion-col>
-            <ion-col class="coll" col-6>
-                <div class="position">
-                <font size="+3" >{{quantity}}</font>
+        <div class="pictureQuantityMoney">
+           <div class="imageValueWrapper">
+                <img width="" src="assets/imgs/shopping_basket.png"/> 
+   
+                <div class="positionValue">
+                <font size="+3" >{{quantity}} </font>
             </div>
-            </ion-col>
-        </ion-row> 
+         </div>
+        </div> 
+
 </div>
 
 
@@ -61,28 +54,12 @@
             <ion-col class="col" col-1>
             </ion-col>
             <ion-col class="col" col-3>
-                <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(2)"></ion-icon>
-            </ion-col>
-            <ion-col class="col" col-4>
-                <font size="+2">2</font>
-            </ion-col>
-            <ion-col class="col" col-3>
-                <ion-icon tappable class="iconm" name="add-circle" (click)="increment(2)"></ion-icon>
-            </ion-col>
-            <ion-col class="col" col-1>
-            </ion-col>
-        </ion-row>
-
-        <ion-row class="row1">
-            <ion-col class="col" col-1>
-            </ion-col>
-            <ion-col col-3>
                 <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(5)"></ion-icon>
             </ion-col>
-            <ion-col col-4>
+            <ion-col class="col" col-4>
                 <font size="+2">5</font>
             </ion-col>
-            <ion-col col-3>
+            <ion-col class="col" col-3>
                 <ion-icon tappable class="iconm" name="add-circle" (click)="increment(5)"></ion-icon>
             </ion-col>
             <ion-col class="col" col-1>
@@ -90,7 +67,7 @@
         </ion-row>
 
         <ion-row class="row1">
-             <ion-col class="col" col-1>
+            <ion-col class="col" col-1>
             </ion-col>
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(10)"></ion-icon>
@@ -101,10 +78,9 @@
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="add-circle" (click)="increment(10)"></ion-icon>
             </ion-col>
-             <ion-col class="col" col-1>
+            <ion-col class="col" col-1>
             </ion-col>
         </ion-row>
-
 
         <ion-row class="row1">
              <ion-col class="col" col-1>
@@ -118,6 +94,23 @@
             <ion-col col-3>
                 <ion-icon tappable class="iconm" name="add-circle" (click)="increment(50)"></ion-icon>
             </ion-col>
+             <ion-col class="col" col-1>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row class="row1">
+             <ion-col class="col" col-1>
+            </ion-col>
+            <ion-col col-3>
+                <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(100)"></ion-icon>
+            </ion-col>
+            <ion-col col-4>
+                <font size="+2">100</font>
+            </ion-col>
+            <ion-col col-3>
+                <ion-icon tappable class="iconm" name="add-circle" (click)="increment(100)"></ion-icon>
+            </ion-col>
             <ion-col class="col" col-1>
             </ion-col>
         </ion-row>
@@ -125,11 +118,11 @@
          </div>
 
     <ion-fab class="fullButtonBottom">
-    <button ion-button full class="fullButtonBottom"></button>
+    <button [color]="(quantity == 0) ? 'danger':'secondary'" ion-button full class="fullButtonBottom"></button>
   </ion-fab>
 
   <ion-fab bottom center class="buttonPosition">
-    <button class="borderButton" ion-fab bottom (click)="gotoiscashpaid()">
+    <button [color]="(quantity == 0) ? 'danger':'secondary'" class="borderButton" ion-fab bottom (click)="gotomoneypaidpage()">
       <ion-icon name="arrow-dropright"></ion-icon>
     </button>
   </ion-fab>

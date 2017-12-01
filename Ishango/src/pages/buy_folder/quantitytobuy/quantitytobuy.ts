@@ -34,10 +34,11 @@ export class QuantitytobuyPage {
   }
 
 
-  gotoiscashpaid() {
-    if (this.quantity>0){
+  gotomoneypaidpage() {
+    if (this.quantity > 0){
     this.sharedprovider.quantityTemp.push(this.quantity);
-    this.navCtrl.push(MoneypaidPage);}
+    this.navCtrl.push(MoneypaidPage);
+    }
   }
 
   producesound (preset) {
