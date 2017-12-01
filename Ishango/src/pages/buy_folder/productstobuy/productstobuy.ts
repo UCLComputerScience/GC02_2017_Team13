@@ -16,6 +16,8 @@ export class ProductstobuyPage {
   
    private quantity=[];
    private moneypaid=[];
+
+
    
    //array with photos
    public photos = [];
@@ -31,6 +33,15 @@ export class ProductstobuyPage {
   }
 
 
+isDebtPaid(index){
+    // item.added = !item.added;
+        if(this.sharedprovider.debt[index])
+          this.sharedprovider.totalProfit -= this.sharedprovider.debt[index];
+        else
+          this.sharedprovider.totalProfit += this.sharedprovider.debt[index];
+        this.sharedprovider.debtBoolean[index] = !this.sharedprovider.debtBoolean[index];
+            console.log(this.sharedprovider.totalProfit);
+      }
 //takes pictures and save them in array photos and provider
   // ngOnInit() {
   //   this.photos = [];
@@ -85,10 +96,6 @@ this.camera.getPicture(options).then((imageData) => {
 this.sharedprovider.photos[index] = this.photos[index];
   }
 
-
-
-  gotoneworexisting() {
-  }
 
   gotodeleteitem(id){
     this.sharedprovider.index=id;

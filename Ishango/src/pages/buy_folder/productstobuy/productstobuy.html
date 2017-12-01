@@ -9,6 +9,7 @@
     </ion-buttons>
 
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
@@ -37,11 +38,25 @@
  <ion-list>
       <div *ngFor="let photo of photos; let id = index">
   <ion-item-sliding>
-    <ion-item class="pictureAndQuantity" (click)="buymoreofthesame(id)">
+    <ion-item class="pictureAndQuantity">
       <ion-avatar class="avatarStyle" item-start (click)="takePhoto1(id)">
-        <img [src]="photo" />
+        <img [src]="photo"/>
       </ion-avatar>
-      <h2 style="float:right; font-size:24px; margin-right: 20px;">{{quantity[id]}}</h2>
+
+<!-- [color]="(quantity == 0) ? 'danger':'secondary'" -->
+<!-- <ion-icon name="checkmark" block   class="tickCross" (click)="toggleReorder()"  *ngIf="!reorderIsEnabled">
+</ion-icon>
+<ion-icon name="cross" block   class="tickCross" (click)="toggleReorder()"  *ngIf="!reorderIsEnabled">
+</ion-icon> -->
+<button ion-button (click)="isDebtPaid(id)">
+   <ion-icon 
+       [name]="this.sharedprovider.debtBoolean[id] ? 'checkmark' :'close'">
+   </ion-icon>
+</button>
+
+ 
+
+      <h2 (click)="buymoreofthesame(id)" style="float:right; font-size:24px; margin-right: 20px;">{{quantity[id]}}</h2>
     </ion-item>
 
     <ion-item-options side="right" >
@@ -55,6 +70,10 @@
   </ion-list>
 
   </ion-scroll>
+
+
+
+    
 
 <ion-fab class="fullButtonBottom">
     <button ion-button full class="fullButtonBottom"></button>

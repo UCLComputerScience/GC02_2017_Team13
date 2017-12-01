@@ -40,6 +40,10 @@ export class SharedProvider {
   // debt values
   public debtRepay;
   public debt = [];
+  public debtBoolean = [];
+
+  //total profit
+  public totalProfit = 0;
 
   // cash values
   public cash=10000;
