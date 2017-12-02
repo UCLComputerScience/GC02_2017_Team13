@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, reorderArray } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { CreaterecordingPage } from '../../../pages/features/createrecording/createrecording';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
+import { DeleterecordingPage } from '../../../pages/features/deleterecording/deleterecording';
 
 
 
@@ -12,12 +13,10 @@ import { CustomTrackProvider } from '../../../providers/custom-track/custom-trac
   templateUrl: 'features.html',
 })
 export class FeaturesPage {
-  public recordingID=[];
-
-
+  public recordingNames=[];
 
   constructor(public navCtrl: NavController,public sharedprovider:SharedProvider,public recordingprovider: CustomTrackProvider, public navParams: NavParams) {
-    this.recordingID=this.recordingprovider.recordingID;
+    this.recordingNames=this.recordingprovider.recordingNames2;
   }
 
   playrecording(id)
@@ -25,19 +24,20 @@ export class FeaturesPage {
     this.recordingprovider.playRecord(id);
   }
 
-
-
   gotocreaterecording(id){
-    this.recordingprovider.indexrec=id;
+    this.recordingprovider.totalrecords=this.recordingprovider.totalrecords+1;
     this.navCtrl.push(CreaterecordingPage);
   }
 
-
+  deleterecording(id){
+    this.recordingprovider.indexrec=id;
+    this.navCtrl.push(DeleterecordingPage);
+  }
 
   producesound(presets){
     if (presets==1)
     {
-      this.sharedprovider.producesound("In this page, you can create custom recording");
+      this.sharedprovider.producesound("In this page, you can create custom recordings");
     }
     
   }
