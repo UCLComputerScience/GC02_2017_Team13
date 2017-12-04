@@ -46,7 +46,7 @@ export class QuantitytosellPage {
     }
   }
 
-  gotoiscashreceived() {
+  gotomoneyreceived() {
     if (this.quantity>0){
       this.sharedprovider.quantityTempSell.push(this.quantity);
       this.navCtrl.push(MoneyreceivedPage);

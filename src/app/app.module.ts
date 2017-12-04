@@ -9,10 +9,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 //pages to review
 import { RunningcostsPage } from '../pages/runningcosts_folder/runningcosts/runningcosts';
 import { RecordPage } from '../pages/runningcosts_folder/record/record';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {DeleterunningcostPage} from '../pages/runningcosts_folder/deleterunningcost/deleterunningcost';
+import {AmountpaidPage} from '../pages/runningcosts_folder/amountpaid/amountpaid';
 
 import { StockPage } from '../pages/stock/stock';
-import { FeaturesPage } from '../pages/features/features';
+import { FeaturesPage } from '../pages/features/allrecordings/features';
+import { CreaterecordingPage } from '../pages/features/createrecording/createrecording';
+import { DeleterecordingPage } from '../pages/features/deleterecording/deleterecording';
 
 import { ProductstobuyPage } from '../pages/buy_folder/productstobuy/productstobuy';
 import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
@@ -76,7 +79,11 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountrepaidPage,
     CashregisterPage,
     WelcomePage,
-    RecordPage
+    RecordPage,
+    DeleterunningcostPage,
+    AmountpaidPage,
+    CreaterecordingPage,
+    DeleterecordingPage
 
   ],
   imports: [
@@ -109,7 +116,11 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountrepaidPage,
     CashregisterPage,
     WelcomePage,
-    RecordPage
+    RecordPage,
+    DeleterunningcostPage,
+    AmountpaidPage,
+    CreaterecordingPage,
+    DeleterecordingPage
   ],
   providers: [
     StatusBar,
@@ -117,6 +128,5 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SharedProvider,CustomTrackProvider
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

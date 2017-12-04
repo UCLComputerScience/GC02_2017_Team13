@@ -5,12 +5,7 @@ import 'rxjs/add/operator/map';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 
-/*
-  Generated class for the QuantityProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class SharedProvider {
   public index;
@@ -22,9 +17,9 @@ export class SharedProvider {
   public moneypaidTemp = [];
 
   // buy_folder final stored values 
-  public photos = [12,34,23,23,123];
-  public quantity = [1,2,3,4,5];
-  public moneypaid = [1000,2000,3000,4000,5000];
+  public photos = [];
+  public quantity = [];
+  public moneypaid = [];
 
   // sell_folder temporary variables
   public quantityTempSell = [];
@@ -34,12 +29,18 @@ export class SharedProvider {
   // sell_folder final stored values 
   public quantitySell = [];
   public moneyReceived = [];
+   public photosSell = [];
+
 
   // debt values
   public debtRepay;
-  public debt = [12,324,1212,512,123];
+  public debt = [];
+  public debtBoolean = [];
 
-  //cash values
+  //total profit
+  public totalProfit = 0;
+
+  // cash values
   public cash=10000;
 
   public buysameitem: boolean = false;
@@ -49,12 +50,15 @@ export class SharedProvider {
 
   }
 
+  // used 'unshift' to add pictures and products on top on the page
   acceptaddition() {
-    this.cash=this.cash-this.moneypaidTemp[this.moneypaidTemp.length-1];
+    
+    this.cash = this.cash - this.moneypaidTemp[this.moneypaidTemp.length - 1];
+    
     if (!this.buysameitem) {
-      this.quantity.push(this.quantityTemp[this.quantityTemp.length - 1]);
-      this.photos.push(this.photosTemp[this.photosTemp.length - 1]);
-      this.moneypaid.push(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
+      this.quantity.unshift(this.quantityTemp[this.quantityTemp.length - 1]);
+      this.photos.unshift(this.photosTemp[this.photosTemp.length - 1]);
+      this.moneypaid.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
     else {
       this.quantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
@@ -75,8 +79,9 @@ export class SharedProvider {
 
   //procedure for selling products
   acceptaddition1() {
-    this.quantitySell.push(this.quantityTempSell[this.quantityTempSell.length - 1]);
-    this.moneyReceived.push(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
+    this.quantitySell.unshift(this.quantityTempSell[this.quantityTempSell.length - 1]);
+    this.moneyReceived.unshift(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
+    this.photosSell.unshift(this.photosTempSell[this.photosTempSell.length - 1]);
     this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[this.quantitySell.length - 1];
 
     var num: number = 0;
@@ -85,9 +90,6 @@ export class SharedProvider {
     }
     for (num = 0; num < this.moneypaidTemp.length; num++) {
       this.moneypaidTemp.splice(num, 1);
-    }
-    for (num = 0; num < this.photosTemp.length; num++) {
-      this.photosTemp.splice(num, 1);
     }
   }
   //pay back for bought items
@@ -108,13 +110,14 @@ export class SharedProvider {
       this.speedVoice = 1.5;
   }
 
+
   //register the new debt
   registerdebt() {
     if (this.buysameitem) {
       this.debt[this.index] = this.debt[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
     }
     else {
-      this.debt.push(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
+      this.debt.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
   }
 

@@ -8,13 +8,15 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
   templateUrl: 'productstosell.html'
 })
 export class ProductstosellPage {
-  private photos = [];
+   private photos = [];
    private quantity = [];
    private moneyreceived = [];
+   private photosSell = [];
 
 
   constructor(public navCtrl: NavController, public sharedprovider: SharedProvider) {
     this.photos = this.sharedprovider.photos;
+    this.photosSell = this.sharedprovider.photosSell;
     this.quantity = this.sharedprovider.quantitySell;
     this.moneyreceived = this.sharedprovider.moneyReceived;
 
@@ -30,6 +32,12 @@ export class ProductstosellPage {
   producesound () {
      this.sharedprovider.producesound("Dimitris I love you");
   }
+
+//!!!!!! delete everything not just page variables!
+  delete(index){
+alert("mammt in index");
+  this.photos.splice(index, 1);
+}
 
 
 
