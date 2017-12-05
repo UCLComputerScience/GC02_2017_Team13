@@ -30,6 +30,8 @@ import { AddnewsalePage } from '../pages/sell_folder/addnewsale/addnewsale';
 import { QuantitytosellPage } from '../pages/sell_folder/quantitytosell/quantitytosell';
 import { MoneyreceivedPage } from '../pages/sell_folder/moneyreceived/moneyreceived';
 import { IscashreceivedPage } from '../pages/sell_folder/iscashreceived/iscashreceived';
+import { DeletesellPage } from '../pages/sell_folder/deletesell/deletesell';
+
 
 import { AmountrepaidPage } from '../pages/debt/amountrepaid/amountrepaid';
 import { ConfirmationPage } from '../pages/debt/confirmation/confirmation';
@@ -83,7 +85,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     DeleterunningcostPage,
     AmountpaidPage,
     CreaterecordingPage,
-    DeleterecordingPage
+    DeleterecordingPage,
+    DeletesellPage
 
   ],
   imports: [
@@ -120,7 +123,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     DeleterunningcostPage,
     AmountpaidPage,
     CreaterecordingPage,
-    DeleterecordingPage
+    DeleterecordingPage,
+    DeletesellPage
   ],
   providers: [
     StatusBar,

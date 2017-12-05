@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AddnewsalePage } from '../addnewsale/addnewsale';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
+import { DeletesellPage } from '../../../pages/sell_folder/deletesell/deletesell';
 
 @Component({
   selector: 'page-productstosell',
