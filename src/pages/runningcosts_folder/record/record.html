@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button (click)="producesound()" ion-button>
+        <ion-icon name="MyApp-sound"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <img class="background thegrid" src="assets/imgs/recordingBackground.png" />
+
+
+  <ion-grid class="thegrid">
+    <ion-row>
+      <ion-col col-4>
+          <img tappable (click)="startRecording()" src="assets/imgs/record.png" />
+      </ion-col>
+      <ion-col col-4>
+          <img tappable (click)="stopRecording()" src="assets/imgs/stop.png" />
+      </ion-col>
+      <ion-col col-4>
+          <img tappable (click)="playRecording()" src="assets/imgs/play.png" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab class="fullButtonBottom">
+    <button ion-button full class="fullButtonBottom"></button>
+  </ion-fab>
+
+  <ion-fab bottom center class="buttonPosition">
+    <button class="borderButton" ion-fab bottom (click)="gotomoneypaid()">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+  </ion-fab>
+
+
+</ion-content>
