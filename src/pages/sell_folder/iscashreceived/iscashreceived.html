@@ -1,0 +1,37 @@
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>CASH RECEIVED?</ion-title>
+      <ion-buttons end>
+          <button (click)="producesound()" ion-button>
+              <ion-icon name="MyApp-sound"></ion-icon>
+          </button>
+          <button ion-button>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+    
+  <ion-content padding>
+    <div class="photoContainer">
+      <img src="assets/imgs/money_paid.png"/>
+      </div>
+
+<ion-fab class="fullButtonBottom">
+    <button ion-button full class="fullButtonBottom"></button>
+  </ion-fab>
+
+  <ion-fab bottom left class="buttonPositionLeft">
+    <button color="danger" class="borderButton" ion-fab bottom (click)="cashnotreceived()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab bottom right class="buttonPositionRight">
+    <button color="secondary" class="borderButton" ion-fab bottom (click)="cashreceived()">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+
