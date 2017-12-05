@@ -12,7 +12,7 @@ import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = WelcomePage;
   loader: any;
 
   constructor(public platform: Platform,public statusBar: StatusBar,public splashScreen: SplashScreen, private device: Device, public loadingCtrl: LoadingController, public storage: Storage) {
@@ -24,7 +24,7 @@ export class MyApp {
           this.storage.get('introShown').then((result) => {
     
             if(result){
-              this.rootPage = TabsPage;
+              this.rootPage = WelcomePage;
             } else {
               this.rootPage = WelcomePage;
               this.storage.set('introShown', true);
@@ -35,7 +35,6 @@ export class MyApp {
           });
     
         });
-    
       }
     
       presentLoading() {

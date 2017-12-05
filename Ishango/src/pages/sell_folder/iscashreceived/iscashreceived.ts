@@ -2,12 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProductstosellPage } from '../productstosell/productstosell';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-/**
- * Generated class for the IscashpaidPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -28,16 +23,17 @@ export class IscashreceivedPage {
 
   cashreceived() { 
     this.sharedprovider.acceptaddition1();
-
     this.navCtrl.setRoot(ProductstosellPage);
-    
-    
-
-    
   }
+  
+  producesound () {
+    this.sharedprovider.producesound("If you paid for the items click the green button. If you paid on credit, click the red button");
+}
+
+
+
   cashnotreceived() {
     this.sharedprovider.acceptaddition1();
-
     this.navCtrl.setRoot(ProductstosellPage);
  
   }

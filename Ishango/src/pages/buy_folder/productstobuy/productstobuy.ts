@@ -21,7 +21,7 @@ export class ProductstobuyPage {
    
    //array with photos
    public photos = [];
-   public base64Image: string;
+   public base64Image: any;
 
 
   constructor(public navCtrl: NavController, public sharedprovider: SharedProvider, private camera: Camera) {
@@ -48,8 +48,9 @@ isDebtPaid(index){
   // }
   takePhoto() {
     const options: CameraOptions = {
-    quality: 20,
-    correctOrientation: false, 
+    quality: 40,
+    allowEdit: true,
+    correctOrientation: true, 
     destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
     mediaType: this.camera.MediaType.PICTURE
@@ -78,7 +79,9 @@ alert("mammt in index");
 
 takePhoto1(index){
     const options: CameraOptions = {
-  quality: 30,
+  quality: 40,
+  allowEdit: true,
+  correctOrientation: true, 
   destinationType: this.camera.DestinationType.DATA_URL,
   encodingType: this.camera.EncodingType.JPEG,
   mediaType: this.camera.MediaType.PICTURE

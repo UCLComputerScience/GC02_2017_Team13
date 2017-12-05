@@ -16,10 +16,12 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
   templateUrl: 'quantitytobuy.html',
 })
 export class QuantitytobuyPage {
-  public quantity = 0;
+   public quantity = 0;
 
   constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
+
+
 
   increment(amount) {
     this.quantity= this.quantity + amount;
@@ -32,6 +34,8 @@ export class QuantitytobuyPage {
       this.quantity = 0;
     }
   }
+  
+    
 
 
   gotomoneypaidpage() {

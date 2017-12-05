@@ -18,7 +18,6 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 })
 export class PhotobuyPage {
   public photos: any;
-  public base64Image: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private sharedprovider: SharedProvider) {
 
@@ -33,21 +32,29 @@ export class PhotobuyPage {
   takePhoto() {
 
 const options: CameraOptions = {
-  quality: 30,
+  
+  quality: 50,
+  targetWidth: 300,
+  targetHeight: 300,
   destinationType: this.camera.DestinationType.DATA_URL,
   encodingType: this.camera.EncodingType.JPEG,
-  mediaType: this.camera.MediaType.PICTURE
+  mediaType: this.camera.MediaType.PICTURE,
+  saveToPhotoAlbum: true,
+  allowEdit: true,
+  correctOrientation: true,
 }
 
 this.camera.getPicture(options).then((imageData) => {
  // imageData is either a base64 encoded string or a file URI
  // If it's base64:
-  this.base64Image = 'data:image/jpeg;base64,' + imageData;
+ let base64Image = 'data:image/jpeg;base64,' + imageData;
 //adding at index 0
-  this.photos.unshift(this.base64Image);
+  this.photos.unshift(base64Image);
 }, (err) => {
  // Handle error
 });
+
+
 this.sharedprovider.photos.push(this.photos);
 }
 

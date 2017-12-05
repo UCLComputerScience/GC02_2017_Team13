@@ -37,9 +37,12 @@ export class AmountpaidPage {
  }
 
 gotorunningcosts(){
-  this.recordingprovider.acceptaddition(this.moneypaid);
+  if(this.moneypaid!=0)
+  {
+    this.recordingprovider.acceptaddition(this.moneypaid);
+    this.navCtrl.setRoot(RunningcostsPage);
+  }
 
-  this.navCtrl.setRoot(RunningcostsPage);
 }
 
 

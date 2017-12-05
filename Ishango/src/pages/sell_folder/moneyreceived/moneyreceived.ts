@@ -36,6 +36,10 @@ export class MoneyreceivedPage {
     this.navCtrl.push(IscashreceivedPage);}
   }
 
+  producesound () {
+    this.sharedprovider.producesound("Enter how much money you received for this sale");
+}
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad moneyreceivedPage');
   }

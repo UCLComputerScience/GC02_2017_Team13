@@ -44,7 +44,7 @@ export class IscashpaidPage {
 
 
   producesound () {
-       this.sharedprovider.producesound("If you paid for the items click the blue button. If you paid on credit, click the red button");
+       this.sharedprovider.producesound("If you paid for the items click the green button. If you paid on credit, click the red button");
   }
 
 }
