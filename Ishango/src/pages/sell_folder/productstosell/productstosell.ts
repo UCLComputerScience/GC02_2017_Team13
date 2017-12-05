@@ -29,8 +29,20 @@ export class ProductstosellPage {
     }
   }
 
-  producesound () {
-     this.sharedprovider.producesound("Dimitris I love you");
+  producesound (preset) {
+    if(preset==1)
+    {
+      this.sharedprovider.producesound("In this screen appear all the products you have sold");
+    }
+    else if (preset==2)
+    {
+      this.sharedprovider.producesound("this column shows a photo of your sold product");
+    }
+    else if (preset==3)
+    {
+      this.sharedprovider.producesound("this column shows the quantity of your sold product");
+    }
+     
   }
 
 //!!!!!! delete everything not just page variables!

@@ -24,8 +24,16 @@ export class QuantitytosellPage {
 
   }
 
-  producesound() {
-    this.sharedprovider.producesound("You don't have more items");
+  producesound (preset) {
+    if(preset==1)
+    {
+      this.sharedprovider.producesound("Enter how many items you are bying");
+    }
+    else if (preset==2)
+    {
+      this.sharedprovider.producesound("You don't have more items to sell");
+    }
+     
   }
 
   //if quantity to sell if bigger than quantity bought, do not allow sale + Vocal message saying no more items.
@@ -35,7 +43,7 @@ export class QuantitytosellPage {
     } else {
        // push quantity to sell to maximum allowed when the actual quantity in stock is surpassed
        this.quantity = this.sharedprovider.quantity[this.sharedprovider.index];
-       this.producesound();
+       this.producesound(2);
     }
   }
   //

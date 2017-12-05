@@ -48,7 +48,7 @@ import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
   }
 
   playRecord(id){
-    this.MediaPlugin2 = new MediaPlugin(this.recordingNames2[id]+".mp3");
+    this.MediaPlugin2 = new MediaPlugin(this.recordingNames2[id]+".wav");
     this.MediaPlugin2.play();
   }
 

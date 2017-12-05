@@ -1,14 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../../../pages/home/home';
+import { TabsPage } from '../../../pages/tabs/tabs';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 
-/**
- * Generated class for the RegistrationPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -43,7 +38,7 @@ export class CashregisterPage {
 
   gohome() {
     this.sharedprovider.cash = this.cash;
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
   ionViewDidLoad() {

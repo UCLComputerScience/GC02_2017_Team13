@@ -27,7 +27,7 @@ export class RecordPage {
   }
 
   startRecording() {
-    let name: string = "recording" + this.totalrecordings;
+    let name: string = "runningcost" + this.totalrecordings;
     this.MediaPlugin = new MediaPlugin(name + ".wav");
     this.MediaPlugin.startRecord();
   }

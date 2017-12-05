@@ -27,7 +27,7 @@ export class CreaterecordingPage {
 
   startRecording() {
     let name: string = "recording" + this.totalrecords;
-    this.MediaPlugin = new MediaPlugin(name + ".mp3");
+    this.MediaPlugin = new MediaPlugin(name + ".wav");
     this.MediaPlugin.startRecord();
   }
 
@@ -41,12 +41,12 @@ export class CreaterecordingPage {
 
 
   gotofeatures() {
-    //if (this.MediaPlugin != null) {
-      //this.MediaPlugin.stopRecord();
+    if (this.MediaPlugin != null) {
+      this.MediaPlugin.stopRecord();
       let name: string = "recording" + this.totalrecords;
       this.recordingprovider.recordingNames2.push(name);
       this.navCtrl.push(FeaturesPage);
-    //}
+    }
   }
 
   producesound(){
