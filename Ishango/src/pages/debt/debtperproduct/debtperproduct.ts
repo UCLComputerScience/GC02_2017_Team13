@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { AmountrepaidPage } from '../../../pages/debt/amountrepaid/amountrepaid';
 
-/**
- * Generated class for the DebtperproductPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

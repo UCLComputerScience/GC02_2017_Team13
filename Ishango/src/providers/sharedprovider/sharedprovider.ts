@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
-
+import { Storage } from '@ionic/storage';
 
 @Injectable()
 export class SharedProvider {
@@ -29,7 +29,7 @@ export class SharedProvider {
   // sell_folder final stored values 
   public quantitySell = [];
   public moneyReceived = [];
-   public photosSell = [];
+  public photosSell = [];
 
 
   // debt values
@@ -41,20 +41,21 @@ export class SharedProvider {
   public totalProfit = 0;
 
   // cash values
-  public cash=10000;
+  public cash = 10000;
 
   public buysameitem: boolean = false;
 
-  constructor(public http: Http, private device: Device, private tts: TextToSpeech) {
-    console.log('Hello QuantityProvider Provider');
+  constructor(public storage: Storage, public http: Http, private device: Device, private tts: TextToSpeech) {
+
+    this.getValuesFromDB();
 
   }
 
   // used 'unshift' to add pictures and products on top on the page
   acceptaddition() {
-    
+
     this.cash = this.cash - this.moneypaidTemp[this.moneypaidTemp.length - 1];
-    
+
     if (!this.buysameitem) {
       this.quantity.unshift(this.quantityTemp[this.quantityTemp.length - 1]);
       this.photos.unshift(this.photosTemp[this.photosTemp.length - 1]);
@@ -75,6 +76,8 @@ export class SharedProvider {
     for (num = 0; num < this.photosTemp.length; num++) {
       this.photosTemp.splice(num, 1);
     }
+    this.updateDataBase();
+
   }
 
   //procedure for selling products
@@ -91,10 +94,12 @@ export class SharedProvider {
     for (num = 0; num < this.moneypaidTemp.length; num++) {
       this.moneypaidTemp.splice(num, 1);
     }
+    this.updateDataBase();
   }
   //pay back for bought items
   repay() {
     this.debt[this.index] = this.debt[this.index] - this.debtRepay;
+    this.updateDataBase();
   }
 
   //delete a product
@@ -102,6 +107,7 @@ export class SharedProvider {
     this.quantity.splice(this.index, 1);
     this.photos.splice(this.index, 1);
     this.moneypaid.splice(this.index, 1);
+    this.updateDataBase();
   }
 
   //speed voice regulator for iOS devices
@@ -119,6 +125,21 @@ export class SharedProvider {
     else {
       this.debt.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
+    this.updateDataBase();
+  }
+
+  updateDataBase(){
+    this.storage.set('quantityArray', this.quantity);
+    this.storage.set('photosArray', this.photos);
+    this.storage.set('moneypaidArray', this.moneypaid);
+
+    this.storage.set('quantitySell', this.quantitySell);
+    this.storage.set('moneyReceived', this.moneyReceived);
+
+    this.storage.set('debt',this.debt);
+    this.storage.set('cash', this.cash);
+
+
   }
 
 
@@ -133,4 +154,52 @@ export class SharedProvider {
       console.log(e);
     }
   }
+
+  getValuesFromDB(){
+    this.storage.get('quantityArray').then((data) => {
+      if(data!=null)
+      {
+        this.quantity = data;
+      }
+    });
+    this.storage.get('photosArray').then((data) => {
+      if(data!=null)
+      {
+        this.photos = data;
+      }
+    });
+    this.storage.get('moneypaidArray').then((data) => {
+      if(data!=null)
+      {
+        this.moneypaid = data;
+      }
+    });
+    this.storage.get('quantitySell').then((data) => {
+      if(data!=null)
+      {
+        this.quantitySell = data;
+      }
+    });
+    this.storage.get('moneyReceived').then((data) => {
+      if(data!=null)
+      {
+        this.moneyReceived = data;
+      }
+    });
+
+    this.storage.get('debt').then((data) => {
+      if(data!=null)
+      {
+        this.debt = data;
+      }
+    });
+
+
+
+  }
+
+
+
+
+
 }

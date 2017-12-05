@@ -45,7 +45,8 @@ export class CreaterecordingPage {
       this.MediaPlugin.stopRecord();
       let name: string = "recording" + this.totalrecords;
       this.recordingprovider.recordingNames2.push(name);
-      this.navCtrl.push(FeaturesPage);
+      this.recordingprovider.updateDataBase();
+      this.navCtrl.setRoot(FeaturesPage);
     }
   }
 

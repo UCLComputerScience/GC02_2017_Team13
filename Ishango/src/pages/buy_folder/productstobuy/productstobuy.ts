@@ -5,6 +5,7 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 import { QuantitytobuyPage } from '../quantitytobuy/quantitytobuy';
 import { DeleteitemPage } from '../../../pages/buy_folder/deleteitem/deleteitem';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -24,11 +25,13 @@ export class ProductstobuyPage {
    public base64Image: any;
 
 
-  constructor(public navCtrl: NavController, public sharedprovider: SharedProvider, private camera: Camera) {
+  constructor(public navCtrl: NavController, public sharedprovider: SharedProvider, private camera: Camera, public storage:Storage) {
     
-    this.photos = this.sharedprovider.photos;
-    this.quantity = this.sharedprovider.quantity;
-    this.moneypaid = this.sharedprovider.moneypaid;
+     this.photos = this.sharedprovider.photos;
+     this.quantity = this.sharedprovider.quantity;
+     this.moneypaid = this.sharedprovider.moneypaid;
+
+
 
   }
 

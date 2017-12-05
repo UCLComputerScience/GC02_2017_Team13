@@ -130,7 +130,7 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     StatusBar,
     SplashScreen,Camera,TextToSpeech, Device, MediaCapture,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SharedProvider,CustomTrackProvider
+    SharedProvider,CustomTrackProvider,Storage
   ],
 })
 export class AppModule {}

@@ -32,7 +32,7 @@
     "@ionic-native/streaming-media": "^4.4.2",
     "@ionic-native/text-to-speech": "^4.4.2",
     "@ionic/pro": "1.0.11",
-    "@ionic/storage": "2.0.1",
+    "@ionic/storage": "^2.0.1",
     "com.hutchind.cordova.plugins.streamingmedia": "~0.1.4",
     "cordova-android": "6.3.0",
     "cordova-browser": "5.0.1",
@@ -50,6 +50,7 @@
     "cordova-plugin-streaming-media": "^1.0.2",
     "cordova-plugin-tts": "^0.2.3",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sqlite-storage": "^2.1.2",
     "ionic-angular": "3.8.0",
     "ionic-audio": "^3.0.0",
     "ionic-native": "^2.9.0",
@@ -82,7 +83,8 @@
       "cordova-plugin-filechooser": {},
       "cordova-plugin-media": {},
       "cordova-plugin-audiorecorder": {},
-      "cordova-plugin-file": {}
+      "cordova-plugin-file": {},
+      "cordova-sqlite-storage": {}
     },
     "platforms": [
       "android",
