@@ -14,7 +14,6 @@ export class IscashpaidPage {
 
   constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
 
-
   }
 
   ionViewDidLoad() {
