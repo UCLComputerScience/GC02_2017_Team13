@@ -24,8 +24,8 @@ export class IscashpaidPage {
   cashpaid() {
     this.sharedprovider.debt.push(0);
 
+    this.sharedprovider.isCashPaidBoolean = true;
 
-    this.sharedprovider.debtBoolean.push(true);
 
     this.sharedprovider.acceptaddition();
    
@@ -34,8 +34,8 @@ export class IscashpaidPage {
   }
   cashnotpaid() {
     this.sharedprovider.registerdebt();
+    this.sharedprovider.isCashPaidBoolean = false;
 
-    this.sharedprovider.debtBoolean.push(false);
 
     this.sharedprovider.acceptaddition();
     this.navCtrl.setRoot(ProductstobuyPage);
