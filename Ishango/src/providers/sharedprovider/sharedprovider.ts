@@ -20,6 +20,7 @@ export class SharedProvider {
   public photos = [];
   public quantity = [];
   public moneypaid = [];
+  public isCashPaidBoolean;
 
   // sell_folder temporary variables
   public quantityTempSell = [];
@@ -35,13 +36,12 @@ export class SharedProvider {
   // debt values
   public debtRepay;
   public debt = [];
-  public debtBoolean = [];
 
   //total profit
   public totalProfit = 0;
 
   // cash values
-  public cash = 10000;
+  public cash=0;
 
   public buysameitem: boolean = false;
 
@@ -53,8 +53,10 @@ export class SharedProvider {
 
   // used 'unshift' to add pictures and products on top on the page
   acceptaddition() {
-
-    this.cash = this.cash - this.moneypaidTemp[this.moneypaidTemp.length - 1];
+    if (this.isCashPaidBoolean==true)
+    {
+      this.cash = this.cash - this.moneypaidTemp[this.moneypaidTemp.length - 1];
+    }
 
     if (!this.buysameitem) {
       this.quantity.unshift(this.quantityTemp[this.quantityTemp.length - 1]);
@@ -82,6 +84,8 @@ export class SharedProvider {
 
   //procedure for selling products
   acceptaddition1() {
+
+    this.cash = this.cash + this.photosTempSell[this.photosTempSell.length - 1];
     this.quantitySell.unshift(this.quantityTempSell[this.quantityTempSell.length - 1]);
     this.moneyReceived.unshift(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
     this.photosSell.unshift(this.photosTempSell[this.photosTempSell.length - 1]);
@@ -107,6 +111,7 @@ export class SharedProvider {
     this.quantity.splice(this.index, 1);
     this.photos.splice(this.index, 1);
     this.moneypaid.splice(this.index, 1);
+    this.debt.splice(this.index,1);
     this.updateDataBase();
   }
 

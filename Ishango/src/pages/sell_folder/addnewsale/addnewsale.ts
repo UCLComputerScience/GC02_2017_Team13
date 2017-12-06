@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { QuantitytosellPage } from '../quantitytosell/quantitytosell';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 
-/**
- * Generated class for the AddneworexPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

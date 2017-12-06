@@ -6,6 +6,7 @@ import { CustomTrackProvider } from '../../../providers/custom-track/custom-trac
 import {FileChooser} from 'ionic-native';
 import {FilePath} from 'ionic-native';
 import {DeleterunningcostPage} from '../../../pages/runningcosts_folder/deleterunningcost/deleterunningcost';
+import { Storage } from '@ionic/storage';
 
 
 @IonicPage()
@@ -21,7 +22,11 @@ export class RunningcostsPage {
     console.log('ionViewDidLoad MusicPlayerPage');
   }
   
-  constructor(public recordingprovider: CustomTrackProvider,public sharedprovider:SharedProvider, public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
+  constructor(public storage:Storage,public recordingprovider: CustomTrackProvider,public sharedprovider:SharedProvider, public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
+    
+  }
+
+  ionViewDidEnter(){
     this.runningCosts=this.recordingprovider.runningCosts;
   }
 

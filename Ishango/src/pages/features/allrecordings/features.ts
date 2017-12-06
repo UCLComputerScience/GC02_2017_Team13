@@ -16,6 +16,10 @@ export class FeaturesPage {
   public recordingNames=[];
 
   constructor(public navCtrl: NavController,public sharedprovider:SharedProvider,public recordingprovider: CustomTrackProvider, public navParams: NavParams) {
+    
+  }
+
+  ionViewDidEnter(){
     this.recordingNames=this.recordingprovider.recordingNames2;
   }
 

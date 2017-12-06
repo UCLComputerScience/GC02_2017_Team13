@@ -31,20 +31,10 @@ export class ProductstobuyPage {
      this.quantity = this.sharedprovider.quantity;
      this.moneypaid = this.sharedprovider.moneypaid;
 
-
-
   }
 
 
-isDebtPaid(index){
-    // item.added = !item.added;
-        if(this.sharedprovider.debt[index])
-          this.sharedprovider.totalProfit -= this.sharedprovider.debt[index];
-        else
-          this.sharedprovider.totalProfit += this.sharedprovider.debt[index];
-        this.sharedprovider.debtBoolean[index] = !this.sharedprovider.debtBoolean[index];
-            console.log(this.sharedprovider.totalProfit);
-      }
+
 //takes pictures and save them in array photos and provider
   // ngOnInit() {
   //   this.photos = [];

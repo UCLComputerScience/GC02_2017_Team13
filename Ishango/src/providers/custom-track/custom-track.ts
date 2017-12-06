@@ -60,8 +60,8 @@ import { Storage } from '@ionic/storage';
   updateDataBase(){
     this.storage.set('recordingNames2', this.recordingNames2);
     this.storage.set('totalrecords', this.totalrecords);
+    
     this.storage.set('runningCosts', this.runningCosts);
-
     this.storage.set('recordingNames', this.recordingNames);
     this.storage.set('totalrecordings', this.totalrecordings);
 
@@ -88,7 +88,6 @@ import { Storage } from '@ionic/storage';
         this.runningCosts = data;
       }
     });
-
     this.storage.get('recordingNames').then((data) => {
       if(data!=null)
       {
@@ -102,6 +101,7 @@ import { Storage } from '@ionic/storage';
         this.totalrecordings = data;
       }
     });
+
 
 
 
