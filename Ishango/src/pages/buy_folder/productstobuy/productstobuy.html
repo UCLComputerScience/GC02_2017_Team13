@@ -34,7 +34,7 @@
     <ion-scroll scrollX="true" scrollY="true" style="height: 75%;"> 
       <ion-list>
         <div *ngFor="let photo of photos; let id = index">
-  
+    <ion-item-sliding>
     <ion-item class="pictureAndQuantity">
       <ion-avatar class="avatarStyle" item-start (click)="takePhoto1(id)">
         <img [src]="photo"/>
@@ -55,9 +55,8 @@
       <h2 (click)="buymoreofthesame(id)" style="float:right; font-size:24px; margin-right: 20px;">{{quantity[id]}}</h2>
     </ion-item>
 
-      <ion-item-sliding>
-    <ion-item-options side="right" >
-      <button ion-button color="primary" (click)="gotodeleteitem(id)">
+      <ion-item-options side="right" >
+      <button ion-button color="primary" (click)="delete(id)">
         <ion-icon name="trash"></ion-icon>
         Delete
       </button>
@@ -65,8 +64,7 @@
   </ion-item-sliding>
 </div>
   </ion-list>
-
-  </ion-scroll>
+</ion-scroll>
 
 <div class="divContainer"> </div>
 

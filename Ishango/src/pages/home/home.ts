@@ -14,6 +14,8 @@ export class HomePage {
   public cash;
   public totaldebt=0;
 
+  public emojy;
+
   constructor(public navCtrl: NavController, private sharedprovider: SharedProvider) {
     this.cash=this.sharedprovider.cash;
     // this.tabBarElement = document.querySelector('.tabbar');
