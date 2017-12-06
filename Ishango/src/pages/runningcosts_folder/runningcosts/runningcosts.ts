@@ -27,7 +27,13 @@ export class RunningcostsPage {
   }
 
   ionViewDidEnter(){
-    this.runningCosts=this.recordingprovider.runningCosts;
+
+    this.storage.get('runningCosts').then((data) => {
+      if(data!=null)
+      {
+        this.runningCosts = data;
+      }
+    });
   }
 
   playrecording(id)
