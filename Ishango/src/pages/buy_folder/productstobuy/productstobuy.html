@@ -31,7 +31,7 @@
       </ion-row>
     </ion-grid>
 
-    <ion-scroll scrollX="true" scrollY="true" style="height: 85%;"> 
+    <ion-scroll scrollX="true" scrollY="true" style="height: 75%;"> 
       <ion-list>
         <div *ngFor="let photo of photos; let id = index">
   
@@ -68,13 +68,7 @@
 
   </ion-scroll>
 
-
-
-    
-
-<ion-fab class="fullButtonBottom">
-    <button ion-button full class="fullButtonBottom"></button>
-  </ion-fab>
+<div class="divContainer"> </div>
 
   <ion-fab bottom center class="buttonPosition">
     <button class="borderButton" ion-fab bottom (click)="takePhoto()">

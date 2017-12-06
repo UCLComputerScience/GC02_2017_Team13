@@ -26,7 +26,7 @@ export class MoneypaidPage {
   }
 
   reduce(amount) {
-    if (this.moneypaid-amount>=0){
+    if (this.moneypaid-amount >= 0){
     this.moneypaid = this.moneypaid - amount;}
     else{
       this.moneypaid = 0;
@@ -34,9 +34,8 @@ export class MoneypaidPage {
   }
 
   gotoiscashpaid() {
-    if (this.moneypaid>0){
     this.sharedprovider.moneypaidTemp.push(this.moneypaid);
-    this.navCtrl.push(IscashpaidPage);}
+    this.navCtrl.push(IscashpaidPage)
   }
 
    producesound () {

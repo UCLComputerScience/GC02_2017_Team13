@@ -33,7 +33,7 @@ export class ProductstosellPage {
   producesound (preset) {
     if(preset==1)
     {
-      this.sharedprovider.producesound("In this screen appear all the products you have sold");
+      this.sharedprovider.producesound("This screen shows your sales");
     }
     else if (preset==2)
     {

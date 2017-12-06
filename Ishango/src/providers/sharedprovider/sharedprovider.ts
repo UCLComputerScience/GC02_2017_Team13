@@ -84,12 +84,12 @@ export class SharedProvider {
 
   //procedure for selling products
   acceptaddition1() {
-
-    this.cash = this.cash + this.photosTempSell[this.photosTempSell.length - 1];
+    // this.cash = this.cash + this.moneyReceived[this.moneyReceived.length - 1];
     this.quantitySell.unshift(this.quantityTempSell[this.quantityTempSell.length - 1]);
     this.moneyReceived.unshift(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
     this.photosSell.unshift(this.photosTempSell[this.photosTempSell.length - 1]);
-    this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[this.quantitySell.length - 1];
+    this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[0];
+    this.cash += this.moneyReceived[0];
 
     var num: number = 0;
     for (num = 0; num < this.quantityTempSell.length; num++) {
