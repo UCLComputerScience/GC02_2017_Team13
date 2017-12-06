@@ -39,19 +39,8 @@
   <ion-item-sliding>
     <ion-item class="pictureAndQuantity">
       <ion-avatar class="avatarStyle" item-start (click)="takePhoto1(id)">
-        <img class="skata" [src]="photo"/>
+        <img [src]="photo"/>
       </ion-avatar>
-
-<!-- [color]="(quantity == 0) ? 'danger':'secondary'" -->
-<!-- <ion-icon name="checkmark" block   class="tickCross" (click)="toggleReorder()"  *ngIf="!reorderIsEnabled">
-</ion-icon>
-<ion-icon name="cross" block   class="tickCross" (click)="toggleReorder()"  *ngIf="!reorderIsEnabled">
-</ion-icon> -->
-<button ion-button (click)="isDebtPaid(id)">
-   <ion-icon 
-       [name]="this.sharedprovider.debtBoolean[id] ? 'checkmark' :'close'">
-   </ion-icon>
-</button>
 
  
 
