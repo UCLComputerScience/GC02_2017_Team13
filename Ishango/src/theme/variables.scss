@@ -96,6 +96,9 @@ $list-text-color:             #424953 !default;
 $list-background-color:      $background-color !default;
 $list-border-color:         #73b1f4 !default;
 
+//default size of all fabs
+$fab-size:                  74px;
+
 
 
 
@@ -114,7 +117,7 @@ src: url("../assets/fonts/Lato-Black.ttf");
 
 //WRAPPERS
 .wrapperHeader {
-height:40%;
+height:35%;
 }
 
 
@@ -122,37 +125,25 @@ height:40%;
 height:100%;
 }
 
+//distance between numbers for quantities 1-2-5-20-50...
+.row1 {
+height:18%;
+}
 
+// disance between number for money .. 10.000 ..
+.row2 {
+  height:14%;
+}
+
+//container of quantity and money page numbers
 .wrapper {
-margin-top: 0%;  
-height: 45%;
   width:100%;
   text-align: center;
-  position: relative;
+  height:50%;
+  margin-top:4%;
 }
 
-.androidWrapper {
-  position: absolute;
-  width:100%;
-  bottom: 0;
-}
-// END WRAPPERS
 
-
-.wrapper {
-margin-top: 0%;  
-height: 45%;
-  width:100%;
-  text-align: center;
-  position: relative;
-}
-
-.androidWrapper {
-  position: absolute;
-  width:100%;
-  bottom: 0;
-}
-// END WRAPPERS
 
 .navBarGlobal {
   // background-color: #B0E0E6;
@@ -202,6 +193,7 @@ height: 45%;
 
 .buttonPosition {
     z-index: 300;
+    margin-bottom:4%;
   }
 
   .borderButton {
@@ -211,18 +203,16 @@ height: 45%;
     border-width: 3px;
   }
 
-  .fullButtonBottom{
+  .divContainer{
     position: absolute;
     right:    0;
     bottom:   0;
     width:    100%;
     margin: 0 auto;
-    height: 40px;
-    color: rgb(255, 255, 255);
+    height: 10%;
     z-index: 10;
+    background-color: color($colors, primary);
   }
-
-
 
 ////////
 

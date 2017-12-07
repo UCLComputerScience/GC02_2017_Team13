@@ -1,0 +1,247 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$headings-font-weight: 300;
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #73b1f4,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  favorite:   #69BB7B,
+  twitter:    #1da1f4,
+  google:     #dc4a38,
+  vimeo:      #23b6ea,
+  facebook:   #3b5998,
+  transp:     transparent
+  );
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+// Use the primary color as the background for the toolbar-md-background
+
+// Change the color of the segment button text
+
+//color of all text on the page
+$text-color:                 #424953 !default;
+$color-header:               white;
+$link-color:                 color($colors, primary) !default;
+//background of every screen
+$background-color:           #FFF0F5  !default;
+
+$font-size-base:             1.4rem !default; // 1.4rem == 14px
+
+//padding and margins of page
+$content-padding:            0px !default;
+$content-margin:             16px !default;
+
+//toolbar background color
+$toolbar-background:         #f4f6f9 !default;
+
+
+$tabs-background:            #f4f6f9 !default;
+// $tabs-background:            url('../../assets/imgs/tabs.jpg') !default;
+
+//color activated tabs
+$tabs-tab-color-active:      #73b1f4 !default;
+$tabs-tab-color-inactive:      #3c3c3c !default;
+
+
+//single elements in tabs
+$tabs-md-background:                 $tabs-background !default;
+$tabs-md-tab-color-inactive:         #3c3c3c !default;
+$tabs-md-tab-color-active:           $tabs-tab-color-active !default;
+
+$list-text-color:             #424953 !default;
+$list-background-color:      $background-color !default;
+$list-border-color:         #73b1f4 !default;
+
+
+
+
+@font-face {
+font-family: Regular;
+src: url("../assets/fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+font-family: Bold;
+src: url("../assets/fonts/Lato-Black.ttf");
+}
+
+
+///// common style for buying, selling, and running costs
+
+//WRAPPERS
+.wrapperHeader {
+height:40%;
+}
+
+
+.pictureQuantityMoney {
+height:100%;
+}
+
+
+.wrapper {
+margin-top: 0%;  
+height: 45%;
+  width:100%;
+  text-align: center;
+  position: relative;
+}
+
+.androidWrapper {
+  position: absolute;
+  width:100%;
+  bottom: 0;
+}
+// END WRAPPERS
+
+
+.wrapper {
+margin-top: 0%;  
+height: 45%;
+  width:100%;
+  text-align: center;
+  position: relative;
+}
+
+.androidWrapper {
+  position: absolute;
+  width:100%;
+  bottom: 0;
+}
+// END WRAPPERS
+
+.navBarGlobal {
+  // background-color: #B0E0E6;
+  color: $color-header; //color-text
+  padding-top: 5px;
+  font-family: 'Bold' !important;
+  font-size: 18px;
+  z-index:150;
+  background-color: #FFF0F5;
+}
+
+.navBarLeft {
+  text-align:left;
+}
+
+.navBarRight {
+  text-align:center;
+}
+
+.pictureAndQuantity {
+  font-family: 'Bold' !important;
+  border-style: none;
+}
+
+
+
+.tickCross{
+  float:right;
+  font-size:26px;
+}
+
+.avatarStyle img  {
+    display:inline-block;
+    width: 100px !important;
+    height : 100px !important;
+    object-fit: cover;
+}
+
+// .buttonContainer {
+//   width: 100%;
+//   height: 18%;
+//   background-color:green;
+//   bottom:0;
+//   z-index: 50;
+//   background-color: color($colors, primary);
+// }
+
+.buttonPosition {
+    z-index: 300;
+  }
+
+  .borderButton {
+    border-style: solid;
+    border-color: #FFF0F5;
+    border-radius: 3em;
+    border-width: 3px;
+  }
+
+  .fullButtonBottom{
+    position: absolute;
+    right:    0;
+    bottom:   0;
+    width:    100%;
+    margin: 0 auto;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    z-index: 10;
+  }
+
+
+
+////////
+
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+// Roboto font is used by default for Material Design. Noto sans
+// is used by default for Windows.
+
+@import "roboto";
+@import "noto-sans";

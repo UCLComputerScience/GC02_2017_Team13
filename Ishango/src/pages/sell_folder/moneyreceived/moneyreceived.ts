@@ -26,14 +26,18 @@ export class MoneyreceivedPage {
   }
 
   reduce(amount) {
-    if (this.moneyreceived-amount>=0){
+    if (this.moneyreceived - amount>=0){
     this.moneyreceived = this.moneyreceived - amount;}
+    else {
+      this.moneyreceived = 0;
+    }
   }
 
   gotoiscashreceived() {
-    if (this.moneyreceived>0){
+    
     this.sharedprovider.moneyreceivedTemp.push(this.moneyreceived);
-    this.navCtrl.push(IscashreceivedPage);}
+    this.navCtrl.push(IscashreceivedPage);
+
   }
 
   producesound () {

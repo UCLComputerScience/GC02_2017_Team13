@@ -27,7 +27,7 @@ export class QuantitytosellPage {
   producesound (preset) {
     if(preset==1)
     {
-      this.sharedprovider.producesound("Enter how many items you are bying");
+      this.sharedprovider.producesound("Enter how many items you are selling");
     }
     else if (preset==2)
     {
@@ -51,6 +51,8 @@ export class QuantitytosellPage {
   reduce(amount) {
     if (this.quantity-amount >= 0){
     this.quantity = this.quantity - amount;
+    } else {
+      this.quantity = 0;
     }
   }
 

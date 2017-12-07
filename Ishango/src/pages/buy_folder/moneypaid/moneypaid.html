@@ -27,9 +27,9 @@
 </div>
 
         <div class="wrapper">
-            <div class="androidWrapper">
+           
 
-        <ion-row class="row1">
+        <ion-row class="row2">
             <ion-col class="col" col-1>
             </ion-col>
             <ion-col class="col" col-3>
@@ -45,7 +45,7 @@
             </ion-col>
         </ion-row>
 
-        <ion-row class="row1">
+        <ion-row class="row2">
             <ion-col class="col" col-1>
             </ion-col>
             <ion-col class="col" col-3>
@@ -61,7 +61,7 @@
             </ion-col>
         </ion-row>
 
-        <ion-row class="row1">
+        <ion-row class="row2">
             <ion-col class="col" col-1>
             </ion-col>
             <ion-col col-3>
@@ -77,7 +77,7 @@
             </ion-col>
         </ion-row>
 
-        <ion-row class="row1">
+        <ion-row class="row2">
              <ion-col class="col" col-1>
             </ion-col>
             <ion-col col-3>
@@ -94,27 +94,41 @@
         </ion-row>
 
 
-        <ion-row class="row1">
+        <ion-row class="row2">
              <ion-col class="col" col-1>
             </ion-col>
             <ion-col col-3>
-                <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(100)"></ion-icon>
+                <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(1000)"></ion-icon>
             </ion-col>
             <ion-col col-4>
-                <font size="+2">100</font>
+                <font size="+2">1000</font>
             </ion-col>
             <ion-col col-3>
-                <ion-icon tappable class="iconm" name="add-circle" (click)="increment(100)"></ion-icon>
+                <ion-icon tappable class="iconm" name="add-circle" (click)="increment(1000)"></ion-icon>
+            </ion-col>
+            <ion-col class="col" col-1>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="row2">
+             <ion-col class="col" col-1>
+            </ion-col>
+            <ion-col col-3>
+                <ion-icon tappable class="iconm" name="remove-circle" (click)="reduce(10000)"></ion-icon>
+            </ion-col>
+            <ion-col col-4>
+                <font size="+2">10000</font>
+            </ion-col>
+            <ion-col col-3>
+                <ion-icon tappable class="iconm" name="add-circle" (click)="increment(10000)"></ion-icon>
             </ion-col>
             <ion-col class="col" col-1>
             </ion-col>
         </ion-row>
          </div>
-         </div>
 
-    <ion-fab class="fullButtonBottom">
-    <button [color]="(moneypaid == 0) ? 'danger':'secondary'" ion-button full class="fullButtonBottom"></button>
-  </ion-fab>
+     <div class="divContainer"> </div>
+
 
   <ion-fab bottom center class="buttonPosition">
     <button [color]="(moneypaid == 0) ? 'danger':'secondary'" class="borderButton" ion-fab bottom (click)="gotoiscashpaid()">

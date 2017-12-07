@@ -21,7 +21,7 @@ export class AmountpaidPage {
   }
 
   reduce(amount) {
-    if (this.moneypaid-amount>=0){
+     if (this.moneypaid-amount >= 0){
     this.moneypaid = this.moneypaid - amount;}
     else{
       this.moneypaid = 0;
@@ -37,11 +37,8 @@ export class AmountpaidPage {
  }
 
 gotorunningcosts(){
-  if(this.moneypaid!=0)
-  {
     this.recordingprovider.acceptaddition(this.moneypaid);
     this.navCtrl.setRoot(RunningcostsPage);
-  }
 
 }
 

@@ -23,7 +23,7 @@ export class IscashpaidPage {
   cashpaid() {
     this.sharedprovider.debt.push(0);
 
-    this.sharedprovider.isCashPaidBoolean=true;
+    this.sharedprovider.isCashPaidBoolean = true;
 
 
     this.sharedprovider.acceptaddition();
@@ -33,7 +33,7 @@ export class IscashpaidPage {
   }
   cashnotpaid() {
     this.sharedprovider.registerdebt();
-    this.sharedprovider.isCashPaidBoolean=false;
+    this.sharedprovider.isCashPaidBoolean = false;
 
 
     this.sharedprovider.acceptaddition();

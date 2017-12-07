@@ -65,8 +65,7 @@ export class ProductstobuyPage {
 //!!!!!! delete everything not just page variables!
 delete(index){
 alert("mammt in index");
-  this.photos.splice(index, 1);
-}
+ this.navCtrl.push(DeleteitemPage);}
 
 ///////////////
 
