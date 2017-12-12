@@ -28,6 +28,16 @@ export class ProductstosellPage {
     if(this.photos.length > 0){
       this.navCtrl.push(AddnewsalePage);
     }
+    else
+    {
+      this.sharedprovider.producesound("You don't have items to sell")
+    }
+  }
+
+  deleteSell(id)
+  {
+    this.sharedprovider.index=id;
+    this.navCtrl.push(DeletesellPage);
   }
 
   producesound (preset) {

@@ -115,6 +115,14 @@ export class SharedProvider {
     this.updateDataBase();
   }
 
+    //delete a product
+    deleteSell() {
+      this.photosSell.splice(this.index,1);
+      this.quantitySell.splice(this.index,1);
+      this.moneyReceived.splice(this.index,1);
+      this.updateDataBase();
+    }
+
   //speed voice regulator for iOS devices
   speedvoice() {
     if (this.device.platform.toString() == "iOS")
@@ -140,6 +148,7 @@ export class SharedProvider {
 
     this.storage.set('quantitySell', this.quantitySell);
     this.storage.set('moneyReceived', this.moneyReceived);
+    this.storage.set('photosSell', this.photosSell);
 
     this.storage.set('debt',this.debt);
     this.storage.set('cash', this.cash);
@@ -189,6 +198,12 @@ export class SharedProvider {
       if(data!=null)
       {
         this.moneyReceived = data;
+      }
+    });
+    this.storage.get('photosSell').then((data) => {
+      if(data!=null)
+      {
+        this.photosSell = data;
       }
     });
 

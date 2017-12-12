@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProductstosellPage } from '../../../pages/sell_folder/productstosell/productstosell';
+import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 
-/**
- * Generated class for the DeletesellPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +11,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DeletesellPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public sharedprovider:SharedProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DeletesellPage');
+  yes(index) {
+    this.sharedprovider.deleteSell();
+    this.navCtrl.setRoot(ProductstosellPage);
   }
+  no() {
+    this.navCtrl.setRoot(ProductstosellPage);
+  }
+  producesound () {
+    this.sharedprovider.producesound("If you really want to delete this sale click the blue button. If you want to cancel click the red button");
+}
 
 }

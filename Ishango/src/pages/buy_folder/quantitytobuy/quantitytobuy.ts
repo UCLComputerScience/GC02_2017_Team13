@@ -12,8 +12,13 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 export class QuantitytobuyPage {
    public quantity = 0;
 
+   ionViewCanEnter(){
+     
+   }
+
   constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
+
 
 
 

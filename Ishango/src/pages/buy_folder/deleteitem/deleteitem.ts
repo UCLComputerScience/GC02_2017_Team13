@@ -18,10 +18,6 @@ export class DeleteitemPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DeleteitemPage');
-  }
-
   yes(index) {
     this.sharedprovider.deleteitem();
     this.navCtrl.setRoot(ProductstobuyPage);

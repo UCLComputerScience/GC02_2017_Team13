@@ -62,12 +62,6 @@ export class ProductstobuyPage {
 }
 /////////////////
 
-//!!!!!! delete everything not just page variables!
-delete(index){
-alert("mammt in index");
- this.navCtrl.push(DeleteitemPage);}
-
-///////////////
 
 takePhoto1(index){
     const options: CameraOptions = {
