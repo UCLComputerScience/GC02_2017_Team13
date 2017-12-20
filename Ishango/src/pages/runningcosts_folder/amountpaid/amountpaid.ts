@@ -11,7 +11,7 @@ import { CustomTrackProvider } from '../../../providers/custom-track/custom-trac
   templateUrl: 'amountpaid.html',
 })
 export class AmountpaidPage {
-  moneypaid=0;
+  moneypaid = 0;
 
   constructor(public navCtrl: NavController,public recordingprovider:CustomTrackProvider,public sharedprovider:SharedProvider, public navParams: NavParams) {
   }

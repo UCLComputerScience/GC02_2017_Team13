@@ -7,17 +7,23 @@ import { WelcomePage } from '../../pages/initialRegistration/welcome/welcome';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
+
 })
+
 export class HomePage {
   // tabBarElement: any;
   // splash = true;
   public cash;
-  public totaldebt=0;
+  public totaldebt = 0;
+  positive;
+  positiveStock;
+
+
 
   public emojy;
 
   constructor(public navCtrl: NavController, private sharedprovider: SharedProvider) {
-    this.cash=this.sharedprovider.cash;
+    this.cash = this.sharedprovider.cash;
     // this.tabBarElement = document.querySelector('.tabbar');
   }
 
@@ -38,7 +44,25 @@ export class HomePage {
     for (num = 0; num < this.sharedprovider.debt.length; num++) {
       temp=temp+this.sharedprovider.debt[num];
     }
-    this.totaldebt=temp;
+    this.totaldebt = temp;
+
+    if(this.cash - this.totaldebt >= 0){
+      this.positive = true;
+    } else {
+      this.positive = false;
+    }
+
+    for(var i = 0; i < this.sharedprovider.quantity.length; i++){
+      if(this.sharedprovider.quantity[i] == 0){
+        this.positiveStock = false;
+        break;
+      } 
+      else {
+        this.positiveStock = true;
+      }
+    }
+
+
   }
 
   

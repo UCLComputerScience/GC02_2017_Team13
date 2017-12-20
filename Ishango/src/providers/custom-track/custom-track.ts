@@ -30,6 +30,8 @@ import { Storage } from '@ionic/storage';
  playRecording(id) {
     this.MediaPlugin = new MediaPlugin(this.recordingNames[id]+".wav");
     this.MediaPlugin.play();
+    this.MediaPlugin.getDuration;
+    console.log(this.MediaPlugin.getCurrentPosition);
 }
 
   delete(){
@@ -39,8 +41,8 @@ import { Storage } from '@ionic/storage';
   }
 
   acceptaddition(moneypaid){
-    this.runningCosts.push(moneypaid);
-    this.sharedprovider.cash=this.sharedprovider.cash-moneypaid;
+    this.runningCosts.unshift(moneypaid);
+    this.sharedprovider.cash = this.sharedprovider.cash - moneypaid;
     this.updateDataBase();
   }
 

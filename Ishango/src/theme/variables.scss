@@ -85,12 +85,15 @@ $tabs-background:            #f4f6f9 !default;
 //color activated tabs
 $tabs-tab-color-active:      #73b1f4 !default;
 $tabs-tab-color-inactive:      #3c3c3c !default;
+$tabs-md-tab-min-height: 7rem;
+$tabs-ios-tab-min-height: 7rem;
 
 
 //single elements in tabs
 $tabs-md-background:                 $tabs-background !default;
 $tabs-md-tab-color-inactive:         #3c3c3c !default;
 $tabs-md-tab-color-active:           $tabs-tab-color-active !default;
+$tabs-md-tab-icon-size: 40px;
 
 $list-text-color:             #424953 !default;
 $list-background-color:      $background-color !default;
@@ -163,6 +166,18 @@ height:18%;
   text-align:center;
 }
 
+
+.quantityTag {
+  float:right; 
+  margin-right: 20px; 
+}
+
+.moneyTag {
+  float:left; 
+  transform: translate(0%, -15%);
+}
+
+
 .pictureAndQuantity {
   font-family: 'Bold' !important;
   border-style: none;
@@ -209,7 +224,7 @@ height:18%;
     bottom:   0;
     width:    100%;
     margin: 0 auto;
-    height: 10%;
+    height: 12%;
     z-index: 10;
     background-color: color($colors, primary);
   }

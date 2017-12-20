@@ -41,7 +41,7 @@ export class SharedProvider {
   public totalProfit = 0;
 
   // cash values
-  public cash=0;
+  public cash = 0;
 
   public buysameitem: boolean = false;
 
@@ -213,12 +213,13 @@ export class SharedProvider {
         this.debt = data;
       }
     });
-
-
-
+    this.storage.get('cash').then((data) => {
+      if(data!=null)
+      {
+        this.cash = data;
+      }
+    });
   }
-
-
 
 
 

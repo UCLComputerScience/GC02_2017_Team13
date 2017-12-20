@@ -22,7 +22,7 @@ export class MoneyreceivedPage {
   }
 
   increment(amount) {
-    this.moneyreceived= this.moneyreceived + amount;
+    this.moneyreceived = this.moneyreceived + amount;
   }
 
   reduce(amount) {

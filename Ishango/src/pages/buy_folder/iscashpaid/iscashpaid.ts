@@ -21,16 +21,25 @@ export class IscashpaidPage {
   }
 
   cashpaid() {
-    this.sharedprovider.debt.push(0);
-
-    this.sharedprovider.isCashPaidBoolean = true;
-
-
-    this.sharedprovider.acceptaddition();
-   
-    this.navCtrl.setRoot(ProductstobuyPage);
+     
+     if(this.sharedprovider.moneypaidTemp[this.sharedprovider.moneypaidTemp.length-1] <= this.sharedprovider.cash){
+      this.sharedprovider.debt.push(0);
+      this.sharedprovider.isCashPaidBoolean = true;
+      this.sharedprovider.acceptaddition();
+      this.navCtrl.setRoot(ProductstobuyPage);
+    } else {
+      this.producesoundnotenoughcash();
+    }
 
   }
+
+  producesoundnotenoughcash () {
+    console.log(this.sharedprovider.cash);
+       this.sharedprovider.producesound("you do not have enough cash to pay entirely with money!");
+  }
+
+
+
   cashnotpaid() {
     this.sharedprovider.registerdebt();
     this.sharedprovider.isCashPaidBoolean = false;

@@ -20,6 +20,9 @@ export class RecordPage {
   public MediaPlugin: MediaPlugin;
 
   public totalrecordings = 0;
+  clicked;
+  playing;
+  stop;
 
   constructor(public navCtrl: NavController,public sharedprovider:SharedProvider, public recordingprovider: CustomTrackProvider, public alertCtrl: AlertController) {
     this.totalrecordings = this.recordingprovider.totalrecordings;
@@ -30,23 +33,32 @@ export class RecordPage {
     let name: string = "runningcost" + this.totalrecordings;
     this.MediaPlugin = new MediaPlugin(name + ".wav");
     this.MediaPlugin.startRecord();
-  }
+    this.clicked = true;
+    this.playing = false;
+    this.stop = false;
+      }
 
   stopRecording() {
     this.MediaPlugin.stopRecord();
+    this.clicked = false;
+    this.playing = false;
+    this.stop = true;
   }
 
   playRecording() {
     this.MediaPlugin.stopRecord();
     this.MediaPlugin.play();
-  }
+    this.playing = true;
+    this.clicked = false;
+    this.stop = false;
+     }
 
 
   gotomoneypaid() {
     if (this.MediaPlugin != null) {
       this.MediaPlugin.stopRecord();
       let name: string = "runningcost" + this.totalrecordings;
-      this.recordingprovider.recordingNames.push(name);
+      this.recordingprovider.recordingNames.unshift(name);
       this.navCtrl.push(AmountpaidPage);
     }
   }
@@ -57,6 +69,9 @@ export class RecordPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AudioRecorderPage');
+    this.clicked = false;
+    this.playing = false;
+    this.stop = false;
   }
 
 
