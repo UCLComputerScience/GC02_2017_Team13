@@ -51,6 +51,7 @@ this.camera.getPicture(options).then((imageData) => {
  // Handle error
 });
 this.sharedprovider.photoProfile = this.photoProfile;
+this.sharedprovider.updateDataBase();
 this.navCtrl.push(CashregisterPage);
 }
 

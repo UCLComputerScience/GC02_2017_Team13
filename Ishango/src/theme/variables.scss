@@ -232,7 +232,9 @@ height:18%;
 .image {
 
      margin: 0;
-    position: fixed;
+    position: absolute;
+    width:130px;
+    height:130px;
     top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -240,8 +242,8 @@ height:18%;
 }
 
 .circle-pic{
-    width:100px;
-    height:100px;
+    width:130px;
+    height:130px;
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }

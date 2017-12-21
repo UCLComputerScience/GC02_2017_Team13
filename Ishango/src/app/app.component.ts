@@ -73,7 +73,10 @@ this.camera.getPicture(options).then((imageData) => {
 }, (err) => {
  // Handle error
 });
+
 this.sharedprovider.photoProfile = this.photoProfile;
+this.sharedprovider.updateDataBase();
+
 }
 
 

@@ -172,7 +172,7 @@ export class SharedProvider {
 
     this.storage.set('debt',this.debt);
     this.storage.set('cash', this.cash);
-
+    this.storage.set('photoProfile', this.photoProfile);
 
   }
 
@@ -237,6 +237,12 @@ export class SharedProvider {
       if(data!=null)
       {
         this.cash = data;
+      }
+    });
+    this.storage.get('photoProfile').then((data) => {
+      if(data!=null)
+      {
+        this.photoProfile = data;
       }
     });
   }
