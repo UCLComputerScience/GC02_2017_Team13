@@ -117,10 +117,29 @@ export class SharedProvider {
 
     //delete a product
     deleteSell() {
-      this.photosSell.splice(this.index,1);
-      this.quantitySell.splice(this.index,1);
-      this.moneyReceived.splice(this.index,1);
-      this.updateDataBase();
+      
+        var match;
+        //restoring the quantity in stock after deleting the sale
+        for(var i = 0; i < this.photos.length; i++){
+           for(var a = 0; a < this.photosSell.length; a++){
+             if(this.photos[i] === this.photosSell[a] && this.quantitySell[a] == this.quantitySell[this.index]){
+                this.quantity[i] += this.quantitySell[this.index];
+                match = true;
+             }
+             if(match)
+               break;
+           }
+           if(match)
+              break;
+        }
+
+  // diminishing the cash after deleting the sale
+        this.cash -= this.moneyReceived[this.index];
+
+        this.quantitySell.splice(this.index,1);
+        this.moneyReceived.splice(this.index,1);
+        this.photosSell.splice(this.index,1);
+        this.updateDataBase();
     }
 
   //speed voice regulator for iOS devices

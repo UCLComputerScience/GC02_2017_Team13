@@ -87,7 +87,7 @@ this.sharedprovider.photos[index] = this.photos[index];
 
 
   gotodeleteitem(id){
-    this.sharedprovider.index=id;
+    this.sharedprovider.index = id;
     this.navCtrl.push(DeleteitemPage);
 
   }

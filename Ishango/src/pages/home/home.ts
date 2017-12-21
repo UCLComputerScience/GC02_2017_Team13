@@ -52,8 +52,9 @@ export class HomePage {
       this.positive = false;
     }
 
-    for(var i = 0; i < this.sharedprovider.quantity.length; i++){
-      if(this.sharedprovider.quantity[i] == 0){
+    for(var i = 0; i <= this.sharedprovider.quantity.length; i++){
+      
+      if(this.sharedprovider.quantity[i] == 0 || this.sharedprovider.quantity.length == 0){
         this.positiveStock = false;
         break;
       } 
