@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CashregisterPage } from '../../../pages/initialRegistration/cashregister/cashregister';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import { WelcomepicturePage } from '../../../pages/initialRegistration/welcomepicture/welcomepicture';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Storage } from '@ionic/storage';
 
@@ -52,7 +51,7 @@ this.camera.getPicture(options).then((imageData) => {
  // Handle error
 });
 this.sharedprovider.photoProfile = this.photoProfile;
-this.navCtrl.push(WelcomepicturePage);
+this.navCtrl.push(CashregisterPage);
 }
 
 

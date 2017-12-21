@@ -115,7 +115,10 @@
         </ion-row>
          </div>
 
-           <div class="divContainer"> </div>
+           <div *ngIf="(quantity == 0); then red else green"> </div>
+      
+         <ng-template #red>  <div class="divContainer" style="background-color: #f53d3d;"> </div>   </ng-template>
+         <ng-template #green>  <div class="divContainer" style="background-color: #32db64;"> </div>  </ng-template>
 
 
   <ion-fab bottom center class="buttonPosition">

@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
 import { DebtperproductPage } from '../../pages/debt/debtperproduct/debtperproduct';
 import { WelcomePage } from '../../pages/initialRegistration/welcome/welcome';
+import { MenuController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -22,7 +23,7 @@ export class HomePage {
 
   public emojy;
 
-  constructor(public navCtrl: NavController, private sharedprovider: SharedProvider) {
+  constructor(public navCtrl: NavController, private sharedprovider: SharedProvider, public menuCtrl: MenuController) {
     this.cash = this.sharedprovider.cash;
     // this.tabBarElement = document.querySelector('.tabbar');
   }

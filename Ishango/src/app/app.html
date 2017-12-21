@@ -1,1 +1,31 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+  
+<ion-menu [content]="mycontent">
+  <ion-content padding>
+   
+<img class="sliderWelcome" src="assets/imgs/profilePic.png"/>
+<img class="positionCenter" src="assets/imgs/ishango.png"/>
+
+
+      <div class="image" item-start (click)="takephotoprofile()">
+        <img class="circle-pic" [src]="photoProfile"/>
+      </div>
+
+<div class="divider"></div>
+
+<div class="about">
+<p>
+
+Ishango is a simple business administration mobile app for Android and IOS.  Its designers were Dimitris Selalmazidis, Lucio D'Alessando and Philip Spencer graduate students at University College London in 2017 in conjunction with the charity, Peace Child International.
+
+</p>
+
+
+  </div>
+
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
+
+

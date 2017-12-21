@@ -183,8 +183,6 @@ height:18%;
   border-style: none;
 }
 
-
-
 .tickCross{
   float:right;
   font-size:26px;
@@ -227,6 +225,65 @@ height:18%;
     height: 12%;
     z-index: 10;
     background-color: color($colors, primary);
+  }
+
+
+
+.image {
+
+     margin: 0;
+    position: fixed;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+
+.circle-pic{
+    width:100px;
+    height:100px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.divider {
+  width: 80%;
+  margin: auto; 
+  margin-top:70%;
+border-bottom: 1.5px solid white;  
+}
+
+  .sliderWelcome {
+       margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -20;
+    height: 100%;
+    display: block;
+    width:auto;
+
+  }
+
+
+  .about {
+  width:80%;
+  margin: auto;
+text-align: left;
+    text-justify: inter-word;
+    color:white;
+    margin-top:70%;  
+  }
+
+  .positionCenter {
+ margin: 0;
+ width:50%;
+    position: absolute;
+top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
   }
 
 ////////
