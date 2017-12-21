@@ -40,6 +40,7 @@ import { DebtperproductPage } from '../pages/debt/debtperproduct/debtperproduct'
 import { CashregisterPage } from '../pages/initialRegistration/cashregister/cashregister';
 import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
 import {IonicStorageModule} from '@ionic/storage';
+import { WelcomepicturePage } from '../pages/initialRegistration/welcomepicture/welcomepicture';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -86,7 +87,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountpaidPage,
     CreaterecordingPage,
     DeleterecordingPage,
-    DeletesellPage
+    DeletesellPage,
+    WelcomepicturePage
 
   ],
   imports: [
@@ -124,13 +126,14 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountpaidPage,
     CreaterecordingPage,
     DeleterecordingPage,
-    DeletesellPage
+    DeletesellPage,
+    WelcomepicturePage
   ],
   providers: [
     StatusBar,
     SplashScreen,Camera,TextToSpeech, Device, MediaCapture,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SharedProvider,CustomTrackProvider,Storage
+    SharedProvider, CustomTrackProvider, Storage
   ],
 })
 export class AppModule {}

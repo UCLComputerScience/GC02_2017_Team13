@@ -10,6 +10,7 @@ import { Storage } from '@ionic/storage';
 export class SharedProvider {
   public index;
   public speedVoice = 0;
+  public photoProfile;
 
   // buy_folder temporary variables
   public quantityTemp = [];

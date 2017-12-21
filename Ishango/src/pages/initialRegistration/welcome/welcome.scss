@@ -1,17 +1,22 @@
 page-welcome {
-    .welcome{
-        margin-top: 55%;
-    }
+    .welcome {
+       margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-    .fab{
-       margin-right: 20%;
-        text-align: center;
-        color: #ffffff;
-      }
+  .position {
 
-      .iconf{
-        font-size: 3em;
-        text-align: center; //works
-      }
+    width:60%;
+    margin: 0;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+  }
 
 }

@@ -22,12 +22,12 @@ export class MyApp {
         this.platform.ready().then(() => {
     
           this.storage.get('introShown').then((result) => {
-    
+      this.storage.set('introShown', false);
             if(result){
               this.rootPage = TabsPage;
             } else {
               this.rootPage = WelcomePage;
-              this.storage.set('introShown', true);
+              // this.storage.set('introShown', true);
             }
     
             this.loader.dismiss();

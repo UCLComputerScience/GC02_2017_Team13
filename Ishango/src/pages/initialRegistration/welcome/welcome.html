@@ -2,16 +2,9 @@
 
 
 <ion-content padding >
-  <div class="welcome">
-        <img src="assets/imgs/welcome.jpg"/>
+  <div>
+        <img class="welcome" src="assets/imgs/profilePic.jpg"/>
+        <img (click)="takePhotoProf()" class="position" src="assets/imgs/picBox.png"/>
 
   </div>
-
-  <ion-fab (click)="gotocashregister()" right bottom>
-      <button ion-fab>
-          <ion-icon class="iconf" name="arrow-dropright"></ion-icon>
-      </button>
-  </ion-fab>
-
-
 </ion-content>
