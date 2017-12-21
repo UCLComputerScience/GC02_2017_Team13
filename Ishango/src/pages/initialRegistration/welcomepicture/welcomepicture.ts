@@ -22,7 +22,7 @@ export class WelcomepicturePage {
 public photoProfile;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider,public storage:Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
   
   this.photoProfile = this.sharedprovider.photoProfile;
 

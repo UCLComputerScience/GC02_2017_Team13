@@ -32,7 +32,7 @@ export class WelcomePage {
    public base64Image: any;
 
 
-takePhotoProf() {
+takephotoprofile() {
     const options: CameraOptions = {
   quality: 40,
   allowEdit: true,
