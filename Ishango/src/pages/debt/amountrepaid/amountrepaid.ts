@@ -22,24 +22,26 @@ export class AmountrepaidPage {
   }
 
   increment(amount) {
-    this.amountrepaid=this.amountrepaid+amount;
-    if(this.sharedprovider.debt[this.sharedprovider.index]-this.amountrepaid<0){
-      this.amountrepaid= this.sharedprovider.debt[this.sharedprovider.index];
+    this.amountrepaid = this.amountrepaid+amount;
+    if(this.sharedprovider.debt[this.sharedprovider.index]-this.amountrepaid < 0){
+      this.amountrepaid = this.sharedprovider.debt[this.sharedprovider.index];
       this.sharedprovider.producesound("You cannot repay more than you owe");
     
     }
   }
 
   reduce(amount) {
-    if (this.amountrepaid-amount>=0){
-    this.amountrepaid = this.amountrepaid - amount;}
+    if (this.amountrepaid - amount >= 0)
+    {
+    this.amountrepaid = this.amountrepaid - amount;
+    }
     else{
       this.amountrepaid = 0;
     }
   }
   gotoconfirmation() {
     this.sharedprovider.debtRepay=this.amountrepaid;
-    this.navCtrl.push(ConfirmationPage)
+    this.navCtrl.push(ConfirmationPage);
 
   }
 

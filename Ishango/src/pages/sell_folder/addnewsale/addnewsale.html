@@ -18,13 +18,18 @@
 <ion-grid class="navBarGlobal">
       <ion-row>
 
-        <ion-col col-6 class="navBarLeft">
-        </ion-col>
+             <ion-col col-4 class="">
+         </ion-col>
 
-        <ion-col col-6 class="navBarRight">
-          <button ion-button round>
-            <font>QUANTITY&nbsp;</font>
-            <ion-icon style="font-size:20px;" name="musical-notes"></ion-icon>
+          <ion-col col-4 class="">
+            <button ion-button round (click)="producesound(2)">
+            <ion-icon style="font-size:30px;" name="cash"></ion-icon>
+          </button>
+         </ion-col>
+       
+        <ion-col col-4 class="navBarRight">
+          <button ion-button round (click)="producesound(3)">
+            <ion-icon style="font-size:30px;" name="basket"></ion-icon>
           </button>
         </ion-col>
 
@@ -41,25 +46,13 @@
         <img [src]="photo" />
       </ion-avatar>
       <h2 style="float:right; font-size:24px; margin-right: 25px;">{{quantity[id]}}</h2>
+          <h2 class="moneyTag" style="font-size: 24px;">{{averagebuyingprice[id]}} $</h2>
+
     </ion-item>
 
     </div>
 </ion-list>
 
   </ion-scroll>
-
-<!-- <ion-scroll scrollX="true" scrollY="true" style="height:85%;">       <ion-grid *ngFor="let photo of photos; let id=index">
-        <ion-row (click)="gotoquantitytosell(id)" class="ion-row">
-          <ion-col col-6 class="columns">
-            <img [src]="photo" />
-          </ion-col>
-          <ion-col col-6 class="columns">
-            <font size="+2"> {{quantity[id]}} </font>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-scroll>
-
-  </ion-list> -->
 
 </ion-content>

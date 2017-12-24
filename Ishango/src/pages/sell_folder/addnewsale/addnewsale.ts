@@ -12,12 +12,15 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 export class AddnewsalePage {
   private photos = [];
   private quantity = [];
+  private averagebuyingprice = [];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
 
     this.photos = this.sharedprovider.photos;
     this.quantity = this.sharedprovider.quantity;
+    this.averagebuyingprice = this.sharedprovider.averagebuyingprice;
+
   }
 
   gotoquantitytosell(index) {

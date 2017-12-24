@@ -1,43 +1,51 @@
 page-amountrepaid {
-    .fab{
-        //width: 180%;
-       //font-size: 5px;
-        //margin: 0 auto;
-        //margin-top: -20%;
-       // margin-left: 50%;
-       margin-right: 20%;
-       // font-size: 60px;
-       // margin-bottom: 0%;
-       // height: 10px;
-        //text-align: center;
-        color: #ffffff;
-      }
-  
-      .grid {
-        height: 100%;
-        justify-content: center;
-        width: 110%;
-        margin-left: 15%;
-        margin-top: -5%;
-        margin-bottom:0%;
-  }
-  
-  .row{
-  
-        height: 7%;
-  }
-  
-  .iconf{
-    font-size: 45px;
-    text-align: center; //works
-  }
-  .iconm{
-    font-size: 30px;
-    text-align: center; //works
-  }
-  
-  .no-scroll .scroll-content{
-    overflow: hidden;
-  }
+ .fab{
+      //width: 180%;
+     //font-size: 5px;
+      //margin: 0 auto;
+      //margin-top: -20%;
+     // margin-left: 50%;
+     // margin-right: 20%;
+     // font-size: 60px;
+     // margin-bottom: 0%;
+     // height: 10px;
+      //text-align: center;
+      color: #ffffff;
+    }
+
+.pictureQuantityMoney {
+      text-align: center;
+      margin: auto;
+      height: auto;
+      position: relative;
+}
+
+.pictureQuantityMoney img {
+width:100%;
+
+}
+
+.positionValue {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.iconf{
+  font-size: 45px;
+  text-align: center; //works
+}
+.iconm{
+  font-size: 35px;
+  text-align: center; //works
+}
+
+
+
+
 
 }

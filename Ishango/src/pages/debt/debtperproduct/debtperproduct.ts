@@ -19,7 +19,7 @@ export class DebtperproductPage {
   }
 
   gotorepaypage(id){
-    this.sharedprovider.index=id;
+    this.sharedprovider.index = id;
     this.navCtrl.push(AmountrepaidPage);
 
   }

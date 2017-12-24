@@ -1,48 +1,51 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Debt per product
-    </ion-title>
+<ion-navbar>
+    <ion-title>Debt per Product</ion-title>
+
     <ion-buttons end>
       <button (click)="producesound()" ion-button>
-        <ion-icon name="musical-notes"></ion-icon>
-        <!-- <ion-icon name="sound"></ion-icon> -->
-      </button>
-      <button ion-button>
+          <ion-icon name="MyApp-sound"></ion-icon>
       </button>
     </ion-buttons>
+
   </ion-navbar>
+
 </ion-header>
 
-<ion-content class="content" padding>
 
+<ion-content padding>
 
-  <ion-list class="listStyleProducts">
-    <ion-grid>
+<ion-grid class="navBarGlobal">
       <ion-row>
-        <ion-col col-6 class="column">
-          <font size="+2">Item</font>
+
+        <ion-col col-6 class="navBarLeft">
         </ion-col>
-        <ion-col col-6 class="column">
-          <font size="+2">Debt</font>
+
+        <ion-col col-6 class="navBarRight">
+          <button ion-button round>
+            <font>MONEY&nbsp;</font>
+            <ion-icon style="font-size:20px;" name="musical-notes"></ion-icon>
+          </button>
         </ion-col>
+
       </ion-row>
     </ion-grid>
 
 
-      <ion-grid *ngFor="let photo of photos; let id=index">
-        <ion-row class="ion-row" (click)="gotorepaypage(id)" *ngIf="debt[id]>0" >
-          <ion-col col-6>
-            <img [src]="photo" />
-          </ion-col>
-          <ion-col col-6 class="column">
-            <font size="+2"> {{debt[id]}} </font>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+<ion-scroll scrollX="true" scrollY="true" style="height: 85%;"> 
+ <ion-list>
+      <div *ngFor="let photo of photos; let id = index">
 
+   <ion-item class="pictureAndQuantity" (click)="gotorepaypage(id)" *ngIf="debt[id]>0">
+      <ion-avatar class="avatarStyle" item-start>
+        <img [src]="photo" />
+      </ion-avatar>
+      <h2 style="float:right; font-size:24px; margin-right: 25px;">{{debt[id]}} $</h2>
+    </ion-item>
 
-  </ion-list>
+    </div>
+</ion-list>
 
+  </ion-scroll>
 
 </ion-content>

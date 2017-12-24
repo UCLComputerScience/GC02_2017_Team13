@@ -1,45 +1,48 @@
 page-debtperproduct {
 
-    .content {
-        background-image: url('../../assets/imgs/a.png');
-        background-position: center;
-      }
-      
-      .addbutton{
+     .brick {
+        background-color: #488aff;
         position: absolute;
         right:    0;
         bottom:   0;
-        width: 100%;
-        font-size: 25px;
-        margin: 0 auto;
-        height: 50px;
-        text-align: center;
-        color: rgb(255, 255, 255);
-      }
-      
-      .grid {
-        justify-content: center;
-        width: 100%;
-        margin-bottom:0%;
-      }
-      
-      .ion-row{
-        border-bottom:1pt solid black;
-       // border-top:1pt solid black;
-      }
-      
-      .column{
-        text-align: center;
-      }
-      
-      .scroll {
-        height: 90%;
-        width: 100%;
-      }
-      .listStyleProducts{
-        height: 93%;
-        //width: 100%;
-      
-      }
+       // height: 31%;
+    }
+    
+    .listStyle {
+    height: 90%;
+    //margin-left: 0%;
+    //width: 100%;
+    
+    }
+    
+    .sentence{
+        position: absolute;
+        right:    5%;
+        bottom: 23%;
+        text-align:center;
+        color: #ffffff
+    
+    }
+    
+    .ion-row{
+        
+                border-bottom:1pt solid black;
+                //border-top:1pt solid black;
+              }
+    
+    
+    .columns{
+      text-align: center;
+    }
+    
+    .fabs {
+        width: 100px !important;
+        height: 100px !important;
+        }
+    
+        .scroll {
+            height: 100%;
+            width: 100%;
+          }
 
 }

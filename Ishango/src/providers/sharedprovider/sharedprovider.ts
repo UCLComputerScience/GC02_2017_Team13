@@ -28,6 +28,12 @@ export class SharedProvider {
   public photosTempSell = [];
   public moneyreceivedTemp = [];
 
+  //average buying price
+  public averagebuyingprice = [];
+  public weightedquantity = [];
+  public partialoldaverage;
+  public partialnewaverage;
+
   // sell_folder final stored values 
   public quantitySell = [];
   public moneyReceived = [];
@@ -63,8 +69,22 @@ export class SharedProvider {
       this.quantity.unshift(this.quantityTemp[this.quantityTemp.length - 1]);
       this.photos.unshift(this.photosTemp[this.photosTemp.length - 1]);
       this.moneypaid.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
+      this.averagebuyingprice.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
     else {
+
+      this.weightedquantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
+      this.partialoldaverage = this.quantity[this.index] / this.weightedquantity[this.index] * this.averagebuyingprice[this.index];
+      this.partialnewaverage = this.quantityTemp[this.quantityTemp.length - 1] / this.weightedquantity[this.index] * this.moneypaidTemp[this.moneypaidTemp.length - 1];
+
+      this.averagebuyingprice[this.index] = this.partialnewaverage + this.partialoldaverage;
+
+      console.log("totalQuantity:" + this.weightedquantity[this.index]);
+      console.log(this.partialoldaverage + " " + this.partialnewaverage);
+      console.log("final average:" + this.averagebuyingprice[this.index]);
+      console.log("index: " + this.index);
+
+
       this.quantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
       this.moneypaid[this.index] = this.moneypaid[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
       this.buysameitem = false;
@@ -113,6 +133,7 @@ export class SharedProvider {
     this.photos.splice(this.index, 1);
     this.moneypaid.splice(this.index, 1);
     this.debt.splice(this.index,1);
+    this.averagebuyingprice.splice(this.index, 1);
     this.updateDataBase();
   }
 
@@ -174,9 +195,9 @@ export class SharedProvider {
     this.storage.set('cash', this.cash);
     this.storage.set('photoProfile', this.photoProfile);
 
+    this.storage.set('averagebuyingprice', this.averagebuyingprice);
+    this.storage.set('weightedquantity', this.weightedquantity);
   }
-
-
 
   //Text to Speech enabled 
   async producesound(soundString): Promise<any> {
@@ -245,8 +266,19 @@ export class SharedProvider {
         this.photoProfile = data;
       }
     });
+    this.storage.get('averagebuyingprice').then((data) => {
+      if(data!=null)
+      {
+        this.averagebuyingprice = data;
+      }
+    });
+    this.storage.get('weightedquantity').then((data) => {
+      if(data!=null)
+      {
+        this.weightedquantity = data;
+      }
+    });
   }
-
 
 
 }

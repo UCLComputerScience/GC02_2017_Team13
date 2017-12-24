@@ -1,36 +1,36 @@
 <ion-header>
+  
+    <ion-navbar>
+      <ion-title>CONFIRM?</ion-title>
+      <ion-buttons end>
+          <button (click)="producesound()" ion-button>
+              <ion-icon name="MyApp-sound"></ion-icon>
+          </button>
+          <button ion-button>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+    
+  <ion-content padding>
+    <div class="photoContainer">
+      <img src="assets/imgs/money_paid.png"/>
+      </div>
 
-  <ion-navbar>
-    <ion-title>Are you sure?</ion-title>
-    <ion-buttons end>
-      <button (click)="producesound()" ion-button>
-        <ion-icon name="musical-notes"></ion-icon>
-        <!-- <ion-icon name="sound"></ion-icon> -->
-      </button>
-      <button ion-button>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-
-</ion-header>
+  <div class="divContainer"> </div>
 
 
-
-
-
-<ion-content padding>
-
-  <ion-row class="photo">
-    <ion-col col-12>
-       <img src="assets/imgs/cashrepaid.png"/> 
-    </ion-col>
-  </ion-row>
-  <ion-row class="buttons">
-    <button ion-button color="danger" round (click)="cancel()">
-      <ion-icon class="iconx" name="close"></ion-icon>
+  <ion-fab bottom left class="buttonPositionLeft buttonPosition">
+    <button color="danger" class="borderButton" ion-fab bottom (click)="cancel()">
+      <ion-icon name="close"></ion-icon>
     </button>
-    <button ion-button round (click)="confirm()">
-      <ion-icon class="iconx" name="checkmark"></ion-icon>
+  </ion-fab>
+
+  <ion-fab bottom right class="buttonPositionRight buttonPosition">
+    <button color="secondary" class="borderButton" ion-fab bottom (click)="confirm()">
+      <ion-icon name="checkmark"></ion-icon>
     </button>
-  </ion-row>
+  </ion-fab>
 </ion-content>
+

@@ -22,8 +22,6 @@ export class MyApp {
 
   constructor(public platform: Platform,public statusBar: StatusBar,public splashScreen: SplashScreen, private device: Device, public loadingCtrl: LoadingController, public storage: Storage, private camera: Camera, public sharedprovider: SharedProvider) {
 
-    this.photoProfile = this.sharedprovider.photoProfile;
-
     this.presentLoading();
     
         this.platform.ready().then(() => {
@@ -79,6 +77,9 @@ this.sharedprovider.updateDataBase();
 
 }
 
+ionViewDidLoad() {
+    this.photoProfile = this.sharedprovider.photoProfile;
+}
 
 
 
