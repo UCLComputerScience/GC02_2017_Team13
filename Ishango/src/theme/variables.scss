@@ -88,7 +88,6 @@ $tabs-tab-color-inactive:      #3c3c3c !default;
 $tabs-md-tab-min-height: 7rem;
 $tabs-ios-tab-min-height: 7rem;
 
-
 //single elements in tabs
 $tabs-md-background:                 $tabs-background !default;
 $tabs-md-tab-color-inactive:         #3c3c3c !default;
@@ -287,6 +286,21 @@ top: 45%;
     transform: translate(-50%, -50%);
 
   }
+
+
+  .warning {
+
+    width:60px;
+    position: absolute;
+    z-index:20;
+    right:0;
+    margin-right: 2%;
+
+
+  }
+
+
+
 
 ////////
 

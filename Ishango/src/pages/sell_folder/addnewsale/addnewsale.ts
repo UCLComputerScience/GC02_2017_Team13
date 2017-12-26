@@ -37,7 +37,7 @@ export class AddnewsalePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddneworexPage');
-  }
+    }
 
 
 }

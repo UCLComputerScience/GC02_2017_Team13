@@ -16,8 +16,9 @@ export class HomePage {
   // splash = true;
   public cash;
   public totaldebt = 0;
-  positive;
-  positiveStock;
+  public debtYes;
+  public positive;
+  public positiveStock;
 
 
 
@@ -25,8 +26,9 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private sharedprovider: SharedProvider, public menuCtrl: MenuController) {
     this.cash = this.sharedprovider.cash;
-    // this.tabBarElement = document.querySelector('.tabbar');
   }
+
+
 
   producesound () {
     console.log(this.sharedprovider.cash);
@@ -40,6 +42,7 @@ export class HomePage {
   }
   ionViewDidEnter(){
     this.cash=this.sharedprovider.cash;
+    this.debtYes = this.sharedprovider.debtYes;
     var num: number = 0;
     var temp: number = 0;
     for (num = 0; num < this.sharedprovider.debt.length; num++) {
@@ -64,18 +67,6 @@ export class HomePage {
       }
     }
 
-
-  }
-
-  
-
-  // ionViewDidLoad() {
-  //   this.tabBarElement.style.display = 'none';
-  //   setTimeout(() => {
-  //     this.splash = false;
-  //     this.tabBarElement.style.display = 'flex';
-  //   }, 3000);
-  // }
-
-
 }
+ }
+

@@ -21,6 +21,7 @@ export class SharedProvider {
   public photos = [];
   public quantity = [];
   public moneypaid = [];
+  public totalmoneypaid = [];
   public isCashPaidBoolean;
 
   // sell_folder temporary variables
@@ -42,6 +43,7 @@ export class SharedProvider {
 
   // debt values
   public debtRepay;
+  public debtYes;
   public debt = [];
 
   //total profit
@@ -60,7 +62,7 @@ export class SharedProvider {
 
   // used 'unshift' to add pictures and products on top on the page
   acceptaddition() {
-    if (this.isCashPaidBoolean==true)
+    if (this.isCashPaidBoolean == true)
     {
       this.cash = this.cash - this.moneypaidTemp[this.moneypaidTemp.length - 1];
     }
@@ -70,19 +72,28 @@ export class SharedProvider {
       this.photos.unshift(this.photosTemp[this.photosTemp.length - 1]);
       this.moneypaid.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
       this.averagebuyingprice.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
+      this.totalmoneypaid.unshift(this.moneypaidTemp[this.moneypaidTemp.length -1]);
+
     }
     else {
 
+      // computing total weight for weighted average formula
       this.weightedquantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
+      // weight for old quantity / money
       this.partialoldaverage = this.quantity[this.index] / this.weightedquantity[this.index] * this.averagebuyingprice[this.index];
+      // weight for new quantity / money
       this.partialnewaverage = this.quantityTemp[this.quantityTemp.length - 1] / this.weightedquantity[this.index] * this.moneypaidTemp[this.moneypaidTemp.length - 1];
 
+      // final weighted average cost per item to help the user understand their selling target price per item
       this.averagebuyingprice[this.index] = this.partialnewaverage + this.partialoldaverage;
 
-      console.log("totalQuantity:" + this.weightedquantity[this.index]);
-      console.log(this.partialoldaverage + " " + this.partialnewaverage);
-      console.log("final average:" + this.averagebuyingprice[this.index]);
-      console.log("index: " + this.index);
+      // converting the number from double to integer to avoid decimal places
+      for(var i = 0; i < this.averagebuyingprice.length; i++){
+      this.averagebuyingprice[i] = Math.round(this.averagebuyingprice[i]) + 1;
+    }
+
+      // total money paid for a specific item
+      this.totalmoneypaid[this.index] += this.moneypaidTemp[this.moneypaidTemp.length - 1];
 
 
       this.quantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
@@ -120,12 +131,6 @@ export class SharedProvider {
     }
     this.updateDataBase();
   }
-  
-  //pay back for bought items
-  repay() {
-    this.debt[this.index] = this.debt[this.index] - this.debtRepay;
-    this.updateDataBase();
-  }
 
   //delete a product
   deleteitem() {
@@ -134,10 +139,11 @@ export class SharedProvider {
     this.moneypaid.splice(this.index, 1);
     this.debt.splice(this.index,1);
     this.averagebuyingprice.splice(this.index, 1);
+    this.totalmoneypaid.splice(this.index, 1);
     this.updateDataBase();
   }
 
-    //delete a product
+    //delete a sale
     deleteSell() {
       
         var match;
@@ -173,12 +179,51 @@ export class SharedProvider {
 
   //register the new debt
   registerdebt() {
+
     if (this.buysameitem) {
       this.debt[this.index] = this.debt[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
     }
     else {
       this.debt.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
+ 
+   
+    for(var i = 0; i < this.debt.length; i++){
+      if(this.debt[i] == 0){
+        this.debt.splice(i, 1);
+      }
+      console.log(this.debt[i]);
+    }
+
+   if(this.moneypaidTemp[this.moneypaidTemp.length - 1] != 0){
+        this.debtYes = true;
+   }
+
+  console.log("array length:" + this.debt.length);
+  console.log("debtYes:" + this.debtYes);
+
+    this.updateDataBase();
+  }
+
+
+  //pay back for bought items
+  repay() {
+    this.debt[this.index] = this.debt[this.index] - this.debtRepay;
+
+    for(var  i = 0; i < this.debt.length; i++){
+
+      if(this.debt[i] > 0){
+          this.debtYes = true;
+          console.log(this.debt[i]);
+          break;
+      } else {
+        this.debtYes = false;
+      }
+    }
+ 
+  console.log("array length:" + this.debt.length);
+  console.log("debtYes:" + this.debtYes);
+   
     this.updateDataBase();
   }
 
@@ -186,6 +231,7 @@ export class SharedProvider {
     this.storage.set('quantityArray', this.quantity);
     this.storage.set('photosArray', this.photos);
     this.storage.set('moneypaidArray', this.moneypaid);
+    this.storage.set('totalmoneypaid', this.totalmoneypaid);
 
     this.storage.set('quantitySell', this.quantitySell);
     this.storage.set('moneyReceived', this.moneyReceived);
@@ -197,6 +243,9 @@ export class SharedProvider {
 
     this.storage.set('averagebuyingprice', this.averagebuyingprice);
     this.storage.set('weightedquantity', this.weightedquantity);
+
+    this.storage.set('debtYes', this.debtYes);
+
   }
 
   //Text to Speech enabled 
@@ -227,6 +276,12 @@ export class SharedProvider {
       if(data!=null)
       {
         this.moneypaid = data;
+      }
+    });
+    this.storage.get('totalmoneypaid').then((data) => {
+      if(data!=null)
+      {
+        this.totalmoneypaid = data;
       }
     });
     this.storage.get('quantitySell').then((data) => {
@@ -278,7 +333,16 @@ export class SharedProvider {
         this.weightedquantity = data;
       }
     });
+    this.storage.get('debtYes').then((data) => {
+      if(data!=null)
+      {
+        this.debtYes = data;
+      }
+    });
   }
+
+
+  
 
 
 }

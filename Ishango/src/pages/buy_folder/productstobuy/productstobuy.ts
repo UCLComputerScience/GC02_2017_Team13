@@ -15,8 +15,9 @@ import { Storage } from '@ionic/storage';
 })
 export class ProductstobuyPage {
   
-   private quantity=[];
-   private moneypaid=[];
+   private quantity = [];
+   private moneypaid = [];
+   private totalmoneypaid = [];
 
 
    
@@ -30,6 +31,7 @@ export class ProductstobuyPage {
      this.photos = this.sharedprovider.photos;
      this.quantity = this.sharedprovider.quantity;
      this.moneypaid = this.sharedprovider.moneypaid;
+     this.totalmoneypaid = this.sharedprovider.totalmoneypaid;
 
   }
 

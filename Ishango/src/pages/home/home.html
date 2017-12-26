@@ -28,7 +28,11 @@
       <div class="pictureQuantityMoney">
            <div class="imageValueWrapper">
                 <img width="" src="assets/imgs/cashDash-01.png"/> 
-   
+                
+                <div *ngIf="debtYes" class="warning">
+                <img src="assets/imgs/warning.png">
+                </div>
+
                 <div class="positionValue">
                     <font size="+3"> {{cash}} </font>
                 </div>

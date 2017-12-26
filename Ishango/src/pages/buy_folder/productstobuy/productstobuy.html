@@ -16,8 +16,11 @@
       <ion-row>
          <ion-col col-4 class="">
          </ion-col>
-
-          <ion-col col-4 class="">
+        
+        <ion-col col-4 class="">
+            <button ion-button round (click)="producesound(2)">
+            <ion-icon style="font-size:30px;" name="cash"></ion-icon>
+          </button>
          </ion-col>
        
         <ion-col col-4 class="navBarRight">
@@ -40,6 +43,8 @@
 
     <div (click)="buymoreofthesame(id)" >
       <div class="quantityTag"><h2 style="font-size: 24px;">{{quantity[id]}}</h2></div>
+      <h2 class="moneyTag" style="font-size: 24px;">{{totalmoneypaid[id]}} $</h2>
+
 </div>
     </ion-item>
 

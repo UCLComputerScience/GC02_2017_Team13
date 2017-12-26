@@ -48,11 +48,14 @@
     </ion-item>
 
     <ion-item-options side="right" >
-      <button ion-button color="primary" (click)="deleteSell(id)">
-        <ion-icon name="trash"></ion-icon>
-        Delete
+      <button style="width:80px;" ion-button color="danger" (click)="deleteSell(id)">
+        <ion-icon name="trash" style="font-size:40px;"></ion-icon>
+      </button>
+      <button style="width:80px;" ion-button color="secondary" (click)="deleteSell(id)">
+        <ion-icon name="filing" style="font-size:40px;"></ion-icon>
       </button>
     </ion-item-options>
+
   </ion-item-sliding>
 </div>
   </ion-list>

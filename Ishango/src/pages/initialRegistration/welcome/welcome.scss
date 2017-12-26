@@ -9,14 +9,19 @@ page-welcome {
 
   .position {
 
-    width:60%;
+    text-align: center;
+    width:100px;
     margin: 0;
     position: fixed;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-
   }
+
+  .fab {
+width: 100px !important;
+height: 100px !important;
+}
 
 }
