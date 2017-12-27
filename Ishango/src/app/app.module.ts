@@ -38,7 +38,10 @@ import { ConfirmationPage } from '../pages/debt/confirmation/confirmation';
 import { DebtperproductPage } from '../pages/debt/debtperproduct/debtperproduct';
 
 import { OtherPage } from '../pages/other/other';
-
+import { SalesarchivePage } from '../pages/archive/salesarchive/salesarchive';
+import { DeletesalesarchivePage } from '../pages/archive/deletesalesarchive/deletesalesarchive';
+import { RunningcarchivePage } from '../pages/archive/runningcarchive/runningcarchive';
+import { DeleterunningcarchivePage } from '../pages/archive/deleterunningcarchive/deleterunningcarchive';
 
 import { CashregisterPage } from '../pages/initialRegistration/cashregister/cashregister';
 import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
@@ -93,6 +96,10 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     DeleterecordingPage,
     DeletesellPage,
     OtherPage,
+    SalesarchivePage,
+    DeletesalesarchivePage,
+    RunningcarchivePage,
+    DeleterunningcarchivePage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -130,7 +137,11 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     CreaterecordingPage,
     DeleterecordingPage,
     DeletesellPage,
-    OtherPage
+    OtherPage,
+    SalesarchivePage,
+    DeletesalesarchivePage,
+    RunningcarchivePage,
+    DeleterunningcarchivePage
       ],
   providers: [
     StatusBar,
