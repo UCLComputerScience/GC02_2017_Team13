@@ -16,21 +16,40 @@ import { IscashreceivedPage } from '../iscashreceived/iscashreceived';
   templateUrl: 'moneyreceived.html',
 })
 export class MoneyreceivedPage {
+  
   moneyreceived = 0;
+  averagebuyingprice;
+  quantity;
+  index;
+  suggestedprice;
+  isRed = false;
 
   constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams ) {
+   this.index = this.sharedprovider.index;
+   this.quantity = this.sharedprovider.quantityTempSell[this.sharedprovider.quantityTempSell.length - 1];
+   this.averagebuyingprice = this.sharedprovider.averagebuyingprice[this.index];
+   this.suggestedprice = this.averagebuyingprice * this.quantity;
   }
 
   increment(amount) {
     this.moneyreceived = this.moneyreceived + amount;
+
+    if(this.moneyreceived - this.suggestedprice > 0){
+      this.isRed = true;
+    }
   }
 
   reduce(amount) {
     if (this.moneyreceived - amount>=0){
-    this.moneyreceived = this.moneyreceived - amount;}
+    this.moneyreceived = this.moneyreceived - amount;
+  }
     else {
       this.moneyreceived = 0;
     }
+if(this.moneyreceived - this.suggestedprice <= 0){
+      this.isRed = false;
+    }
+
   }
 
   gotoiscashreceived() {
@@ -45,7 +64,14 @@ export class MoneyreceivedPage {
 }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad moneyreceivedPage');
+    console.log('index: ' + this.index);
+    console.log('quantity: ' + this.sharedprovider.quantityTempSell[this.sharedprovider.quantityTempSell.length - 1]);
+    console.log('weighted price: ' + this.sharedprovider.averagebuyingprice[this.index]);
+    console.log('suggested: ' + this.averagebuyingprice * this.quantity[this.index]);
+
+    for(var i = 0; i < this.sharedprovider.averagebuyingprice.length; i++){
+      console.log('in weighted loop position ' + i + ": " + this.sharedprovider.averagebuyingprice[i]);
+    }
   }
 
 }

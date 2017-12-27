@@ -71,35 +71,88 @@ export class SharedProvider {
       this.quantity.unshift(this.quantityTemp[this.quantityTemp.length - 1]);
       this.photos.unshift(this.photosTemp[this.photosTemp.length - 1]);
       this.moneypaid.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
-      this.averagebuyingprice.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
+      
+      var round = Math.ceil(this.moneypaid[0] / this.quantity[0]);
+      this.averagebuyingprice.unshift(round);
+
       this.totalmoneypaid.unshift(this.moneypaidTemp[this.moneypaidTemp.length -1]);
 
+       console.log("averagebuyingprice: " + this.averagebuyingprice[0]);
+
+
     }
+
     else {
 
       // computing total weight for weighted average formula
       this.weightedquantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
+      console.log("weighted quantity: " + this.weightedquantity[this.index]);
       // weight for old quantity / money
       this.partialoldaverage = this.quantity[this.index] / this.weightedquantity[this.index] * this.averagebuyingprice[this.index];
+      console.log("partial old average : " + this.partialoldaverage);
       // weight for new quantity / money
-      this.partialnewaverage = this.quantityTemp[this.quantityTemp.length - 1] / this.weightedquantity[this.index] * this.moneypaidTemp[this.moneypaidTemp.length - 1];
+      this.partialnewaverage = this.quantityTemp[this.quantityTemp.length - 1] / this.weightedquantity[this.index] * (this.moneypaidTemp[this.moneypaidTemp.length - 1] / this.quantityTemp[this.quantityTemp.length - 1]);
+      console.log("partial new average: " + this.partialnewaverage);
 
       // final weighted average cost per item to help the user understand their selling target price per item
       this.averagebuyingprice[this.index] = this.partialnewaverage + this.partialoldaverage;
+      console.log("averagebuyingprice: " + this.averagebuyingprice[this.index]);
 
       // converting the number from double to integer to avoid decimal places
       for(var i = 0; i < this.averagebuyingprice.length; i++){
-      this.averagebuyingprice[i] = Math.round(this.averagebuyingprice[i]) + 1;
+      this.averagebuyingprice[i] = Math.ceil(this.averagebuyingprice[i]);
     }
+
+    this.weightedquantity.unshift(this.weightedquantity[this.index]);
+    this.averagebuyingprice.unshift(this.averagebuyingprice[this.index]);
+
+    this.weightedquantity.splice(this.index + 1, 1);
+    this.averagebuyingprice.splice(this.index + 1, 1);
 
       // total money paid for a specific item
       this.totalmoneypaid[this.index] += this.moneypaidTemp[this.moneypaidTemp.length - 1];
-
-
       this.quantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
       this.moneypaid[this.index] = this.moneypaid[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
+
+            console.log("BEFORE UNSHIFT");
+
+for(var i  = 0; i < this.averagebuyingprice.length; i++){
+           console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
+
+      }
+
+      
+
+      this.totalmoneypaid.unshift(this.totalmoneypaid[this.index]);
+      this.quantity.unshift(this.quantity[this.index]);
+      this.moneypaid.unshift(this.moneypaid[this.index]);
+      this.photos.unshift(this.photos[this.index]);
+
+  console.log("AFTER UNSHIFT");
+
+for(var i  = 0; i < this.averagebuyingprice.length; i++){
+                    console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
+
+      }
+
+      this.totalmoneypaid.splice(this.index + 1, 1);
+      this.quantity.splice(this.index + 1, 1);
+      this.moneypaid.splice(this.index + 1, 1);
+      this.photos.splice(this.index + 1, 1);
+
+        console.log("AFTER SPLICE");
+
+
+      for(var i  = 0; i < this.averagebuyingprice.length; i++){
+                    console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
+
+      }
+
+
+
       this.buysameitem = false;
     }
+
     var num: number = 0;
     for (num = 0; num < this.quantityTemp.length; num++) {
       this.quantityTemp.splice(num, 1);

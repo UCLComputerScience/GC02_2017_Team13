@@ -19,9 +19,17 @@
            
                 <img width="" src="assets/imgs/cash.png"/> 
    
+        <div class="positionSuggestion" *ngIf="!isRed" style="color:#f53d3d;"> 
+        <font size="+1" >{{suggestedprice}} </font>  
+      </div> 
+
+      <div class="positionSuggestion" *ngIf="isRed" style="color:#32db64;"> 
+        <font size="+1" >{{suggestedprice}} </font>  
+      </div>
+
                 <div class="positionValue">
                 <font size="+3" >{{moneyreceived}} </font>
-            </div>
+                </div>
          
         </div> 
 </div>
