@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     
-    <ion-title tappable>Running Costs</ion-title>
+    <ion-title> Recordings</ion-title>
 
     <ion-buttons end>
         <button (click)="producesound(1)" ion-button>
@@ -23,7 +23,7 @@
          </ion-col>
         
         <ion-col col-4 class="navBarRight">
-          <button ion-button round (click)="producesound(2)">
+          <button ion-button round (click)="producesound(1)">
             <ion-icon style="font-size:30px;" name="cash"></ion-icon>
           </button>
         </ion-col>
@@ -33,18 +33,18 @@
   
    <ion-scroll scrollX="true" scrollY="true" style="height: 74%;"> 
  <ion-list>
-    <div *ngFor="let runningcosts of runningCosts; let id = index">
+    <div *ngFor="let recording of recordingNames; let id = index">
           <ion-item-sliding>
             <ion-item class="pictureAndQuantity">
               <ion-avatar class="avatarStyle" item-start (click)="playrecording(id)">
                   <img src="assets/imgs/play.png"/>
               </ion-avatar>
 
-              <div class="quantityTag"> <h2 style="font-size: 24px;">{{runningCosts[id]}} $</h2> </div>
+              <div class="quantityTag"> <h2 style="font-size: 24px;"># 1</h2> </div>
             </ion-item>
 
             <ion-item-options side="right">
-      <button ion-button color="primary" (click)="gotodeleterunningcost(id)">
+      <button ion-button color="primary" (click)="deleterecording(id)">
         <ion-icon name="trash"></ion-icon>
         Delete
       </button>
@@ -58,7 +58,7 @@
 
 
   <ion-fab bottom center class="buttonPosition">
-    <button class="borderButton" ion-fab bottom (click)="gotorecord()">
+    <button class="borderButton" ion-fab bottom (click)="gotocreaterecording()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>

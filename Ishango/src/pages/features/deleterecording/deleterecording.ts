@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
-import { FeaturesPage } from '../../../pages/features/allrecordings/features';
+import { AllrecordingsPage } from '../../../pages/features/allrecordings/allrecordings';
 
 
 @IonicPage()
@@ -16,10 +16,10 @@ export class DeleterecordingPage {
 
   yes() {
     this.recordingprovider.deleterec();
-    this.navCtrl.setRoot(FeaturesPage);
+    this.navCtrl.setRoot(AllrecordingsPage);
   }
   no() {
-    this.navCtrl.setRoot(FeaturesPage);
+    this.navCtrl.setRoot(AllrecordingsPage);
   }
 
   ionViewDidLoad() {

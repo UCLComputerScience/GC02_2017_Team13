@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { CreaterecordingPage } from '../../../pages/features/createrecording/createrecording';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
@@ -7,15 +7,14 @@ import { DeleterecordingPage } from '../../../pages/features/deleterecording/del
 
 
 
-@IonicPage()
 @Component({
-  selector: 'page-features',
-  templateUrl: 'features.html',
+  selector: 'page-allrecordings',
+  templateUrl: 'allrecordings.html',
 })
-export class FeaturesPage {
+export class AllrecordingsPage {
   public recordingNames=[];
 
-  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider,public recordingprovider: CustomTrackProvider, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider,public recordingprovider: CustomTrackProvider) {
     
   }
 

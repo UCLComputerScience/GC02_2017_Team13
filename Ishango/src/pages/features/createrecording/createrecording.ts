@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { MediaPlugin } from 'ionic-native';
-import { FeaturesPage } from '../../../pages/features/allrecordings/features';
+import { AllrecordingsPage } from '../../../pages/features/allrecordings/allrecordings';
 
 @IonicPage()
 @Component({
@@ -46,7 +46,7 @@ export class CreaterecordingPage {
       let name: string = "recording" + this.totalrecords;
       this.recordingprovider.recordingNames2.push(name);
       this.recordingprovider.updateDataBase();
-      this.navCtrl.setRoot(FeaturesPage);
+      this.navCtrl.setRoot(AllrecordingsPage);
     }
   }
 

@@ -13,7 +13,7 @@ import {DeleterunningcostPage} from '../pages/runningcosts_folder/deleterunningc
 import {AmountpaidPage} from '../pages/runningcosts_folder/amountpaid/amountpaid';
 
 import { StockPage } from '../pages/stock/stock';
-import { FeaturesPage } from '../pages/features/allrecordings/features';
+import { AllrecordingsPage } from '../pages/features/allrecordings/allrecordings';
 import { CreaterecordingPage } from '../pages/features/createrecording/createrecording';
 import { DeleterecordingPage } from '../pages/features/deleterecording/deleterecording';
 
@@ -37,6 +37,9 @@ import { AmountrepaidPage } from '../pages/debt/amountrepaid/amountrepaid';
 import { ConfirmationPage } from '../pages/debt/confirmation/confirmation';
 import { DebtperproductPage } from '../pages/debt/debtperproduct/debtperproduct';
 
+import { OtherPage } from '../pages/other/other';
+
+
 import { CashregisterPage } from '../pages/initialRegistration/cashregister/cashregister';
 import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
 import {IonicStorageModule} from '@ionic/storage';
@@ -54,6 +57,8 @@ import { IonicAudioModule } from 'ionic-audio/dist';
 import { CustomTrackProvider } from '../providers/custom-track/custom-track';
 
 
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -69,7 +74,7 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     TabsPage,
     RunningcostsPage,
     StockPage,
-    FeaturesPage,
+    AllrecordingsPage,
     VoicerecordPage,
     //HideFabDirective,
     DeleteitemPage,
@@ -86,7 +91,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountpaidPage,
     CreaterecordingPage,
     DeleterecordingPage,
-    DeletesellPage
+    DeletesellPage,
+    OtherPage,
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -103,7 +109,7 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     RunningcostsPage,
     StockPage,
     PhotobuyPage,
-    FeaturesPage,
+    AllrecordingsPage,
     QuantitytobuyPage,
     IscashpaidPage,
     MoneypaidPage,
@@ -123,7 +129,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountpaidPage,
     CreaterecordingPage,
     DeleterecordingPage,
-    DeletesellPage
+    DeletesellPage,
+    OtherPage
       ],
   providers: [
     StatusBar,
