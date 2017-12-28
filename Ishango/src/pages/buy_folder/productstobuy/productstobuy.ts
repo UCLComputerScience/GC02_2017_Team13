@@ -55,6 +55,8 @@ export class ProductstobuyPage {
       this.base64Image = 'data:image/jpeg;base64,' + imageData;
       //adding at index 0
       this.sharedprovider.photosTemp.push(this.base64Image);
+      this.sharedprovider.photosDebtTemp.push(this.base64Image); 
+
     }, (err) => {
      // Handle error
     });
@@ -85,7 +87,7 @@ this.camera.getPicture(options).then((imageData) => {
  // Handle error
 });
 this.sharedprovider.photos[index] = this.photos[index];
-  }
+ }
 
 
   gotodeleteitem(id){
@@ -97,6 +99,7 @@ this.sharedprovider.photos[index] = this.photos[index];
   buymoreofthesame(index){
     this.sharedprovider.buysameitem = true;
     this.sharedprovider.index = index;
+    this.sharedprovider.photosDebtTemp.push(this.photos[index]); 
     this.navCtrl.push(QuantitytobuyPage);
     
 

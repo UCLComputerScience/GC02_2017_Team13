@@ -31,8 +31,9 @@ width:90%;
     margin: 0;
     position: absolute;
     top: 50%;
-    left: 60%;
+    left: 55%;
     transform: translate(-50%, -50%);
+    font-family: 'Regular'; 
 }
 
 
@@ -71,11 +72,12 @@ margin-top:-5%;
 
   .warning {
 
-    width:60px;
+    width:80px;
     position: absolute;
     z-index:20;
     right:0;
     margin-right: 2%;
+    margin-top:2%;
   }
 
 }

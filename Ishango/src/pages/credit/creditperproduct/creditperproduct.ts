@@ -21,7 +21,7 @@ export class CreditperproductPage {
   public credit = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
-  this.photos = this.sharedprovider.photos;
+  this.photos = this.sharedprovider.photosSell;
     this.credit = this.sharedprovider.credit;
 
   }

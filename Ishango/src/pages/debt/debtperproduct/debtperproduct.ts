@@ -10,12 +10,12 @@ import { AmountrepaidPage } from '../../../pages/debt/amountrepaid/amountrepaid'
   templateUrl: 'debtperproduct.html',
 })
 export class DebtperproductPage {
-  private photos=[];
-  public debt=[];
+  private photos = [];
+  public debt = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public sharedprovider: SharedProvider) {
-    this.photos = this.sharedprovider.photos;
-    this.debt=this.sharedprovider.debt;
+    this.photos = this.sharedprovider.photosDebt;
+    this.debt = this.sharedprovider.debt;
   }
 
   gotorepaypage(id){

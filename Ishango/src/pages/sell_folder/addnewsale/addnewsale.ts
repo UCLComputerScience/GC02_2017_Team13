@@ -25,7 +25,8 @@ export class AddnewsalePage {
 
   gotoquantitytosell(index) {
     this.sharedprovider.index = index;
-    this.sharedprovider.photosTempSell.push(this.photos[index]) 
+    this.sharedprovider.photosTempSell.push(this.photos[index]);
+
     // console.log(this.photos[index]);
     this.navCtrl.push(QuantitytosellPage);
     // console.log(index);

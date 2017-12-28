@@ -45,6 +45,8 @@ export class SharedProvider {
   public debtRepay;
   public debtYes;
   public debt = [];
+  public photosDebtTemp = [];
+  public photosDebt = [];
 
   //credit values
   public creditRepay;
@@ -154,6 +156,9 @@ export class SharedProvider {
       this.buysameitem = false;
     }
 
+    this.photosDebt.unshift(this.photosDebtTemp[this.photosDebtTemp.length - 1]);
+
+
     var num: number = 0;
     for (num = 0; num < this.quantityTemp.length; num++) {
       this.quantityTemp.splice(num, 1);
@@ -164,6 +169,10 @@ export class SharedProvider {
     for (num = 0; num < this.photosTemp.length; num++) {
       this.photosTemp.splice(num, 1);
     }
+    for (num = 0; num < this.photosDebtTemp.length; num++) {
+      this.photosDebtTemp.splice(num, 1);
+    }
+
     this.updateDataBase();
 
   }
@@ -174,10 +183,7 @@ export class SharedProvider {
     if (this.isCashReceivedBoolean == true)
     {
       this.cash = this.cash + this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1];
-      console.log("cash: " + this.cash);
     }
-
-    console.log("cash: " + this.cash);
 
     this.quantitySell.unshift(this.quantityTempSell[this.quantityTempSell.length - 1]);
     this.moneyReceived.unshift(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
@@ -188,9 +194,17 @@ export class SharedProvider {
     for (num = 0; num < this.quantityTempSell.length; num++) {
       this.quantityTemp.splice(num, 1);
     }
-    for (num = 0; num < this.moneypaidTemp.length; num++) {
-      this.moneypaidTemp.splice(num, 1);
+    for (num = 0; num < this.moneyreceivedTemp.length; num++) {
+      this.moneyreceivedTemp.splice(num, 1);
     }
+    for (num = 0; num < this.photosTempSell.length; num++) {
+      this.photosTempSell.splice(num, 1);
+    }
+
+
+    console.log("NORMAL ADDITION");
+    for(var i = 0; i < this.moneyReceived.length; i++)
+      console.log("money received: " + this.moneyReceived[i] + "  " + "money credit: " + this.credit[i]);
     this.updateDataBase();
   }
 
@@ -200,7 +214,6 @@ export class SharedProvider {
     this.photos.splice(this.index, 1);
     this.moneypaid.splice(this.index, 1);
     // we want to keep track of the debt when the item is deleted
-    // this.debt.splice(this.index,1);
     this.averagebuyingprice.splice(this.index, 1);
     this.totalmoneypaid.splice(this.index, 1);
     this.updateDataBase();
@@ -225,12 +238,19 @@ export class SharedProvider {
         }
 
   // diminishing the cash after deleting the sale
-  this.cash -= this.moneyReceived[this.index];
+  if(this.credit[this.index] == 0)
+    this.cash -= this.moneyReceived[this.index];
 
   this.quantitySell.splice(this.index,1);
   this.moneyReceived.splice(this.index,1);
+  this.credit.splice(this.index, 1);
   this.photosSell.splice(this.index,1);
   this.updateDataBase();
+
+  console.log("SALE DELETED");
+  for(var i = 0; i < this.moneyReceived.length; i++)
+    console.log("money received: " + this.moneyReceived[i] + "  " + "money credit: " + this.credit[i]);
+
 }
 
   //speed voice regulator for iOS devices
@@ -243,12 +263,18 @@ export class SharedProvider {
   registercredit(){
 
     this.credit.unshift(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
-    console.log("credit array: " + this.credit[0]);
     if(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1] != 0){
       this.creditYes = true;
       console.log("in Setter creditYes true");
     }
     this.updateDataBase();
+
+    console.log();
+    
+    console.log("BOUGHT ON CREDIT");
+    for(var i = 0; i < this.moneyReceived.length; i++)
+      console.log("money received: " + this.moneyReceived[i] + "  " + "money credit: " + this.credit[i]);
+
 
   }
 
@@ -271,7 +297,7 @@ export class SharedProvider {
 
     console.log("array length:" + this.credit.length);
     console.log("creditYes:" + this.creditYes);
-
+    
     this.updateDataBase();
 
 
@@ -280,12 +306,12 @@ export class SharedProvider {
   //register the new debt
   registerdebt() {
 
-    if (this.buysameitem) {
-      this.debt[this.index] = this.debt[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
-    }
-    else {
+    // if (this.buysameitem) {
+    //   this.debt[this.index] = this.debt[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
+    // }
+    // else {
       this.debt.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
-    }
+    // }
 
 
     // for(var i = 0; i < this.debt.length; i++){

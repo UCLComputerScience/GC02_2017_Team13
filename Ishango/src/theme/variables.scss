@@ -151,7 +151,6 @@ height:18%;
   // background-color: #B0E0E6;
   color: $color-header; //color-text
   padding-top: 5px;
-  font-family: 'Bold' !important;
   font-size: 18px;
   z-index:150;
   background-color: #FFF0F5;
@@ -178,7 +177,7 @@ height:18%;
 
 
 .pictureAndQuantity {
-  font-family: 'Bold' !important;
+  font-family: 'Regular' !important;
   border-style: none;
 }
 
@@ -230,7 +229,7 @@ height:18%;
 
 .image {
 
-     margin: 0;
+    margin: 0;
     position: absolute;
     width:130px;
     height:130px;
@@ -274,7 +273,8 @@ border-bottom: 1.5px solid white;
 text-align: left;
     text-justify: inter-word;
     color:white;
-    margin-top:70%;  
+    margin-top:70%;
+      font-family: 'Regular' !important; 
   }
 
   .positionCenter {
