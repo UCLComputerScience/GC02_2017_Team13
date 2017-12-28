@@ -3,15 +3,15 @@
     <ion-title></ion-title>
 
 
-<ion-buttons left>
-<button ion-button icon-only menuToggle>
-<ion-icon name="menu" style="font-size: 30px;"></ion-icon>
-</button>
-</ion-buttons>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu" style="font-size: 30px;"></ion-icon>
+      </button>
+    </ion-buttons>
 
     <ion-buttons end>
       <button  (click)="producesound(1)" ion-button>
-          <ion-icon name="MyApp-sound"></ion-icon>
+        <ion-icon name="volume-up" style="font-size:30px;"></ion-icon>
       </button>
     </ion-buttons>
 
@@ -23,52 +23,59 @@
 
 
   <div class="grid">
-    
-    <div class="">
-      <div class="pictureQuantityMoney">
-           <div class="imageValueWrapper">
-                <img width="" src="assets/imgs/cashDash-01.png"/> 
-                
-                <div *ngIf="debtYes" class="warning">
-                <img src="assets/imgs/warning.png">
-                </div>
 
-                <div class="positionValue">
-                    <font size="+3"> {{cash}} </font>
-                </div>
-          </div>
-        </div> 
-    </div>
-    <div class="rows" tappable (click)="debtperproduct()">
-     <div class="pictureQuantityMoney">
-           <div class="imageValueWrapper">
-                <img width="" src="assets/imgs/debtTotal-01.png"/> 
-                <div class="positionValue">
-                <font size="+3"> {{totaldebt}}</font>
-            </div>
-         </div>
-        </div> 
-    </div>
     <div class="rows">
       <div class="pictureQuantityMoney">
-           <div class="imageValueWrapper" *ngIf="positive; then happy else sad">
-          </div>
-            <ng-template #happy> <img id src="assets/imgs/cashMinusDebt-01.png"/> </ng-template>
-            <ng-template #sad> <img src="assets/imgs/cashMinusDebt2-01.png"/> </ng-template>
-           
-        </div> 
-    </div>
-    
-    <div class="rows">
-         <div class="pictureQuantityMoney">
-           <div class="imageValueWrapper" *ngIf="positiveStock; then happyStock else sadStock">
-           </div>
-            <ng-template #happyStock> <img width="" src="assets/imgs/stockHappy-02.png"/> </ng-template>
-            <ng-template #sadStock> <img src="assets/imgs/stockSad-02.png"/> </ng-template>
-                
-        </div> 
+       <div class="imageValueWrapper">
+        <div *ngIf="creditYes" class="warning" (click)="creditperproduct()" tappable>
+          <img src="assets/imgs/warning.png">
+        </div>
+        
+        <img width="" src="assets/imgs/cashDash-01.png"/> 
+        <div class="positionValue">
+          <font size="+3">$ {{cash}} </font>
+        </div>
       </div>
+    </div> 
   </div>
+  
+  <div class="rows">
+
+   <div class="pictureQuantityMoney">
+    <div class="imageValueWrapper">
+     <div *ngIf="debtYes" class="warning" (click)="debtperproduct()" tappable>
+      <img src="assets/imgs/warning.png">
+    </div>
+
+    <img width="" src="assets/imgs/debtTotal-01.png"/> 
+    <div class="positionValue">
+      <font size="+3">$ {{totaldebt}}</font>
+    </div>
+  </div>
+</div> 
+</div>
+
+
+<div class="rows">
+  <div class="pictureQuantityMoney">
+   <div class="imageValueWrapper" *ngIf="positive; then happy else sad">
+   </div>
+   <ng-template #happy> <img id src="assets/imgs/cashMinusDebt-01.png"/> </ng-template>
+   <ng-template #sad> <img src="assets/imgs/cashMinusDebt2-01.png"/> </ng-template>
+
+ </div> 
+</div>
+
+<div class="rows">
+ <div class="pictureQuantityMoney">
+   <div class="imageValueWrapper" *ngIf="positiveStock; then happyStock else sadStock">
+   </div>
+   <ng-template #happyStock> <img width="" src="assets/imgs/stockHappy-02.png"/> </ng-template>
+   <ng-template #sadStock> <img src="assets/imgs/stockSad-02.png"/> </ng-template>
+
+ </div> 
+</div>
+</div>
 
 
 

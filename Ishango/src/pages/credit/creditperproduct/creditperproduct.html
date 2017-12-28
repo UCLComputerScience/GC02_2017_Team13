@@ -36,11 +36,11 @@
  <ion-list>
       <div *ngFor="let photo of photos; let id = index">
 
-   <ion-item class="pictureAndQuantity" (click)="gotorepaypage(id)" *ngIf="debt[id]>0">
+   <ion-item class="pictureAndQuantity" (click)="gotocollectpage(id)" *ngIf="credit[id]>0">
       <ion-avatar class="avatarStyle" item-start>
         <img [src]="photo" />
       </ion-avatar>
-      <h2 style="float:right; font-size:24px; margin-right: 25px;">{{debt[id]}} $</h2>
+      <h2 style="float:right; font-size:24px; margin-right: 25px;">{{credit[id]}} $</h2>
     </ion-item>
 
     </div>

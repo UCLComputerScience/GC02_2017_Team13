@@ -22,6 +22,8 @@ export class IscashreceivedPage {
   }
 
   cashreceived() { 
+    this.sharedprovider.credit.unshift(0);
+    this.sharedprovider.isCashReceivedBoolean = true;
     this.sharedprovider.acceptaddition1();
     this.navCtrl.setRoot(ProductstosellPage);
   }
@@ -33,9 +35,10 @@ export class IscashreceivedPage {
 
 
   cashnotreceived() {
+    this.sharedprovider.registercredit();
+    this.sharedprovider.isCashReceivedBoolean = false;
     this.sharedprovider.acceptaddition1();
     this.navCtrl.setRoot(ProductstosellPage);
- 
   }
 
 

@@ -37,11 +37,9 @@ import { AmountrepaidPage } from '../pages/debt/amountrepaid/amountrepaid';
 import { ConfirmationPage } from '../pages/debt/confirmation/confirmation';
 import { DebtperproductPage } from '../pages/debt/debtperproduct/debtperproduct';
 
-import { OtherPage } from '../pages/other/other';
-import { SalesarchivePage } from '../pages/archive/salesarchive/salesarchive';
-import { DeletesalesarchivePage } from '../pages/archive/deletesalesarchive/deletesalesarchive';
-import { RunningcarchivePage } from '../pages/archive/runningcarchive/runningcarchive';
-import { DeleterunningcarchivePage } from '../pages/archive/deleterunningcarchive/deleterunningcarchive';
+import { AmountcollectedPage } from '../pages/credit/amountcollected/amountcollected';
+import { ConfirmationcreditPage } from '../pages/credit/confirmationcredit/confirmationcredit';
+import { CreditperproductPage } from '../pages/credit/creditperproduct/creditperproduct';
 
 import { CashregisterPage } from '../pages/initialRegistration/cashregister/cashregister';
 import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
@@ -95,11 +93,9 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     CreaterecordingPage,
     DeleterecordingPage,
     DeletesellPage,
-    OtherPage,
-    SalesarchivePage,
-    DeletesalesarchivePage,
-    RunningcarchivePage,
-    DeleterunningcarchivePage
+    AmountcollectedPage,
+    ConfirmationcreditPage,
+    CreditperproductPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -137,11 +133,9 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     CreaterecordingPage,
     DeleterecordingPage,
     DeletesellPage,
-    OtherPage,
-    SalesarchivePage,
-    DeletesalesarchivePage,
-    RunningcarchivePage,
-    DeleterunningcarchivePage
+    AmountcollectedPage,
+    ConfirmationcreditPage,
+    CreditperproductPage
       ],
   providers: [
     StatusBar,

@@ -16,14 +16,14 @@ import { ConfirmationPage } from '../../../pages/debt/confirmation/confirmation'
   templateUrl: 'amountrepaid.html',
 })
 export class AmountrepaidPage {
-  amountrepaid=0;
+  amountrepaid = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public sharedprovider: SharedProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
   }
 
   increment(amount) {
-    this.amountrepaid = this.amountrepaid+amount;
-    if(this.sharedprovider.debt[this.sharedprovider.index]-this.amountrepaid < 0){
+    this.amountrepaid = this.amountrepaid + amount;
+    if(this.sharedprovider.debt[this.sharedprovider.index] - this.amountrepaid < 0){
       this.amountrepaid = this.sharedprovider.debt[this.sharedprovider.index];
       this.sharedprovider.producesound("You cannot repay more than you owe");
     

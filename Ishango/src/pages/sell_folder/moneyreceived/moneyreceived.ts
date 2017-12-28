@@ -64,14 +64,14 @@ if(this.moneyreceived - this.suggestedprice <= 0){
 }
 
   ionViewDidLoad() {
-    console.log('index: ' + this.index);
-    console.log('quantity: ' + this.sharedprovider.quantityTempSell[this.sharedprovider.quantityTempSell.length - 1]);
-    console.log('weighted price: ' + this.sharedprovider.averagebuyingprice[this.index]);
-    console.log('suggested: ' + this.averagebuyingprice * this.quantity[this.index]);
+    // console.log('index: ' + this.index);
+    // console.log('quantity: ' + this.sharedprovider.quantityTempSell[this.sharedprovider.quantityTempSell.length - 1]);
+    // console.log('weighted price: ' + this.sharedprovider.averagebuyingprice[this.index]);
+    // console.log('suggested: ' + this.averagebuyingprice * this.quantity[this.index]);
 
-    for(var i = 0; i < this.sharedprovider.averagebuyingprice.length; i++){
-      console.log('in weighted loop position ' + i + ": " + this.sharedprovider.averagebuyingprice[i]);
-    }
+    // for(var i = 0; i < this.sharedprovider.averagebuyingprice.length; i++){
+    //   console.log('in weighted loop position ' + i + ": " + this.sharedprovider.averagebuyingprice[i]);
+    // }
   }
 
 }

@@ -3,7 +3,7 @@
     <ion-title>Stock</ion-title>
     <ion-buttons end (click)="producesound(1)">
       <button (click)="producesound()" ion-button>
-          <ion-icon name="MyApp-sound"></ion-icon>
+          <ion-icon name="volume-up" style="font-size:30px;"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -43,15 +43,14 @@
 
     <div (click)="buymoreofthesame(id)" >
       <div class="quantityTag"><h2 style="font-size: 24px;">{{quantity[id]}}</h2></div>
-      <h2 class="moneyTag" style="font-size: 24px;">{{totalmoneypaid[id]}} $</h2>
+      <h2 class="moneyTag" style="font-size: 24px;">$ {{totalmoneypaid[id]}}</h2>
 
 </div>
     </ion-item>
 
       <ion-item-options side="right" >
-      <button ion-button color="primary" (click)="gotodeleteitem(id)">
-        <ion-icon name="trash"></ion-icon>
-        Delete
+      <button style="width:80px;" ion-button color="danger" (click)="gotodeleteitem(id)">
+        <ion-icon name="trash" style="font-size:36px;"></ion-icon>
       </button>
     </ion-item-options>
   </ion-item-sliding>

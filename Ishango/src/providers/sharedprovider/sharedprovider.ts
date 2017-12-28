@@ -39,12 +39,17 @@ export class SharedProvider {
   public quantitySell = [];
   public moneyReceived = [];
   public photosSell = [];
-
+  public isCashReceivedBoolean;
 
   // debt values
   public debtRepay;
   public debtYes;
   public debt = [];
+
+  //credit values
+  public creditRepay;
+  public creditYes;
+  public credit = [];
 
   //total profit
   public totalProfit = 0;
@@ -77,7 +82,7 @@ export class SharedProvider {
 
       this.totalmoneypaid.unshift(this.moneypaidTemp[this.moneypaidTemp.length -1]);
 
-       console.log("averagebuyingprice: " + this.averagebuyingprice[0]);
+      // console.log("averagebuyingprice: " + this.averagebuyingprice[0]);
 
 
     }
@@ -86,69 +91,65 @@ export class SharedProvider {
 
       // computing total weight for weighted average formula
       this.weightedquantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
-      console.log("weighted quantity: " + this.weightedquantity[this.index]);
+      // console.log("weighted quantity: " + this.weightedquantity[this.index]);
       // weight for old quantity / money
       this.partialoldaverage = this.quantity[this.index] / this.weightedquantity[this.index] * this.averagebuyingprice[this.index];
-      console.log("partial old average : " + this.partialoldaverage);
+      // console.log("partial old average : " + this.partialoldaverage);
       // weight for new quantity / money
       this.partialnewaverage = this.quantityTemp[this.quantityTemp.length - 1] / this.weightedquantity[this.index] * (this.moneypaidTemp[this.moneypaidTemp.length - 1] / this.quantityTemp[this.quantityTemp.length - 1]);
-      console.log("partial new average: " + this.partialnewaverage);
+      // console.log("partial new average: " + this.partialnewaverage);
 
       // final weighted average cost per item to help the user understand their selling target price per item
       this.averagebuyingprice[this.index] = this.partialnewaverage + this.partialoldaverage;
-      console.log("averagebuyingprice: " + this.averagebuyingprice[this.index]);
+      // console.log("averagebuyingprice: " + this.averagebuyingprice[this.index]);
 
       // converting the number from double to integer to avoid decimal places
       for(var i = 0; i < this.averagebuyingprice.length; i++){
-      this.averagebuyingprice[i] = Math.ceil(this.averagebuyingprice[i]);
-    }
+        this.averagebuyingprice[i] = Math.ceil(this.averagebuyingprice[i]);
+      }
 
-    this.weightedquantity.unshift(this.weightedquantity[this.index]);
-    this.averagebuyingprice.unshift(this.averagebuyingprice[this.index]);
+      this.weightedquantity.unshift(this.weightedquantity[this.index]);
+      this.averagebuyingprice.unshift(this.averagebuyingprice[this.index]);
 
-    this.weightedquantity.splice(this.index + 1, 1);
-    this.averagebuyingprice.splice(this.index + 1, 1);
+      this.weightedquantity.splice(this.index + 1, 1);
+      this.averagebuyingprice.splice(this.index + 1, 1);
 
       // total money paid for a specific item
       this.totalmoneypaid[this.index] += this.moneypaidTemp[this.moneypaidTemp.length - 1];
       this.quantity[this.index] = this.quantity[this.index] + this.quantityTemp[this.quantityTemp.length - 1];
       this.moneypaid[this.index] = this.moneypaid[this.index] + this.moneypaidTemp[this.moneypaidTemp.length - 1];
 
-            console.log("BEFORE UNSHIFT");
+      // console.log("BEFORE UNSHIFT");
 
-for(var i  = 0; i < this.averagebuyingprice.length; i++){
-           console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
+      // for(var i  = 0; i < this.averagebuyingprice.length; i++){
+      //   console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
 
-      }
-
-      
+      // }
 
       this.totalmoneypaid.unshift(this.totalmoneypaid[this.index]);
       this.quantity.unshift(this.quantity[this.index]);
       this.moneypaid.unshift(this.moneypaid[this.index]);
       this.photos.unshift(this.photos[this.index]);
 
-  console.log("AFTER UNSHIFT");
+      // console.log("AFTER UNSHIFT");
 
-for(var i  = 0; i < this.averagebuyingprice.length; i++){
-                    console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
+      // for(var i  = 0; i < this.averagebuyingprice.length; i++){
+      //   console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
 
-      }
+      // }
 
       this.totalmoneypaid.splice(this.index + 1, 1);
       this.quantity.splice(this.index + 1, 1);
       this.moneypaid.splice(this.index + 1, 1);
       this.photos.splice(this.index + 1, 1);
 
-        console.log("AFTER SPLICE");
+      // console.log("AFTER SPLICE");
 
 
-      for(var i  = 0; i < this.averagebuyingprice.length; i++){
-                    console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
+      // for(var i  = 0; i < this.averagebuyingprice.length; i++){
+      //   console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
 
-      }
-
-
+      // }
 
       this.buysameitem = false;
     }
@@ -169,11 +170,19 @@ for(var i  = 0; i < this.averagebuyingprice.length; i++){
 
   //procedure for selling products
   acceptaddition1() {
+
+    if (this.isCashReceivedBoolean == true)
+    {
+      this.cash = this.cash + this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1];
+      console.log("cash: " + this.cash);
+    }
+
+    console.log("cash: " + this.cash);
+
     this.quantitySell.unshift(this.quantityTempSell[this.quantityTempSell.length - 1]);
     this.moneyReceived.unshift(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
     this.photosSell.unshift(this.photosTempSell[this.photosTempSell.length - 1]);
     this.quantity[this.index] = this.quantity[this.index] - this.quantitySell[0];
-    this.cash += this.moneyReceived[0];
 
     var num: number = 0;
     for (num = 0; num < this.quantityTempSell.length; num++) {
@@ -190,7 +199,8 @@ for(var i  = 0; i < this.averagebuyingprice.length; i++){
     this.quantity.splice(this.index, 1);
     this.photos.splice(this.index, 1);
     this.moneypaid.splice(this.index, 1);
-    this.debt.splice(this.index,1);
+    // we want to keep track of the debt when the item is deleted
+    // this.debt.splice(this.index,1);
     this.averagebuyingprice.splice(this.index, 1);
     this.totalmoneypaid.splice(this.index, 1);
     this.updateDataBase();
@@ -198,30 +208,30 @@ for(var i  = 0; i < this.averagebuyingprice.length; i++){
 
     //delete a sale
     deleteSell() {
-      
-        var match;
+
+      var match;
         //restoring the quantity in stock after deleting the sale
         for(var i = 0; i < this.photos.length; i++){
-           for(var a = 0; a < this.photosSell.length; a++){
-             if(this.photos[i] === this.photosSell[a] && this.quantitySell[a] == this.quantitySell[this.index]){
-                this.quantity[i] += this.quantitySell[this.index];
-                match = true;
-             }
-             if(match)
-               break;
-           }
-           if(match)
+          for(var a = 0; a < this.photosSell.length; a++){
+            if(this.photos[i] === this.photosSell[a] && this.quantitySell[a] == this.quantitySell[this.index]){
+              this.quantity[i] += this.quantitySell[this.index];
+              match = true;
+            }
+            if(match)
               break;
+          }
+          if(match)
+            break;
         }
 
   // diminishing the cash after deleting the sale
-        this.cash -= this.moneyReceived[this.index];
+  this.cash -= this.moneyReceived[this.index];
 
-        this.quantitySell.splice(this.index,1);
-        this.moneyReceived.splice(this.index,1);
-        this.photosSell.splice(this.index,1);
-        this.updateDataBase();
-    }
+  this.quantitySell.splice(this.index,1);
+  this.moneyReceived.splice(this.index,1);
+  this.photosSell.splice(this.index,1);
+  this.updateDataBase();
+}
 
   //speed voice regulator for iOS devices
   speedvoice() {
@@ -229,6 +239,43 @@ for(var i  = 0; i < this.averagebuyingprice.length; i++){
       this.speedVoice = 1.5;
   }
 
+  //register the new credit
+  registercredit(){
+
+    this.credit.unshift(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
+    console.log("credit array: " + this.credit[0]);
+    if(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1] != 0){
+      this.creditYes = true;
+      console.log("in Setter creditYes true");
+    }
+    this.updateDataBase();
+
+  }
+
+  //collect money from sales
+  collect() {
+
+    this.credit[this.index] = this.credit[this.index] - this.creditRepay;
+    this.cash = this.cash + this.creditRepay;
+
+    for(var  i = 0; i < this.credit.length; i++){
+
+      if(this.credit[i] > 0){
+        this.creditYes = true;
+        console.log(this.credit[i]);
+        break;
+      } else {
+        this.creditYes = false;
+      }
+    }
+
+    console.log("array length:" + this.credit.length);
+    console.log("creditYes:" + this.creditYes);
+
+    this.updateDataBase();
+
+
+  }
 
   //register the new debt
   registerdebt() {
@@ -239,21 +286,21 @@ for(var i  = 0; i < this.averagebuyingprice.length; i++){
     else {
       this.debt.unshift(this.moneypaidTemp[this.moneypaidTemp.length - 1]);
     }
- 
-   
-    for(var i = 0; i < this.debt.length; i++){
-      if(this.debt[i] == 0){
-        this.debt.splice(i, 1);
-      }
-      console.log(this.debt[i]);
+
+
+    // for(var i = 0; i < this.debt.length; i++){
+    //   if(this.debt[i] == 0){
+    //     this.debt.splice(i, 1);
+    //   }
+    //   console.log(this.debt[i]);
+    // }
+
+    if(this.moneypaidTemp[this.moneypaidTemp.length - 1] != 0){
+      this.debtYes = true;
     }
 
-   if(this.moneypaidTemp[this.moneypaidTemp.length - 1] != 0){
-        this.debtYes = true;
-   }
-
-  console.log("array length:" + this.debt.length);
-  console.log("debtYes:" + this.debtYes);
+    console.log("array length:" + this.debt.length);
+    console.log("debtYes:" + this.debtYes);
 
     this.updateDataBase();
   }
@@ -266,17 +313,17 @@ for(var i  = 0; i < this.averagebuyingprice.length; i++){
     for(var  i = 0; i < this.debt.length; i++){
 
       if(this.debt[i] > 0){
-          this.debtYes = true;
-          console.log(this.debt[i]);
-          break;
+        this.debtYes = true;
+        console.log(this.debt[i]);
+        break;
       } else {
         this.debtYes = false;
       }
     }
- 
-  console.log("array length:" + this.debt.length);
-  console.log("debtYes:" + this.debtYes);
-   
+
+    console.log("array length:" + this.debt.length);
+    console.log("debtYes:" + this.debtYes);
+
     this.updateDataBase();
   }
 
@@ -291,13 +338,17 @@ for(var i  = 0; i < this.averagebuyingprice.length; i++){
     this.storage.set('photosSell', this.photosSell);
 
     this.storage.set('debt',this.debt);
+    this.storage.set('debtYes', this.debtYes);
+
+    this.storage.set('credit', this.credit);
+    this.storage.set('creditYes', this.creditYes);
+
+
     this.storage.set('cash', this.cash);
     this.storage.set('photoProfile', this.photoProfile);
 
     this.storage.set('averagebuyingprice', this.averagebuyingprice);
     this.storage.set('weightedquantity', this.weightedquantity);
-
-    this.storage.set('debtYes', this.debtYes);
 
   }
 
@@ -390,6 +441,18 @@ for(var i  = 0; i < this.averagebuyingprice.length; i++){
       if(data!=null)
       {
         this.debtYes = data;
+      }
+    });
+    this.storage.get('creditYes').then((data) => {
+      if(data!=null)
+      {
+        this.creditYes = data;
+      }
+    });
+    this.storage.get('credit').then((data) => {
+      if(data!=null)
+      {
+        this.credit = data;
       }
     });
   }

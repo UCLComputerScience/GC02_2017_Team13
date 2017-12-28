@@ -4,7 +4,7 @@ import { ProductstobuyPage } from '../buy_folder/productstobuy/productstobuy';
 import { ProductstosellPage } from '../sell_folder/productstosell/productstosell';
 import { HomePage } from '../home/home';
 import { RunningcostsPage } from '../runningcosts_folder/runningcosts/runningcosts';
-import { OtherPage } from '../other/other';
+import { AllrecordingsPage } from '../features/allrecordings/allrecordings';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class TabsPage {
   tab2Root = ProductstobuyPage;
   tab3Root = ProductstosellPage;
   tab4Root = RunningcostsPage;
-  tab6Root = OtherPage;
+  tab6Root = AllrecordingsPage;
 
 
 

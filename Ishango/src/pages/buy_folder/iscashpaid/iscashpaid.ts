@@ -23,7 +23,7 @@ export class IscashpaidPage {
   cashpaid() {
      
      if(this.sharedprovider.moneypaidTemp[this.sharedprovider.moneypaidTemp.length-1] <= this.sharedprovider.cash){
-      this.sharedprovider.debt.push(0);
+      this.sharedprovider.debt.unshift(0);
       this.sharedprovider.isCashPaidBoolean = true;
       this.sharedprovider.acceptaddition();
       this.navCtrl.setRoot(ProductstobuyPage);
