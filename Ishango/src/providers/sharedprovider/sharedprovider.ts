@@ -211,12 +211,52 @@ export class SharedProvider {
   //delete a product
   deleteitem() {
     this.quantity.splice(this.index, 1);
-    this.photos.splice(this.index, 1);
     this.moneypaid.splice(this.index, 1);
-    // we want to keep track of the debt when the item is deleted
     this.averagebuyingprice.splice(this.index, 1);
     this.totalmoneypaid.splice(this.index, 1);
+
+
+    //CONSOLE ONLY checking the debt array
+    for(var i = 0; i < this.photosDebt.length; i++){
+      console.log("debt array [" + i + "]: " + this.debt[i]);
+    }
+    //
+
+// deleting all debt related to the deleted item 
+    for(var i = 0; i < this.photosDebt.length; i++){
+      if(this.photosDebt[i] == this.photos[this.index]){
+        this.photosDebt.splice(i, 1);
+        this.debt.splice(i, 1);
+        i--;
+      }
+    }
+
+ //CONSOLE ONLY checking array debt after cancelling values
+    for(var i = 0; i < this.photosDebt.length; i++){
+      console.log("debt array [" + i +  "]: " + this.debt[i]);
+    }
+    //
+
+    this.photos.splice(this.index, 1);
     this.updateDataBase();
+
+
+    // managing the "go to debt" icon based on the array debt values
+    var sum = 0;
+
+    if(this.debt[0] == undefined){
+      this.debtYes = false;
+      console.log("debt at  0 is undefined");
+    }
+
+    for(var i = 0; i < this.debt.length; i++){
+      sum = sum + this.debt[i];
+      console.log("sum: " + sum);
+    }
+
+    if(sum == 0)
+      this.debtYes = false;
+
   }
 
     //delete a sale
@@ -245,12 +285,18 @@ export class SharedProvider {
   this.moneyReceived.splice(this.index,1);
   this.credit.splice(this.index, 1);
   this.photosSell.splice(this.index,1);
+
+  var sum = 0;
+
+  for(var i = 0; i < this.credit.length; i++)
+    sum += this.credit[i];
+  
+  if(sum != 0)
+    this.creditYes = true;
+  else
+    this.creditYes = false;
+
   this.updateDataBase();
-
-  console.log("SALE DELETED");
-  for(var i = 0; i < this.moneyReceived.length; i++)
-    console.log("money received: " + this.moneyReceived[i] + "  " + "money credit: " + this.credit[i]);
-
 }
 
   //speed voice regulator for iOS devices
@@ -265,17 +311,8 @@ export class SharedProvider {
     this.credit.unshift(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1]);
     if(this.moneyreceivedTemp[this.moneyreceivedTemp.length - 1] != 0){
       this.creditYes = true;
-      console.log("in Setter creditYes true");
     }
     this.updateDataBase();
-
-    console.log();
-    
-    console.log("BOUGHT ON CREDIT");
-    for(var i = 0; i < this.moneyReceived.length; i++)
-      console.log("money received: " + this.moneyReceived[i] + "  " + "money credit: " + this.credit[i]);
-
-
   }
 
   //collect money from sales
@@ -295,12 +332,7 @@ export class SharedProvider {
       }
     }
 
-    console.log("array length:" + this.credit.length);
-    console.log("creditYes:" + this.creditYes);
-    
     this.updateDataBase();
-
-
   }
 
   //register the new debt
@@ -336,6 +368,7 @@ export class SharedProvider {
   repay() {
     this.debt[this.index] = this.debt[this.index] - this.debtRepay;
 
+
     for(var  i = 0; i < this.debt.length; i++){
 
       if(this.debt[i] > 0){
@@ -365,6 +398,7 @@ export class SharedProvider {
 
     this.storage.set('debt',this.debt);
     this.storage.set('debtYes', this.debtYes);
+    this.storage.set('photosDebt', this.photosDebt);
 
     this.storage.set('credit', this.credit);
     this.storage.set('creditYes', this.creditYes);
@@ -380,8 +414,17 @@ export class SharedProvider {
 
   //Text to Speech enabled 
   async producesound(soundString): Promise<any> {
+
+    var speaking;
+
+    if(speaking){
+      await this.tts.speak({ text: ""})
+      return;
+    }
+
     try {
       this.speedvoice();
+      speaking = true;
       await this.tts.speak({ text: soundString, rate: this.speedVoice })
     }
     catch (e) {
@@ -481,10 +524,12 @@ export class SharedProvider {
         this.credit = data;
       }
     });
+    this.storage.get('photosDebt').then((data) => {
+      if(data!=null)
+      {
+        this.photosDebt = data;
+      }
+    });
   }
-
-
-  
-
 
 }
