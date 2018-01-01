@@ -32,7 +32,7 @@ export class CreaterecordingPage {
 
 
   startRecording() {
-    let name: string = "recording " + this.totalrecords;
+    let name: string = "recording # " + this.totalrecords;
     this.MediaPlugin = new MediaPlugin(name + ".wav");
     this.MediaPlugin.startRecord();
      this.clicked = true;
@@ -58,7 +58,7 @@ export class CreaterecordingPage {
   gotofeatures() {
     if (this.MediaPlugin != null) {
       this.MediaPlugin.stopRecord();
-      let name: string = "recording" + this.totalrecords;
+      let name: string = "recording # " + this.totalrecords;
       this.recordingprovider.recordingNames2.push(name);
       this.recordingprovider.updateDataBase();
       this.navCtrl.setRoot(AllrecordingsPage);

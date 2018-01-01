@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import { MediaPlugin } from 'ionic-native';
 import { SharedProvider } from '../../providers/sharedprovider/sharedprovider';
 import { Storage } from '@ionic/storage';
- 
+
 @Injectable()export class CustomTrackProvider {
 
   //values for recording
@@ -16,41 +16,42 @@ import { Storage } from '@ionic/storage';
 
 
 //values for runningcosts
- public runningCosts=[];
- public recordingNames=[];
- public totalrecordings=0;
- public MediaPlugin: MediaPlugin;
+public runningCosts=[];
+public recordingNames=[];
+public totalrecordings = 0;
+public MediaPlugin: MediaPlugin;
  public index;//this values is used to delete 
  
  constructor(public http: Http,public sharedprovider:SharedProvider,public storage:Storage) {
-   
-  this.getValuesFromDB();
- 
+
+   this.getValuesFromDB();
+
  }
 
  
  playRecording(id) {
-    this.MediaPlugin = new MediaPlugin(this.recordingNames[id]+".wav");
-    this.MediaPlugin.play();
-    this.MediaPlugin.getDuration;
-    console.log(this.MediaPlugin.getCurrentPosition);
-}
+   this.MediaPlugin = new MediaPlugin(this.recordingNames[id]+".wav");
+   this.MediaPlugin.play();
+ }
 
-  delete(){
-    this.runningCosts.splice(this.index,1);
-    this.recordingNames.splice(this.index,1);
-    this.updateDataBase();
-  }
+ delete(){
+   this.sharedprovider.cash += this.runningCosts[this.index];
+   this.runningCosts.splice(this.index,1);
+   this.recordingNames.splice(this.index,1);
+   this.totalrecordings -= 1;
+   this.updateDataBase();
+ }
 
-  acceptaddition(moneypaid){
-    this.runningCosts.unshift(moneypaid);
-    this.sharedprovider.cash = this.sharedprovider.cash - moneypaid;
-    this.updateDataBase();
-  }
+ acceptaddition(moneypaid){
+   this.runningCosts.unshift(moneypaid);
+   this.sharedprovider.cash = this.sharedprovider.cash - moneypaid;
+   this.updateDataBase();
+ }
 
   //functions for recording
   deleterec(){
     this.recordingNames2.splice(this.indexrec,1);
+    this.totalrecords -= 1;
     this.updateDataBase();
   }
 
