@@ -14,38 +14,47 @@
 
 <ion-content padding>
 
-    <img class="background thegrid" src="assets/imgs/recordingBackground.png" />
 
 
   <ion-grid class="thegrid">
     <ion-row>
+
+       <ion-col col-3 >
+         </ion-col>
       <div *ngIf="clicked; then green else neutral"> 
         </div>
-      
+        
           <ng-template #neutral>
-            <ion-col col-4 >
-            <img tappable (click)="startRecording()" src="assets/imgs/record.png" /> 
+            <ion-col col-6 >
+            <img tappable (click)="startRecording()" src="assets/imgs/recordOff.png" /> 
             </ion-col>
           </ng-template>
 
           <ng-template #green>
-            <ion-col col-4 >
+            <ion-col col-6 >
             <img tappable (click)="startRecording()" src="assets/imgs/recordOn.png" /> 
+            <img class="background positioning" src="assets/imgs/vocal-09.png" />
               </ion-col>
       </ng-template>
+
+      <ion-col col-3 >
+         </ion-col>
+
+         <ion-col col-2 >
+         </ion-col>
 
       <div *ngIf="stop; then red else blue">
       </div>
 
       <ng-template #blue>
       <ion-col col-4>
-          <img tappable (click)="stopRecording()" src="assets/imgs/stopOff-03.png" />
+          <img tappable (click)="stopRecording()" src="assets/imgs/stopOff.png" />
       </ion-col>
     </ng-template>
 
     <ng-template #red>
       <ion-col col-4>
-          <img tappable (click)="stopRecording()" src="assets/imgs/stop.png" />
+          <img tappable (click)="stopRecording()" src="assets/imgs/stopOn.png" />
       </ion-col>
     </ng-template>
 
@@ -55,7 +64,7 @@
       
          <ng-template #wait>
           <ion-col col-4 >
-            <img tappable (click)="playRecording()" src="assets/imgs/play.png" />
+            <img tappable (click)="playRecording()" src="assets/imgs/playOff.png" />
              </ion-col>
           </ng-template>
 
@@ -64,7 +73,8 @@
           <img tappable (click)="playRecording()" src="assets/imgs/playOn.png" />
            </ion-col>
       </ng-template>
-
+       <ion-col col-2 >
+         </ion-col>
 
     </ion-row>
   </ion-grid>

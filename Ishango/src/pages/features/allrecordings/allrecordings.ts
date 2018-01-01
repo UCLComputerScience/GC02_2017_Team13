@@ -13,6 +13,7 @@ import { DeleterecordingPage } from '../../../pages/features/deleterecording/del
 })
 export class AllrecordingsPage {
   public recordingNames=[];
+  public background1;
 
   constructor(public navCtrl: NavController,public sharedprovider:SharedProvider,public recordingprovider: CustomTrackProvider) {
     
@@ -20,6 +21,14 @@ export class AllrecordingsPage {
 
   ionViewDidEnter(){
     this.recordingNames=this.recordingprovider.recordingNames2;
+    console.log(this.recordingNames.length);
+    if(this.recordingNames.length == 0){
+      this.background1 = true;
+    } else {
+      this.background1 = false;
+    }
+  
+
   }
 
   playrecording(id)

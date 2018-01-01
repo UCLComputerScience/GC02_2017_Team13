@@ -13,7 +13,7 @@ export class ProductstosellPage {
    private quantity = [];
    private moneyreceived = [];
    private photosSell = [];
-
+   private background;
 
   constructor(public navCtrl: NavController, public sharedprovider: SharedProvider) {
     this.photos = this.sharedprovider.photos;
@@ -22,6 +22,16 @@ export class ProductstosellPage {
     this.moneyreceived = this.sharedprovider.moneyReceived;
 
   }
+
+
+  ionViewDidEnter(){
+
+    if(this.photosSell.length > 0){
+      this.background = false;
+    }
+    else
+      this.background = true;
+}
 
   //allow sales only if at least one product has been bought
   gotoaddnewsale() {

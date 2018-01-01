@@ -13,6 +13,10 @@
   
  <ion-content padding>
 
+  <div *ngIf="background">
+      <img class="welcome" src="assets/imgs/emptyrunning-08.png"/>
+</div>
+
     <ion-grid class="navBarGlobal">
         <ion-row>
   
@@ -37,16 +41,15 @@
           <ion-item-sliding>
             <ion-item class="pictureAndQuantity">
               <ion-avatar class="avatarStyle" item-start (click)="playrecording(id)">
-                  <img src="assets/imgs/play.png"/>
+                  <img src="assets/imgs/playOff.png"/>
               </ion-avatar>
 
               <div class="quantityTag"> <h2 style="font-size: 24px;">{{runningCosts[id]}} $</h2> </div>
             </ion-item>
 
-            <ion-item-options side="right">
-      <button ion-button color="primary" (click)="gotodeleterunningcost(id)">
-        <ion-icon name="trash"></ion-icon>
-        Delete
+           <ion-item-options side="right" >
+      <button style="width:80px;" ion-button color="danger" (click)="gotodeleterunning(id)">
+        <ion-icon name="trash" style="font-size:36px;"></ion-icon>
       </button>
     </ion-item-options>
   </ion-item-sliding>

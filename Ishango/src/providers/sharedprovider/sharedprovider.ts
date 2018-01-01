@@ -223,39 +223,27 @@ export class SharedProvider {
     //
 
 // deleting all debt related to the deleted item 
-    for(var i = 0; i < this.photosDebt.length; i++){
-      if(this.photosDebt[i] == this.photos[this.index]){
-        this.photosDebt.splice(i, 1);
-        this.debt.splice(i, 1);
-        i--;
+    for(var a = 0; a < this.photosDebt.length; a++){
+      if(this.photosDebt[a] == this.photos[this.index]){
+        this.photosDebt.splice(a, 1);
+        this.debt.splice(a, 1);
+        a--;
       }
     }
 
  //CONSOLE ONLY checking array debt after cancelling values
-    for(var i = 0; i < this.photosDebt.length; i++){
-      console.log("debt array [" + i +  "]: " + this.debt[i]);
+    for(var b = 0; b < this.photosDebt.length; b++){
+      console.log("debt array [" + b +  "]: " + this.debt[b]);
     }
     //
 
+    if(this.photosDebt.length == 0){
+      this.debtYes = false;
+      console.log("debtYes is false and stored");
+    }
+
     this.photos.splice(this.index, 1);
     this.updateDataBase();
-
-
-    // managing the "go to debt" icon based on the array debt values
-    var sum = 0;
-
-    if(this.debt[0] == undefined){
-      this.debtYes = false;
-      console.log("debt at  0 is undefined");
-    }
-
-    for(var i = 0; i < this.debt.length; i++){
-      sum = sum + this.debt[i];
-      console.log("sum: " + sum);
-    }
-
-    if(sum == 0)
-      this.debtYes = false;
 
   }
 
@@ -370,7 +358,6 @@ export class SharedProvider {
 
 
     for(var  i = 0; i < this.debt.length; i++){
-
       if(this.debt[i] > 0){
         this.debtYes = true;
         console.log(this.debt[i]);
@@ -379,9 +366,6 @@ export class SharedProvider {
         this.debtYes = false;
       }
     }
-
-    console.log("array length:" + this.debt.length);
-    console.log("debtYes:" + this.debtYes);
 
     this.updateDataBase();
   }
@@ -414,17 +398,8 @@ export class SharedProvider {
 
   //Text to Speech enabled 
   async producesound(soundString): Promise<any> {
-
-    var speaking;
-
-    if(speaking){
-      await this.tts.speak({ text: ""})
-      return;
-    }
-
     try {
       this.speedvoice();
-      speaking = true;
       await this.tts.speak({ text: soundString, rate: this.speedVoice })
     }
     catch (e) {

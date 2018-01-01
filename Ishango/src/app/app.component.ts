@@ -7,6 +7,10 @@ import { LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
+import { SharedProvider } from '../providers/sharedprovider/sharedprovider';
+import { CustomTrackProvider } from '../providers/custom-track/custom-track';
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -15,10 +19,13 @@ export class MyApp {
   rootPage:any = TabsPage;
   loader: any;
 
-  constructor(public platform: Platform,public statusBar: StatusBar,public splashScreen: SplashScreen, private device: Device, public loadingCtrl: LoadingController, public storage: Storage) {
+  constructor(public platform: Platform,public statusBar: StatusBar,public splashScreen: SplashScreen, private device: Device, public loadingCtrl: LoadingController, public storage: Storage, public sharedprovider: SharedProvider, public audioprovider: CustomTrackProvider) {
 
     this.presentLoading();
-    
+
+      this.sharedprovider.getValuesFromDB();
+      this.audioprovider.getValuesFromDB();
+
         this.platform.ready().then(() => {
     
           this.storage.get('introShown').then((result) => {

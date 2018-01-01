@@ -17,23 +17,23 @@ import { Storage } from '@ionic/storage';
 export class RunningcostsPage {
 
   public runningCosts=[];
-  
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MusicPlayerPage');
-  }
+  private background;
   
   constructor(public storage:Storage,public recordingprovider: CustomTrackProvider,public sharedprovider:SharedProvider, public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
-    
+
   }
 
   ionViewDidEnter(){
 
-    this.storage.get('runningCosts').then((data) => {
-      if(data!=null)
-      {
-        this.runningCosts = data;
-      }
-    });
+    this.runningCosts = this.recordingprovider.runningCosts;
+
+    console.log("runningCosts length: " + this.runningCosts.length);
+    
+    if(this.runningCosts.length > 0) {
+      this.background = false;
+    } else {
+      this.background = true;
+    }
   }
 
   playrecording(id)
@@ -41,9 +41,8 @@ export class RunningcostsPage {
     this.recordingprovider.playRecording(id);
   }
 
-
   gotodeleterunningcost(id){
-    this.recordingprovider.index=id;
+    this.recordingprovider.index = id;
     this.navCtrl.push(DeleterunningcostPage);
   }
 
@@ -58,7 +57,7 @@ export class RunningcostsPage {
     }
     else if (presets==3)
     {
-     this.sharedprovider.producesound("In this column you can see the money you paid for each running cost"); 
+      this.sharedprovider.producesound("In this column you can see the money you paid for each running cost"); 
     }
     
   }
@@ -68,4 +67,4 @@ export class RunningcostsPage {
     this.navCtrl.push(RecordPage);
   }
 
- }
+}

@@ -36,7 +36,7 @@ export class RecordPage {
     this.clicked = true;
     this.playing = false;
     this.stop = false;
-      }
+  }
 
   stopRecording() {
     this.MediaPlugin.stopRecord();
@@ -51,8 +51,7 @@ export class RecordPage {
     this.playing = true;
     this.clicked = false;
     this.stop = false;
-     }
-
+  }
 
   gotomoneypaid() {
     if (this.MediaPlugin != null) {

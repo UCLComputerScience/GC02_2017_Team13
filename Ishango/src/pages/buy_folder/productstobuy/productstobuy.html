@@ -11,6 +11,10 @@
 
 
 <ion-content padding>
+
+  <div *ngIf="background">
+      <img class="welcome" src="assets/imgs/emptybuy-08.png"/>
+</div>
  
     <ion-grid class="navBarGlobal">
       <ion-row>
@@ -19,13 +23,13 @@
         
         <ion-col col-4 class="">
             <button ion-button round (click)="producesound(2)">
-            <ion-icon style="font-size:30px;" name="cash"></ion-icon>
+            <ion-icon style="font-size:30px; z-index: 10;" name="cash"></ion-icon>
           </button>
          </ion-col>
        
         <ion-col col-4 class="navBarRight">
           <button ion-button round (click)="producesound(3)">
-            <ion-icon style="font-size:30px;" name="basket"></ion-icon>
+            <ion-icon style="font-size:30px; z-index: 10;" name="basket"></ion-icon>
           </button>
         </ion-col>
 

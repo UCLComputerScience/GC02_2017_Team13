@@ -18,6 +18,7 @@ export class ProductstobuyPage {
    private quantity = [];
    private moneypaid = [];
    private totalmoneypaid = [];
+   private background;
 
 
    
@@ -35,7 +36,14 @@ export class ProductstobuyPage {
 
   }
 
+  ionViewDidEnter(){
 
+    if(this.photos.length > 0){
+      this.background = false;
+    }
+    else
+      this.background = true;
+}
 
 //takes pictures and save them in array photos and provider
   // ngOnInit() {

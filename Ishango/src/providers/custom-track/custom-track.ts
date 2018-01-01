@@ -11,7 +11,7 @@ import { Storage } from '@ionic/storage';
   public indexrec;
   public recordingNames2=[];
   public MediaPlugin2: MediaPlugin;
-  public totalrecords=0;
+  public totalrecords = 0;
 
 
 
@@ -27,6 +27,8 @@ import { Storage } from '@ionic/storage';
   this.getValuesFromDB();
  
  }
+
+ 
  playRecording(id) {
     this.MediaPlugin = new MediaPlugin(this.recordingNames[id]+".wav");
     this.MediaPlugin.play();
@@ -46,9 +48,7 @@ import { Storage } from '@ionic/storage';
     this.updateDataBase();
   }
 
-
   //functions for recording
-
   deleterec(){
     this.recordingNames2.splice(this.indexrec,1);
     this.updateDataBase();
@@ -66,18 +66,17 @@ import { Storage } from '@ionic/storage';
     this.storage.set('runningCosts', this.runningCosts);
     this.storage.set('recordingNames', this.recordingNames);
     this.storage.set('totalrecordings', this.totalrecordings);
-
   }
 
   getValuesFromDB(){
     this.storage.get('recordingNames2').then((data) => {
-      if(data!=null)
+      if(data!=undefined)
       {
         this.recordingNames2 = data;
       }
     });
     this.storage.get('totalrecords').then((data) => {
-      if(data!=null)
+      if(data!=undefined)
       {
         this.totalrecords = data;
       }
@@ -85,33 +84,26 @@ import { Storage } from '@ionic/storage';
 
     //now the running costs values
     this.storage.get('runningCosts').then((data) => {
-      if(data!=null)
+      if(data!=undefined)
       {
         this.runningCosts = data;
       }
     });
     this.storage.get('recordingNames').then((data) => {
-      if(data!=null)
+      if(data!=undefined)
       {
         this.recordingNames = data;
       }
     });
 
     this.storage.get('totalrecordings').then((data) => {
-      if(data!=null)
+      if(data!=undefined)
       {
         this.totalrecordings = data;
       }
     });
+  } 
 
-
-
-
-  }
-
-
-
- 
 }
 
 
