@@ -72,6 +72,8 @@ export class SharedProvider {
     if (this.isCashPaidBoolean == true)
     {
       this.cash = this.cash - this.moneypaidTemp[this.moneypaidTemp.length - 1];
+      if(this.cash<0)
+        this.cash=0;
     }
 
     if (!this.buysameitem) {
@@ -268,6 +270,8 @@ export class SharedProvider {
   // diminishing the cash after deleting the sale
   if(this.credit[this.index] == 0)
     this.cash -= this.moneyReceived[this.index];
+  if(this.cash<0)
+    this.cash=0;
 
   this.quantitySell.splice(this.index,1);
   this.moneyReceived.splice(this.index,1);
@@ -355,7 +359,9 @@ export class SharedProvider {
   //pay back for bought items
   repay() {
     this.debt[this.index] = this.debt[this.index] - this.debtRepay;
-
+    this.cash=this.cash-this.debtRepay;
+    if(this.cash<0)
+    this.cash=0;
 
     for(var  i = 0; i < this.debt.length; i++){
       if(this.debt[i] > 0){

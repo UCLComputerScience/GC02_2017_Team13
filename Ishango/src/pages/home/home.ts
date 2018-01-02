@@ -5,6 +5,7 @@ import { DebtperproductPage } from '../../pages/debt/debtperproduct/debtperprodu
 import { CreditperproductPage } from '../../pages/credit/creditperproduct/creditperproduct';
 import { WelcomePage } from '../../pages/initialRegistration/welcome/welcome';
 import { MenuController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -22,9 +23,47 @@ export class HomePage {
   public positive;
   public positiveStock;
 
-  constructor(public navCtrl: NavController, private sharedprovider: SharedProvider, public menuCtrl: MenuController) {
-  }
+  constructor(public navCtrl: NavController,public storage:Storage, private sharedprovider: SharedProvider, public menuCtrl: MenuController) {
+    this.storage.get('debt').then((data) => {
+      if(data!=null)
+      {
+        var num = 0;
+        var temp = 0;
+        for (num = 0; num < data.length; num++) {
+          temp = temp + data[num];
+        }
+        this.totaldebt = temp;
+      }
+    });    
+    this.storage.get('cash').then((data) => {
+      if(data!=null)
+      {
+        if(data<0)
+        {
+          this.storage.set('cash', 0);
+          this.sharedprovider.cash=0;
+          this.cash=0;
+        }
+        else
+        this.cash = data;
+      }
+    });
 
+    this.storage.get('creditYes').then((data) => {
+      if(data!=null)
+      {
+        this.creditYes = data;
+      }
+    });
+    this.storage.get('debtYes').then((data) => {
+      if(data!=null)
+      {
+        this.debtYes = data;
+      }
+    });
+
+
+  }
 
 
   producesound () {

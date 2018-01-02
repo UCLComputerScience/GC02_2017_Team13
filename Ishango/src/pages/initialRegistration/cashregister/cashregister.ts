@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../../../pages/tabs/tabs';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -13,7 +14,7 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 export class CashregisterPage {
   public cash = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
+  constructor(public navCtrl: NavController,public storage:Storage, public navParams: NavParams, public sharedprovider: SharedProvider) {
   }
 
 
@@ -38,6 +39,7 @@ export class CashregisterPage {
 
   gohome() {
     this.sharedprovider.cash = this.cash;
+    this.storage.set('cash', this.cash);
     this.navCtrl.setRoot(TabsPage);
   }
 
