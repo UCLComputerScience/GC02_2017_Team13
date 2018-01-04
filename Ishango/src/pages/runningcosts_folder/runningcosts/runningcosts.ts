@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { RecordPage } from '../../../pages/runningcosts_folder/record/record';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
-import {FileChooser} from 'ionic-native';
-import {FilePath} from 'ionic-native';
 import {DeleterunningcostPage} from '../../../pages/runningcosts_folder/deleterunningcost/deleterunningcost';
 import { Storage } from '@ionic/storage';
 

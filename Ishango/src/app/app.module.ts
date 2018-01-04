@@ -52,7 +52,6 @@ import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
 //import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { Device } from '@ionic-native/device';
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { IonicAudioModule } from 'ionic-audio/dist';
 import { CustomTrackProvider } from '../providers/custom-track/custom-track';
@@ -139,7 +138,7 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
       ],
   providers: [
     StatusBar,
-    SplashScreen,Camera,TextToSpeech, Device, MediaCapture,
+    SplashScreen,Camera,TextToSpeech, Device,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SharedProvider, CustomTrackProvider, Storage
   ],
