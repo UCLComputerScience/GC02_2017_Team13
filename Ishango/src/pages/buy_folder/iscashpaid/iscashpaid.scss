@@ -20,6 +20,16 @@ page-iscashpaid {
     height:70%;
   }
 
+  .photoContainer img {
+    width:100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+
 
 .buttonPositionLeft {
   // margin-bottom: 4%;

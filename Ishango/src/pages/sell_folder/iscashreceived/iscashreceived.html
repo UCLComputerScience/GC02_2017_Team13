@@ -3,7 +3,7 @@
     <ion-navbar>
       <ion-title>CASH RECEIVED?</ion-title>
       <ion-buttons end>
-          <button (click)="producesound()" ion-button>
+          <button (click)="producesoundGeneral()" ion-button>
               <ion-icon name="volume-up" style="font-size:30px;"></ion-icon>
           </button>
           <button ion-button>
@@ -14,8 +14,24 @@
   </ion-header>
     
   <ion-content padding>
+
+<ion-row>
+ <ion-col col-6 class="soundAlign">
+  <button ion-button round color="danger"  (click)="producesound(1)">
+    <ion-icon style="font-size:30px; z-index: 10;" name="volume-up"></ion-icon>
+  </button>
+</ion-col>
+
+<ion-col col-6 class="soundAlign">
+  <button ion-button round color="secondary"  (click)="producesound(2)">
+    <ion-icon style="font-size:30px; z-index: 10;" name="volume-up"></ion-icon>
+  </button>
+</ion-col>
+</ion-row>
+
+
     <div class="photoContainer">
-      <img src="assets/imgs/money_paid.png"/>
+      <img src="assets/imgs/iscashreceived.png"/>
       </div>
 
   <div class="divContainer"> </div>
@@ -23,7 +39,7 @@
 
   <ion-fab bottom left class="buttonPositionLeft buttonPosition">
     <button color="danger" class="borderButton" ion-fab bottom (click)="cashnotreceived()">
-      <ion-icon name="close"></ion-icon>
+      <ion-icon name="checkmark"></ion-icon>
     </button>
   </ion-fab>
 

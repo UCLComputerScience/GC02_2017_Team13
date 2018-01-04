@@ -27,13 +27,24 @@ export class IscashreceivedPage {
     this.sharedprovider.acceptaddition1();
     this.navCtrl.setRoot(ProductstosellPage);
   }
+
+  producesoundGeneral() {
+    this.sharedprovider.producesound("Choose whether you collected your money or sold on credit!");
+  }
+
+  producesound (preset) {
+
+    if (preset==1)
+    {
+      this.sharedprovider.producesound("if you collected the money from your sales, click on the right button");
+    }
+    else if (preset==2)
+    {
+      this.sharedprovider.producesound("if you did not collect the money from your sales, click on the left button");
+    }
+
+  }
   
-  producesound () {
-    this.sharedprovider.producesound("If you paid for the items click the green button. If you paid on credit, click the red button");
-}
-
-
-
   cashnotreceived() {
     this.sharedprovider.registercredit();
     this.sharedprovider.isCashReceivedBoolean = false;
