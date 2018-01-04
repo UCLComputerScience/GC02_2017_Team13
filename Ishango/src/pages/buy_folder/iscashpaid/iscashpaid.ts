@@ -49,13 +49,9 @@ export class IscashpaidPage {
 
   }
 
+  producesound(preset) {
 
-  producesoundGeneral() {
-    this.sharedprovider.producesound("Choose whether you paid for your purchases or bought on credit!");
-  }
-
-  producesound (preset) {
-
+    console.log("are we even in??");
     if (preset==1)
     {
       this.sharedprovider.producesound("if you paid for your purchases, click on the right button");
@@ -63,6 +59,10 @@ export class IscashpaidPage {
     else if (preset==2)
     {
       this.sharedprovider.producesound("if you did not pay for your purchases, click on the left button");
+    } 
+    else if (preset==3)
+    {
+    this.sharedprovider.producesound("Choose whether you paid for your purchases or bought on credit!");
     }
 
   }

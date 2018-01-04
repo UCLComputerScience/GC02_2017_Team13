@@ -15,19 +15,21 @@
     
   <ion-content padding>
 
-<ion-row>
- <ion-col col-6 class="soundAlign">
-  <button ion-button round color="danger"  (click)="producesound(1)">
-    <ion-icon style="font-size:30px; z-index: 10;" name="volume-up"></ion-icon>
-  </button>
-</ion-col>
+ <ion-grid>
+  <ion-row>
+   <ion-col col-6 class="soundAlign">
+    <button ion-button round color="danger" (click)="producesound(1)" >
+      <ion-icon style="font-size:30px; z-index: 10;" name="volume-up"></ion-icon>
+    </button>
+  </ion-col>
 
-<ion-col col-6 class="soundAlign">
-  <button ion-button round color="secondary"  (click)="producesound(2)">
-    <ion-icon style="font-size:30px; z-index: 10;" name="volume-up"></ion-icon>
-  </button>
-</ion-col>
+  <ion-col col-6 class="soundAlign">
+    <button ion-button round color="secondary" (click)="producesound(2)" >
+      <ion-icon style="font-size:30px; z-index: 10;" name="volume-up"></ion-icon>
+    </button>
+  </ion-col>
 </ion-row>
+</ion-grid>
 
 
     <div class="photoContainer">
