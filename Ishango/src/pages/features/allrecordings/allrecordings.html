@@ -16,26 +16,8 @@
  <div *ngIf="background1">
       <img class="welcome" src="assets/imgs/emptyRecording-08.png"/>
 </div>
-
-    <ion-grid class="navBarGlobal">
-        <ion-row>
   
-          <ion-col col-4 class="">
-         </ion-col>
-
-          <ion-col col-4 class="">
-         </ion-col>
-        
-        <ion-col col-4 class="navBarRight">
-          <button ion-button round (click)="producesound(1)">
-            <ion-icon style="font-size:30px;" name="cash"></ion-icon>
-          </button>
-        </ion-col>
-  
-        </ion-row>
-      </ion-grid>
-  
-   <ion-scroll scrollX="true" scrollY="true" style="height: 74%;"> 
+   <ion-scroll scrollX="true" scrollY="true" style="height: 92%;"> 
  <ion-list>
     <div *ngFor="let recording of recordingNames; let id = index">
           <ion-item-sliding>

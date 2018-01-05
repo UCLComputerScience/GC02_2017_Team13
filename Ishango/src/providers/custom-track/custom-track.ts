@@ -51,7 +51,6 @@ public MediaPlugin: MediaPlugin;
   //functions for recording
   deleterec(){
     this.recordingNames2.splice(this.indexrec,1);
-    this.totalrecords -= 1;
     this.updateDataBase();
   }
 
