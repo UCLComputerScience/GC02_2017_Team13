@@ -238,8 +238,13 @@ export class SharedProvider {
       console.log("debt array [" + b +  "]: " + this.debt[b]);
     }
     //
+    
+     var sum = 0;
+     for(var i = 0; i < this.debt.length; i++){
+     sum += this.debt[i];
+    }
 
-    if(this.photosDebt.length == 0){
+    if(sum == 0){
       this.debtYes = false;
       console.log("debtYes is false and stored");
     }
