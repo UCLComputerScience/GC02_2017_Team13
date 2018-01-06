@@ -29,20 +29,7 @@ export class IscashreceivedPage {
   }
 
   producesoundGeneral() {
-    this.sharedprovider.producesound("Choose whether you collected your money or sold on credit!");
-  }
-
-  producesound (preset) {
-
-    if (preset==1)
-    {
-      this.sharedprovider.producesound("if you collected the money from your sales, click on the right button");
-    }
-    else if (preset==2)
-    {
-      this.sharedprovider.producesound("if you did not collect the money from your sales, click on the left button");
-    }
-
+    this.sharedprovider.producesound("Click on the green button if your customer paid you. Otherwise, click on the red button if you sold on credit!");
   }
   
   cashnotreceived() {

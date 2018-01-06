@@ -57,11 +57,11 @@ export class ProductstosellPage {
     }
     else if (preset==2)
     {
-      this.sharedprovider.producesound("this column shows a photo of your sold product");
+      this.sharedprovider.producesound("the values in this column represent the money you received from your sales");
     }
     else if (preset==3)
     {
-      this.sharedprovider.producesound("this column shows the quantity of your sold product");
+      this.sharedprovider.producesound("this column shows the quantity of your sold products");
     }
      
   }

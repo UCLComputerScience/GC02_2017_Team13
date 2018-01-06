@@ -63,7 +63,7 @@ export class RecordPage {
   }
 
   producesound(){
-    this.sharedprovider.producesound("Press the microphone button to record your running cost and press the stop button when you're done. You can hear your recording by pressing the play button")
+    this.sharedprovider.producesound("Press the rec button to record your expense. Then, press the stop button when you're done. You can hear your recording by pressing the play button")
   }
 
   ionViewDidLoad() {

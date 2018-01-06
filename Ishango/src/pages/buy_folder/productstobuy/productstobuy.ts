@@ -116,15 +116,15 @@ this.sharedprovider.photos[index] = this.photos[index];
   producesound (preset) {
     if(preset==1)
     {
-      this.sharedprovider.producesound("In this screen appear all the products you have bought");
+      this.sharedprovider.producesound("The list shows all your the products in stock");
     }
     else if (preset==2)
     {
-      this.sharedprovider.producesound("this column shows a photo of your product");
+      this.sharedprovider.producesound("the values in this column represent the money you spent to purchase your goods");
     }
     else if (preset==3)
     {
-      this.sharedprovider.producesound("this column shows the quantity of your product");
+      this.sharedprovider.producesound("this column shows the quantity of your goods");
     }
      
   }

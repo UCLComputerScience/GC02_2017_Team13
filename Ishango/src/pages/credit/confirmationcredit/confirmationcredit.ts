@@ -29,7 +29,7 @@ export class ConfirmationcreditPage {
     this.navCtrl.setRoot(HomePage);
   }
   producesound() {
-    this.sharedprovider.producesound("Are you sure that you want to collect the money?");
+    this.sharedprovider.producesound("Are you sure you want to collect the money?");
 }
 
   ionViewDidLoad() {

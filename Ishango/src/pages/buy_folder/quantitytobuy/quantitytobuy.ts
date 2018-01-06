@@ -44,15 +44,10 @@ export class QuantitytobuyPage {
     }
   }
 
-  producesound (preset) {
-    if(preset==1)
-    {
-      this.sharedprovider.producesound("Enter how many items you are bying");
-    }
-    else if (preset==2)
-    {
-      this.sharedprovider.producesound("Enter how many items you are bying");
-    }
+  producesound () {
+    
+      this.sharedprovider.producesound("Enter the number of goods you are buying");
+ 
      
   }
 

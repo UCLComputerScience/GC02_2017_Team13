@@ -60,7 +60,7 @@ if(this.moneyreceived - this.suggestedprice <= 0){
   }
 
   producesound () {
-    this.sharedprovider.producesound("Enter how much money you received for this sale");
+    this.sharedprovider.producesound("Enter how much money you received for your sale");
 }
 
   ionViewDidLoad() {

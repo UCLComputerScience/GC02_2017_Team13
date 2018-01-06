@@ -27,7 +27,7 @@ export class DeleteitemPage {
   }
 
   producesound () {
-       this.sharedprovider.producesound("If you really want to delete this item click the blue button. If you want to cancel and return to the products screen click the red button");
+       this.sharedprovider.producesound("If you really want to delete this item click the green button. If you want to cancel and return to the purchases page click the red button");
   }
 
 

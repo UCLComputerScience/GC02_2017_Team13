@@ -49,21 +49,9 @@ export class IscashpaidPage {
 
   }
 
-  producesound(preset) {
+  producesoundGeneral() {
 
-    console.log("are we even in??");
-    if (preset==1)
-    {
-      this.sharedprovider.producesound("if you paid for your purchases, click on the right button");
-    }
-    else if (preset==2)
-    {
-      this.sharedprovider.producesound("if you did not pay for your purchases, click on the left button");
-    } 
-    else if (preset==3)
-    {
-    this.sharedprovider.producesound("Choose whether you paid for your purchases or bought on credit!");
-    }
+    this.sharedprovider.producesound("Click on the green button if you paid your provider. Otherwise, click on the red button if you bought on credit!");
 
   }
 

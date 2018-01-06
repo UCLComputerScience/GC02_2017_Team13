@@ -32,13 +32,24 @@ export class AddnewsalePage {
     // console.log(index);
   }  
   
-  producesound () {
-       this.sharedprovider.producesound("Select the item that you are selling");
+  producesound (number) {
+
+    if(number == 1)
+      this.sharedprovider.producesound("Select the item that you are selling");
+
+    if(number == 2)
+      this.sharedprovider.producesound("The values on this column show he average unit cost of your items");
+
+    if(number == 3)
+      this.sharedprovider.producesound("The values on this column show your items available stock quantity");
+
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddneworexPage');
-    }
+  }
 
 
 }

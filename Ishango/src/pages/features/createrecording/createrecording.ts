@@ -66,7 +66,7 @@ export class CreaterecordingPage {
   }
 
   producesound(){
-    this.sharedprovider.producesound("Press the microphone button to record and press the stop button when you're done. You can hear your recording by pressing the play button")
+    this.sharedprovider.producesound("Press the rec button to record your message. Then, press the stop button when you're done. You can hear your recording by pressing the play button");
   }
 
 

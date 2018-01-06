@@ -33,7 +33,7 @@ export class CreditperproductPage {
   }
 
   producesound() {
-    this.sharedprovider.producesound("In this screen you can see the your items sold on credit");
+    this.sharedprovider.producesound("In this page you can see the goods you sold on credit");
 }
 
 

@@ -49,7 +49,7 @@ export class AllrecordingsPage {
   producesound(presets){
     if (presets==1)
     {
-      this.sharedprovider.producesound("In this page, you can create custom recordings");
+      this.sharedprovider.producesound("In this page, you can create customized recordings");
     }
     
   }

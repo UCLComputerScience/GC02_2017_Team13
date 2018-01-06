@@ -42,7 +42,7 @@ export class AmountpaidPage {
     }
 
     producesound () {
-      this.sharedprovider.producesound("Enter how much money you paid for this running cost");
+      this.sharedprovider.producesound("Enter how much money you paid for your expense");
     }
 
     gotorunningcosts(){

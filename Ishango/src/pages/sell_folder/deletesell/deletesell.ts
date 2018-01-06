@@ -21,7 +21,7 @@ export class DeletesellPage {
     this.navCtrl.setRoot(ProductstosellPage);
   }
   producesound () {
-    this.sharedprovider.producesound("If you really want to delete this sale click the blue button. If you want to cancel click the red button");
+    this.sharedprovider.producesound("If you really want to delete this sale click the green button. If you want to cancel click the red button");
 }
 
 }

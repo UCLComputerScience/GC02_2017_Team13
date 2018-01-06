@@ -39,7 +39,7 @@ export class MoneypaidPage {
   }
 
    producesound () {
-     this.sharedprovider.producesound("Enter how much money you paid for your purchase");
+     this.sharedprovider.producesound("Enter the money you paid for your goods");
   }
 
   ionViewDidLoad() {
