@@ -116,7 +116,7 @@ this.sharedprovider.photos[index] = this.photos[index];
   producesound (preset) {
     if(preset==1)
     {
-      this.sharedprovider.producesound("The list shows all your the products in stock");
+      this.sharedprovider.producesound("The page shows all your products in stock");
     }
     else if (preset==2)
     {
