@@ -148,6 +148,8 @@ export class SharedProvider {
       this.photos.splice(this.index + 1, 1);
 
       // console.log("AFTER SPLICE");
+
+
       // for(var i  = 0; i < this.averagebuyingprice.length; i++){
       //   console.log("averagebuyingprice at " + i + ": " + this.averagebuyingprice[i]);
 
@@ -223,23 +225,23 @@ export class SharedProvider {
     //
 
 // deleting all debt related to the deleted item 
-for(var a = 0; a < this.photosDebt.length; a++){
-  if(this.photosDebt[a] == this.photos[this.index]){
-    this.photosDebt.splice(a, 1);
-    this.debt.splice(a, 1);
-    a--;
-  }
-}
+    for(var a = 0; a < this.photosDebt.length; a++){
+      if(this.photosDebt[a] == this.photos[this.index]){
+        this.photosDebt.splice(a, 1);
+        this.debt.splice(a, 1);
+        a--;
+      }
+    }
 
  //CONSOLE ONLY checking array debt after cancelling values
- for(var b = 0; b < this.photosDebt.length; b++){
-   console.log("debt array [" + b +  "]: " + this.debt[b]);
- }
+    for(var b = 0; b < this.photosDebt.length; b++){
+      console.log("debt array [" + b +  "]: " + this.debt[b]);
+    }
     //
     
-    var sum = 0;
-    for(var i = 0; i < this.debt.length; i++){
-      sum += this.debt[i];
+     var sum = 0;
+     for(var i = 0; i < this.debt.length; i++){
+     sum += this.debt[i];
     }
 
     if(sum == 0){
@@ -364,7 +366,7 @@ for(var a = 0; a < this.photosDebt.length; a++){
     this.debt[this.index] = this.debt[this.index] - this.debtRepay;
     this.cash=this.cash-this.debtRepay;
     if(this.cash<0)
-      this.cash=0;
+    this.cash=0;
 
     for(var  i = 0; i < this.debt.length; i++){
       if(this.debt[i] > 0){

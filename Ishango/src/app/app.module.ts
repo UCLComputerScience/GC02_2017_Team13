@@ -12,15 +12,14 @@ import { RecordPage } from '../pages/runningcosts_folder/record/record';
 import {DeleterunningcostPage} from '../pages/runningcosts_folder/deleterunningcost/deleterunningcost';
 import {AmountpaidPage} from '../pages/runningcosts_folder/amountpaid/amountpaid';
 
-<<<<<<< HEAD:src/app/app.module.ts
-=======
 import { StockPage } from '../pages/stock/stock';
->>>>>>> 258c65d7e0e8960d3d9d7eb4493feeaaee9f473d:Ishango/src/app/app.module.ts
 import { AllrecordingsPage } from '../pages/features/allrecordings/allrecordings';
 import { CreaterecordingPage } from '../pages/features/createrecording/createrecording';
 import { DeleterecordingPage } from '../pages/features/deleterecording/deleterecording';
 
 import { ProductstobuyPage } from '../pages/buy_folder/productstobuy/productstobuy';
+import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
+import { PhotobuyPage } from '../pages/buy_folder/photobuy/photobuy';
 import { QuantitytobuyPage } from '../pages/buy_folder/quantitytobuy/quantitytobuy';
 import { MoneypaidPage } from '../pages/buy_folder/moneypaid/moneypaid';
 import { IscashpaidPage } from '../pages/buy_folder/iscashpaid/iscashpaid';
@@ -49,6 +48,7 @@ import {IonicStorageModule} from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedProvider } from '../providers/sharedprovider/sharedprovider';
+import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
 //import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { Device } from '@ionic-native/device';
@@ -67,17 +67,15 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     ProductstosellPage,
     QuantitytobuyPage,
     QuantitytosellPage,
+    AddneworexPage,
+    PhotobuyPage,
     MoneypaidPage,
     IscashpaidPage,
     TabsPage,
     RunningcostsPage,
-<<<<<<< HEAD:src/app/app.module.ts
-    AllrecordingsPage,
-=======
     StockPage,
     AllrecordingsPage,
     VoicerecordPage,
->>>>>>> 258c65d7e0e8960d3d9d7eb4493feeaaee9f473d:Ishango/src/app/app.module.ts
     //HideFabDirective,
     DeleteitemPage,
     AddnewsalePage,
@@ -111,15 +109,14 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     HomePage,
     TabsPage,
     RunningcostsPage,
-<<<<<<< HEAD:src/app/app.module.ts
-=======
     StockPage,
     PhotobuyPage,
->>>>>>> 258c65d7e0e8960d3d9d7eb4493feeaaee9f473d:Ishango/src/app/app.module.ts
     AllrecordingsPage,
     QuantitytobuyPage,
     IscashpaidPage,
     MoneypaidPage,
+    VoicerecordPage,
+    AddneworexPage,
     DeleteitemPage,
     AddnewsalePage,
     MoneyreceivedPage,
