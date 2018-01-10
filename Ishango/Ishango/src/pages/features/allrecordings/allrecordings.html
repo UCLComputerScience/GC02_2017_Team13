@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    
+    <ion-title>Recordings List</ion-title>
+
+    <ion-buttons end>
+        <button (click)="producesound(1)" ion-button>
+            <ion-icon name="volume-up" style="font-size:30px;"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+ </ion-header>
+  
+ <ion-content padding>
+
+ <div *ngIf="background1">
+      <img class="welcome" src="assets/imgs/emptyRecording-08.png"/>
+</div>
+  
+   <ion-scroll scrollX="true" scrollY="true" style="height: 92%;"> 
+ <ion-list>
+    <div *ngFor="let recording of recordingNames; let id = index">
+          <ion-item-sliding>
+            <ion-item class="pictureAndQuantity">
+              <ion-avatar class="avatarStyle" item-start (click)="playrecording(id)">
+                  <img src="assets/imgs/playOff.png"/>
+              </ion-avatar>
+
+              <div class="quantityTag"> <h2 style="font-size: 24px;">{{recordingNames[id]}}</h2> </div>
+            </ion-item>
+
+            <ion-item-options side="right" >
+      <button style="width:80px;" ion-button color="danger" (click)="deleterecording(id)">
+        <ion-icon name="trash" style="font-size:36px;"></ion-icon>
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+      </div>
+  </ion-list>
+</ion-scroll>
+
+    <div class="divContainer"> </div>
+
+
+  <ion-fab bottom center class="buttonPosition">
+    <button class="borderButton" ion-fab bottom (click)="gotocreaterecording()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  
+  
+ </ion-content>
