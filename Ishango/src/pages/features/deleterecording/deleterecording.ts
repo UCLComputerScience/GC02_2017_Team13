@@ -13,7 +13,7 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 })
 export class DeleterecordingPage {
 
-  constructor(public recordingprovider: CustomTrackProvider,public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
+  constructor(public recordingprovider: CustomTrackProvider, public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
   }
 
   yes() {
@@ -29,7 +29,7 @@ export class DeleterecordingPage {
   }
 
 
-  producesound(){
+  producesound() {
     this.sharedprovider.producesound("If you want to delete the recording, press the green button. Otherwise, press the red button.");
   }
 

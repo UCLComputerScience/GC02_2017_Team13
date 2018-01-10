@@ -17,19 +17,19 @@ import { HomePage } from '../../../pages/home/home';
 })
 export class ConfirmationPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public sharedprovider: SharedProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
   }
 
-  confirm(){
+  confirm() {
     this.sharedprovider.repay();
     this.navCtrl.setRoot(HomePage);
   }
-  cancel(){
+  cancel() {
     this.navCtrl.setRoot(HomePage);
   }
   producesound() {
     this.sharedprovider.producesound("Are you sure that you want to repay the money?");
-}
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfirmationPage');

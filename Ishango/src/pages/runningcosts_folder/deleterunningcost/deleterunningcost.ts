@@ -14,7 +14,7 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
 })
 export class DeleterunningcostPage {
 
-  constructor(public recordingprovider: CustomTrackProvider,public sharedprovider:SharedProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public recordingprovider: CustomTrackProvider, public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -22,16 +22,17 @@ export class DeleterunningcostPage {
   }
 
 
-  producesound () {
+  producesound() {
     this.sharedprovider.producesound("If you really want to delete this item click the green button. If you want to cancel and return to the running cost screen click the red button");
-}
-
-yes() {
-  this.recordingprovider.delete();
-  this.navCtrl.setRoot(RunningcostsPage);
-}
-no() {
-  this.navCtrl.setRoot(RunningcostsPage);
-}
+  }
+  //function executed when the user chooses to delete a running cost
+  yes() {
+    this.recordingprovider.delete();
+    this.navCtrl.setRoot(RunningcostsPage);
+  }
+  //function executed when the user chooses to cancel the deletion of the runningcost
+  no() {
+    this.navCtrl.setRoot(RunningcostsPage);
+  }
 
 }

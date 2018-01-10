@@ -10,11 +10,11 @@ import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider
   templateUrl: 'quantitytobuy.html',
 })
 export class QuantitytobuyPage {
-   public quantity = 0;
+  public quantity = 0;
 
-   ionViewCanEnter(){
-     
-   }
+  ionViewCanEnter() {
+
+  }
 
   constructor(public sharedprovider: SharedProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -23,32 +23,33 @@ export class QuantitytobuyPage {
 
 
   increment(amount) {
-    this.quantity= this.quantity + amount;
+    this.quantity = this.quantity + amount;
   }
 
   reduce(amount) {
-    if (this.quantity-amount>=0){
-    this.quantity = this.quantity - amount;}
-    else{
+    if (this.quantity - amount >= 0) {
+      this.quantity = this.quantity - amount;
+    }
+    else {
       this.quantity = 0;
     }
   }
-  
-    
+
+
 
 
   gotomoneypaidpage() {
-    if (this.quantity > 0){
-    this.sharedprovider.quantityTemp.push(this.quantity);
-    this.navCtrl.push(MoneypaidPage);
+    if (this.quantity > 0) {
+      this.sharedprovider.quantityTemp.push(this.quantity);
+      this.navCtrl.push(MoneypaidPage);
     }
   }
 
-  producesound () {
-    
-      this.sharedprovider.producesound("Enter the number of goods you are buying");
- 
-     
+  producesound() {
+
+    this.sharedprovider.producesound("Enter the number of goods you are buying");
+
+
   }
 
 }

@@ -11,7 +11,7 @@ import { AllrecordingsPage } from '../features/allrecordings/allrecordings';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-  public hideTabs:boolean = true;
+  public hideTabs: boolean = true;
 
   tab1Root = HomePage;
   tab2Root = ProductstobuyPage;

@@ -10,4 +10,4 @@ import { CreditperproductPage } from './creditperproduct';
     IonicPageModule.forChild(CreditperproductPage),
   ],
 })
-export class CreditperproductPageModule {}
+export class CreditperproductPageModule { }

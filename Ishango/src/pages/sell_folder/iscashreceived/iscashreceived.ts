@@ -21,6 +21,7 @@ export class IscashreceivedPage {
     console.log('ionViewDidLoad IscashpaidPage');
   }
 
+  //function executed when the user selects that cash was received and not owed.
   cashreceived() { 
     this.sharedprovider.credit.unshift(0);
     this.sharedprovider.isCashReceivedBoolean = true;
@@ -32,6 +33,7 @@ export class IscashreceivedPage {
     this.sharedprovider.producesound("Click on the green button if your customer paid you. Otherwise, click on the red button if you sold on credit!");
   }
   
+  //function executed when the user selects that the client paid by credit
   cashnotreceived() {
     this.sharedprovider.registercredit();
     this.sharedprovider.isCashReceivedBoolean = false;

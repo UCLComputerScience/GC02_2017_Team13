@@ -6,25 +6,25 @@ import { HttpModule } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
-//pages to review
+//Running Cost pages
 import { RunningcostsPage } from '../pages/runningcosts_folder/runningcosts/runningcosts';
 import { RecordPage } from '../pages/runningcosts_folder/record/record';
-import {DeleterunningcostPage} from '../pages/runningcosts_folder/deleterunningcost/deleterunningcost';
-import {AmountpaidPage} from '../pages/runningcosts_folder/amountpaid/amountpaid';
+import { DeleterunningcostPage } from '../pages/runningcosts_folder/deleterunningcost/deleterunningcost';
+import { AmountpaidPage } from '../pages/runningcosts_folder/amountpaid/amountpaid';
 
-import { StockPage } from '../pages/stock/stock';
+//Custom recordings pages
 import { AllrecordingsPage } from '../pages/features/allrecordings/allrecordings';
 import { CreaterecordingPage } from '../pages/features/createrecording/createrecording';
 import { DeleterecordingPage } from '../pages/features/deleterecording/deleterecording';
 
+//Bying product pages
 import { ProductstobuyPage } from '../pages/buy_folder/productstobuy/productstobuy';
-import { AddneworexPage } from '../pages/buy_folder/addneworex/addneworex';
-import { PhotobuyPage } from '../pages/buy_folder/photobuy/photobuy';
 import { QuantitytobuyPage } from '../pages/buy_folder/quantitytobuy/quantitytobuy';
 import { MoneypaidPage } from '../pages/buy_folder/moneypaid/moneypaid';
 import { IscashpaidPage } from '../pages/buy_folder/iscashpaid/iscashpaid';
 import { DeleteitemPage } from '../pages/buy_folder/deleteitem/deleteitem';
 
+//Selling product pages
 import { ProductstosellPage } from '../pages/sell_folder/productstosell/productstosell';
 import { AddnewsalePage } from '../pages/sell_folder/addnewsale/addnewsale';
 import { QuantitytosellPage } from '../pages/sell_folder/quantitytosell/quantitytosell';
@@ -32,24 +32,25 @@ import { MoneyreceivedPage } from '../pages/sell_folder/moneyreceived/moneyrecei
 import { IscashreceivedPage } from '../pages/sell_folder/iscashreceived/iscashreceived';
 import { DeletesellPage } from '../pages/sell_folder/deletesell/deletesell';
 
-
+//Creditors repayment pages
 import { AmountrepaidPage } from '../pages/debt/amountrepaid/amountrepaid';
 import { ConfirmationPage } from '../pages/debt/confirmation/confirmation';
 import { DebtperproductPage } from '../pages/debt/debtperproduct/debtperproduct';
 
+//Debtors repayment pages
 import { AmountcollectedPage } from '../pages/credit/amountcollected/amountcollected';
 import { ConfirmationcreditPage } from '../pages/credit/confirmationcredit/confirmationcredit';
 import { CreditperproductPage } from '../pages/credit/creditperproduct/creditperproduct';
 
+//Initial registration pages
 import { CashregisterPage } from '../pages/initialRegistration/cashregister/cashregister';
 import { WelcomePage } from '../pages/initialRegistration/welcome/welcome';
-import {IonicStorageModule} from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
 
+//Splash screen, shared provider, and plugins
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SharedProvider } from '../providers/sharedprovider/sharedprovider';
-import { VoicerecordPage } from '../pages/voicerecord/voicerecord';
-//import { HideFabDirective } from '../directives/hide-fab/hide-fab';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { Device } from '@ionic-native/device';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -67,16 +68,11 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     ProductstosellPage,
     QuantitytobuyPage,
     QuantitytosellPage,
-    AddneworexPage,
-    PhotobuyPage,
     MoneypaidPage,
     IscashpaidPage,
     TabsPage,
     RunningcostsPage,
-    StockPage,
     AllrecordingsPage,
-    VoicerecordPage,
-    //HideFabDirective,
     DeleteitemPage,
     AddnewsalePage,
     MoneyreceivedPage,
@@ -97,8 +93,8 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     CreditperproductPage
   ],
   imports: [
-    BrowserModule,HttpModule,
-    IonicModule.forRoot(MyApp,{tabsHideOnSubPages:true}),IonicStorageModule.forRoot(),IonicAudioModule.forRoot()
+    BrowserModule, HttpModule,
+    IonicModule.forRoot(MyApp, { tabsHideOnSubPages: true }), IonicStorageModule.forRoot(), IonicAudioModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -109,14 +105,10 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     HomePage,
     TabsPage,
     RunningcostsPage,
-    StockPage,
-    PhotobuyPage,
     AllrecordingsPage,
     QuantitytobuyPage,
     IscashpaidPage,
     MoneypaidPage,
-    VoicerecordPage,
-    AddneworexPage,
     DeleteitemPage,
     AddnewsalePage,
     MoneyreceivedPage,
@@ -135,12 +127,12 @@ import { CustomTrackProvider } from '../providers/custom-track/custom-track';
     AmountcollectedPage,
     ConfirmationcreditPage,
     CreditperproductPage
-      ],
+  ],
   providers: [
     StatusBar,
-    SplashScreen,Camera,TextToSpeech, Device,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SplashScreen, Camera, TextToSpeech, Device,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     SharedProvider, CustomTrackProvider, Storage
   ],
 })
-export class AppModule {}
+export class AppModule { }

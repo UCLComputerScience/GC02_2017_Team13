@@ -14,7 +14,7 @@ import { Storage } from '@ionic/storage';
 export class CashregisterPage {
   public cash = 0;
 
-  constructor(public navCtrl: NavController,public storage:Storage, public navParams: NavParams, public sharedprovider: SharedProvider) {
+  constructor(public navCtrl: NavController, public storage: Storage, public navParams: NavParams, public sharedprovider: SharedProvider) {
   }
 
 

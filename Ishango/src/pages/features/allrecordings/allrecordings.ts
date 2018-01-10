@@ -12,46 +12,44 @@ import { DeleterecordingPage } from '../../../pages/features/deleterecording/del
   templateUrl: 'allrecordings.html',
 })
 export class AllrecordingsPage {
-  public recordingNames=[];
+  public recordingNames = [];
   public background1;
 
-  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider,public recordingprovider: CustomTrackProvider) {
-    
+  constructor(public navCtrl: NavController, public sharedprovider: SharedProvider, public recordingprovider: CustomTrackProvider) {
+
   }
 
-  ionViewDidEnter(){
-    this.recordingNames=this.recordingprovider.recordingNames2;
+  ionViewDidEnter() {
+    this.recordingNames = this.recordingprovider.recordingNames2;
     console.log(this.recordingNames.length);
-    if(this.recordingNames.length == 0){
+    if (this.recordingNames.length == 0) {
       this.background1 = true;
     } else {
       this.background1 = false;
     }
-  
+
 
   }
 
-  playrecording(id)
-  {
+  playrecording(id) {
     this.recordingprovider.playRecord(id);
   }
 
-  gotocreaterecording(id){
-    this.recordingprovider.totalrecords=this.recordingprovider.totalrecords+1;
+  gotocreaterecording(id) {
+    this.recordingprovider.totalrecords = this.recordingprovider.totalrecords + 1;
     this.navCtrl.push(CreaterecordingPage);
   }
 
-  deleterecording(id){
-    this.recordingprovider.indexrec=id;
+  deleterecording(id) {
+    this.recordingprovider.indexrec = id;
     this.navCtrl.push(DeleterecordingPage);
   }
 
-  producesound(presets){
-    if (presets==1)
-    {
+  producesound(presets) {
+    if (presets == 1) {
       this.sharedprovider.producesound("In this page you can create customized recordings");
     }
-    
+
   }
 
   ionViewDidLoad() {

@@ -7,7 +7,7 @@ import { File } from '@ionic-native/file';
 import { RunningcostsPage } from '../../../pages/runningcosts_folder/runningcosts/runningcosts';
 import { CustomTrackProvider } from '../../../providers/custom-track/custom-track';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
-import {AmountpaidPage} from '../../../pages/runningcosts_folder/amountpaid/amountpaid';
+import { AmountpaidPage } from '../../../pages/runningcosts_folder/amountpaid/amountpaid';
 
 
 @IonicPage()
@@ -24,11 +24,11 @@ export class RecordPage {
   playing;
   stop;
 
-  constructor(public navCtrl: NavController,public sharedprovider:SharedProvider, public recordingprovider: CustomTrackProvider, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public sharedprovider: SharedProvider, public recordingprovider: CustomTrackProvider, public alertCtrl: AlertController) {
     this.totalrecordings = this.recordingprovider.totalrecordings;
 
   }
-
+  //start a new recording
   startRecording() {
     let name: string = "runningcost" + this.totalrecordings;
     this.MediaPlugin = new MediaPlugin(name + ".wav");
@@ -37,14 +37,14 @@ export class RecordPage {
     this.playing = false;
     this.stop = false;
   }
-
+  //stop the recording
   stopRecording() {
     this.MediaPlugin.stopRecord();
     this.clicked = false;
     this.playing = false;
     this.stop = true;
   }
-
+  //play the recorded recording
   playRecording() {
     this.MediaPlugin.stopRecord();
     this.MediaPlugin.play();
@@ -52,7 +52,7 @@ export class RecordPage {
     this.clicked = false;
     this.stop = false;
   }
-
+  //go to the next page where the user selects how much money they paid for the running cost
   gotomoneypaid() {
     if (this.MediaPlugin != null) {
       this.MediaPlugin.stopRecord();
@@ -61,8 +61,7 @@ export class RecordPage {
       this.navCtrl.push(AmountpaidPage);
     }
   }
-
-  producesound(){
+  producesound() {
     this.sharedprovider.producesound("Press the rec button to record your expense. Then, press the stop button when you're done. You can hear your recording by pressing the play button")
   }
 

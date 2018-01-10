@@ -13,13 +13,13 @@ import { AllrecordingsPage } from '../../../pages/features/allrecordings/allreco
 export class CreaterecordingPage {
 
   public MediaPlugin: MediaPlugin;
-  
-    public totalrecords = 0;
-    clicked;
+
+  public totalrecords = 0;
+  clicked;
   playing;
   stop;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public sharedprovider:SharedProvider, public recordingprovider: CustomTrackProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider, public recordingprovider: CustomTrackProvider) {
     this.totalrecords = this.recordingprovider.totalrecords;
   }
 
@@ -30,23 +30,23 @@ export class CreaterecordingPage {
     this.stop = false;
   }
 
-
+  //start the recording
   startRecording() {
     let name: string = "recording # " + this.totalrecords;
     this.MediaPlugin = new MediaPlugin(name + ".wav");
     this.MediaPlugin.startRecord();
-     this.clicked = true;
+    this.clicked = true;
     this.playing = false;
     this.stop = false;
   }
-
+//stop the recording
   stopRecording() {
     this.MediaPlugin.stopRecord();
     this.clicked = false;
     this.playing = false;
     this.stop = true;
   }
-
+  //play the recorded recording
   playRecording() {
     this.MediaPlugin.play();
     this.playing = true;
@@ -65,7 +65,7 @@ export class CreaterecordingPage {
     }
   }
 
-  producesound(){
+  producesound() {
     this.sharedprovider.producesound("Press the rec button to record your message. Then, press the stop button when you're done. You can hear your recording by pressing the play button");
   }
 

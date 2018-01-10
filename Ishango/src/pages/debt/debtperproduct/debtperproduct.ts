@@ -13,12 +13,12 @@ export class DebtperproductPage {
   private photos = [];
   public debt = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public sharedprovider: SharedProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
     this.photos = this.sharedprovider.photosDebt;
     this.debt = this.sharedprovider.debt;
   }
 
-  gotorepaypage(id){
+  gotorepaypage(id) {
     this.sharedprovider.index = id;
     this.navCtrl.push(AmountrepaidPage);
 
@@ -27,7 +27,7 @@ export class DebtperproductPage {
 
   producesound() {
     this.sharedprovider.producesound("In this screen you can see your debt for each purchase");
-}
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DebtperproductPage');

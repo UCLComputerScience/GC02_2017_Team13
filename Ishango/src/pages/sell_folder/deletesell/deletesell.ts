@@ -13,10 +13,12 @@ export class DeletesellPage {
 
   constructor(public sharedprovider:SharedProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
+  //function executed when the user confirms to delete a sale
   yes(index) {
     this.sharedprovider.deleteSell();
     this.navCtrl.setRoot(ProductstosellPage);
   }
+    //function executed when the user cancel the deletion of a sale
   no() {
     this.navCtrl.setRoot(ProductstosellPage);
   }

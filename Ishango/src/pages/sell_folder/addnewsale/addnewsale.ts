@@ -30,17 +30,17 @@ export class AddnewsalePage {
     // console.log(this.photos[index]);
     this.navCtrl.push(QuantitytosellPage);
     // console.log(index);
-  }  
-  
-  producesound (number) {
+  }
+  //method executed when voice feedback is needed
+  producesound(number) {
 
-    if(number == 1)
+    if (number == 1)
       this.sharedprovider.producesound("Select the item that you are selling");
 
-    if(number == 2)
+    if (number == 2)
       this.sharedprovider.producesound("The values on this column show he average unit cost of your items");
 
-    if(number == 3)
+    if (number == 3)
       this.sharedprovider.producesound("The values on this column show your items available stock quantity");
 
   }

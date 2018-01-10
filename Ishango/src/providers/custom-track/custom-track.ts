@@ -23,17 +23,16 @@ public MediaPlugin: MediaPlugin;
  public index;//this values is used to delete 
  
  constructor(public http: Http,public sharedprovider:SharedProvider,public storage:Storage) {
-
    this.getValuesFromDB();
 
  }
 
- 
+ //play recording
  playRecording(id) {
    this.MediaPlugin = new MediaPlugin(this.recordingNames[id]+".wav");
    this.MediaPlugin.play();
  }
-
+ //delete recording
  delete(){
    this.sharedprovider.cash += this.runningCosts[this.index];
    this.runningCosts.splice(this.index,1);
@@ -41,7 +40,7 @@ public MediaPlugin: MediaPlugin;
    this.totalrecordings -= 1;
    this.updateDataBase();
  }
-
+ //function to execute when a new running cost is registered
  acceptaddition(moneypaid){
    this.runningCosts.unshift(moneypaid);
    this.sharedprovider.cash = this.sharedprovider.cash - moneypaid;
@@ -58,7 +57,7 @@ public MediaPlugin: MediaPlugin;
     this.MediaPlugin2 = new MediaPlugin(this.recordingNames2[id]+".wav");
     this.MediaPlugin2.play();
   }
-
+  //update the local database
   updateDataBase(){
     this.storage.set('recordingNames2', this.recordingNames2);
     this.storage.set('totalrecords', this.totalrecords);
@@ -67,7 +66,7 @@ public MediaPlugin: MediaPlugin;
     this.storage.set('recordingNames', this.recordingNames);
     this.storage.set('totalrecordings', this.totalrecordings);
   }
-
+  //retrieve values from local database
   getValuesFromDB(){
     this.storage.get('recordingNames2').then((data) => {
       if(data!=undefined)

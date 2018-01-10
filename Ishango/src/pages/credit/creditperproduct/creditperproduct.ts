@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { AmountcollectedPage } from '../../../pages/credit/amountcollected/amountcollected';
 
-/**
- * Generated class for the CreditperproductPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -21,12 +15,12 @@ export class CreditperproductPage {
   public credit = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sharedprovider: SharedProvider) {
-  this.photos = this.sharedprovider.photosSell;
+    this.photos = this.sharedprovider.photosSell;
     this.credit = this.sharedprovider.credit;
 
   }
 
-  gotocollectpage(id){
+  gotocollectpage(id) {
     this.sharedprovider.index = id;
     this.navCtrl.push(AmountcollectedPage);
 
@@ -34,7 +28,7 @@ export class CreditperproductPage {
 
   producesound() {
     this.sharedprovider.producesound("In this page you can see the goods you sold on credit");
-}
+  }
 
 
   ionViewDidLoad() {

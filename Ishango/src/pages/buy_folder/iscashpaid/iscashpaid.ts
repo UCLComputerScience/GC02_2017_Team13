@@ -16,13 +16,10 @@ export class IscashpaidPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad IscashpaidPage');
-  }
-
+  //method that is executed if the user paid for the purchase
   cashpaid() {
 
-    if(this.sharedprovider.moneypaidTemp[this.sharedprovider.moneypaidTemp.length-1] <= this.sharedprovider.cash){
+    if (this.sharedprovider.moneypaidTemp[this.sharedprovider.moneypaidTemp.length - 1] <= this.sharedprovider.cash) {
       this.sharedprovider.debt.unshift(0);
       this.sharedprovider.isCashPaidBoolean = true;
       this.sharedprovider.acceptaddition();
@@ -33,12 +30,12 @@ export class IscashpaidPage {
 
   }
 
-  producesoundnotenoughcash () {
+  producesoundnotenoughcash() {
     this.sharedprovider.producesound("you do not have enough cash to pay entirely with money!");
   }
 
 
-
+  //method that is executed if the user paid by credit
   cashnotpaid() {
     this.sharedprovider.registerdebt();
     this.sharedprovider.isCashPaidBoolean = false;
@@ -48,7 +45,7 @@ export class IscashpaidPage {
     this.navCtrl.setRoot(ProductstobuyPage);
 
   }
-
+  
   producesoundGeneral() {
 
     this.sharedprovider.producesound("Click on the green button if you paid your provider. Otherwise, click on the red button if you bought on credit!");

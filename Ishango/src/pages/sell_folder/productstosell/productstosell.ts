@@ -43,13 +43,13 @@ export class ProductstosellPage {
       this.sharedprovider.producesound("You don't have items to sell")
     }
   }
-
+  
   deleteSell(id)
   {
     this.sharedprovider.index=id;
     this.navCtrl.push(DeletesellPage);
   }
-
+  //method executed when voice feedback is needed
   producesound (preset) {
     if(preset==1)
     {

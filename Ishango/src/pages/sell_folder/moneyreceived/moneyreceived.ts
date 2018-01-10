@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SharedProvider } from '../../../providers/sharedprovider/sharedprovider';
 import { IscashreceivedPage } from '../iscashreceived/iscashreceived';
 
-/**
- * Generated class for the moneyreceivedPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -30,7 +24,7 @@ export class MoneyreceivedPage {
    this.averagebuyingprice = this.sharedprovider.averagebuyingprice[this.index];
    this.suggestedprice = this.averagebuyingprice * this.quantity;
   }
-
+  //increment the amount of money displayed
   increment(amount) {
     this.moneyreceived = this.moneyreceived + amount;
 
@@ -38,7 +32,7 @@ export class MoneyreceivedPage {
       this.isRed = true;
     }
   }
-
+  //decrement the amount of money displayed
   reduce(amount) {
     if (this.moneyreceived - amount>=0){
     this.moneyreceived = this.moneyreceived - amount;
@@ -51,27 +45,17 @@ if(this.moneyreceived - this.suggestedprice <= 0){
     }
 
   }
-
+  // go the next page where the user selects whether cash was paid or owed.
   gotoiscashreceived() {
     
     this.sharedprovider.moneyreceivedTemp.push(this.moneyreceived);
     this.navCtrl.push(IscashreceivedPage);
 
   }
-
+  //function executed when voice feedback is required
   producesound () {
     this.sharedprovider.producesound("Enter how much money you received for your sale");
 }
 
-  ionViewDidLoad() {
-    // console.log('index: ' + this.index);
-    // console.log('quantity: ' + this.sharedprovider.quantityTempSell[this.sharedprovider.quantityTempSell.length - 1]);
-    // console.log('weighted price: ' + this.sharedprovider.averagebuyingprice[this.index]);
-    // console.log('suggested: ' + this.averagebuyingprice * this.quantity[this.index]);
-
-    // for(var i = 0; i < this.sharedprovider.averagebuyingprice.length; i++){
-    //   console.log('in weighted loop position ' + i + ": " + this.sharedprovider.averagebuyingprice[i]);
-    // }
-  }
 
 }

@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CashregisterPage } from '../../../pages/initialRegistration/cashregister/cashregister';
 
 
-/**
- * Generated class for the WelcomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -24,9 +18,9 @@ export class WelcomePage {
     console.log('ionViewDidLoad WelcomePage');
   }
 
-gotocashregisterpage(){
-this.navCtrl.push(CashregisterPage);
-}
+  gotocashregisterpage() {
+    this.navCtrl.push(CashregisterPage);
+  }
 
 
 
